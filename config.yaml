@@ -5,10 +5,8 @@ theme: "starter-academic"
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Academic # Website name
-baseurl: '' # Website URL
+baseurl: 'https://laddem.github.io/' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
-
-publishDir: "../laddem.github.io"
 
 ############################
 ## LANGUAGE
