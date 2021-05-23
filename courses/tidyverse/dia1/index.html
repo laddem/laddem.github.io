@@ -1,0 +1,2252 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="LADDEM" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Um modelo de ciência de dados Uma forma esquemática, mas útil de encarar o processo de análise de dados e de produção de conhecimento a partir de informações secundárias é esta figura:" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://laddem.github.io/courses/tidyverse/dia1/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="rgb(251, 191, 183)" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/foundation.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/foundation.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.46f8102c91669d08bf92f59f6531234a.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://laddem.github.io/courses/tidyverse/dia1/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="LADDEM" />
+  <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/dia1/" />
+  <meta property="og:title" content="readr, tibble e tidyr | LADDEM" />
+  <meta property="og:description" content="Um modelo de ciência de dados Uma forma esquemática, mas útil de encarar o processo de análise de dados e de produção de conhecimento a partir de informações secundárias é esta figura:" /><meta property="og:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-05-23T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-05-23T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>readr, tibble e tidyr | LADDEM</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="0bad4868b4cebec13d81438fabee26ad" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.f16be01fc8fb2b5885dd67ce942d1185.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">LADDEM</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">LADDEM</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Tidyverse
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Cursos</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/courses/tidyverse/">Tidyverse</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class="active"><a href="/courses/tidyverse/dia1/">readr, tibble e tidyr</a></li>
+
+
+
+  <li class=""><a href="/courses/tidyverse/dia2/">stringr, forcats e dplyr</a></li>
+
+
+
+  <li class=""><a href="/courses/tidyverse/dia3/">ggplot2</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#um-modelo-de-ciência-de-dados">Um modelo de ciência de dados</a>
+      <ul>
+        <li><a href="#programação-literária">Programação literária</a></li>
+        <li><a href="#o-mistério-do-pipe-">O mistério do pipe: <code>%&gt;%</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#readr"><code>readr</code></a>
+      <ul>
+        <li><a href="#debaixo-do-capô">Debaixo do capô</a></li>
+      </ul>
+    </li>
+    <li><a href="#tibbles"><code>tibbles</code></a></li>
+    <li><a href="#tidyr"><code>tidyr</code></a></li>
+    <li><a href="#revisão">Revisão</a>
+      <ul>
+        <li><a href="#readr-1"><code>readr</code></a></li>
+        <li><a href="#tibble"><code>tibble</code></a></li>
+        <li><a href="#tidyr-1"><code>tidyr</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#exercícios">Exercícios</a></li>
+    <li><a href="#agradecimentos">Agradecimentos</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+            
+  <nav class="d-none d-md-flex" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      
+  
+  
+  
+
+  <li class="breadcrumb-item">
+    <a href="/">
+      
+        Home
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/">
+      
+        Cursos
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/tidyverse/">
+      
+        Tidyverse
+      
+    </a>
+  </li>
+
+
+      <li class="breadcrumb-item active" aria-current="page">
+        readr, tibble e tidyr
+      </li>
+    </ol>
+  </nav>
+
+
+          
+
+          <h1>readr, tibble e tidyr</h1>
+
+          <div class="article-style">
+            <h2 id="um-modelo-de-ciência-de-dados">Um modelo de ciência de dados</h2>
+<p>Uma forma esquemática, mas útil de encarar o processo de análise de dados e de produção de conhecimento a partir de informações secundárias é esta figura:</p>
+<p><img src="/courses/tidyverse/dia1_files/data-science-explore.png" alt="Data Science Framework"></p>
+<p>Ela acaba sendo um ponto de partida interessante porque contextualiza a maioria dos pacotes que vamos utilizar. O <code>readr</code> é uma maneira de facilitar e tornar mais rápida a importação de dados em formatos comuns, como o texto delimitado por separadores e o formato colunado com larguras-fixas utilizado pelo IBGE.</p>
+<p>A <code>tibble</code> é uma proposta de modernização para o <code>data.frame</code>, aproveitando a estrutura flexível e poderosa, mas mudando certas convenções, como a conversão de strings para fatores, permitindo a criação de colunas de listas, utilização de nomes mais complexos para colunas, etc.</p>
+<p>O <code>tidyr</code> é uma forma de reformatar (<em>reshape</em>) bancos de dados que vêm em formatos que dificultam seu processamento, permitindo que o analista facilmente reconfigure a informação para o formato mais adequado. Ele é o primeiro pacote que veremos sobre a parte de &ldquo;cozinha&rdquo; dos dados, no qual é preciso processar o dado bruto para torná-lo passível de análise.</p>
+<p>O mesmo pode ser dito para os outros pacotes que veremos nos próximos dias. Cada um deles foi pensado para resolver um problema ou facilitar uma rotina de trabalho relacionada com um dos passos descritos acima.</p>
+<h3 id="programação-literária">Programação literária</h3>
+<p>Vários dos conceitos que guiam o design do <code>tidyverse</code> são orientados por uma certa filosofia. Esta filosofia dita que a principal preocupação por trás de um programa não é que ele funcione. Eventualmente e com um pouco de persistência, é quase sempre possível chegar a uma solução técnica adequada. A principal questão é que o programa é uma ferramenta de comunicação com outras pessoas que o lerão, seja seus colegas, colaboradores, alunos ou você mesmo, daqui a 2 anos, quando lembrar que você já escreveu um programa para aquela tarefa. Trago aqui alguns trechos de <em>Literate Programming</em>, de Donald Knuth (1984), traduzidos livremente por este que vos fala:</p>
+<blockquote>
+<p>Creio que chegou a hora de melhorar significativamente a documentação dos programas, e que podemos atingir este objetivo tratando programas como obras literárias. Por isso o título: &ldquo;Programação Literária&rdquo;. Abandonemos os velhos hábitos de construir programas: ao invés de imaginar que nossa tarefa principal é instruir um computador sobre o que deve ser feito, concentremo-nos em explicar aos seres humanos o que queremos que o computador faça. O praticante da programação literária pode ser visto como um ensaísta, cuja principal preocupação é com a clareza da exposição e a excelência no estilo. Tal autor, com um dicionário na mão, escolhe os nomes das variáveis com cuidado e explica claramente seu significado. Ele ou ela esmera por um programa que é compreensível porque seus conceitos foram introduzidos na melhor ordem possível para o entendimento humano, utilizando uma mistura de métodos formais e informais que se complementam.</p>
+</blockquote>
+<p>Assim, várias das escolhas feitas na construção de <code>tidyverse</code> procuram reforçar essa característica de interpretabilidade dos programas, como a ordem lógica das operações com o pipe (<code>%&gt;%</code>), funções com nomes mais longos e semânticos, a utilização de uma função específica para cada tarefa, ao invés da adaptação de funções genéricas para uma grande variedade de tarefas. O propósito de um código escrito como <code>tidyverse</code> é que, no limite, a própria síntaxe do código funcione como parte da documentação do programa.</p>
+<h3 id="o-mistério-do-pipe-">O mistério do pipe: <code>%&gt;%</code></h3>
+<p>Usuários de longa data do R já podem ter encontrado no mato esse animal estranho e podem ter ficado confusos com seu significado. O pipe é de origem humilde e nasceu nos sistemas Unix há muitas décadas atrás. Seu objetivo é muito simples: e se você tiver uma sequência de computações em que cada uma recebe o resultado daquela feita anteriormente? Claro que você poderia fazer:</p>
+<pre><code class="language-r">x &lt;- 1:10
+y &lt;- diff(x)
+mean(y)
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<p>Mas não seria interessante pular os objetos intermediários e ir direto ao ponto? O pipe vem do pacote <code>magrittr</code>, mas ele vêm carregado em quase todos os pacotes do tidyverse. Vamos carregar logo o tibble.</p>
+<pre><code class="language-r"># Para ter acesso ao pipe, basta carregar um pacote do tidyverse, como tibble, dplyr, tidyr, etc.
+# Vamos carregar o tibble agora
+library(tibble)
+x %&gt;% diff() %&gt;% mean()
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<p>Vejamos um exemplo mais real, quantos artistas existem no dataset <code>billboard</code>? Podemos usar <code>unique</code> e <code>length</code> para descobrir.</p>
+<pre><code class="language-r">x &lt;- unique(tidyr::billboard$artist)
+length(x)
+</code></pre>
+<pre><code>## [1] 228
+</code></pre>
+<p>Mas com <code>%&gt;%</code> fica bem melhor:</p>
+<pre><code class="language-r">tidyr::billboard %&gt;% .$artist %&gt;% unique() %&gt;% length()
+</code></pre>
+<pre><code>## [1] 228
+</code></pre>
+<p>Ok, mas como ele funciona? É simples, o pipe carrega o objeto a sua esquerda num ponto <code>.</code> invisível que é automaticamente passado como o primeiro argumento da função à direita.</p>
+<pre><code class="language-r">x &lt;- 1:10
+mean(x)
+</code></pre>
+<pre><code>## [1] 5.5
+</code></pre>
+<pre><code class="language-r">x %&gt;% mean()
+</code></pre>
+<pre><code>## [1] 5.5
+</code></pre>
+<p>OK, mas e se meu argumento não for o primeiro, ainda posso usar pipe? Pode! É só usar explicitamente um ponto no lugar onde você quer aproveitar o efeito:</p>
+<pre><code class="language-r">iris %&gt;% boxplot(Sepal.Length ~ Species, data = .)
+</code></pre>
+<p><img src="/courses/tidyverse/dia1_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>O ponto <code>.</code> depois de <code>data</code> indica indica que ali deve ser colocado o <code>iris</code>. O pipe é uma peça chave de muitas funções do <code>tidyverse</code>, não porque ele seja obrigatório, mas sim porque ele permite expressar sequências de operações numa ordem mais lógica, do tipo: &ldquo;Primeiro faça a, então b, então c, &hellip; &ldquo;, ao contrário da forma como isto é geralmente feito usando parênteses para precedência.</p>
+<pre><code class="language-r"># Compare
+mean(diff(1:10))
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">1:10 %&gt;% diff %&gt;% mean
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<p>E assim fica desmistificado o mistério do pipe! Um último pulo do gato: pelo amor de deus ninguém digita <code>Shift + %, &gt;, Shift + %</code>, basta usar o atalho: <code>Ctrl + Shift + M</code> que ele põe um pipe separado por espaços <code>%&gt;%</code>.</p>
+<h2 id="readr"><code>readr</code></h2>
+<p>Usuários do R provavelmente vão estar familiarizados com os nossos leitores de arquivos mais comuns: <code>read.table</code> e <code>read.csv</code>. Talvez muitos de vocês já até memorizaram alguns dos argumentos mais comuns. Não é o caso aqui de revisitar esta função, mas o <code>readr</code> tem muitos paralelos com elas, porque é pensado como uma nova versão da mesma coisa.</p>
+<pre><code class="language-r"># Comecemos carregando o readr
+library(readr)
+</code></pre>
+<h3 id="debaixo-do-capô">Debaixo do capô</h3>
+<p>O readr, como as funções de leitura do <code>base</code> é uma coleção de <em>parsers</em>, que transformam texto em objetos R com o tipo desejado.</p>
+<pre><code class="language-r">parse_number(c(&quot;1&quot;, &quot;20&quot;, &quot;38&quot;))
+</code></pre>
+<pre><code>## [1]  1 20 38
+</code></pre>
+<pre><code class="language-r">parse_character(c(&quot;banana&quot;, &quot;maçã&quot;, &quot;pêra&quot;))
+</code></pre>
+<pre><code>## [1] &quot;banana&quot;     &quot;ma&lt;e7&gt;&lt;e3&gt;&quot; &quot;p&lt;ea&gt;ra&quot;
+</code></pre>
+<pre><code class="language-r"># Note os acentos e caracteres especiais
+parse_character(c(&quot;banana&quot;, &quot;maçã&quot;, &quot;pêra&quot;), 
+                locale = locale(encoding = &quot;Windows-1252&quot;))
+</code></pre>
+<pre><code>## [1] &quot;banana&quot; &quot;maçã&quot;   &quot;pêra&quot;
+</code></pre>
+<pre><code class="language-r">parse_logical(c(&quot;true&quot;, &quot;false&quot;, &quot;true&quot;))
+</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE
+</code></pre>
+<p>Em geral, a gente não precisa descer tanto o nível, a gente vai trabalhar mesmo é com os leitores de dados &ldquo;retangulares&rdquo;. Como os do <code>base</code>, eles são <code>read_csv</code>, <code>read_table</code>, etc. Vamos trabalhar com bancos de dados que já vêm no pacote, para facilitar o processo.</p>
+<pre><code class="language-r"># Lista os datasets que vem no pacote
+readr_example()
+</code></pre>
+<pre><code>## [1] &quot;challenge.csv&quot;     &quot;epa78.txt&quot;         &quot;example.log&quot;      
+## [4] &quot;fwf-sample.txt&quot;    &quot;massey-rating.txt&quot; &quot;mtcars.csv&quot;       
+## [7] &quot;mtcars.csv.bz2&quot;    &quot;mtcars.csv.zip&quot;
+</code></pre>
+<p>Uma coisa que gosto de fazer é olhar como o arquivo está organizado antes de tentar abrí-lo. Muitos de vocês podem fazer isso com <code>readLines</code>. Ela ganhou sua versão no pacote com <code>read_lines</code>.</p>
+<pre><code class="language-r"># Vamos tentar abrir massey-rating.txt
+read_lines(readr_example(&quot;massey-rating.txt&quot;), n_max = 10)
+</code></pre>
+<pre><code>##  [1] &quot;UCC PAY LAZ KPK  RT   COF BIH DII ENG ACU Rank Team            Conf&quot; 
+##  [2] &quot;  1   1   1   1   1     1   1   1   1   1    1 Ohio St          B10 &quot;
+##  [3] &quot;  2   2   2   2   2     2   2   2   4   2    2 Oregon           P12 &quot;
+##  [4] &quot;  3   4   3   4   3     4   3   4   2   3    3 Alabama          SEC &quot;
+##  [5] &quot;  4   3   4   3   4     3   5   3   3   4    4 TCU              B12 &quot;
+##  [6] &quot;  6   6   6   5   5     7   6   5   6  11    5 Michigan St      B10 &quot;
+##  [7] &quot;  7   7   7   6   7     6  11   8   7   8    6 Georgia          SEC &quot;
+##  [8] &quot;  5   5   5   7   6     8   4   6   5   5    7 Florida St       ACC &quot;
+##  [9] &quot;  8   8   9   9  10     5   7   7  10   7    8 Baylor           B12 &quot;
+## [10] &quot;  9  11   8  13  11    11  12   9  14   9    9 Georgia Tech     ACC &quot;
+</code></pre>
+<pre><code class="language-r"># Identificando o separador, escolho a função adequada
+read_table(readr_example(&quot;massey-rating.txt&quot;))
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   UCC = col_double(),
+##   PAY = col_double(),
+##   LAZ = col_double(),
+##   KPK = col_double(),
+##   RT = col_double(),
+##   COF = col_double(),
+##   BIH = col_double(),
+##   DII = col_double(),
+##   ENG = col_double(),
+##   ACU = col_double(),
+##   Rank = col_double(),
+##   Team = col_character(),
+##   Conf = col_character()
+## )
+</code></pre>
+<pre><code>## # A tibble: 10 x 13
+##      UCC   PAY   LAZ   KPK    RT   COF   BIH   DII   ENG   ACU  Rank Team  Conf 
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+##  1     1     1     1     1     1     1     1     1     1     1     1 Ohio~ B10  
+##  2     2     2     2     2     2     2     2     2     4     2     2 Oreg~ P12  
+##  3     3     4     3     4     3     4     3     4     2     3     3 Alab~ SEC  
+##  4     4     3     4     3     4     3     5     3     3     4     4 TCU   B12  
+##  5     6     6     6     5     5     7     6     5     6    11     5 Mich~ B10  
+##  6     7     7     7     6     7     6    11     8     7     8     6 Geor~ SEC  
+##  7     5     5     5     7     6     8     4     6     5     5     7 Flor~ ACC  
+##  8     8     8     9     9    10     5     7     7    10     7     8 Bayl~ B12  
+##  9     9    11     8    13    11    11    12     9    14     9     9 Geor~ ACC  
+## 10    13    10    13    11     8     9    10    11     9    10    10 Miss~ SEC
+</code></pre>
+<p>Como identifiquei que as colunas estavam separadas por espaços, utilizei <code>read_table</code> cujo delimitador é o espaço <code>&quot; &quot;</code>.</p>
+<p>A segunda feature mais interessante do readr, é uma interface para selecionar os tipos de colunas que serão importadas. Vejamos o seguinte exemplo.</p>
+<pre><code class="language-r"># Vamos abrir mtcars.csv
+read_lines(readr_example(&quot;mtcars.csv&quot;), n_max = 10)
+</code></pre>
+<pre><code>##  [1] &quot;\&quot;mpg\&quot;,\&quot;cyl\&quot;,\&quot;disp\&quot;,\&quot;hp\&quot;,\&quot;drat\&quot;,\&quot;wt\&quot;,\&quot;qsec\&quot;,\&quot;vs\&quot;,\&quot;am\&quot;,\&quot;gear\&quot;,\&quot;carb\&quot;&quot;
+##  [2] &quot;21,6,160,110,3.9,2.62,16.46,0,1,4,4&quot;                                                     
+##  [3] &quot;21,6,160,110,3.9,2.875,17.02,0,1,4,4&quot;                                                    
+##  [4] &quot;22.8,4,108,93,3.85,2.32,18.61,1,1,4,1&quot;                                                   
+##  [5] &quot;21.4,6,258,110,3.08,3.215,19.44,1,0,3,1&quot;                                                 
+##  [6] &quot;18.7,8,360,175,3.15,3.44,17.02,0,0,3,2&quot;                                                  
+##  [7] &quot;18.1,6,225,105,2.76,3.46,20.22,1,0,3,1&quot;                                                  
+##  [8] &quot;14.3,8,360,245,3.21,3.57,15.84,0,0,3,4&quot;                                                  
+##  [9] &quot;24.4,4,146.7,62,3.69,3.19,20,1,0,4,2&quot;                                                    
+## [10] &quot;22.8,4,140.8,95,3.92,3.15,22.9,1,0,4,2&quot;
+</code></pre>
+<pre><code class="language-r"># Identificamos o separador de colunas, selecionamos a função adequada
+read_csv(readr_example(&quot;mtcars.csv&quot;))
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   mpg = col_double(),
+##   cyl = col_double(),
+##   disp = col_double(),
+##   hp = col_double(),
+##   drat = col_double(),
+##   wt = col_double(),
+##   qsec = col_double(),
+##   vs = col_double(),
+##   am = col_double(),
+##   gear = col_double(),
+##   carb = col_double()
+## )
+</code></pre>
+<pre><code>## # A tibble: 32 x 11
+##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4
+##  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4
+##  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1
+##  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1
+##  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2
+##  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1
+##  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4
+##  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2
+##  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2
+## 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
+## # ... with 22 more rows
+</code></pre>
+<p>O console nos mostra que a leitura do banco foi completada, mas também mostra <code>Column Specification</code>. Isto indica qual o tipo de dado que foi identificado automaticamente numa análise feita pela função  <code>guess_parser</code>. Em diversos casos, nós podemos querer identificar manualmente as colunas. Vejamos um exemplo:</p>
+<pre><code class="language-r"># Vamos identificar as colunas com spec
+spec_csv(readr_example(&quot;mtcars.csv&quot;))
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   mpg = col_double(),
+##   cyl = col_double(),
+##   disp = col_double(),
+##   hp = col_double(),
+##   drat = col_double(),
+##   wt = col_double(),
+##   qsec = col_double(),
+##   vs = col_double(),
+##   am = col_double(),
+##   gear = col_double(),
+##   carb = col_double()
+## )
+</code></pre>
+<pre><code>## cols(
+##   mpg = col_double(),
+##   cyl = col_double(),
+##   disp = col_double(),
+##   hp = col_double(),
+##   drat = col_double(),
+##   wt = col_double(),
+##   qsec = col_double(),
+##   vs = col_double(),
+##   am = col_double(),
+##   gear = col_double(),
+##   carb = col_double()
+## )
+</code></pre>
+<pre><code class="language-r"># Copia e cola, modifica as colunas que queremos alterar
+
+spec_cols &lt;- cols(
+  mpg = col_double(),
+  cyl = col_factor(), # N de cilindros do automóvel
+  disp = col_double(),
+  hp = col_double(),
+  drat = col_double(),
+  wt = col_double(),
+  qsec = col_double(),
+  vs = col_double(),
+  am = col_factor(c(&quot;0&quot;, &quot;1&quot;)), # Transmissão automática ou manual
+  gear = col_double(),
+  carb = col_double()
+)
+
+df &lt;- read_csv(readr_example(&quot;mtcars.csv&quot;), col_types = spec_cols)
+df
+</code></pre>
+<pre><code>## # A tibble: 32 x 11
+##      mpg cyl    disp    hp  drat    wt  qsec    vs am     gear  carb
+##    &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  21   6      160    110  3.9   2.62  16.5     0 1         4     4
+##  2  21   6      160    110  3.9   2.88  17.0     0 1         4     4
+##  3  22.8 4      108     93  3.85  2.32  18.6     1 1         4     1
+##  4  21.4 6      258    110  3.08  3.22  19.4     1 0         3     1
+##  5  18.7 8      360    175  3.15  3.44  17.0     0 0         3     2
+##  6  18.1 6      225    105  2.76  3.46  20.2     1 0         3     1
+##  7  14.3 8      360    245  3.21  3.57  15.8     0 0         3     4
+##  8  24.4 4      147.    62  3.69  3.19  20       1 0         4     2
+##  9  22.8 4      141.    95  3.92  3.15  22.9     1 0         4     2
+## 10  19.2 6      168.   123  3.92  3.44  18.3     1 0         4     4
+## # ... with 22 more rows
+</code></pre>
+<pre><code class="language-r"># Para importar apenas colunas selecionadas, utilize 'cols_only()'
+spec_cols2 &lt;- cols_only(
+  mpg = col_double(),
+  cyl = col_factor(), # N de cilindros do automóvel
+  am = col_factor(c(&quot;0&quot;, &quot;1&quot;)), # Transmissão automática ou manual
+  gear = col_double(),
+  carb = col_double()
+)
+
+df2 &lt;- read_csv(readr_example(&quot;mtcars.csv&quot;), col_types = spec_cols2)
+df2
+</code></pre>
+<pre><code>## # A tibble: 32 x 5
+##      mpg cyl   am     gear  carb
+##    &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  21   6     1         4     4
+##  2  21   6     1         4     4
+##  3  22.8 4     1         4     1
+##  4  21.4 6     0         3     1
+##  5  18.7 8     0         3     2
+##  6  18.1 6     0         3     1
+##  7  14.3 8     0         3     4
+##  8  24.4 4     0         4     2
+##  9  22.8 4     0         4     2
+## 10  19.2 6     0         4     4
+## # ... with 22 more rows
+</code></pre>
+<pre><code class="language-r"># Para indicar os tipos de colunas de um jeito mais sucinto, utilize uma string:
+
+df &lt;- read_csv(readr_example(&quot;mtcars.csv&quot;), col_types = &quot;dfddddddfdd&quot;)
+
+# Só cuidado pra não perder a conta dos ds!
+df
+</code></pre>
+<pre><code>## # A tibble: 32 x 11
+##      mpg cyl    disp    hp  drat    wt  qsec    vs am     gear  carb
+##    &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  21   6      160    110  3.9   2.62  16.5     0 1         4     4
+##  2  21   6      160    110  3.9   2.88  17.0     0 1         4     4
+##  3  22.8 4      108     93  3.85  2.32  18.6     1 1         4     1
+##  4  21.4 6      258    110  3.08  3.22  19.4     1 0         3     1
+##  5  18.7 8      360    175  3.15  3.44  17.0     0 0         3     2
+##  6  18.1 6      225    105  2.76  3.46  20.2     1 0         3     1
+##  7  14.3 8      360    245  3.21  3.57  15.8     0 0         3     4
+##  8  24.4 4      147.    62  3.69  3.19  20       1 0         4     2
+##  9  22.8 4      141.    95  3.92  3.15  22.9     1 0         4     2
+## 10  19.2 6      168.   123  3.92  3.44  18.3     1 0         4     4
+## # ... with 22 more rows
+</code></pre>
+<p>Você também pode querer definir características de localização, como a codificação de caracteres, os separadores de decimal e de milhar e etc. A melhor forma de fazer isso é definir um <code>locale</code>.</p>
+<pre><code class="language-r">meu_locale &lt;- locale(encoding = &quot;UTF-8&quot;, decimal_mark = &quot;,&quot;, grouping_mark = &quot;.&quot;)
+</code></pre>
+<p>Aí é só passar isso pra uma das funções do pacote sob o argumento <code>locale</code></p>
+<pre><code class="language-r">read_csv(readr_example(&quot;mtcars.csv&quot;), locale = meu_locale)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   mpg = col_number(),
+##   cyl = col_double(),
+##   disp = col_number(),
+##   hp = col_double(),
+##   drat = col_number(),
+##   wt = col_number(),
+##   qsec = col_number(),
+##   vs = col_double(),
+##   am = col_double(),
+##   gear = col_double(),
+##   carb = col_double()
+## )
+</code></pre>
+<pre><code>## # A tibble: 32 x 11
+##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1    21     6   160   110    39   262  1646     0     1     4     4
+##  2    21     6   160   110    39  2875  1702     0     1     4     4
+##  3   228     4   108    93   385   232  1861     1     1     4     1
+##  4   214     6   258   110   308  3215  1944     1     0     3     1
+##  5   187     8   360   175   315   344  1702     0     0     3     2
+##  6   181     6   225   105   276   346  2022     1     0     3     1
+##  7   143     8   360   245   321   357  1584     0     0     3     4
+##  8   244     4  1467    62   369   319    20     1     0     4     2
+##  9   228     4  1408    95   392   315   229     1     0     4     2
+## 10   192     6  1676   123   392   344   183     1     0     4     4
+## # ... with 22 more rows
+</code></pre>
+<p>Existe ainda a possibilidade de ler dados colunados com largura-fixa. <code>readr</code> implementa quatro funções diferentes para ajudar na construção do dicionário:</p>
+<pre><code class="language-r"># Nossos dados
+x &lt;- readr_example(&quot;fwf-sample.txt&quot;)
+read_lines(x, n_max = 10)
+</code></pre>
+<pre><code>## [1] &quot;John Smith          WA        418-Y11-4111&quot;
+## [2] &quot;Mary Hartford       CA        319-Z19-4341&quot;
+## [3] &quot;Evan Nolan          IL        219-532-c301&quot;
+</code></pre>
+<pre><code class="language-r"># separados por espaço
+
+dic1 &lt;- fwf_empty(x)
+dic1
+</code></pre>
+<pre><code>## $begin
+## [1]  0  5 20 30
+## 
+## $end
+## [1]  4 13 22 NA
+## 
+## $skip
+## [1] 0
+## 
+## $col_names
+## [1] &quot;X1&quot; &quot;X2&quot; &quot;X3&quot; &quot;X4&quot;
+</code></pre>
+<pre><code class="language-r">df &lt;- read_fwf(file = x, col_positions = dic1)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   X1 = col_character(),
+##   X2 = col_character(),
+##   X3 = col_character(),
+##   X4 = col_character()
+## )
+</code></pre>
+<pre><code class="language-r">df
+</code></pre>
+<pre><code>## # A tibble: 3 x 4
+##   X1    X2       X3    X4          
+##   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;       
+## 1 John  Smith    WA    418-Y11-4111
+## 2 Mary  Hartford CA    319-Z19-4341
+## 3 Evan  Nolan    IL    219-532-c301
+</code></pre>
+<pre><code class="language-r"># indicando a largura da coluna
+larguras &lt;- c(20, 10, 12)
+
+dic2 &lt;- fwf_widths(larguras)
+dic2
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   begin   end col_names
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;    
+## 1     0    20 X1       
+## 2    20    30 X2       
+## 3    30    42 X3
+</code></pre>
+<pre><code class="language-r">df &lt;- read_fwf(file = x, col_positions = dic2)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   X1 = col_character(),
+##   X2 = col_character(),
+##   X3 = col_character()
+## )
+</code></pre>
+<pre><code class="language-r">df
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   X1            X2    X3          
+##   &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;       
+## 1 John Smith    WA    418-Y11-4111
+## 2 Mary Hartford CA    319-Z19-4341
+## 3 Evan Nolan    IL    219-532-c301
+</code></pre>
+<pre><code class="language-r"># indicando onde cada coluna começa e termina
+comeca &lt;- c(1, 21, 30)
+termina &lt;- c(20, 29, 42)
+
+dic3 &lt;- fwf_positions(comeca, termina)
+dic3
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   begin   end col_names
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;    
+## 1     0    20 X1       
+## 2    20    29 X2       
+## 3    29    42 X3
+</code></pre>
+<pre><code class="language-r">df &lt;- read_fwf(file = x, col_positions = dic3)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   X1 = col_character(),
+##   X2 = col_character(),
+##   X3 = col_character()
+## )
+</code></pre>
+<pre><code class="language-r">df
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   X1            X2    X3          
+##   &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;       
+## 1 John Smith    WA    418-Y11-4111
+## 2 Mary Hartford CA    319-Z19-4341
+## 3 Evan Nolan    IL    219-532-c301
+</code></pre>
+<pre><code class="language-r"># indicando pares nome-valor
+dic4 &lt;- fwf_cols(
+  nome = c(1, 20),
+  uf = c(21, 29),
+  numero = c(30, 42))
+dic4
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   begin   end col_names
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    
+## 1     0    20 nome     
+## 2    20    29 uf       
+## 3    29    42 numero
+</code></pre>
+<pre><code class="language-r">df &lt;- read_fwf(file = x, col_positions = dic4)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   nome = col_character(),
+##   uf = col_character(),
+##   numero = col_character()
+## )
+</code></pre>
+<pre><code class="language-r">df
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   nome          uf    numero      
+##   &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;       
+## 1 John Smith    WA    418-Y11-4111
+## 2 Mary Hartford CA    319-Z19-4341
+## 3 Evan Nolan    IL    219-532-c301
+</code></pre>
+<p>Especificar dicionários para arquivos colunados é um pé-no-saco, por sorte, existem pacotes que já fizeram parte desse trabalho por nós. O <code>readr</code> não melhora muita o serviço manual de construção de dicionários, o que ele oferece é um ganho de performance tremendo. <code>read_fwf</code> é centenas de vezes mais rápido que o base <code>read.fwf</code>.</p>
+<p>Em termos do que o pacote faz, é basicamente isso. A única coisa que falta mencionar é que ele importa os dados como <code>tibbles</code> ao invés do <code>data.frame</code> padrão, mas isso já é um ótimo gancho pra nossa próxima parte.</p>
+<h2 id="tibbles"><code>tibbles</code></h2>
+<p>Tibbles são basicamente data.frames com um método mais bonitinho de <code>print</code>. Elas automaticamente se ajustam a largura da sua tela, omitindo as colunas que estouram, e por padrão imprimem só as 10 primeiras observações. Outras características que pessoalmente gosto, é que elas informam o tipo de variável junto com o nome, arrendondam digitos significativos, destacam números grandes, negativos, NAs e etc.</p>
+<pre><code class="language-r">df &lt;- read_csv(readr_example(&quot;mtcars.csv&quot;), col_types = cols()) # omitir a especificação
+df
+</code></pre>
+<pre><code>## # A tibble: 32 x 11
+##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4
+##  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4
+##  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1
+##  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1
+##  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2
+##  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1
+##  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4
+##  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2
+##  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2
+## 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4
+## # ... with 22 more rows
+</code></pre>
+<p>Do ponto de vista prático, elas funcionam exatamente igual a data.frames, tudo que você pode fazer com um data.frame, você faz com tibbles. O que elas trazem de novidade é:</p>
+<ul>
+<li>Elas nunca mudam o tipo de dado inputado.</li>
+</ul>
+<pre><code class="language-r">df1 &lt;- data.frame(x = list(1:5, 1:10, 1:20))
+df1
+</code></pre>
+<pre><code>##    x.1.5 x.1.10 x.1.20
+## 1      1      1      1
+## 2      2      2      2
+## 3      3      3      3
+## 4      4      4      4
+## 5      5      5      5
+## 6      1      6      6
+## 7      2      7      7
+## 8      3      8      8
+## 9      4      9      9
+## 10     5     10     10
+## 11     1      1     11
+## 12     2      2     12
+## 13     3      3     13
+## 14     4      4     14
+## 15     5      5     15
+## 16     1      6     16
+## 17     2      7     17
+## 18     3      8     18
+## 19     4      9     19
+## 20     5     10     20
+</code></pre>
+<pre><code class="language-r">df2 &lt;- tibble(x = list(1:5, 1:10, 1:20))
+df2
+</code></pre>
+<pre><code>## # A tibble: 3 x 1
+##   x         
+##   &lt;list&gt;    
+## 1 &lt;int [5]&gt; 
+## 2 &lt;int [10]&gt;
+## 3 &lt;int [20]&gt;
+</code></pre>
+<ul>
+<li>Elas nunca ajustam os nomes das variáveis</li>
+</ul>
+<pre><code class="language-r">names(data.frame(`nome hipster` = 1))
+</code></pre>
+<pre><code>## [1] &quot;nome.hipster&quot;
+</code></pre>
+<pre><code class="language-r">names(tibble(`nome hipster` = 1))
+</code></pre>
+<pre><code>## [1] &quot;nome hipster&quot;
+</code></pre>
+<ul>
+<li>Ela avalia cada argumento de forma &ldquo;preguiçosa&rdquo; e sequencial</li>
+</ul>
+<pre><code class="language-r"># erro
+data.frame(x = 1:5, y = x ^ 2)
+</code></pre>
+<pre><code>## Error in x^2: argumento não-numérico para operador binário
+</code></pre>
+<pre><code class="language-r"># funciona
+tibble(x = 1:5, y = x ^ 2)
+</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##       x     y
+##   &lt;int&gt; &lt;dbl&gt;
+## 1     1     1
+## 2     2     4
+## 3     3     9
+## 4     4    16
+## 5     5    25
+</code></pre>
+<ul>
+<li>Ela nunca utiliza row.names</li>
+</ul>
+<pre><code class="language-r">head(data.frame(state.x77))
+</code></pre>
+<pre><code>##            Population Income Illiteracy Life.Exp Murder HS.Grad Frost   Area
+## Alabama          3615   3624        2.1    69.05   15.1    41.3    20  50708
+## Alaska            365   6315        1.5    69.31   11.3    66.7   152 566432
+## Arizona          2212   4530        1.8    70.55    7.8    58.1    15 113417
+## Arkansas         2110   3378        1.9    70.66   10.1    39.9    65  51945
+## California      21198   5114        1.1    71.71   10.3    62.6    20 156361
+## Colorado         2541   4884        0.7    72.06    6.8    63.9   166 103766
+</code></pre>
+<pre><code class="language-r">as_tibble(state.x77)
+</code></pre>
+<pre><code>## # A tibble: 50 x 8
+##    Population Income Illiteracy `Life Exp` Murder `HS Grad` Frost   Area
+##         &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1       3615   3624        2.1       69.0   15.1      41.3    20  50708
+##  2        365   6315        1.5       69.3   11.3      66.7   152 566432
+##  3       2212   4530        1.8       70.6    7.8      58.1    15 113417
+##  4       2110   3378        1.9       70.7   10.1      39.9    65  51945
+##  5      21198   5114        1.1       71.7   10.3      62.6    20 156361
+##  6       2541   4884        0.7       72.1    6.8      63.9   166 103766
+##  7       3100   5348        1.1       72.5    3.1      56     139   4862
+##  8        579   4809        0.9       70.1    6.2      54.6   103   1982
+##  9       8277   4815        1.3       70.7   10.7      52.6    11  54090
+## 10       4931   4091        2         68.5   13.9      40.6    60  58073
+## # ... with 40 more rows
+</code></pre>
+<ul>
+<li>Ela muda a &ldquo;regra da reciclagem&rdquo;: apenas são aceitos vetores unitários ou vetores de tamanho igual aos demais</li>
+</ul>
+<pre><code class="language-r">data.frame(x = 1:10, y = 1:5)
+</code></pre>
+<pre><code>##     x y
+## 1   1 1
+## 2   2 2
+## 3   3 3
+## 4   4 4
+## 5   5 5
+## 6   6 1
+## 7   7 2
+## 8   8 3
+## 9   9 4
+## 10 10 5
+</code></pre>
+<pre><code class="language-r"># erro
+tibble(x = 1:10, y = 1:5)
+</code></pre>
+<pre><code>## Error: Tibble columns must have compatible sizes.
+## * Size 10: Existing data.
+## * Size 5: Column `y`.
+## i Only values of size one are recycled.
+</code></pre>
+<pre><code class="language-r">tibble(x = 1:10, y = 1)
+</code></pre>
+<pre><code>## # A tibble: 10 x 2
+##        x     y
+##    &lt;int&gt; &lt;dbl&gt;
+##  1     1     1
+##  2     2     1
+##  3     3     1
+##  4     4     1
+##  5     5     1
+##  6     6     1
+##  7     7     1
+##  8     8     1
+##  9     9     1
+## 10    10     1
+</code></pre>
+<pre><code class="language-r">tibble(x = 1:10, y = c(1:5, 1:5))
+</code></pre>
+<pre><code>## # A tibble: 10 x 2
+##        x     y
+##    &lt;int&gt; &lt;int&gt;
+##  1     1     1
+##  2     2     2
+##  3     3     3
+##  4     4     4
+##  5     5     5
+##  6     6     1
+##  7     7     2
+##  8     8     3
+##  9     9     4
+## 10    10     5
+</code></pre>
+<ul>
+<li>Tibbles são estritas com relação as operações de subsetting com <code>[</code></li>
+</ul>
+<pre><code class="language-r">df1 &lt;- data.frame(x = 1:3, y = 3:1)
+class(df1[,1:2])
+</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r">class(df1[,1])
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<pre><code class="language-r">df2 &lt;- tibble(x = 1:3, y = 3:1)
+class(df2[, 1:2])
+</code></pre>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r">class(df2[, 1])
+</code></pre>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r"># Se quiser extrair só uma coluna, utilize '[[' ou '$'
+class(df2[[1]])
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<pre><code class="language-r">class(df2$x)
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<p>Elas também não aceitam &lsquo;partial matching&rsquo; de nomes de variáveis.</p>
+<pre><code class="language-r">df &lt;- data.frame(nome_de_cavalo = 1)
+df$nome
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">df2 &lt;- tibble(nome_de_cavalo = 1)
+df2$nome
+</code></pre>
+<pre><code>## Warning: Unknown or uninitialised column: `nome`.
+</code></pre>
+<pre><code>## NULL
+</code></pre>
+<h2 id="tidyr"><code>tidyr</code></h2>
+<p>Ok, nossos dados estão no R, mas, muitas vezes, não estão no formato adequado. De maneira geral, analistas de dados vão dar preferência a um formato parecido com este:</p>
+<p><img src="/courses/tidyverse/dia1_files/tidy-1.png" alt="Tidy Data"></p>
+<p>Isto tem uma razão de ser que deve tornar-se óbvia quando tentarmos realizar as operações de transformação de variáveis, visualização, modelos, etc. Porém, muitas vezes outras considerações são feitas na hora registrar os dados, armazená-los, apresentá-los ao público, por isso, frequentemente nossos dados não estão no formato tidy e precisam ser reformatados. Essa é uma das principais tarefas do <code>tidyr</code> e é nela que vamos nos concentrar.</p>
+<p>Atente que reformatação, como muitos outros aspectos da análise de dados, não é receita de bolo. Muitas vezes o formato desejado não é óbvio, muito menos os passos necessários para chegar lá. Porém, vou apresentar as ferramentas e alguns exemplos simples que cobrem muitos dos nossos casos de uso.</p>
+<pre><code class="language-r">library(tidyr)
+who
+</code></pre>
+<pre><code>## # A tibble: 7,240 x 60
+##    country  iso2  iso3   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544
+##    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;int&gt;       &lt;int&gt;        &lt;int&gt;        &lt;int&gt;        &lt;int&gt;
+##  1 Afghani~ AF    AFG    1980          NA           NA           NA           NA
+##  2 Afghani~ AF    AFG    1981          NA           NA           NA           NA
+##  3 Afghani~ AF    AFG    1982          NA           NA           NA           NA
+##  4 Afghani~ AF    AFG    1983          NA           NA           NA           NA
+##  5 Afghani~ AF    AFG    1984          NA           NA           NA           NA
+##  6 Afghani~ AF    AFG    1985          NA           NA           NA           NA
+##  7 Afghani~ AF    AFG    1986          NA           NA           NA           NA
+##  8 Afghani~ AF    AFG    1987          NA           NA           NA           NA
+##  9 Afghani~ AF    AFG    1988          NA           NA           NA           NA
+## 10 Afghani~ AF    AFG    1989          NA           NA           NA           NA
+## # ... with 7,230 more rows, and 52 more variables: new_sp_m4554 &lt;int&gt;,
+## #   new_sp_m5564 &lt;int&gt;, new_sp_m65 &lt;int&gt;, new_sp_f014 &lt;int&gt;,
+## #   new_sp_f1524 &lt;int&gt;, new_sp_f2534 &lt;int&gt;, new_sp_f3544 &lt;int&gt;,
+## #   new_sp_f4554 &lt;int&gt;, new_sp_f5564 &lt;int&gt;, new_sp_f65 &lt;int&gt;,
+## #   new_sn_m014 &lt;int&gt;, new_sn_m1524 &lt;int&gt;, new_sn_m2534 &lt;int&gt;,
+## #   new_sn_m3544 &lt;int&gt;, new_sn_m4554 &lt;int&gt;, new_sn_m5564 &lt;int&gt;,
+## #   new_sn_m65 &lt;int&gt;, new_sn_f014 &lt;int&gt;, new_sn_f1524 &lt;int&gt;,
+## #   new_sn_f2534 &lt;int&gt;, new_sn_f3544 &lt;int&gt;, new_sn_f4554 &lt;int&gt;,
+## #   new_sn_f5564 &lt;int&gt;, new_sn_f65 &lt;int&gt;, new_ep_m014 &lt;int&gt;,
+## #   new_ep_m1524 &lt;int&gt;, new_ep_m2534 &lt;int&gt;, new_ep_m3544 &lt;int&gt;,
+## #   new_ep_m4554 &lt;int&gt;, new_ep_m5564 &lt;int&gt;, new_ep_m65 &lt;int&gt;,
+## #   new_ep_f014 &lt;int&gt;, new_ep_f1524 &lt;int&gt;, new_ep_f2534 &lt;int&gt;,
+## #   new_ep_f3544 &lt;int&gt;, new_ep_f4554 &lt;int&gt;, new_ep_f5564 &lt;int&gt;,
+## #   new_ep_f65 &lt;int&gt;, newrel_m014 &lt;int&gt;, newrel_m1524 &lt;int&gt;,
+## #   newrel_m2534 &lt;int&gt;, newrel_m3544 &lt;int&gt;, newrel_m4554 &lt;int&gt;,
+## #   newrel_m5564 &lt;int&gt;, newrel_m65 &lt;int&gt;, newrel_f014 &lt;int&gt;,
+## #   newrel_f1524 &lt;int&gt;, newrel_f2534 &lt;int&gt;, newrel_f3544 &lt;int&gt;,
+## #   newrel_f4554 &lt;int&gt;, newrel_f5564 &lt;int&gt;, newrel_f65 &lt;int&gt;
+</code></pre>
+<p>Esse é um banco de dados difícil de analisar, ele tem 60 colunas, indicando o número de casos de tuberculose em diversos estágios da doença, por país e ano. O problema é que ao invés de termos algo como:</p>
+<pre><code class="language-r">tribble(
+  ~pais, ~ano, ~tipo, ~idade, ~casos,
+  &quot;brasil&quot;, 1980, &quot;extrapulmonar&quot;, &quot;15-24&quot;, 10,
+  &quot;brasil&quot;, 1990, &quot;relapso&quot;, &quot;15-24&quot;, 10
+)
+</code></pre>
+<pre><code>## # A tibble: 2 x 5
+##   pais     ano tipo          idade casos
+##   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; &lt;dbl&gt;
+## 1 brasil  1980 extrapulmonar 15-24    10
+## 2 brasil  1990 relapso       15-24    10
+</code></pre>
+<p>As informações de tipo de tuberculose e idade dos pacientes estão espalhadas pelas colunas. Pra encurtar a história, precisamos &ldquo;tombar&rdquo; esse banco para que essas colunas se tornem um novo conjunto de variáveis. Vamos passo a passo.</p>
+<pre><code class="language-r"># Primeiro, vamos excluir as colunas iso2 e iso3, porque elas são a mesma informação redundante
+who$iso2 &lt;- NULL
+who$iso3 &lt;- NULL
+
+who1 &lt;- pivot_longer(who,
+                     cols = c(new_sp_m014:newrel_f65),
+                     names_to = &quot;tipo_tb&quot;,
+                     values_to = &quot;casos&quot;,
+                     values_drop_na = TRUE)
+who1
+</code></pre>
+<pre><code>## # A tibble: 76,046 x 4
+##    country      year tipo_tb      casos
+##    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;        &lt;int&gt;
+##  1 Afghanistan  1997 new_sp_m014      0
+##  2 Afghanistan  1997 new_sp_m1524    10
+##  3 Afghanistan  1997 new_sp_m2534     6
+##  4 Afghanistan  1997 new_sp_m3544     3
+##  5 Afghanistan  1997 new_sp_m4554     5
+##  6 Afghanistan  1997 new_sp_m5564     2
+##  7 Afghanistan  1997 new_sp_m65       0
+##  8 Afghanistan  1997 new_sp_f014      5
+##  9 Afghanistan  1997 new_sp_f1524    38
+## 10 Afghanistan  1997 new_sp_f2534    36
+## # ... with 76,036 more rows
+</code></pre>
+<p>Nosso primeiro passo é transformar todas as colunas de novos casos em um par de colunas:</p>
+<ul>
+<li><code>cols</code> indica quais colunas serão tombadas e quais serão mantidas.</li>
+<li>Uma coluna <code>names_to</code> recebe as categorias da variável.</li>
+<li>Uma coluna <code>values_to</code> recebe os valores das células.</li>
+<li><code>values_drop_na</code> é uma opção para eliminar células vazias.</li>
+</ul>
+<p>Essa primeira transformação já nos dá um banco de dados um pouco mais amigável, porém, ainda temos variáveis &ldquo;presas&rdquo; na coluna <code>tipo_tb</code>. Vamos tentar soltá-las.</p>
+<pre><code class="language-r"># primeiro, corrigir uma pequena inconsistencia:
+unique(who1$tipo_tb)
+</code></pre>
+<pre><code>##  [1] &quot;new_sp_m014&quot;  &quot;new_sp_m1524&quot; &quot;new_sp_m2534&quot; &quot;new_sp_m3544&quot; &quot;new_sp_m4554&quot;
+##  [6] &quot;new_sp_m5564&quot; &quot;new_sp_m65&quot;   &quot;new_sp_f014&quot;  &quot;new_sp_f1524&quot; &quot;new_sp_f2534&quot;
+## [11] &quot;new_sp_f3544&quot; &quot;new_sp_f4554&quot; &quot;new_sp_f5564&quot; &quot;new_sp_f65&quot;   &quot;new_sn_m014&quot; 
+## [16] &quot;new_sn_m1524&quot; &quot;new_sn_m2534&quot; &quot;new_sn_m3544&quot; &quot;new_sn_m4554&quot; &quot;new_sn_m5564&quot;
+## [21] &quot;new_sn_m65&quot;   &quot;new_ep_m014&quot;  &quot;new_ep_m1524&quot; &quot;new_ep_m2534&quot; &quot;new_ep_m3544&quot;
+## [26] &quot;new_ep_m4554&quot; &quot;new_ep_m5564&quot; &quot;new_ep_m65&quot;   &quot;new_sn_f014&quot;  &quot;newrel_m014&quot; 
+## [31] &quot;newrel_f014&quot;  &quot;new_sn_f1524&quot; &quot;new_sn_f2534&quot; &quot;new_sn_f3544&quot; &quot;new_sn_f4554&quot;
+## [36] &quot;new_sn_f5564&quot; &quot;new_sn_f65&quot;   &quot;new_ep_f014&quot;  &quot;new_ep_f1524&quot; &quot;new_ep_f2534&quot;
+## [41] &quot;new_ep_f3544&quot; &quot;new_ep_f4554&quot; &quot;new_ep_f5564&quot; &quot;new_ep_f65&quot;   &quot;newrel_m1524&quot;
+## [46] &quot;newrel_m2534&quot; &quot;newrel_m3544&quot; &quot;newrel_m4554&quot; &quot;newrel_m5564&quot; &quot;newrel_m65&quot;  
+## [51] &quot;newrel_f1524&quot; &quot;newrel_f2534&quot; &quot;newrel_f3544&quot; &quot;newrel_f4554&quot; &quot;newrel_f5564&quot;
+## [56] &quot;newrel_f65&quot;
+</code></pre>
+<pre><code class="language-r"># Notem que newrel deveria ser new_rel
+# Alguns de vocês devem conhecer 'gsub'
+who1$tipo_tb &lt;- gsub(&quot;newrel&quot;, &quot;new_rel&quot;, who1$tipo_tb)
+
+# Agora, podemos usar outra função chave do tidyr, 'separate'
+who2 &lt;- who1 %&gt;%  separate(col = tipo_tb,
+                           into = c(NA, &quot;tipo_tb&quot;, &quot;sexo_idade&quot;),
+                           sep = &quot;_&quot;)
+who2
+</code></pre>
+<pre><code>## # A tibble: 76,046 x 5
+##    country      year tipo_tb sexo_idade casos
+##    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;int&gt;
+##  1 Afghanistan  1997 sp      m014           0
+##  2 Afghanistan  1997 sp      m1524         10
+##  3 Afghanistan  1997 sp      m2534          6
+##  4 Afghanistan  1997 sp      m3544          3
+##  5 Afghanistan  1997 sp      m4554          5
+##  6 Afghanistan  1997 sp      m5564          2
+##  7 Afghanistan  1997 sp      m65            0
+##  8 Afghanistan  1997 sp      f014           5
+##  9 Afghanistan  1997 sp      f1524         38
+## 10 Afghanistan  1997 sp      f2534         36
+## # ... with 76,036 more rows
+</code></pre>
+<pre><code class="language-r"># E outra passagem de separate para separar a idade do sexo
+who3 &lt;- who2 %&gt;% separate(col = sexo_idade,
+                          into = c(&quot;sexo&quot;, &quot;idade&quot;),
+                          sep = 1)
+who3
+</code></pre>
+<pre><code>## # A tibble: 76,046 x 6
+##    country      year tipo_tb sexo  idade casos
+##    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;int&gt;
+##  1 Afghanistan  1997 sp      m     014       0
+##  2 Afghanistan  1997 sp      m     1524     10
+##  3 Afghanistan  1997 sp      m     2534      6
+##  4 Afghanistan  1997 sp      m     3544      3
+##  5 Afghanistan  1997 sp      m     4554      5
+##  6 Afghanistan  1997 sp      m     5564      2
+##  7 Afghanistan  1997 sp      m     65        0
+##  8 Afghanistan  1997 sp      f     014       5
+##  9 Afghanistan  1997 sp      f     1524     38
+## 10 Afghanistan  1997 sp      f     2534     36
+## # ... with 76,036 more rows
+</code></pre>
+<p>Bem melhor, não acham? Estamos agora com um banco de dados muito mais adequado para uma análise de dados em R. Cada linha é uma observação, cada coluna é uma informação sobre ela.</p>
+<p>Alguns de vocês podem ter reparado que fizemos um caminho em que nosso banco de dados passou de ter muitas colunas para muitas linhas (ficou mais &ldquo;longo&rdquo;) e depois precisamos separar algumas das colunas que criamos em outras (o que fizemos com separate). Podemos facilmente imaginar situações em que queremos fazer o caminho inverso: transformar um banco do formato longo para o formato com mais colunas e unir colunas separadas em uma nova. Vamos ver um exemplo.</p>
+<pre><code class="language-r"># Exemplo adaptado de https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
+populacao &lt;- tribble(
+  ~Rank, ~Country, ~Population,	~'% of world', ~Day, ~Month, ~Year, ~Source,
+  1L,         &quot;China&quot;,    1411778724, &quot;17.9%&quot;,  &quot;1&quot;, &quot;Nov&quot;, &quot;2020&quot;,       &quot;Seventh Census on 2020&quot;,
+  2L,         &quot;India&quot;,    1377123716, &quot;17.5%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[3]&quot;,
+  3L, &quot;United States&quot;,     331695937, &quot;4.22%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[4]&quot;,
+  4L,     &quot;Indonesia&quot;,     271350000, &quot;3.45%&quot;, &quot;31&quot;, &quot;Dec&quot;, &quot;2020&quot;,  &quot;National annual estimate[5]&quot;,
+  5L,      &quot;Pakistan&quot;,     225200000, &quot;2.86%&quot;,  &quot;1&quot;, &quot;Jul&quot;, &quot;2021&quot;,             &quot;UN projection[2]&quot;,
+  6L,        &quot;Brazil&quot;,     213154869, &quot;2.71%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[6]&quot;,
+  7L,       &quot;Nigeria&quot;,     211401000, &quot;2.69%&quot;,  &quot;1&quot;, &quot;Jul&quot;, &quot;2021&quot;,             &quot;UN projection[2]&quot;,
+  8L,    &quot;Bangladesh&quot;,     170689832, &quot;2.17%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[7]&quot;,
+  9L,        &quot;Russia&quot;,     146171015, &quot;1.86%&quot;,  &quot;1&quot;, &quot;Jan&quot;, &quot;2021&quot;,  &quot;National annual estimate[8]&quot;,
+  10L,       &quot;Mexico&quot;,     126014024, &quot;1.60%&quot;,  &quot;2&quot;, &quot;Mar&quot;, &quot;2020&quot;,        &quot;2020 census result[9]&quot;
+)
+populacao
+</code></pre>
+<pre><code>## # A tibble: 10 x 8
+##     Rank Country     Population `% of world` Day   Month Year  Source           
+##    &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;            
+##  1     1 China       1411778724 17.9%        1     Nov   2020  Seventh Census o~
+##  2     2 India       1377123716 17.5%        19    May   2021  National populat~
+##  3     3 United Sta~  331695937 4.22%        19    May   2021  National populat~
+##  4     4 Indonesia    271350000 3.45%        31    Dec   2020  National annual ~
+##  5     5 Pakistan     225200000 2.86%        1     Jul   2021  UN projection[2] 
+##  6     6 Brazil       213154869 2.71%        19    May   2021  National populat~
+##  7     7 Nigeria      211401000 2.69%        1     Jul   2021  UN projection[2] 
+##  8     8 Bangladesh   170689832 2.17%        19    May   2021  National populat~
+##  9     9 Russia       146171015 1.86%        1     Jan   2021  National annual ~
+## 10    10 Mexico       126014024 1.60%        2     Mar   2020  2020 census resu~
+</code></pre>
+<p>Imagine que, por qualquer motivo, você prefira trabalhar com uma variável &ldquo;Data&rdquo; ao invés de dia, mês e ano. Podemos usar <code>unite</code>:</p>
+<pre><code class="language-r">populacao2 &lt;- populacao %&gt;% unite(col = Data, Day, Month, Year, sep = &quot; &quot;)
+populacao2
+</code></pre>
+<pre><code>## # A tibble: 10 x 6
+##     Rank Country      Population `% of world` Data       Source                 
+##    &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;                  
+##  1     1 China        1411778724 17.9%        1 Nov 2020 Seventh Census on 2020 
+##  2     2 India        1377123716 17.5%        19 May 20~ National population cl~
+##  3     3 United Stat~  331695937 4.22%        19 May 20~ National population cl~
+##  4     4 Indonesia     271350000 3.45%        31 Dec 20~ National annual estima~
+##  5     5 Pakistan      225200000 2.86%        1 Jul 2021 UN projection[2]       
+##  6     6 Brazil        213154869 2.71%        19 May 20~ National population cl~
+##  7     7 Nigeria       211401000 2.69%        1 Jul 2021 UN projection[2]       
+##  8     8 Bangladesh    170689832 2.17%        19 May 20~ National population cl~
+##  9     9 Russia        146171015 1.86%        1 Jan 2021 National annual estima~
+## 10    10 Mexico        126014024 1.60%        2 Mar 2020 2020 census result[9]
+</code></pre>
+<p>O outro problema que precisamos resolver frequentemente, é separar um par de variáveis em diversas colunas, fazendo o caminho inverso que fizemos no caso do dataset da OMS.</p>
+<pre><code class="language-r">us_rent_income
+</code></pre>
+<pre><code>## # A tibble: 104 x 5
+##    GEOID NAME       variable estimate   moe
+##    &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+##  1 01    Alabama    income      24476   136
+##  2 01    Alabama    rent          747     3
+##  3 02    Alaska     income      32940   508
+##  4 02    Alaska     rent         1200    13
+##  5 04    Arizona    income      27517   148
+##  6 04    Arizona    rent          972     4
+##  7 05    Arkansas   income      23789   165
+##  8 05    Arkansas   rent          709     5
+##  9 06    California income      29454   109
+## 10 06    California rent         1358     3
+## # ... with 94 more rows
+</code></pre>
+<p>No exemplo acima, queremos separar em colunas os valores das variáveis de renda e valor do aluguel. Esse tipo de operação tem um certo grau de abstração que me deu bastante dor de cabeça para entender inicialmente, então vamos olhar com carinho para o que queremos ter depois da transformação.</p>
+<pre><code class="language-r">us_rent_income2 &lt;- tribble(
+  ~GEOID, ~NAME, ~income_estimate, ~rent_estimate, ~income_moe, ~rent_moe,
+  &quot;01&quot;, &quot;Alabama&quot;, 24476,  747, 136, 3,
+  &quot;02&quot;, &quot;Alaska&quot;, 32940, 1200, 508, 13
+)
+us_rent_income2
+</code></pre>
+<pre><code>## # A tibble: 2 x 6
+##   GEOID NAME    income_estimate rent_estimate income_moe rent_moe
+##   &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+## 1 01    Alabama           24476           747        136        3
+## 2 02    Alaska            32940          1200        508       13
+</code></pre>
+<p>O banco que queremos tem uma cara assim. Ele tem mais colunas novas e menos linhas, já que eu tinha no formato tidy uma variável chamada &ldquo;variable&rdquo; que guardava os valores renda e aluguel e duas colunas que guardavam os valores da estimativa e do moe. Agora, eu vou ter 4 colunas, duas para as estimativas de renda e aluguel e duas para os moes das mesmas variáveis. Como especificar isso para o banco todo? Usando <code>pivot_wider</code>.</p>
+<pre><code class="language-r">us_rent_income %&gt;% pivot_wider(names_from = variable, values_from = c(estimate, moe))
+</code></pre>
+<pre><code>## # A tibble: 52 x 6
+##    GEOID NAME                 estimate_income estimate_rent moe_income moe_rent
+##    &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+##  1 01    Alabama                        24476           747        136        3
+##  2 02    Alaska                         32940          1200        508       13
+##  3 04    Arizona                        27517           972        148        4
+##  4 05    Arkansas                       23789           709        165        5
+##  5 06    California                     29454          1358        109        3
+##  6 08    Colorado                       32401          1125        109        5
+##  7 09    Connecticut                    35326          1123        195        5
+##  8 10    Delaware                       31560          1076        247       10
+##  9 11    District of Columbia           43198          1424        681       17
+## 10 12    Florida                        25952          1077         70        3
+## # ... with 42 more rows
+</code></pre>
+<p>As funções <code>pivot_</code> tem diversos outros argumentos e cobrem diversos casos de uso. Vejam este exemplo da documentação de <code>pivot_longer</code>:</p>
+<pre><code class="language-r">anscombe
+</code></pre>
+<pre><code>##    x1 x2 x3 x4    y1   y2    y3    y4
+## 1  10 10 10  8  8.04 9.14  7.46  6.58
+## 2   8  8  8  8  6.95 8.14  6.77  5.76
+## 3  13 13 13  8  7.58 8.74 12.74  7.71
+## 4   9  9  9  8  8.81 8.77  7.11  8.84
+## 5  11 11 11  8  8.33 9.26  7.81  8.47
+## 6  14 14 14  8  9.96 8.10  8.84  7.04
+## 7   6  6  6  8  7.24 6.13  6.08  5.25
+## 8   4  4  4 19  4.26 3.10  5.39 12.50
+## 9  12 12 12  8 10.84 9.13  8.15  5.56
+## 10  7  7  7  8  4.82 7.26  6.42  7.91
+## 11  5  5  5  8  5.68 4.74  5.73  6.89
+</code></pre>
+<p>Podemos transformar esse banco de dados rapidamente usando um dos argumentos de <code>pivot_longer</code>, chamado <code>names_pattern</code>.</p>
+<pre><code class="language-r">anscombe %&gt;% pivot_longer(everything(),
+                          names_to = c(&quot;.value&quot;, &quot;set&quot;),
+                          names_pattern = &quot;(.)(.)&quot;)
+</code></pre>
+<pre><code>## # A tibble: 44 x 3
+##    set       x     y
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 1        10  8.04
+##  2 2        10  9.14
+##  3 3        10  7.46
+##  4 4         8  6.58
+##  5 1         8  6.95
+##  6 2         8  8.14
+##  7 3         8  6.77
+##  8 4         8  5.76
+##  9 1        13  7.58
+## 10 2        13  8.74
+## # ... with 34 more rows
+</code></pre>
+<p>Esse exemplo é interessante, porque ele se aproveita de uma &ldquo;regular expression&rdquo;, tema da parte do nosso curso em que falaremos sobre manipulação de strings com o <code>stringr</code>. Resumidas as contas, as colunas se chamam &ldquo;x1, x2, x3 &hellip;&rdquo; e a string &ldquo;(.)(.)&rdquo; indica que há dois &ldquo;grupos&rdquo; formados por um caractere cada. A string &ldquo;.value&rdquo; que vai no argumento de cima é um atalho da função para dizer &ldquo;pegue o valor de todas as células das variáveis selecionadas&rdquo;, aqui, todas. Ou seja, ele indica para a função que o primeiro caractere &ldquo;x&rdquo; ou &ldquo;y&rdquo; definirá uma nova variável e armazenará os valores das celulas, enquanto o segundo grupo &ldquo;1&rdquo;, &ldquo;2&rdquo;, &ldquo;3&rdquo; ou &ldquo;4&rdquo; formará uma segunda variável chamada &ldquo;set&rdquo; que contém apenas os nomes das colunas. Deu um nó na cabeça?</p>
+<p>Uma última preocupação ao utilizar a reformatação de dados é o que ocorre com os valores <code>NA</code>. Vejamos este exemplo:</p>
+<pre><code class="language-r">acoes &lt;- tibble(
+  ano   = c(2015, 2015, 2015, 2015, 2016, 2016, 2016),
+  qdr   = c(   1,    2,    3,    4,    2,    3,    4),
+  lucro = c(1.88, 0.59, 0.35,   NA, 0.92, 0.17, 2.66)
+)
+</code></pre>
+<p>Existem dois tipos de valor nulo, <strong>explícito</strong> se diz de um valor nulo como aquele NA que aparece na variável lucro. <strong>Implícito</strong> é o valor que ocorre no primeiro quadrimestre de 2016, onde sequer foi adicionada uma linha no banco de dados. Os valores implícitos são muito sacanas, porque eles não são imediatamente visíveis.</p>
+<pre><code class="language-r">acoes %&gt;% 
+  pivot_wider(names_from = ano, values_from = lucro)
+</code></pre>
+<pre><code>## # A tibble: 4 x 3
+##     qdr `2015` `2016`
+##   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1     1   1.88  NA   
+## 2     2   0.59   0.92
+## 3     3   0.35   0.17
+## 4     4  NA      2.66
+</code></pre>
+<p>Ao transformar o banco, o valor implícito ficou explícito. Caso você não esteja interessado neste valor, você pode passar o <code>values_drop_na</code> durante a transformação de volta ao formato original.</p>
+<pre><code class="language-r">acoes %&gt;% 
+  pivot_wider(names_from = ano, values_from = lucro) %&gt;% 
+  pivot_longer(c(`2015`, `2016`),
+               names_to = &quot;ano&quot;,
+               values_to = &quot;lucro&quot;,
+               values_drop_na = TRUE)
+</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##     qdr ano   lucro
+##   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+## 1     1 2015   1.88
+## 2     2 2015   0.59
+## 3     2 2016   0.92
+## 4     3 2015   0.35
+## 5     3 2016   0.17
+## 6     4 2016   2.66
+</code></pre>
+<p>Que faz os valores missing desaparecem.</p>
+<p><code>complete</code> pode ser usada pra tornar valores implícitos, explícitos! A função toma todas as colunas pedidas e verifica todas as combinações possíveis de valores, preenchendo as lacunas com <code>NA</code>. Cuidado ao utilizar complete com valores numéricos ou bancos de dados muito grandes, pois o número de combinações pode ser infinitamente grande e travar sua sessão.</p>
+<pre><code class="language-r">acoes %&gt;% complete(ano, qdr)
+</code></pre>
+<pre><code>## # A tibble: 8 x 3
+##     ano   qdr lucro
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  2015     1  1.88
+## 2  2015     2  0.59
+## 3  2015     3  0.35
+## 4  2015     4 NA   
+## 5  2016     1 NA   
+## 6  2016     2  0.92
+## 7  2016     3  0.17
+## 8  2016     4  2.66
+</code></pre>
+<p>Pra encerrar, <code>fill</code> serve para aqueles casos em que um valor missing indica que a última observação deve ser repetida. Pesquisadores brasileiros das antigas podem lembrar-se do Censo de 1991, em que o IBGE registrava os arquivos de domícilio e pessoas com esse sistema. Em inglês, isso se chama LOCF, ou &ldquo;last observation carried forward&rdquo;.</p>
+<pre><code class="language-r">treatment &lt;- tribble(
+  ~ person,           ~ treatment, ~response,
+  &quot;Derrick Whitmore&quot;, 1,           7,
+  NA,                 2,           10,
+  NA,                 3,           9,
+  &quot;Katherine Burke&quot;,  1,           4
+)
+treatment
+</code></pre>
+<pre><code>## # A tibble: 4 x 3
+##   person           treatment response
+##   &lt;chr&gt;                &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Derrick Whitmore         1        7
+## 2 &lt;NA&gt;                     2       10
+## 3 &lt;NA&gt;                     3        9
+## 4 Katherine Burke          1        4
+</code></pre>
+<pre><code class="language-r">treatment %&gt;% fill(person)
+</code></pre>
+<pre><code>## # A tibble: 4 x 3
+##   person           treatment response
+##   &lt;chr&gt;                &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Derrick Whitmore         1        7
+## 2 Derrick Whitmore         2       10
+## 3 Derrick Whitmore         3        9
+## 4 Katherine Burke          1        4
+</code></pre>
+<p><code>tidyr</code> tem também outras funcionalidades relevantes para modelagem estatística, mas acho que isso sai um pouco do escopo do curso. Quem sabe a gente não faz um curso posterior só sobre modelagem no tidyverse?</p>
+<h2 id="revisão">Revisão</h2>
+<h3 id="readr-1"><code>readr</code></h3>
+<p>O pacote <code>readr</code> apresenta uma família de funções para substituir as funções do <code>base</code> relacionadas a importação de arquivos em formato texto, seja delimitado ou largura-fixa. São elas,</p>
+<ul>
+<li><code>read_delim</code></li>
+<li><code>read_csv</code></li>
+<li><code>read_csv2</code></li>
+<li><code>read_tsv</code></li>
+<li><code>read_table</code></li>
+<li><code>read_fwf</code></li>
+</ul>
+<p>E assim sucessivamente. Durante o processo de importação, você pode querer especificar o tipo de coluna com <code>cols</code> ou <code>cols_only</code>, usando o argumento <code>col_types</code>. Ou use uma string do tipo &ldquo;ddcdiDT&rdquo; em que cada letra é um tipo de variável.</p>
+<ul>
+<li><code>col_integer</code></li>
+<li><code>col_double</code></li>
+<li><code>col_factor</code></li>
+<li><code>col_character</code></li>
+</ul>
+<p>Etc. Você também pode querer definir características de localização, como a codificação de caracteres, os separadores de decimal e de milhar e etc. A melhor forma de fazer isso é definir um <code>locale</code>.</p>
+<p>Ah, e você sempre pode salvar com <code>write_</code>, inclusive salvando/lendo compactado para <code>bzip</code>, <code>gzip</code> ou <code>xzip</code>.</p>
+<h3 id="tibble"><code>tibble</code></h3>
+<p>Tibbles são uma versão do data.frame com algumas regrinhas novas. Vou apenas repetí-las aqui de forma resumida.</p>
+<ul>
+<li>tibbles tem um método print mais bonito e amigável, especialmente para bancos com muitas observações e variáveis.</li>
+<li>elas são estritas com operações de subsetting com <code>[</code> e <code>$</code>.</li>
+<li>elas não aceita a reciclagem de argumento de tamanho diferente de 1.</li>
+</ul>
+<h3 id="tidyr-1"><code>tidyr</code></h3>
+<p><code>tidyr</code> é um pacote de reformatação de bancos, criando novas linhas e colunas a partir da reorganização das variáveis e valores existentes. Suas principais operações são:</p>
+<ul>
+<li><code>pivot_longer</code> para converter colunas em linhas</li>
+<li><code>pivot_wider</code> para converter linhas em colunas</li>
+<li><code>separate</code> para separar uma coluna em várias com base em caracteres</li>
+<li><code>unite</code> para unir diversas colunas em uma com base em caracteres</li>
+</ul>
+<p>Ufa. Acabou né? Posso ir dormir já? Claro, só fazer uns exercícios!</p>
+<h2 id="exercícios">Exercícios</h2>
+<ol>
+<li>Como você importaria o banco &ldquo;epa78.csv&rdquo;</li>
+</ol>
+<pre><code class="language-r">file &lt;- readr_example(&quot;epa78.txt&quot;)
+</code></pre>
+<ol start="2">
+<li>Importe o banco &ldquo;challenge.csv&rdquo; e resolva os problemas com o tipo da coluna.</li>
+</ol>
+<pre><code class="language-r">file &lt;- readr_example(&quot;challenge.csv&quot;)
+</code></pre>
+<ol start="3">
+<li>Com o banco sala_aula dado a seguir, transforme-o para que ele contenha as variáveis nome, avaliação e nota.</li>
+</ol>
+<pre><code class="language-r">sala_aula &lt;- tribble(
+ ~name,    ~teste1,  ~teste2,  ~prova1,
+ &quot;Billy&quot;,  &quot;&lt;NA&gt;&quot;,   &quot;D&quot;   ,   &quot;C&quot;,
+ &quot;Suzy&quot;,   &quot;F&quot;,      &quot;&lt;NA&gt;&quot;,   &quot;&lt;NA&gt;&quot;,
+ &quot;Lionel&quot;, &quot;B&quot;,      &quot;C&quot;   ,   &quot;B&quot;,
+ &quot;Jenny&quot;,  &quot;A&quot;,      &quot;A&quot;   ,   &quot;B&quot;
+)
+</code></pre>
+<ol start="4">
+<li>Transforme o banco <code>relig_income</code> para que ele contenha as colunas religião, renda e frequência.</li>
+</ol>
+<pre><code class="language-r">relig_income
+</code></pre>
+<pre><code>## # A tibble: 18 x 11
+##    religion `&lt;$10k` `$10-20k` `$20-30k` `$30-40k` `$40-50k` `$50-75k` `$75-100k`
+##    &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+##  1 Agnostic      27        34        60        81        76       137        122
+##  2 Atheist       12        27        37        52        35        70         73
+##  3 Buddhist      27        21        30        34        33        58         62
+##  4 Catholic     418       617       732       670       638      1116        949
+##  5 Don’t k~      15        14        15        11        10        35         21
+##  6 Evangel~     575       869      1064       982       881      1486        949
+##  7 Hindu          1         9         7         9        11        34         47
+##  8 Histori~     228       244       236       238       197       223        131
+##  9 Jehovah~      20        27        24        24        21        30         15
+## 10 Jewish        19        19        25        25        30        95         69
+## 11 Mainlin~     289       495       619       655       651      1107        939
+## 12 Mormon        29        40        48        51        56       112         85
+## 13 Muslim         6         7         9        10         9        23         16
+## 14 Orthodox      13        17        23        32        32        47         38
+## 15 Other C~       9         7        11        13        13        14         18
+## 16 Other F~      20        33        40        46        49        63         46
+## 17 Other W~       5         2         3         4         2         7          3
+## 18 Unaffil~     217       299       374       365       341       528        407
+## # ... with 3 more variables: $100-150k &lt;dbl&gt;, &gt;150k &lt;dbl&gt;,
+## #   Don't know/refused &lt;dbl&gt;
+</code></pre>
+<ol start="5">
+<li>Transforme o banco <code>billboard</code> para que ele contenha apenas uma coluna &ldquo;semana&rdquo; e uma coluna com a posição da música no ranking.</li>
+</ol>
+<pre><code class="language-r"># Dica, você pode selecionar várias colunas usando o atalho wk1:wk76
+billboard 
+</code></pre>
+<pre><code>## # A tibble: 317 x 79
+##    artist   track   date.entered   wk1   wk2   wk3   wk4   wk5   wk6   wk7   wk8
+##    &lt;chr&gt;    &lt;chr&gt;   &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 2 Pac    Baby D~ 2000-02-26      87    82    72    77    87    94    99    NA
+##  2 2Ge+her  The Ha~ 2000-09-02      91    87    92    NA    NA    NA    NA    NA
+##  3 3 Doors~ Krypto~ 2000-04-08      81    70    68    67    66    57    54    53
+##  4 3 Doors~ Loser   2000-10-21      76    76    72    69    67    65    55    59
+##  5 504 Boyz Wobble~ 2000-04-15      57    34    25    17    17    31    36    49
+##  6 98^0     Give M~ 2000-08-19      51    39    34    26    26    19     2     2
+##  7 A*Teens  Dancin~ 2000-07-08      97    97    96    95   100    NA    NA    NA
+##  8 Aaliyah  I Don'~ 2000-01-29      84    62    51    41    38    35    35    38
+##  9 Aaliyah  Try Ag~ 2000-03-18      59    53    38    28    21    18    16    14
+## 10 Adams, ~ Open M~ 2000-08-26      76    76    74    69    68    67    61    58
+## # ... with 307 more rows, and 68 more variables: wk9 &lt;dbl&gt;, wk10 &lt;dbl&gt;,
+## #   wk11 &lt;dbl&gt;, wk12 &lt;dbl&gt;, wk13 &lt;dbl&gt;, wk14 &lt;dbl&gt;, wk15 &lt;dbl&gt;, wk16 &lt;dbl&gt;,
+## #   wk17 &lt;dbl&gt;, wk18 &lt;dbl&gt;, wk19 &lt;dbl&gt;, wk20 &lt;dbl&gt;, wk21 &lt;dbl&gt;, wk22 &lt;dbl&gt;,
+## #   wk23 &lt;dbl&gt;, wk24 &lt;dbl&gt;, wk25 &lt;dbl&gt;, wk26 &lt;dbl&gt;, wk27 &lt;dbl&gt;, wk28 &lt;dbl&gt;,
+## #   wk29 &lt;dbl&gt;, wk30 &lt;dbl&gt;, wk31 &lt;dbl&gt;, wk32 &lt;dbl&gt;, wk33 &lt;dbl&gt;, wk34 &lt;dbl&gt;,
+## #   wk35 &lt;dbl&gt;, wk36 &lt;dbl&gt;, wk37 &lt;dbl&gt;, wk38 &lt;dbl&gt;, wk39 &lt;dbl&gt;, wk40 &lt;dbl&gt;,
+## #   wk41 &lt;dbl&gt;, wk42 &lt;dbl&gt;, wk43 &lt;dbl&gt;, wk44 &lt;dbl&gt;, wk45 &lt;dbl&gt;, wk46 &lt;dbl&gt;,
+## #   wk47 &lt;dbl&gt;, wk48 &lt;dbl&gt;, wk49 &lt;dbl&gt;, wk50 &lt;dbl&gt;, wk51 &lt;dbl&gt;, wk52 &lt;dbl&gt;,
+## #   wk53 &lt;dbl&gt;, wk54 &lt;dbl&gt;, wk55 &lt;dbl&gt;, wk56 &lt;dbl&gt;, wk57 &lt;dbl&gt;, wk58 &lt;dbl&gt;,
+## #   wk59 &lt;dbl&gt;, wk60 &lt;dbl&gt;, wk61 &lt;dbl&gt;, wk62 &lt;dbl&gt;, wk63 &lt;dbl&gt;, wk64 &lt;dbl&gt;,
+## #   wk65 &lt;dbl&gt;, wk66 &lt;lgl&gt;, wk67 &lt;lgl&gt;, wk68 &lt;lgl&gt;, wk69 &lt;lgl&gt;, wk70 &lt;lgl&gt;,
+## #   wk71 &lt;lgl&gt;, wk72 &lt;lgl&gt;, wk73 &lt;lgl&gt;, wk74 &lt;lgl&gt;, wk75 &lt;lgl&gt;, wk76 &lt;lgl&gt;
+</code></pre>
+<ol start="6">
+<li>
+<p>Experimente fazer o caminho inverso dos exercícios 3 a 5, devolvendo os datasets ao seu formato original. O que você observou?</p>
+</li>
+<li>
+<p>O que os argumentos <code>extra</code> e <code>fill</code> em separate fazem? Utilize o exemplo a seguir como guia.</p>
+</li>
+</ol>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;))
+</code></pre>
+<pre><code>## Warning: Expected 3 pieces. Additional pieces discarded in 1 rows [2].
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f    
+## 3 h     i     j
+</code></pre>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;))
+</code></pre>
+<pre><code>## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 1 rows [2].
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     &lt;NA&gt; 
+## 3 f     g     i
+</code></pre>
+<ol start="8">
+<li>
+<p>Tanto <code>unite</code> como <code>separate</code> possuem um argumento <code>remove</code>. Pra que ele serve e quando você o utilizaria no valor <code>FALSE</code>?</p>
+</li>
+<li>
+<p>Compare o argumento <code>values_fill</code> em <code>pivot_wider</code> e <code>fill</code> em <code>complete</code>. Qual é a diferença?</p>
+</li>
+</ol>
+<h2 id="agradecimentos">Agradecimentos</h2>
+<p>Esse material é uma adaptação livre das vinhetas dos pacotes <code>tidyr</code>, <code>readr</code> e <code>tibble</code> e do capítulo Tidy Data do <a href="https://r4ds.had.co.nz/tidy-data.html" target="_blank" rel="noopener">R for Data Science</a>, de Wickham &amp; Grolemund.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/tidyverse/dia2/" rel="prev">stringr, forcats e dplyr</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on 23 May 2021</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+  
+  
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    © 2021 LADDEM
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.8b7df62fd2da18ce73e29c13cc0a6198.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
