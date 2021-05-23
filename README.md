@@ -1,2 +1,2 @@
-# Site do LADDEM
-Repositório do [Site do LADDEM](https://laddem.github.io/)
+# laddem.github.io
+Site do LADDEM
