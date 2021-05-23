@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt" >
+<!DOCTYPE html><html lang="en-us" >
 
 <head>
   <meta charset="utf-8" />
@@ -23,7 +23,7 @@
   
   
 
-  <meta name="author" content="Laboratório de Análise de Dados em Demografia" />
+  <meta name="author" content="LADDEM" />
 
   
   
@@ -33,7 +33,7 @@
   <meta name="description" content="Aprenda a utilizar o tidyverse nas suas análises de dados." />
 
   
-  <link rel="alternate" hreflang="pt" href="https://laddem.github.io/courses/tidyverse/" />
+  <link rel="alternate" hreflang="en-us" href="https://laddem.github.io/courses/tidyverse/" />
 
   
 
@@ -292,10 +292,10 @@
   <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/" />
   <meta property="og:title" content="📊 Aprenda a utilizar o tidyverse | LADDEM" />
   <meta property="og:description" content="Aprenda a utilizar o tidyverse nas suas análises de dados." /><meta property="og:image" content="https://laddem.github.io/courses/tidyverse/featured.png" />
-    <meta property="twitter:image" content="https://laddem.github.io/courses/tidyverse/featured.png" /><meta property="og:locale" content="pt" />
+    <meta property="twitter:image" content="https://laddem.github.io/courses/tidyverse/featured.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2021-05-20T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2021-05-23T00:00:00&#43;00:00" />
     
   
 
@@ -336,7 +336,7 @@
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1>Pesquisar</h1>
+          <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -345,9 +345,9 @@
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
         autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Pesquisar...">
+        aria-label="Search...">
         
       </div>
 
@@ -394,7 +394,7 @@
 
     
     <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Alterar navegação">
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     <span><i class="fas fa-bars"></i></span>
     </button>
     
@@ -411,6 +411,43 @@
 
       
       <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre</span></a>
+        </li>
+
+        
         
 
         
@@ -490,20 +527,11 @@
 
       
       
-        
-          
-          <li class="nav-item d-none d-lg-inline-flex">
-            <a class="nav-link" href="https://twitter.com/" data-toggle="tooltip" data-placement="bottom" title="Siga-nos no twitter" target="_blank" rel="noopener" aria-label="Siga-nos no twitter">
-              <i class="fab fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
 
       
       
       <li class="nav-item">
-        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
@@ -563,7 +591,7 @@
   
   <button class="form-control sidebar-search js-search d-none d-md-flex">
     <i class="fas fa-search pr-2"></i>
-    <span class="sidebar-search-text">Pesquisar...</span>
+    <span class="sidebar-search-text">Search...</span>
     <span class="sidebar-search-shortcut">/</span>
   </button>
   
@@ -612,6 +640,14 @@
 
   <li class=""><a href="/courses/tidyverse/dia1/">readr, tibble e tidyr</a></li>
 
+
+
+  <li class=""><a href="/courses/tidyverse/dia2/">stringr, forcats e dplyr</a></li>
+
+
+
+  <li class=""><a href="/courses/tidyverse/dia3/">ggplot2</a></li>
+
       
         </ul>
       
@@ -633,14 +669,14 @@
       
 
       <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Nesta página</a></li>
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
       <nav id="TableOfContents">
   <ul>
     <li><a href="#o-que-você-vai-aprender">O que você vai aprender</a></li>
     <li><a href="#o-curso">O curso</a></li>
-    <li><a href="#programa">Programa</a></li>
+    <li><a href="#programação">Programação</a></li>
     <li><a href="#instrutores">Instrutores</a></li>
     <li><a href="#links-úteis">Links úteis</a></li>
   </ul>
@@ -712,12 +748,12 @@
     <div class="w-100" ><img src="featured.jpg" alt="" loading="lazy" data-zoomable /></div>
   </div></figure>
 <details class="toc-inpage d-print-none d-xl-none " open>
-  <summary class="font-weight-bold">Lista de Conteúdos</summary>
+  <summary class="font-weight-bold">Table of Contents</summary>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#o-que-você-vai-aprender">O que você vai aprender</a></li>
     <li><a href="#o-curso">O curso</a></li>
-    <li><a href="#programa">Programa</a></li>
+    <li><a href="#programação">Programação</a></li>
     <li><a href="#instrutores">Instrutores</a></li>
     <li><a href="#links-úteis">Links úteis</a></li>
   </ul>
@@ -732,7 +768,7 @@
 </ul>
 <h2 id="o-curso">O curso</h2>
 <p>Uma semana, com aulas à noite, no formato <em>workshop</em>, com muitos exercícios para praticar e pegar o jeito.</p>
-<h2 id="programa">Programa</h2>
+<h2 id="programação">Programação</h2>
 
 
   <ul class="list-unstyled">
@@ -740,6 +776,16 @@
       <li>
         <h5><a href="/courses/tidyverse/dia1/">readr, tibble e tidyr</a></h5>
         <p>Um modelo de ciência de dados Uma forma esquemática, mas útil de encarar o processo de análise de dados e de produção de conhecimento a partir de informações secundárias é esta figura:</p>
+      </li>
+    
+      <li>
+        <h5><a href="/courses/tidyverse/dia2/">stringr, forcats e dplyr</a></h5>
+        <p>Operações em variáveis e bancos de dados Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados.</p>
+      </li>
+    
+      <li>
+        <h5><a href="/courses/tidyverse/dia3/">ggplot2</a></h5>
+        <p>O pacote ggplot2 e a &ldquo;gramática dos gráficos&rdquo; Ainda me lembro da primeira vez que li o terceiro capítulo de R for Data Science em que o conceito de visualização de dados é apresentado junto com a ideia de data.</p>
       </li>
     
   </ul>
@@ -772,7 +818,7 @@
         </div>
 
         <div class="body-footer">
-          <p>Última atualização em May 20, 2021</p>
+          <p>Last updated on 23 May 2021</p>
 
           
 
@@ -805,7 +851,7 @@
 
   
   <p class="powered-by">
-    © 2021 Laboratório de Análise de Dados em Demografia
+    © 2021 LADDEM
   </p>
   
 
@@ -849,7 +895,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Citação</h5>
+        <h5 class="modal-title">Cite</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -859,7 +905,7 @@
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copiar
+          <i class="fas fa-copy"></i> Copy
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
           <i class="fas fa-download"></i> Download
@@ -972,7 +1018,7 @@
       
     
     
-    <script src="/pt/js/wowchemy.min.ea676792c99b118944958e3c9ac3f0ed.js"></script>
+    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>
 
     
   <script async defer src="https://buttons.github.io/buttons.js"></script>

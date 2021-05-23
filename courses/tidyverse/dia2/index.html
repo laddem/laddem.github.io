@@ -1,0 +1,3103 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="LADDEM" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Operações em variáveis e bancos de dados Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://laddem.github.io/courses/tidyverse/dia2/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="rgb(251, 191, 183)" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/foundation.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/foundation.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.46f8102c91669d08bf92f59f6531234a.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://laddem.github.io/courses/tidyverse/dia2/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="LADDEM" />
+  <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/dia2/" />
+  <meta property="og:title" content="stringr, forcats e dplyr | LADDEM" />
+  <meta property="og:description" content="Operações em variáveis e bancos de dados Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados." /><meta property="og:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-05-23T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-05-23T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>stringr, forcats e dplyr | LADDEM</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="fa0304036676bc16efc6e61759597fd7" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.f16be01fc8fb2b5885dd67ce942d1185.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">LADDEM</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">LADDEM</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Tidyverse
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Cursos</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/courses/tidyverse/">Tidyverse</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/courses/tidyverse/dia1/">readr, tibble e tidyr</a></li>
+
+
+
+  <li class="active"><a href="/courses/tidyverse/dia2/">stringr, forcats e dplyr</a></li>
+
+
+
+  <li class=""><a href="/courses/tidyverse/dia3/">ggplot2</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#operações-em-variáveis-e-bancos-de-dados">Operações em variáveis e bancos de dados</a></li>
+    <li><a href="#dplyr"><code>dplyr</code></a>
+      <ul>
+        <li><a href="#dplyr-para-manipulação-de-dados"><code>dplyr</code> para manipulação de dados</a></li>
+        <li><a href="#dplyr-para-bancos-de-dados-relacionais"><code>dplyr</code> para bancos de dados relacionais</a></li>
+      </ul>
+    </li>
+    <li><a href="#stringr"><code>stringr</code></a>
+      <ul>
+        <li><a href="#basicão-da-string">Basicão da string</a></li>
+        <li><a href="#trabalhando-com-padrões-e-expressões-regulares">Trabalhando com padrões e “expressões regulares”</a></li>
+      </ul>
+    </li>
+    <li><a href="#forcats"><code>forcats</code></a>
+      <ul>
+        <li><a href="#modificando-a-ordem">Modificando a ordem</a></li>
+        <li><a href="#modificando-os-níveis">Modificando os níveis</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercícios">Exercícios</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+            
+  <nav class="d-none d-md-flex" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      
+  
+  
+  
+
+  <li class="breadcrumb-item">
+    <a href="/">
+      
+        Home
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/">
+      
+        Cursos
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/tidyverse/">
+      
+        Tidyverse
+      
+    </a>
+  </li>
+
+
+      <li class="breadcrumb-item active" aria-current="page">
+        stringr, forcats e dplyr
+      </li>
+    </ol>
+  </nav>
+
+
+          
+
+          <h1>stringr, forcats e dplyr</h1>
+
+          <div class="article-style">
+            <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="/rmarkdown-libs/str_view/str_view.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/str_view-binding/str_view.js"></script>
+<h2 id="operações-em-variáveis-e-bancos-de-dados">Operações em variáveis e bancos de dados</h2>
+<p>Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados.</p>
+<p>O pacote <code>stringr</code> é uma série de adaptações da biblioteca <code>stringi</code> e serve para a manipulação de variáveis texto, incluindo funções para detecção, modificação, substituição, remoção de texto em variáveis caractere. Para dominar esse assunto, é necessário compreender o conceito de “regex,” ou “expressão regular,” que foge um pouco do escopo do curso, mas que será introduzido brevemente.</p>
+<p>O pacote <code>forcats</code> contém uma série de funções para trabalhar com o tipo <code>factor</code>. São funções que facilitam operações envolvendo esse tipo de variável, como contagens, troca dos nomes das categorias, agrupamento de categorias, recodificação, plotagem, etc.</p>
+<p>O pacote <code>dplyr</code> é um dos pilares do <code>tidyverse</code> e ele tem dois papéis principais: operações de manipulação de banco de dados simples e operações de bancos de dados relacionais. No primeiro tipo são incluídas as operações de criação e modificação de variáveis, medidas resumo globais e por grupos, seleção de variáveis, mudança da ordem das linhas e colunas, etc. No segundo tipo, são as operações de tipo <code>_join</code>, em que uma variável chave é utilizada para combinar registros de dois bancos de dados distintos.</p>
+<p>Os pacotes <code>stringr</code> e <code>forcats</code> são mais diretos, mas o <code>dplyr</code> pode representar um certo nível de abstração que pode incomodar usuários de longa data do R, portanto, vamos nos esforçar para demonstrar as vantagens de mudar seu workflow para incluir as funções desse pacote através de comparações com o R base.</p>
+<h2 id="dplyr"><code>dplyr</code></h2>
+<h3 id="dplyr-para-manipulação-de-dados"><code>dplyr</code> para manipulação de dados</h3>
+<p>Talvez o pacote mais utilizado de todo o tidyverse, <code>dplyr</code> é um pacote de manipulação de bancos de dados inspirado pela linguagem SQL. A ideia é concatenar operações de <strong>seleção de variáveis</strong>, <strong>filtragem de observação</strong>, <strong>arranjo e ordenamento</strong>, <strong>derivação de variáveis</strong>, <strong>computação de medidas resumo</strong> para o banco todo ou para <strong>grupos</strong>. As funções básicas e mais utilizadas são, portanto:</p>
+<ul>
+<li><code>select</code></li>
+<li><code>filter</code></li>
+<li><code>arrange</code></li>
+<li><code>mutate</code></li>
+<li><code>summarize</code></li>
+<li><code>group_by</code></li>
+</ul>
+<p>Para praticar, vamos usar o dataset <code>flights</code>, que contém informações sobre os vôos saídos de Nova Iorque em 2013.</p>
+<pre><code class="language-r">library(nycflights13)
+library(dplyr)
+</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'
+
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+</code></pre>
+<pre><code class="language-r">flights
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r">glimpse(flights)
+</code></pre>
+<pre><code>## Rows: 336,776
+## Columns: 19
+## $ year           &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2~
+## $ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
+## $ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
+## $ dep_time       &lt;int&gt; 517, 533, 542, 544, 554, 554, 555, 557, 557, 558, 558, ~
+## $ sched_dep_time &lt;int&gt; 515, 529, 540, 545, 600, 558, 600, 600, 600, 600, 600, ~
+## $ dep_delay      &lt;dbl&gt; 2, 4, 2, -1, -6, -4, -5, -3, -3, -2, -2, -2, -2, -2, -1~
+## $ arr_time       &lt;int&gt; 830, 850, 923, 1004, 812, 740, 913, 709, 838, 753, 849,~
+## $ sched_arr_time &lt;int&gt; 819, 830, 850, 1022, 837, 728, 854, 723, 846, 745, 851,~
+## $ arr_delay      &lt;dbl&gt; 11, 20, 33, -18, -25, 12, 19, -14, -8, 8, -2, -3, 7, -1~
+## $ carrier        &lt;chr&gt; &quot;UA&quot;, &quot;UA&quot;, &quot;AA&quot;, &quot;B6&quot;, &quot;DL&quot;, &quot;UA&quot;, &quot;B6&quot;, &quot;EV&quot;, &quot;B6&quot;, &quot;~
+## $ flight         &lt;int&gt; 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79, 301, 4~
+## $ tailnum        &lt;chr&gt; &quot;N14228&quot;, &quot;N24211&quot;, &quot;N619AA&quot;, &quot;N804JB&quot;, &quot;N668DN&quot;, &quot;N394~
+## $ origin         &lt;chr&gt; &quot;EWR&quot;, &quot;LGA&quot;, &quot;JFK&quot;, &quot;JFK&quot;, &quot;LGA&quot;, &quot;EWR&quot;, &quot;EWR&quot;, &quot;LGA&quot;,~
+## $ dest           &lt;chr&gt; &quot;IAH&quot;, &quot;IAH&quot;, &quot;MIA&quot;, &quot;BQN&quot;, &quot;ATL&quot;, &quot;ORD&quot;, &quot;FLL&quot;, &quot;IAD&quot;,~
+## $ air_time       &lt;dbl&gt; 227, 227, 160, 183, 116, 150, 158, 53, 140, 138, 149, 1~
+## $ distance       &lt;dbl&gt; 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 944, 733, ~
+## $ hour           &lt;dbl&gt; 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6, 6~
+## $ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 0~
+## $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-01 0~
+</code></pre>
+<p>Podemos filtrar nossas linhas: <code>filter</code></p>
+<pre><code class="language-r"># Voos de primeiro de janeiro
+flights %&gt;% filter(month == 1, day == 1)
+</code></pre>
+<pre><code>## # A tibble: 842 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 832 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos a partir de junho
+flights %&gt;% filter(month &gt; 6)
+</code></pre>
+<pre><code>## # A tibble: 170,618 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013    10     1      447            500       -13      614            648
+##  2  2013    10     1      522            517         5      735            757
+##  3  2013    10     1      536            545        -9      809            855
+##  4  2013    10     1      539            545        -6      801            827
+##  5  2013    10     1      539            545        -6      917            933
+##  6  2013    10     1      544            550        -6      912            932
+##  7  2013    10     1      549            600       -11      653            716
+##  8  2013    10     1      550            600       -10      648            700
+##  9  2013    10     1      550            600       -10      649            659
+## 10  2013    10     1      551            600        -9      727            730
+## # ... with 170,608 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos saídos do aeroporto JFK
+flights %&gt;% filter(origin == &quot;JFK&quot;)
+</code></pre>
+<pre><code>## # A tibble: 111,279 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      542            540         2      923            850
+##  2  2013     1     1      544            545        -1     1004           1022
+##  3  2013     1     1      557            600        -3      838            846
+##  4  2013     1     1      558            600        -2      849            851
+##  5  2013     1     1      558            600        -2      853            856
+##  6  2013     1     1      558            600        -2      924            917
+##  7  2013     1     1      559            559         0      702            706
+##  8  2013     1     1      606            610        -4      837            845
+##  9  2013     1     1      611            600        11      945            931
+## 10  2013     1     1      613            610         3      925            921
+## # ... with 111,269 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos com destino ao aeroporto de Albuquerque
+flights %&gt;% filter(dest == &quot;ABQ&quot;)
+</code></pre>
+<pre><code>## # A tibble: 254 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013    10     1     1955           2001        -6     2213           2248
+##  2  2013    10     2     2010           2001         9     2230           2248
+##  3  2013    10     3     1955           2001        -6     2232           2248
+##  4  2013    10     4     2017           2001        16     2304           2248
+##  5  2013    10     5     1959           1959         0     2226           2246
+##  6  2013    10     6     1959           2001        -2     2234           2248
+##  7  2013    10     7     2002           2001         1     2233           2248
+##  8  2013    10     8     1957           2001        -4     2216           2248
+##  9  2013    10     9     1957           2001        -4     2220           2248
+## 10  2013    10    10     2011           2001        10     2235           2248
+## # ... with 244 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos com atraso de até 10 minutos
+flights %&gt;% filter(dep_delay &lt;= 10)
+</code></pre>
+<pre><code>## # A tibble: 245,687 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 245,677 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos com atraso de cerca de 10 minutos
+flights %&gt;% filter(near(dep_delay, 10, tol = 2))
+</code></pre>
+<pre><code>## # A tibble: 8,677 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      611            600        11      945            931
+##  2  2013     1     1      709            700         9      852            832
+##  3  2013     1     1      826            817         9     1145           1158
+##  4  2013     1     1      851            840        11     1215           1206
+##  5  2013     1     1     1011           1001        10     1133           1128
+##  6  2013     1     1     1208           1158        10     1540           1502
+##  7  2013     1     1     1240           1229        11     1451           1428
+##  8  2013     1     1     1310           1300        10     1559           1554
+##  9  2013     1     1     1330           1321         9     1613           1536
+## 10  2013     1     1     1511           1500        11     1753           1742
+## # ... with 8,667 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos que ocorreram entre abril e maio
+flights %&gt;% filter(between(month, 4, 5))
+</code></pre>
+<pre><code>## # A tibble: 57,126 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     4     1      454            500        -6      636            640
+##  2  2013     4     1      509            515        -6      743            814
+##  3  2013     4     1      526            530        -4      812            827
+##  4  2013     4     1      534            540        -6      833            850
+##  5  2013     4     1      542            545        -3      914            920
+##  6  2013     4     1      543            545        -2      921            927
+##  7  2013     4     1      551            600        -9      748            659
+##  8  2013     4     1      552            600        -8      641            701
+##  9  2013     4     1      553            600        -7      725            735
+## 10  2013     4     1      554            600        -6      752            805
+## # ... with 57,116 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<p>Podemos combinar várias condições usando operadores lógicos</p>
+<pre><code class="language-r"># Voos até 15 de abril ou até 15 de maio
+flights %&gt;% filter(
+  between(month, 4, 5), # mesmo que usar &amp;
+  between(day, 1, 15)
+)
+</code></pre>
+<pre><code>## # A tibble: 28,176 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     4     1      454            500        -6      636            640
+##  2  2013     4     1      509            515        -6      743            814
+##  3  2013     4     1      526            530        -4      812            827
+##  4  2013     4     1      534            540        -6      833            850
+##  5  2013     4     1      542            545        -3      914            920
+##  6  2013     4     1      543            545        -2      921            927
+##  7  2013     4     1      551            600        -9      748            659
+##  8  2013     4     1      552            600        -8      641            701
+##  9  2013     4     1      553            600        -7      725            735
+## 10  2013     4     1      554            600        -6      752            805
+## # ... with 28,166 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos entre 15 de abril e 15 de maio
+flights %&gt;% filter(
+  month == 4 &amp; between(day, 15, 30) | # OU
+  month == 5 &amp; between(day, 1, 15)
+)
+</code></pre>
+<pre><code>## # A tibble: 29,101 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     4    15        2           2359         3      341            339
+##  2  2013     4    15      453            500        -7      639            640
+##  3  2013     4    15      511            515        -4      741            802
+##  4  2013     4    15      527            530        -3      806            813
+##  5  2013     4    15      527            529        -2      750            743
+##  6  2013     4    15      537            540        -3      846            840
+##  7  2013     4    15      542            545        -3      931            927
+##  8  2013     4    15      551            600        -9      728            758
+##  9  2013     4    15      552            600        -8      835            850
+## 10  2013     4    15      552            600        -8      648            701
+## # ... with 29,091 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos em todas os primeiros 7 dias de cada mês, exceto em janeiro e dezembro
+flights %&gt;% filter(
+  between(day, 1, 7),
+  !month %in% c(1, 12)
+)
+</code></pre>
+<pre><code>## # A tibble: 64,365 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013    10     1      447            500       -13      614            648
+##  2  2013    10     1      522            517         5      735            757
+##  3  2013    10     1      536            545        -9      809            855
+##  4  2013    10     1      539            545        -6      801            827
+##  5  2013    10     1      539            545        -6      917            933
+##  6  2013    10     1      544            550        -6      912            932
+##  7  2013    10     1      549            600       -11      653            716
+##  8  2013    10     1      550            600       -10      648            700
+##  9  2013    10     1      550            600       -10      649            659
+## 10  2013    10     1      551            600        -9      727            730
+## # ... with 64,355 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos saidos de JFK, excluindo aqueles para os quais não tem informações de horário de saída
+flights %&gt;% filter(
+  origin == &quot;JFK&quot;, !is.na(dep_time)
+)
+</code></pre>
+<pre><code>## # A tibble: 109,416 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      542            540         2      923            850
+##  2  2013     1     1      544            545        -1     1004           1022
+##  3  2013     1     1      557            600        -3      838            846
+##  4  2013     1     1      558            600        -2      849            851
+##  5  2013     1     1      558            600        -2      853            856
+##  6  2013     1     1      558            600        -2      924            917
+##  7  2013     1     1      559            559         0      702            706
+##  8  2013     1     1      606            610        -4      837            845
+##  9  2013     1     1      611            600        11      945            931
+## 10  2013     1     1      613            610         3      925            921
+## # ... with 109,406 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Voos com mais de 30 minutos de atraso em janeiro ou dezembro
+flights %&gt;% filter(
+  dep_delay &gt; 30, xor(month == 1, month == 12)
+)
+</code></pre>
+<pre><code>## # A tibble: 8,221 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      732            645        47     1011            941
+##  2  2013     1     1      749            710        39      939            850
+##  3  2013     1     1      811            630       101     1047            830
+##  4  2013     1     1      826            715        71     1136           1045
+##  5  2013     1     1      848           1835       853     1001           1950
+##  6  2013     1     1      903            820        43     1045            955
+##  7  2013     1     1      909            810        59     1331           1315
+##  8  2013     1     1      953            921        32     1320           1241
+##  9  2013     1     1      957            733       144     1056            853
+## 10  2013     1     1     1025            951        34     1258           1302
+## # ... with 8,211 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<p>E assim sucessivamente.</p>
+<p>Da mesma forma, temos <code>select</code> para selecionar as variáveis do banco. As duas grandes novidades são que você não precisa utilizar aspas na seleção de variáveis e que <code>select</code> introduz várias <code>helper functions</code> para facilitar a seleção de variáveis parecidas.</p>
+<pre><code class="language-r"># Selecionar as colunas ano, mes, dia, horario de saida e horario de chegada
+flights %&gt;% select(year, month, day, dep_time, arr_time)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 5
+##     year month   day dep_time arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;    &lt;int&gt;
+##  1  2013     1     1      517      830
+##  2  2013     1     1      533      850
+##  3  2013     1     1      542      923
+##  4  2013     1     1      544     1004
+##  5  2013     1     1      554      812
+##  6  2013     1     1      554      740
+##  7  2013     1     1      555      913
+##  8  2013     1     1      557      709
+##  9  2013     1     1      557      838
+## 10  2013     1     1      558      753
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Utilizando helpers
+flights %&gt;% select(year:dep_time, arr_time)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 5
+##     year month   day dep_time arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;    &lt;int&gt;
+##  1  2013     1     1      517      830
+##  2  2013     1     1      533      850
+##  3  2013     1     1      542      923
+##  4  2013     1     1      544     1004
+##  5  2013     1     1      554      812
+##  6  2013     1     1      554      740
+##  7  2013     1     1      555      913
+##  8  2013     1     1      557      709
+##  9  2013     1     1      557      838
+## 10  2013     1     1      558      753
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Mais helpers
+flights %&gt;% select(year:day, starts_with(&quot;dep&quot;), starts_with(&quot;arr&quot;))
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 7
+##     year month   day dep_time dep_delay arr_time arr_delay
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1  2013     1     1      517         2      830        11
+##  2  2013     1     1      533         4      850        20
+##  3  2013     1     1      542         2      923        33
+##  4  2013     1     1      544        -1     1004       -18
+##  5  2013     1     1      554        -6      812       -25
+##  6  2013     1     1      554        -4      740        12
+##  7  2013     1     1      555        -5      913        19
+##  8  2013     1     1      557        -3      709       -14
+##  9  2013     1     1      557        -3      838        -8
+## 10  2013     1     1      558        -2      753         8
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r">flights %&gt;% select(year:day, ends_with(&quot;time&quot;))
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 8
+##     year month   day dep_time sched_dep_time arr_time sched_arr_time air_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;    &lt;int&gt;          &lt;int&gt;    &lt;dbl&gt;
+##  1  2013     1     1      517            515      830            819      227
+##  2  2013     1     1      533            529      850            830      227
+##  3  2013     1     1      542            540      923            850      160
+##  4  2013     1     1      544            545     1004           1022      183
+##  5  2013     1     1      554            600      812            837      116
+##  6  2013     1     1      554            558      740            728      150
+##  7  2013     1     1      555            600      913            854      158
+##  8  2013     1     1      557            600      709            723       53
+##  9  2013     1     1      557            600      838            846      140
+## 10  2013     1     1      558            600      753            745      138
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r">flights %&gt;% select(year:day, c(ends_with(&quot;time&quot;)) &amp; !contains(&quot;sched&quot;))
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 6
+##     year month   day dep_time arr_time air_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;    &lt;int&gt;    &lt;dbl&gt;
+##  1  2013     1     1      517      830      227
+##  2  2013     1     1      533      850      227
+##  3  2013     1     1      542      923      160
+##  4  2013     1     1      544     1004      183
+##  5  2013     1     1      554      812      116
+##  6  2013     1     1      554      740      150
+##  7  2013     1     1      555      913      158
+##  8  2013     1     1      557      709       53
+##  9  2013     1     1      557      838      140
+## 10  2013     1     1      558      753      138
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Você pode mudar o nome das colunas durante um call para select
+flights %&gt;% select(ano = year, mes = month, dia = day)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 3
+##      ano   mes   dia
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1  2013     1     1
+##  2  2013     1     1
+##  3  2013     1     1
+##  4  2013     1     1
+##  5  2013     1     1
+##  6  2013     1     1
+##  7  2013     1     1
+##  8  2013     1     1
+##  9  2013     1     1
+## 10  2013     1     1
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Ou você pode usar rename para mudar os nomes sem selecionar variáveis
+flights %&gt;% rename(ano = year, mes = month, dia = day)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##      ano   mes   dia dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<p>São realmente muitas possibilidades, vejam a documentação e os exemplos em <code>?select</code>.</p>
+<p>Utilizando <code>arrange</code> podemos facilmente organizar nosso banco a partir de variáveis de interesse:</p>
+<pre><code class="language-r"># Selecionar algumas variáveis e ver organizar de acordar com os mais adiantados
+flights %&gt;% 
+  select(year:day,matches(&quot;^dep|^arr&quot;)) %&gt;% 
+  arrange(dep_delay, arr_delay)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 7
+##     year month   day dep_time dep_delay arr_time arr_delay
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1  2013    12     7     2040       -43       40        48
+##  2  2013     2     3     2022       -33     2240       -58
+##  3  2013    11    10     1408       -32     1549       -10
+##  4  2013     1    11     1900       -30     2233       -10
+##  5  2013     1    29     1703       -27     1947       -10
+##  6  2013     8     9      729       -26     1002         7
+##  7  2013     3    30     2030       -25     2213       -37
+##  8  2013    10    23     1907       -25     2143         0
+##  9  2013     5     5      934       -24     1225       -44
+## 10  2013     9    18     1631       -24     1812       -33
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Ou os mais atrasados
+flights %&gt;% 
+  select(year:day,matches(&quot;^dep|^arr&quot;)) %&gt;% 
+  arrange(-dep_delay, -arr_delay)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 7
+##     year month   day dep_time dep_delay arr_time arr_delay
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1  2013     1     9      641      1301     1242      1272
+##  2  2013     6    15     1432      1137     1607      1127
+##  3  2013     1    10     1121      1126     1239      1109
+##  4  2013     9    20     1139      1014     1457      1007
+##  5  2013     7    22      845      1005     1044       989
+##  6  2013     4    10     1100       960     1342       931
+##  7  2013     3    17     2321       911      135       915
+##  8  2013     6    27      959       899     1236       850
+##  9  2013     7    22     2257       898      121       895
+## 10  2013    12     5      756       896     1058       878
+## # ... with 336,766 more rows
+</code></pre>
+<p>É basicamente isso, você pode especificar uma ou muitas colunas para organizar, decidir se a ordem é ascendente ou descendente e pronto.</p>
+<p>Utilizando <code>mutate</code>, você cria variáveis derivadas das originais. Como <code>tibble</code>, essa função avalia seus argumentos de maneira preguiçosa e sequencial, o que permite você criar variáveis derivadas umas das outras muito facilmente.</p>
+<pre><code class="language-r">flights %&gt;% 
+  select(sched_dep_time, dep_time, sched_arr_time, arr_time) %&gt;% 
+  mutate(atraso_decolagem = dep_time - sched_dep_time,
+         atraso_pouso = arr_time - sched_arr_time,
+         atraso_dec_horas = atraso_decolagem / 60,
+         atraso_pouso_horas = atraso_pouso / 60)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 8
+##    sched_dep_time dep_time sched_arr_time arr_time atraso_decolagem atraso_pouso
+##             &lt;int&gt;    &lt;int&gt;          &lt;int&gt;    &lt;int&gt;            &lt;int&gt;        &lt;int&gt;
+##  1            515      517            819      830                2           11
+##  2            529      533            830      850                4           20
+##  3            540      542            850      923                2           73
+##  4            545      544           1022     1004               -1          -18
+##  5            600      554            837      812              -46          -25
+##  6            558      554            728      740               -4           12
+##  7            600      555            854      913              -45           59
+##  8            600      557            723      709              -43          -14
+##  9            600      557            846      838              -43           -8
+## 10            600      558            745      753              -42            8
+## # ... with 336,766 more rows, and 2 more variables: atraso_dec_horas &lt;dbl&gt;,
+## #   atraso_pouso_horas &lt;dbl&gt;
+</code></pre>
+<pre><code class="language-r"># Transmute é um atalho para quando você quer apenas as variáveis resultado e não está interessado nas intermediárias.
+flights %&gt;% 
+  transmute(atraso_decolagem = dep_time - sched_dep_time,
+            atraso_pouso = arr_time - sched_arr_time,
+            atraso_dec_horas = atraso_decolagem / 60,
+            atraso_pouso_horas = atraso_pouso / 60)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 4
+##    atraso_decolagem atraso_pouso atraso_dec_horas atraso_pouso_horas
+##               &lt;int&gt;        &lt;int&gt;            &lt;dbl&gt;              &lt;dbl&gt;
+##  1                2           11           0.0333              0.183
+##  2                4           20           0.0667              0.333
+##  3                2           73           0.0333              1.22 
+##  4               -1          -18          -0.0167             -0.3  
+##  5              -46          -25          -0.767              -0.417
+##  6               -4           12          -0.0667              0.2  
+##  7              -45           59          -0.75                0.983
+##  8              -43          -14          -0.717              -0.233
+##  9              -43           -8          -0.717              -0.133
+## 10              -42            8          -0.7                 0.133
+## # ... with 336,766 more rows
+</code></pre>
+<p>Usando o pipe, é fazer diversas operações de transformação de variáveis simultâneamente em um único call sem a necessidade de repetir o nome do objeto e <code>$</code> a cada referência. <code>mutate</code> é uma função extremamente flexível, você pode chamar qualquer função que retorne um vetor de tamanho 1 ou de tamanho do número de linhas do banco lá dentro para criar uma variável.</p>
+<pre><code class="language-r">desabafo &lt;- function(x) {
+  y &lt;- floor(x / 60)
+  
+  dplyr::case_when(
+    # Condições ~ Resultados
+    y &lt; 0       ~ &quot;Opa, vou chegar cedo!&quot;,
+    y &lt; 1       ~ &quot;Atraso de menos de 1 hora é tolerável&quot;,
+    y &gt;= 1      ~ paste0(&quot;Atraso de mais de &quot;, y, &quot; horas é f***.&quot;),
+    TRUE        ~ &quot;Ahn?&quot; # Condição guarda-chuva
+  )
+  
+}
+
+flights %&gt;% 
+  select(dep_delay) %&gt;% 
+  mutate(desabafo = desabafo(dep_delay)) %&gt;% 
+  sample_n(10)
+</code></pre>
+<pre><code>## # A tibble: 10 x 2
+##    dep_delay desabafo                             
+##        &lt;dbl&gt; &lt;chr&gt;                                
+##  1         0 Atraso de menos de 1 hora é tolerável
+##  2        -3 Opa, vou chegar cedo!                
+##  3        88 Atraso de mais de 1 horas é f***.    
+##  4        -3 Opa, vou chegar cedo!                
+##  5         3 Atraso de menos de 1 hora é tolerável
+##  6        15 Atraso de menos de 1 hora é tolerável
+##  7        -3 Opa, vou chegar cedo!                
+##  8        -9 Opa, vou chegar cedo!                
+##  9         5 Atraso de menos de 1 hora é tolerável
+## 10         2 Atraso de menos de 1 hora é tolerável
+</code></pre>
+<p>Utilizando <code>summarize</code> você tira medidas resumo das suas colunas de interesse:</p>
+<pre><code class="language-r">flights %&gt;% 
+  summarize(atraso_decolagem_medio = mean(dep_delay, na.rm = T),
+            atraso_decolagem_desvpad = sd(dep_delay, na.rm = T),
+            atraso_pouso_medio = mean(arr_delay, na.rm = T),
+            atraso_pouso_desvpad = sd(arr_delay, na.rm = T),
+            n_voos = n())
+</code></pre>
+<pre><code>## # A tibble: 1 x 5
+##   atraso_decolagem_~ atraso_decolagem_~ atraso_pouso_me~ atraso_pouso_de~ n_voos
+##                &lt;dbl&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;  &lt;int&gt;
+## 1               12.6               40.2             6.90             44.6 336776
+</code></pre>
+<p>Parece uma bobagem, mas quando você junta isso com a última função, <code>group_by</code>, é possível obter diversas estatísticas de interesse muito rapidamente e para vários domínios:</p>
+<pre><code class="language-r"># Por mês
+flights %&gt;% 
+  group_by(month) %&gt;% 
+  summarize(atraso_decolagem_medio = mean(dep_delay, na.rm = T),
+            atraso_decolagem_desvpad = sd(dep_delay, na.rm = T),
+            atraso_pouso_medio = mean(arr_delay, na.rm = T),
+            atraso_pouso_desvpad = sd(arr_delay, na.rm = T),
+            n_voos = n())
+</code></pre>
+<pre><code>## # A tibble: 12 x 6
+##    month atraso_decolagem_~ atraso_decolagem_~ atraso_pouso_me~ atraso_pouso_de~
+##    &lt;int&gt;              &lt;dbl&gt;              &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1     1              10.0                36.4            6.13              40.4
+##  2     2              10.8                36.3            5.61              39.5
+##  3     3              13.2                40.1            5.81              44.1
+##  4     4              13.9                43.0           11.2               47.5
+##  5     5              13.0                39.4            3.52              44.2
+##  6     6              20.8                51.5           16.5               56.1
+##  7     7              21.7                51.6           16.7               57.1
+##  8     8              12.6                37.7            6.04              42.6
+##  9     9               6.72               35.6           -4.02              39.7
+## 10    10               6.24               29.7           -0.167             32.6
+## 11    11               5.44               27.6            0.461             31.4
+## 12    12              16.6                41.9           14.9               46.1
+## # ... with 1 more variable: n_voos &lt;int&gt;
+</code></pre>
+<pre><code class="language-r"># Por mês e aeroporto de origem
+flights %&gt;% 
+  group_by(month, origin) %&gt;% 
+  summarize(atraso_decolagem_medio = mean(dep_delay, na.rm = T),
+            atraso_decolagem_desvpad = sd(dep_delay, na.rm = T),
+            atraso_pouso_medio = mean(arr_delay, na.rm = T),
+            atraso_pouso_desvpad = sd(arr_delay, na.rm = T),
+            n_voos = n())
+</code></pre>
+<pre><code>## `summarise()` has grouped output by 'month'. You can override using the `.groups` argument.
+
+## # A tibble: 36 x 7
+## # Groups:   month [12]
+##    month origin atraso_decolagem_medio atraso_decolagem_desvp~ atraso_pouso_med~
+##    &lt;int&gt; &lt;chr&gt;                   &lt;dbl&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
+##  1     1 EWR                     14.9                     40.8             12.8 
+##  2     1 JFK                      8.62                    36.0              1.37
+##  3     1 LGA                      5.64                    29.7              3.38
+##  4     2 EWR                     13.1                     37.2              8.78
+##  5     2 JFK                     11.8                     37.4              4.39
+##  6     2 LGA                      6.96                    33.4              3.15
+##  7     3 EWR                     18.1                     44.1             10.6 
+##  8     3 JFK                     10.7                     35.3              2.58
+##  9     3 LGA                     10.2                     39.7              3.74
+## 10     4 EWR                     17.4                     43.9             14.1 
+## # ... with 26 more rows, and 2 more variables: atraso_pouso_desvpad &lt;dbl&gt;,
+## #   n_voos &lt;int&gt;
+</code></pre>
+<p>Uma vez que você se familiariza com a gramática do <code>dplyr</code>, o processo de análise exploratória se torna bastante trivial e até certo ponto, prazeiroso. Mas o que eu realmente gosto é que ele também se torna visualmente óbvio para o leitor, com cada chamado podendo ser lido como uma declaração:</p>
+<blockquote>
+<p>Utilizando o banco de dados flights, agrupe as observações por mês e aeroporto de origem, então, calcule as médias e desvios padrão dos atrasos no pouso e na decolagem e o número de vôos para cada grupo.</p>
+</blockquote>
+<p>Você também pode rapidamente introduzir ou retirar passos em cada chamado deste utilizando o pipe, por exemplo:</p>
+<pre><code class="language-r">flights %&gt;% 
+  group_by(month, origin) %&gt;% 
+  summarize(atraso_decolagem_medio = mean(dep_delay, na.rm = T),
+            atraso_decolagem_desvpad = sd(dep_delay, na.rm = T),
+            atraso_pouso_medio = mean(arr_delay, na.rm = T),
+            atraso_pouso_desvpad = sd(arr_delay, na.rm = T),
+            n_voos = n()) %&gt;% 
+  arrange(-atraso_decolagem_medio)
+</code></pre>
+<pre><code>## `summarise()` has grouped output by 'month'. You can override using the `.groups` argument.
+
+## # A tibble: 36 x 7
+## # Groups:   month [12]
+##    month origin atraso_decolagem_medio atraso_decolagem_desvp~ atraso_pouso_med~
+##    &lt;int&gt; &lt;chr&gt;                   &lt;dbl&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
+##  1     7 JFK                      23.8                    53.3             20.2 
+##  2     6 EWR                      22.5                    50.8             16.9 
+##  3     7 EWR                      22.0                    49.5             15.5 
+##  4    12 EWR                      21.0                    45.7             19.6 
+##  5     6 JFK                      20.5                    50.2             17.6 
+##  6     6 LGA                      19.3                    53.6             14.8 
+##  7     7 LGA                      19.0                    52.0             14.2 
+##  8     3 EWR                      18.1                    44.1             10.6 
+##  9     4 EWR                      17.4                    43.9             14.1 
+## 10     5 EWR                      15.4                    39.0              5.38
+## # ... with 26 more rows, and 2 more variables: atraso_pouso_desvpad &lt;dbl&gt;,
+## #   n_voos &lt;int&gt;
+</code></pre>
+<p>E a leitura fica:</p>
+<blockquote>
+<p>Utilizando o banco de dados flights, agrupe as observações por mês e aeroporto de origem, então, calcule as médias e desvios padrão dos atrasos no pouso e na decolagem e o número de vôos para cada grupo, então, ordene os resultados pelo maior atraso.</p>
+</blockquote>
+<p>De quebra, você ainda leva para casa um dado no formato “tabela,” fácil de exportar para outros softwares para embelezamento e publicação. Veja:</p>
+<pre><code class="language-r">resumo &lt;- 
+  flights %&gt;% 
+  group_by(month, origin) %&gt;% 
+  summarize(atraso_decolagem_medio = mean(dep_delay, na.rm = T),
+            atraso_decolagem_desvpad = sd(dep_delay, na.rm = T),
+            atraso_pouso_medio = mean(arr_delay, na.rm = T),
+            atraso_pouso_desvpad = sd(arr_delay, na.rm = T),
+            n_voos = n()) %&gt;% 
+  arrange(-atraso_decolagem_medio)
+</code></pre>
+<pre><code>## `summarise()` has grouped output by 'month'. You can override using the `.groups` argument.
+</code></pre>
+<pre><code class="language-r">print(resumo, n = Inf)
+</code></pre>
+<pre><code>## # A tibble: 36 x 7
+## # Groups:   month [12]
+##    month origin atraso_decolagem_medio atraso_decolagem_desvp~ atraso_pouso_med~
+##    &lt;int&gt; &lt;chr&gt;                   &lt;dbl&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
+##  1     7 JFK                     23.8                     53.3            20.2  
+##  2     6 EWR                     22.5                     50.8            16.9  
+##  3     7 EWR                     22.0                     49.5            15.5  
+##  4    12 EWR                     21.0                     45.7            19.6  
+##  5     6 JFK                     20.5                     50.2            17.6  
+##  6     6 LGA                     19.3                     53.6            14.8  
+##  7     7 LGA                     19.0                     52.0            14.2  
+##  8     3 EWR                     18.1                     44.1            10.6  
+##  9     4 EWR                     17.4                     43.9            14.1  
+## 10     5 EWR                     15.4                     39.0             5.38 
+## 11     1 EWR                     14.9                     40.8            12.8  
+## 12    12 JFK                     14.8                     39.1            12.7  
+## 13    12 LGA                     13.6                     39.8            12.0  
+## 14     8 EWR                     13.5                     37.6             6.71 
+## 15     2 EWR                     13.1                     37.2             8.78 
+## 16     8 JFK                     12.9                     36.3             5.91 
+## 17     5 JFK                     12.5                     38.5             2.12 
+## 18     4 JFK                     12.2                     41.2             7.01 
+## 19     2 JFK                     11.8                     37.4             4.39 
+## 20     4 LGA                     11.5                     43.4            12.0  
+## 21     8 LGA                     11.2                     39.2             5.41 
+## 22     3 JFK                     10.7                     35.3             2.58 
+## 23     5 LGA                     10.6                     40.6             2.80 
+## 24     3 LGA                     10.2                     39.7             3.74 
+## 25    10 EWR                      8.64                    32.7             2.60 
+## 26     1 JFK                      8.62                    36.0             1.37 
+## 27     9 EWR                      7.29                    35.0            -4.73 
+## 28     2 LGA                      6.96                    33.4             3.15 
+## 29    11 EWR                      6.72                    28.8             0.672
+## 30     9 JFK                      6.64                    32.5            -4.46 
+## 31     9 LGA                      6.21                    39.0            -2.83 
+## 32     1 LGA                      5.64                    29.7             3.38 
+## 33    10 LGA                      5.31                    30.1             0.186
+## 34    11 LGA                      4.77                    26.6             1.55 
+## 35    11 JFK                      4.68                    27.1            -0.873
+## 36    10 JFK                      4.59                    25.2            -3.59 
+## # ... with 2 more variables: atraso_pouso_desvpad &lt;dbl&gt;, n_voos &lt;int&gt;
+</code></pre>
+<p>Lembrem-se que é necessário atribuir <code>&lt;-</code> os resultados das operações para que elas sejam salvas. Em geral, meu workflow é assim:</p>
+<pre><code class="language-r"># Começo com o banco
+flights
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 11 more variables: arr_delay &lt;dbl&gt;,
+## #   carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;,
+## #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r"># Seleciono algumas variáveis
+flights %&gt;% 
+  select(month, dep_delay, arr_delay)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 3
+##    month dep_delay arr_delay
+##    &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+##  1     1         2        11
+##  2     1         4        20
+##  3     1         2        33
+##  4     1        -1       -18
+##  5     1        -6       -25
+##  6     1        -4        12
+##  7     1        -5        19
+##  8     1        -3       -14
+##  9     1        -3        -8
+## 10     1        -2         8
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Recorto algumas observações
+flights %&gt;% 
+  select(month, dep_delay, arr_delay) %&gt;% 
+  filter(between(month, 1, 6))
+</code></pre>
+<pre><code>## # A tibble: 166,158 x 3
+##    month dep_delay arr_delay
+##    &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+##  1     1         2        11
+##  2     1         4        20
+##  3     1         2        33
+##  4     1        -1       -18
+##  5     1        -6       -25
+##  6     1        -4        12
+##  7     1        -5        19
+##  8     1        -3       -14
+##  9     1        -3        -8
+## 10     1        -2         8
+## # ... with 166,148 more rows
+</code></pre>
+<pre><code class="language-r"># Escolho os dominios e calculo as medidas resumo
+flights %&gt;% 
+  select(month, dep_delay, arr_delay) %&gt;% 
+  filter(between(month, 1, 6)) %&gt;% 
+  group_by(month) %&gt;% 
+  summarise(atraso_dec_medio = mean(dep_delay, na.rm = T),
+            atraso_pou_medio = mean(arr_delay, na.rm = T))
+</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   month atraso_dec_medio atraso_pou_medio
+##   &lt;int&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1     1             10.0             6.13
+## 2     2             10.8             5.61
+## 3     3             13.2             5.81
+## 4     4             13.9            11.2 
+## 5     5             13.0             3.52
+## 6     6             20.8            16.5
+</code></pre>
+<pre><code class="language-r"># Acho bom organizar pelos atrasos maiores
+flights %&gt;% 
+  select(month, dep_delay, arr_delay) %&gt;% 
+  filter(between(month, 1, 6)) %&gt;% 
+  group_by(month) %&gt;% 
+  summarise(atraso_dec_medio = mean(dep_delay, na.rm = T),
+            atraso_pou_medio = mean(arr_delay, na.rm = T)) %&gt;% 
+  arrange(-atraso_dec_medio, -atraso_pou_medio)
+</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   month atraso_dec_medio atraso_pou_medio
+##   &lt;int&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1     6             20.8            16.5 
+## 2     4             13.9            11.2 
+## 3     3             13.2             5.81
+## 4     5             13.0             3.52
+## 5     2             10.8             5.61
+## 6     1             10.0             6.13
+</code></pre>
+<pre><code class="language-r"># Estou satisfeito, salvo meu resultado em outro objeto
+atrasos &lt;- 
+  flights %&gt;% 
+  select(month, dep_delay, arr_delay) %&gt;% 
+  filter(between(month, 1, 6)) %&gt;% 
+  group_by(month) %&gt;% 
+  summarise(atraso_dec_medio = mean(dep_delay, na.rm = T),
+            atraso_pou_medio = mean(arr_delay, na.rm = T)) %&gt;% 
+  arrange(-atraso_dec_medio, -atraso_pou_medio)
+
+atrasos
+</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##   month atraso_dec_medio atraso_pou_medio
+##   &lt;int&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1     6             20.8            16.5 
+## 2     4             13.9            11.2 
+## 3     3             13.2             5.81
+## 4     5             13.0             3.52
+## 5     2             10.8             5.61
+## 6     1             10.0             6.13
+</code></pre>
+<p>Desta forma, consigo construir interativamente meus cálculos, verificando a cada passo se estou obtendo o resultado esperado. Visto de outra perspectiva, se encontro um código programado desta forma que não funciona, posso ir apagando cada <code>%&gt;%</code> para identificar onde o problema ocorreu.</p>
+<p>Espero que tenha ficado claro que o assunto não se encerra por aqui. Existem diversas outras funções úteis no pacote, como <code>count</code>, <code>if_else</code>, <code>case_when</code>, <code>top_n</code>, <code>bind_rows</code>, <code>bind_cols</code>, as novas funções <code>across</code> e <code>c_across</code> e muitas, muitas outras. Nos livros vocês encontram vários outros exemplos e funções para facilitar o processo de análise de dados, mas nossa expectativa é que essa apresentação seja um ponto de partida para vocês se aprofundarem no seu próprio ritmo.</p>
+<h3 id="dplyr-para-bancos-de-dados-relacionais"><code>dplyr</code> para bancos de dados relacionais</h3>
+<p>Nesta seção, o nosso problema não é mais a análise de dados presentes em um banco, mas o problema de relacionar informações sobre uma mesma unidade de análise que estão presentes em vários bancos de dados distintos.</p>
+<p>O banco <code>nycflights13</code> contém várias tabelas que se relacionam, e elas funcionam como um excelente exemplo de banco de dados relacionais.</p>
+<p><img src="/courses/tidyverse/dia2_files/relational-nycflights.png" alt="Banco de dados relacional de vôos"></p>
+<p>Note que além do banco de dados dos vôos, temos informações sobre clima, aviões e companhias aéreas. Para nós, pode ser relevante reunir informações de diferentes fontes em um mesmo banco de dados, algo que é possível através de <code>joins</code>. Por uma questão de tempo, não vamos entrar muito a fundo no assunto, mas vamos introduzir dois conceitos chave e partir pros exemplos.</p>
+<ul>
+<li>
+<p><code>chaves</code> são as variáveis que identificam cada observação em um banco de dados de forma única. Uma chave é dita “primária” quando identifica uma observação na sua própria tabela e “externa” quando ela identifica uma observação em outra tabela. Assim, qualquer operação de join é uma forma de relacionar uma chave <strong>primária</strong> e uma chave <strong>externa</strong>. Essa junção de chaves é uma <strong>relação</strong>, e as relações podem ser <strong>1 para 1</strong>, <strong>1 para muitos</strong> ou <strong>muitos para 1</strong>.</p>
+</li>
+<li>
+<p><code>joins</code> são tipos de operação no qual se opta por priorizar um grupo de observações em detrimento de outras. Podemos vê-los didaticamente a partir de duas figuras:</p>
+</li>
+</ul>
+<p><img src="/courses/tidyverse/dia2_files/join-venn.png" alt="Joins como diagramas de Venn"></p>
+<p><img src="/courses/tidyverse/dia2_files/join-outer.png" alt="Joins como “pontos”"></p>
+<p>A primeira figura é interessante porque nos dá uma ideia de quais observações serão mantidas e quais serão descartadas, podemos imaginá-la como uma abstração da nossa escolha.</p>
+<blockquote>
+<p>Quero todas as informações sobre os vôos e os aeroportos, e as duas são igualmente importantes (inner_join, x = flights, y = airports).</p>
+</blockquote>
+<blockquote>
+<p>Quero todas as observações do banco vôos e as informações disponíveis sobre a aeronave (left_join, x = flights, y = planes).</p>
+</blockquote>
+<blockquote>
+<p>Quero todas as informações tanto sobre os vôos quanto sobre o clima em cada dia (full_join, x = flights, y = weather).</p>
+</blockquote>
+<blockquote>
+<p>Quero as informações dos vôos realizados pelas companhias aéreas - minha prioridade são as cias. áreas (right_join, x = flights, y = carriers).</p>
+</blockquote>
+<p>A segunda figura é interessante porque elas mostra a mecânica de um <code>join</code>: cada observação tem a sua chave marcada com a observação correspondente no outro banco. Se as chaves são iguais, a operação é realizada, se as chaves não são iguais, a operação não é realizada. Dependendo do tipo de <code>join</code>, uma, as duas ou nenhuma das observações é descartada do banco resultante.</p>
+<blockquote>
+<p>Antes de começar a trabalhar com bancos relacionais, é uma boa ideia dar uma explorada nas chaves, vendo suas contagens, se há erros de digitação, etc. Por uma questão de tempo, vamos pular essa fase.</p>
+</blockquote>
+<p>Se as nossas chaves forem perfeitinhas, e inclusive tiverem o mesmo nome nas duas tabelas, basta invocar o tipo de join desejado.</p>
+<pre><code class="language-r"># Vamos dar uma enxugada no flights para poder ver o efeito dos joins com maior facilidade.
+flights2 &lt;- flights %&gt;% 
+  select(year:day, hour, origin, dest, tailnum, carrier)
+
+flights2
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 8
+##     year month   day  hour origin dest  tailnum carrier
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+##  1  2013     1     1     5 EWR    IAH   N14228  UA     
+##  2  2013     1     1     5 LGA    IAH   N24211  UA     
+##  3  2013     1     1     5 JFK    MIA   N619AA  AA     
+##  4  2013     1     1     5 JFK    BQN   N804JB  B6     
+##  5  2013     1     1     6 LGA    ATL   N668DN  DL     
+##  6  2013     1     1     5 EWR    ORD   N39463  UA     
+##  7  2013     1     1     6 EWR    FLL   N516JB  B6     
+##  8  2013     1     1     6 LGA    IAD   N829AS  EV     
+##  9  2013     1     1     6 JFK    MCO   N593JB  B6     
+## 10  2013     1     1     6 LGA    ORD   N3ALAA  AA     
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Chaves perfeitas, mesmo nome nos dois bancos = natural join
+flights2 %&gt;% left_join(weather) # Moleza
+</code></pre>
+<pre><code>## Joining, by = c(&quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;hour&quot;, &quot;origin&quot;)
+
+## # A tibble: 336,776 x 18
+##     year month   day  hour origin dest  tailnum carrier  temp  dewp humid
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  2013     1     1     5 EWR    IAH   N14228  UA       39.0  28.0  64.4
+##  2  2013     1     1     5 LGA    IAH   N24211  UA       39.9  25.0  54.8
+##  3  2013     1     1     5 JFK    MIA   N619AA  AA       39.0  27.0  61.6
+##  4  2013     1     1     5 JFK    BQN   N804JB  B6       39.0  27.0  61.6
+##  5  2013     1     1     6 LGA    ATL   N668DN  DL       39.9  25.0  54.8
+##  6  2013     1     1     5 EWR    ORD   N39463  UA       39.0  28.0  64.4
+##  7  2013     1     1     6 EWR    FLL   N516JB  B6       37.9  28.0  67.2
+##  8  2013     1     1     6 LGA    IAD   N829AS  EV       39.9  25.0  54.8
+##  9  2013     1     1     6 JFK    MCO   N593JB  B6       37.9  27.0  64.3
+## 10  2013     1     1     6 LGA    ORD   N3ALAA  AA       39.9  25.0  54.8
+## # ... with 336,766 more rows, and 7 more variables: wind_dir &lt;dbl&gt;,
+## #   wind_speed &lt;dbl&gt;, wind_gust &lt;dbl&gt;, precip &lt;dbl&gt;, pressure &lt;dbl&gt;,
+## #   visib &lt;dbl&gt;, time_hour &lt;dttm&gt;
+</code></pre>
+<pre><code class="language-r">flights2 %&gt;% left_join(airlines) # Moleza
+</code></pre>
+<pre><code>## Joining, by = &quot;carrier&quot;
+
+## # A tibble: 336,776 x 9
+##     year month   day  hour origin dest  tailnum carrier name                    
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;                   
+##  1  2013     1     1     5 EWR    IAH   N14228  UA      United Air Lines Inc.   
+##  2  2013     1     1     5 LGA    IAH   N24211  UA      United Air Lines Inc.   
+##  3  2013     1     1     5 JFK    MIA   N619AA  AA      American Airlines Inc.  
+##  4  2013     1     1     5 JFK    BQN   N804JB  B6      JetBlue Airways         
+##  5  2013     1     1     6 LGA    ATL   N668DN  DL      Delta Air Lines Inc.    
+##  6  2013     1     1     5 EWR    ORD   N39463  UA      United Air Lines Inc.   
+##  7  2013     1     1     6 EWR    FLL   N516JB  B6      JetBlue Airways         
+##  8  2013     1     1     6 LGA    IAD   N829AS  EV      ExpressJet Airlines Inc.
+##  9  2013     1     1     6 JFK    MCO   N593JB  B6      JetBlue Airways         
+## 10  2013     1     1     6 LGA    ORD   N3ALAA  AA      American Airlines Inc.  
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code class="language-r"># Chaves perfeitas, mas há variáveis nos dois bancos com o mesmo nome e que não são chaves
+# É necessário especificar qual a chave
+flights2 %&gt;% left_join(planes, by = &quot;tailnum&quot;)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 16
+##    year.x month   day  hour origin dest  tailnum carrier year.y type            
+##     &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;           
+##  1   2013     1     1     5 EWR    IAH   N14228  UA        1999 Fixed wing mult~
+##  2   2013     1     1     5 LGA    IAH   N24211  UA        1998 Fixed wing mult~
+##  3   2013     1     1     5 JFK    MIA   N619AA  AA        1990 Fixed wing mult~
+##  4   2013     1     1     5 JFK    BQN   N804JB  B6        2012 Fixed wing mult~
+##  5   2013     1     1     6 LGA    ATL   N668DN  DL        1991 Fixed wing mult~
+##  6   2013     1     1     5 EWR    ORD   N39463  UA        2012 Fixed wing mult~
+##  7   2013     1     1     6 EWR    FLL   N516JB  B6        2000 Fixed wing mult~
+##  8   2013     1     1     6 LGA    IAD   N829AS  EV        1998 Fixed wing mult~
+##  9   2013     1     1     6 JFK    MCO   N593JB  B6        2004 Fixed wing mult~
+## 10   2013     1     1     6 LGA    ORD   N3ALAA  AA          NA &lt;NA&gt;            
+## # ... with 336,766 more rows, and 6 more variables: manufacturer &lt;chr&gt;,
+## #   model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;
+</code></pre>
+<p>Veja que tanto <code>flights2</code> quanto <code>planes</code> tem uma variável chamada <code>year</code>, mas elas significados diferentes. Em <code>flights2</code> é o ano do vôo, enquanto em <code>planes</code> é o ano em que a aeronave entra em serviço. Na hora que fazemos o join, uma recebe o sufixo “x” e a outra “y” para a indicar a diferença. Você pode especificar o sufixo desejado para evitar confusão:</p>
+<pre><code class="language-r">flights2 %&gt;% left_join(planes, by = &quot;tailnum&quot;, suffix = c(&quot;_flight&quot;, &quot;_entered_service&quot;))
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 16
+##    year_flight month   day  hour origin dest  tailnum carrier year_entered_serv~
+##          &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;                &lt;int&gt;
+##  1        2013     1     1     5 EWR    IAH   N14228  UA                    1999
+##  2        2013     1     1     5 LGA    IAH   N24211  UA                    1998
+##  3        2013     1     1     5 JFK    MIA   N619AA  AA                    1990
+##  4        2013     1     1     5 JFK    BQN   N804JB  B6                    2012
+##  5        2013     1     1     6 LGA    ATL   N668DN  DL                    1991
+##  6        2013     1     1     5 EWR    ORD   N39463  UA                    2012
+##  7        2013     1     1     6 EWR    FLL   N516JB  B6                    2000
+##  8        2013     1     1     6 LGA    IAD   N829AS  EV                    1998
+##  9        2013     1     1     6 JFK    MCO   N593JB  B6                    2004
+## 10        2013     1     1     6 LGA    ORD   N3ALAA  AA                      NA
+## # ... with 336,766 more rows, and 7 more variables: type &lt;chr&gt;,
+## #   manufacturer &lt;chr&gt;, model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;,
+## #   engine &lt;chr&gt;
+</code></pre>
+<p>Um aviso: cuidado com os produtos cartesianos. Não há um bom exemplo aqui no caso do <code>flights</code> porque o banco já está limpinho, mas se você especificar chaves com uma relação “muitos para muitos,” ele vai registrar no banco novo uma linha para cada combinação possível de variáveis. Em bancos maiores, isso geralmente estoura sua memória e trava o R. Veja este pequeno exemplo de brinquedo.</p>
+<pre><code class="language-r">x &lt;- tribble(
+  ~key, ~val_x,
+     1, &quot;x1&quot;,
+     2, &quot;x2&quot;,
+     2, &quot;x3&quot;,
+     3, &quot;x4&quot;
+)
+y &lt;- tribble(
+  ~key, ~val_y,
+     1, &quot;y1&quot;,
+     2, &quot;y2&quot;,
+     2, &quot;y3&quot;,
+     3, &quot;y4&quot;
+)
+left_join(x, y, by = &quot;key&quot;)
+</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##     key val_x val_y
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1     1 x1    y1   
+## 2     2 x2    y2   
+## 3     2 x2    y3   
+## 4     2 x3    y2   
+## 5     2 x3    y3   
+## 6     3 x4    y4
+</code></pre>
+<p>Veja que no resultado foi criada uma linha para cada combinação de val_x e val_y que tem a mesma chave repetida. Podem até existir situações em que isso seja o que você quer mesmo, mas na minha experiência até o momento isso é problema com as chaves duplicadas e é sinal de que há algo errado.</p>
+<p>Mas peraí, se você falou que tem 4 tipos de join, porque só dá exemplo de <code>left_join</code>?</p>
+<p>Na prática, operações relacionais são feitas de forma intencional: escolhemos bancos de dados de acordo com o valor que atribuímos a informação presente nele e pinçamos informações relacionadas de outros lugares para adicionar aquilo que é nosso foco. Por isso, na maioria dos casos, o <code>left_join</code> é o mais usual, porque <strong>preserva todas as informações do meu banco x e adiciona apenas as informações do banco y que combinaram com sucesso</strong>. Isso garante que eu não vou perder nenhuma informação do meu banco principal.</p>
+<p>Pra encerrar essa parte, mais exemplos de <code>joins</code>.</p>
+<pre><code class="language-r"># Minhas chaves tem nomes diferentes, então uso um vetor do tipo c(&quot;chave_x&quot; = &quot;chave_y&quot;)
+flights2 %&gt;% 
+  left_join(airports, c(&quot;dest&quot; = &quot;faa&quot;))
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 15
+##     year month   day  hour origin dest  tailnum carrier name     lat   lon   alt
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  2013     1     1     5 EWR    IAH   N14228  UA      Georg~  30.0 -95.3    97
+##  2  2013     1     1     5 LGA    IAH   N24211  UA      Georg~  30.0 -95.3    97
+##  3  2013     1     1     5 JFK    MIA   N619AA  AA      Miami~  25.8 -80.3     8
+##  4  2013     1     1     5 JFK    BQN   N804JB  B6      &lt;NA&gt;    NA    NA      NA
+##  5  2013     1     1     6 LGA    ATL   N668DN  DL      Harts~  33.6 -84.4  1026
+##  6  2013     1     1     5 EWR    ORD   N39463  UA      Chica~  42.0 -87.9   668
+##  7  2013     1     1     6 EWR    FLL   N516JB  B6      Fort ~  26.1 -80.2     9
+##  8  2013     1     1     6 LGA    IAD   N829AS  EV      Washi~  38.9 -77.5   313
+##  9  2013     1     1     6 JFK    MCO   N593JB  B6      Orlan~  28.4 -81.3    96
+## 10  2013     1     1     6 LGA    ORD   N3ALAA  AA      Chica~  42.0 -87.9   668
+## # ... with 336,766 more rows, and 3 more variables: tz &lt;dbl&gt;, dst &lt;chr&gt;,
+## #   tzone &lt;chr&gt;
+</code></pre>
+<pre><code class="language-r"># Mesma coisa, só que agora juntando as informações da origem ao invés do destino
+flights2 %&gt;% 
+  left_join(airports, c(&quot;origin&quot; = &quot;faa&quot;))
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 15
+##     year month   day  hour origin dest  tailnum carrier name     lat   lon   alt
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  2013     1     1     5 EWR    IAH   N14228  UA      Newar~  40.7 -74.2    18
+##  2  2013     1     1     5 LGA    IAH   N24211  UA      La Gu~  40.8 -73.9    22
+##  3  2013     1     1     5 JFK    MIA   N619AA  AA      John ~  40.6 -73.8    13
+##  4  2013     1     1     5 JFK    BQN   N804JB  B6      John ~  40.6 -73.8    13
+##  5  2013     1     1     6 LGA    ATL   N668DN  DL      La Gu~  40.8 -73.9    22
+##  6  2013     1     1     5 EWR    ORD   N39463  UA      Newar~  40.7 -74.2    18
+##  7  2013     1     1     6 EWR    FLL   N516JB  B6      Newar~  40.7 -74.2    18
+##  8  2013     1     1     6 LGA    IAD   N829AS  EV      La Gu~  40.8 -73.9    22
+##  9  2013     1     1     6 JFK    MCO   N593JB  B6      John ~  40.6 -73.8    13
+## 10  2013     1     1     6 LGA    ORD   N3ALAA  AA      La Gu~  40.8 -73.9    22
+## # ... with 336,766 more rows, and 3 more variables: tz &lt;dbl&gt;, dst &lt;chr&gt;,
+## #   tzone &lt;chr&gt;
+</code></pre>
+<p>O assunto, obviamente, não pára por aí. Nos livros vocês encontrarão mais exemplos e funções, como é o caso do <code>semi_join</code> e do <code>anti_join</code> e das operações “set,” <code>intersect</code>, <code>union</code> e <code>setdiff</code>, mas isso fica pra vocês explorarem por conta própria e virem tirar as dúvidas depois!</p>
+<h2 id="stringr"><code>stringr</code></h2>
+<p><code>stringr</code> contém uma família de funções, todas começadas em <code>str_</code>, cuja principal preocupação é a <strong>consistência</strong>. As funções do <code>base</code> para strings são muito úteis, porém, seus argumentos estão numa ordem um pouco estranha, algumas funções são vetorizadas e outras não. Quando você se acostuma, até que não é tão ruim, mas voltando para o assunto discutido ontem de tornar o seu código mais legível, é interessante ter a simplicidade oferecida.</p>
+<h3 id="basicão-da-string">Basicão da string</h3>
+<p>Como este curso já é pra praticantes de R, vou pular algumas coisas muito básicas de string, vamos ao que interessa.</p>
+<p>Determinados caracteres tem um significado especial dentro das strings. Quem já tentou copiar e colar um caminho de arquivo do Windows pro R sabe disso. Então, nesses casos, é precisar “escapar” caracteres. Por exemplo, se você quiser escrever aspas, você usar a contrabarra <code>\</code> para “escapar” um caractere.</p>
+<pre><code class="language-r">aspa_simples &lt;- '\'' # ou &quot;'&quot;
+aspa_dupla &lt;- &quot;\&quot;&quot; # ou '&quot;'
+</code></pre>
+<p>A regra do escape é simples, então se você quiser colocar uma contrabarra <code>\</code></p>
+<pre><code class="language-r">x &lt;- c(&quot;\\&quot;, &quot;\&quot;&quot;)
+x
+</code></pre>
+<pre><code>## [1] &quot;\\&quot; &quot;\&quot;&quot;
+</code></pre>
+<pre><code class="language-r">writeLines(x)
+</code></pre>
+<pre><code>## \
+## &quot;
+</code></pre>
+<p>Outros caracteres especiais úteis: <code>&quot;\n&quot;</code> para pular uma linha, <code>\t</code> para Tab. Você pode ver os outros na ajuda das aspas <code>&quot;</code>, basta digitar no console <code>?&quot;'&quot;</code> ou <code>?'&quot;'</code>.</p>
+<p>Outra coisa que dá pra fazer, se você precisar incluir um caractere distinto, é usar unicode:</p>
+<pre><code class="language-r">x &lt;- &quot;\u00b5&quot;
+x
+</code></pre>
+<pre><code>## [1] &quot;µ&quot;
+</code></pre>
+<p>Ok, mas e o pacote <code>stringr</code>? Bem, ele tem o intuito de facilitar e dar consistência, então, todas as funções do pacote começam com as iniciais <code>str_</code> justamente para serem utilizadas com o <strong>autocompletar</strong> do RStudio, que pode ser acessada com os atalhos <code>Ctrl + Espaço</code> ou <code>Tab</code>. Vamos ver agora alguns exemplos de funções do pacote.</p>
+<p>Comprimento da string em caracteres:</p>
+<pre><code class="language-r">library(stringr)
+
+# No RStudio, basta digitar 'str_' e apertar Tab ou Ctrl + Espaço
+x &lt;- &quot;Ministro Sinistro&quot;
+str_length(x)
+</code></pre>
+<pre><code>## [1] 17
+</code></pre>
+<pre><code class="language-r">x &lt;- c(&quot;Ministro Sinistro&quot;, &quot;Abelha Gulosa&quot;, &quot;p&quot;)
+str_length(x)
+</code></pre>
+<pre><code>## [1] 17 13  1
+</code></pre>
+<p>Concatenação de strings:</p>
+<pre><code class="language-r">str_c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;)
+</code></pre>
+<pre><code>## [1] &quot;xyz&quot;
+</code></pre>
+<p>Use o argumento <code>sep</code> para definir caracteres que aparecerão entre as strings originais:</p>
+<pre><code class="language-r">str_c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;, sep = &quot; + &quot;)
+</code></pre>
+<pre><code>## [1] &quot;x + y + z&quot;
+</code></pre>
+<p>Você pode trabalhar com strings que contém <code>NA</code>s:</p>
+<pre><code class="language-r">x &lt;- c(&quot;abc&quot;, NA)
+str_c(&quot;|-&quot;, x, &quot;-|&quot;)
+</code></pre>
+<pre><code>## [1] &quot;|-abc-|&quot; NA
+</code></pre>
+<pre><code class="language-r">str_c(&quot;|-&quot;, str_replace_na(x), &quot;-|&quot;)
+</code></pre>
+<pre><code>## [1] &quot;|-abc-|&quot; &quot;|-NA-|&quot;
+</code></pre>
+<p><code>str_c</code> é uma função vetorizada e automaticamente recicla seus argumentos pra ter o tamanho do maior:</p>
+<pre><code class="language-r"># Eu na graduação
+str_c(&quot;Profe, me dá mais &quot;, c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;), &quot; semanas pra entregar, por favor!&quot;)
+</code></pre>
+<pre><code>## [1] &quot;Profe, me dá mais 1 semanas pra entregar, por favor!&quot;
+## [2] &quot;Profe, me dá mais 2 semanas pra entregar, por favor!&quot;
+## [3] &quot;Profe, me dá mais 3 semanas pra entregar, por favor!&quot;
+</code></pre>
+<pre><code class="language-r"># Eu de manhã
+str_c(&quot;Só mais &quot;, c(&quot;5&quot;, &quot;10&quot;, &quot;20&quot;, &quot;30&quot;), &quot; minutinhos e eu acordo!&quot;)
+</code></pre>
+<pre><code>## [1] &quot;Só mais 5 minutinhos e eu acordo!&quot;  &quot;Só mais 10 minutinhos e eu acordo!&quot;
+## [3] &quot;Só mais 20 minutinhos e eu acordo!&quot; &quot;Só mais 30 minutinhos e eu acordo!&quot;
+</code></pre>
+<p>Se algum dos objetos passados para <code>str_c</code> tiver tamanho 0, ele é descartado. Útil para usar com testes lógicos.</p>
+<pre><code class="language-r">nome &lt;- &quot;Vinicius&quot;
+sobrenome &lt;- &quot;Maia&quot;
+tem_nome_do_meio &lt;- FALSE
+
+str_c(
+  &quot;Meu nome é &quot;, nome, &quot; &quot;,
+  # isso aqui retorna um vetor tamanho 0
+  if (tem_nome_do_meio) &quot; de Souza&quot;, 
+  sobrenome,
+  &quot;.&quot;
+)
+</code></pre>
+<pre><code>## [1] &quot;Meu nome é Vinicius Maia.&quot;
+</code></pre>
+<p>Conhecedores de <code>paste</code> reconhecerão o argumento <code>collapse</code>, que serve para transformar vetores de strings em uma única string.</p>
+<pre><code class="language-r">str_c(c(&quot;Natália&quot;, &quot;Martins&quot;, &quot;Arruda&quot;), collapse = &quot; &quot;)
+</code></pre>
+<pre><code>## [1] &quot;Natália Martins Arruda&quot;
+</code></pre>
+<p>De forma similar, conhecedores de <code>substring</code> deverão imediatamente reconhecer essa:</p>
+<pre><code class="language-r">x &lt;- c(&quot;Maçã&quot;, &quot;Banana&quot;, &quot;Abacaxi&quot;)
+str_sub(x, 1, 3)
+</code></pre>
+<pre><code>## [1] &quot;Maç&quot; &quot;Ban&quot; &quot;Aba&quot;
+</code></pre>
+<pre><code class="language-r">str_sub(x, -3, -1)
+</code></pre>
+<pre><code>## [1] &quot;açã&quot; &quot;ana&quot; &quot;axi&quot;
+</code></pre>
+<p><code>str_sub</code> não vai dar erro se a string for muito curta:</p>
+<pre><code class="language-r">str_sub(&quot;a&quot;, 1, 5)
+</code></pre>
+<pre><code>## [1] &quot;a&quot;
+</code></pre>
+<p>Dá pra usar a forma <code>str_sub(x) &lt;-</code> para modificar partes de strings</p>
+<pre><code class="language-r">str_sub(x, 1, 1) &lt;- str_to_lower(str_sub(x, 1, 1))
+x
+</code></pre>
+<pre><code>## [1] &quot;maçã&quot;    &quot;banana&quot;  &quot;abacaxi&quot;
+</code></pre>
+<p>Note o uso de <code>str_to_lower</code> para mudar para minúsculas. O contrário é <code>str_to_upper</code>, também há uma para títulos, <code>str_to_title</code>, e para a primeira letra de uma frase, <code>str_to_sentence</code>.</p>
+<pre><code class="language-r">x &lt;- &quot;Ministro Sinistro&quot;
+
+str_to_lower(x)
+</code></pre>
+<pre><code>## [1] &quot;ministro sinistro&quot;
+</code></pre>
+<pre><code class="language-r">str_to_upper(x)
+</code></pre>
+<pre><code>## [1] &quot;MINISTRO SINISTRO&quot;
+</code></pre>
+<pre><code class="language-r">str_to_sentence(x)
+</code></pre>
+<pre><code>## [1] &quot;Ministro sinistro&quot;
+</code></pre>
+<pre><code class="language-r">str_to_title(x)
+</code></pre>
+<pre><code>## [1] &quot;Ministro Sinistro&quot;
+</code></pre>
+<p>Como vimos no <code>readr</code>, algumas questões relacionadas a strings dependem da língua, ou, na linguagem do pacote, são “locale dependent.” Por isso nas funções onde isso é relevante, o argumento se chama <code>locale</code>. Isso não é super relevante para quem trabalha com o inglês ou as línguas do oeste europeu, considerando que a maioria das línguas tem raízes similares, mas pode ser muito importante para outros idiomas. Vejamos este exemplo com a mudança da ordem das strings.</p>
+<pre><code class="language-r">x &lt;- c(&quot;abacaxi&quot;, &quot;escarola&quot;, &quot;banana&quot;)
+
+str_sort(x, locale = &quot;en&quot;)  # Inglês
+</code></pre>
+<pre><code>## [1] &quot;abacaxi&quot;  &quot;banana&quot;   &quot;escarola&quot;
+</code></pre>
+<pre><code class="language-r">str_sort(x, locale = &quot;haw&quot;) # Havaiano
+</code></pre>
+<pre><code>## [1] &quot;abacaxi&quot;  &quot;escarola&quot; &quot;banana&quot;
+</code></pre>
+<p>É justamente para esses casos que <code>str_sort</code> e <code>str_order</code> oferecem a alternativa de você especificar o <code>locale</code>.</p>
+<h3 id="trabalhando-com-padrões-e-expressões-regulares">Trabalhando com padrões e “expressões regulares”</h3>
+<p>Expressões regulares são quase uma linguagem de programação em si, aqui, vamos dar uma passada muito rápida e ver alguns exemplos simples. São uma ferramenta muito útil, mas talvez não do interesse de todos.</p>
+<p>Basicamente, a ideia é fazer uma pesquisa na string, em busca de um padrão específico. Pode ser uma palavra, um espaço em branco, uma quebra de linha. Pode ficar muito complexo ou ser bem básico. O nosso objetivo aqui é que todos tenham a capacidade de trabalhar com padrões simples para corrigir inconsistências em bancos de dados, como no exemplo da aula anterior das colunas do dataset da OMS.</p>
+<p>Para visualizar padrões, vamos usar duas <code>helper functions</code>, <code>str_view</code> e <code>str_view_all</code>.</p>
+<pre><code class="language-r">x &lt;- c(&quot;mamão&quot;, &quot;banana&quot;, &quot;ananas&quot;)
+str_view(x, &quot;an&quot;)
+</code></pre>
+<div id="htmlwidget-1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"html":"<ul>\n  <li>mamão<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li><span class='match'>an<\/span>anas<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>O resultado sai na aba “Viewer” do seu RStudio.</p>
+<p>O primeiro padrão que podemos usar é o <code>.</code>, que identifica qualquer caractere. As vezes na documentação esse tipo de padrão genérico é chamado de “wildcard.”</p>
+<pre><code class="language-r">str_view(x, &quot;.a.&quot;)
+</code></pre>
+<div id="htmlwidget-2" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"html":"<ul>\n  <li><span class='match'>mam<\/span>ão<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>a<span class='match'>nan<\/span>as<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>A forma de ler essa operação é: “Identifique qualquer conjunto de caracteres que tenha uma letra a no meio deles.”</p>
+<p>Se você quiser identificar um <code>.</code> numa string, você precisa usar o escape <code>\</code>. Porém, a barra também é um escape! Então, ao escrever expressões regulares, precisamos usar <code>\\</code>. Veja:</p>
+<pre><code class="language-r">dot &lt;- &quot;.&quot;
+cat(dot)
+</code></pre>
+<pre><code>## .
+</code></pre>
+<pre><code class="language-r"># erro
+dot &lt;- &quot;\.&quot;
+</code></pre>
+<pre><code>## Error: '\.'  é uma seqüência de escape não reconhecida na cadeia de caracteres começando com &quot;&quot;\.&quot;
+</code></pre>
+<pre><code class="language-r"># agora sim
+dot &lt;- &quot;\\.&quot;
+cat(dot)
+</code></pre>
+<pre><code>## \.
+</code></pre>
+<p>Agora em um exemplo:</p>
+<pre><code class="language-r">x &lt;- c(&quot;Praia.&quot;, &quot;Agora.&quot;, &quot;Ou.&quot;, &quot;Me.&quot;, &quot;Rebelo.&quot;)
+str_view(x, &quot;a\\.&quot;)
+</code></pre>
+<div id="htmlwidget-3" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"html":"<ul>\n  <li>Prai<span class='match'>a.<\/span><\/li>\n  <li>Agor<span class='match'>a.<\/span><\/li>\n  <li>Ou.<\/li>\n  <li>Me.<\/li>\n  <li>Rebelo.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;u\\.&quot;)
+</code></pre>
+<div id="htmlwidget-4" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"html":"<ul>\n  <li>Praia.<\/li>\n  <li>Agora.<\/li>\n  <li>O<span class='match'>u.<\/span><\/li>\n  <li>Me.<\/li>\n  <li>Rebelo.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;o\\.&quot;)
+</code></pre>
+<div id="htmlwidget-5" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5">{"x":{"html":"<ul>\n  <li>Praia.<\/li>\n  <li>Agora.<\/li>\n  <li>Ou.<\/li>\n  <li>Me.<\/li>\n  <li>Rebel<span class='match'>o.<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Tá, mas se a contrabarra é utilizada para denotar uma expressão regular tipo o <code>.</code>, como eu faço para pesquisar uma contrabarra?</p>
+<pre><code class="language-r">x &lt;- &quot;Jake Peralta é o melhor detetive\\gênio&quot;
+cat(x)
+</code></pre>
+<pre><code>## Jake Peralta é o melhor detetive\gênio
+</code></pre>
+<p>A solução é escapar o escape do escape, sacou?</p>
+<pre><code class="language-r">str_view(x, &quot;\\\\&quot;)
+</code></pre>
+<div id="htmlwidget-6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6">{"x":{"html":"<ul>\n  <li>Jake Peralta é o melhor detetive<span class='match'>\\<\/span>gênio<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>É enrolado mesmo…</p>
+<p>Para não estender muito o assunto, vamos ver vários exemplos de caracteres especiais a ser usados em expressões regulares.</p>
+<p><code>^</code> encontra o início de uma string</p>
+<pre><code class="language-r">x &lt;- c(&quot;maçã&quot;, &quot;banana&quot;, &quot;mamão&quot;)
+
+str_view(x, &quot;^m&quot;)
+</code></pre>
+<div id="htmlwidget-7" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7">{"x":{"html":"<ul>\n  <li><span class='match'>m<\/span>açã<\/li>\n  <li>banana<\/li>\n  <li><span class='match'>m<\/span>amão<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p><code>$</code> encontra o final</p>
+<pre><code class="language-r">str_view(x, &quot;a$&quot;)
+</code></pre>
+<div id="htmlwidget-8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8">{"x":{"html":"<ul>\n  <li>maçã<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>mamão<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Para forçar a expressão a achar apenas a palavra completa, use os dois</p>
+<pre><code class="language-r">x &lt;- c(&quot;vitamina de banana&quot;, &quot;sundae de banana&quot;, &quot;banana&quot;)
+str_view(x, &quot;banana&quot;)
+</code></pre>
+<div id="htmlwidget-9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9">{"x":{"html":"<ul>\n  <li>vitamina de <span class='match'>banana<\/span><\/li>\n  <li>sundae de <span class='match'>banana<\/span><\/li>\n  <li><span class='match'>banana<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;^banana$&quot;)
+</code></pre>
+<div id="htmlwidget-10" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-10">{"x":{"html":"<ul>\n  <li>vitamina de banana<\/li>\n  <li>sundae de banana<\/li>\n  <li><span class='match'>banana<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Use <code>classes</code> de caracteres para encontrar genéricos</p>
+<p>Qualquer digito:</p>
+<pre><code class="language-r">x &lt;- &quot;15 de Maio de 2021.&quot;
+str_view(x, &quot;\\d&quot;)
+</code></pre>
+<div id="htmlwidget-11" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-11">{"x":{"html":"<ul>\n  <li><span class='match'>1<\/span>5 de Maio de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Qualquer espaço em branco:</p>
+<pre><code class="language-r">str_view(x, &quot;\\s&quot;)
+</code></pre>
+<div id="htmlwidget-12" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-12">{"x":{"html":"<ul>\n  <li>15<span class='match'> <\/span>de Maio de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Qualquer caractere de um grupo: <code>[abc]</code></p>
+<pre><code class="language-r">str_view(x, &quot;[M]&quot;)
+</code></pre>
+<div id="htmlwidget-13" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-13">{"x":{"html":"<ul>\n  <li>15 de <span class='match'>M<\/span>aio de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;[eM]&quot;)
+</code></pre>
+<div id="htmlwidget-14" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-14">{"x":{"html":"<ul>\n  <li>15 d<span class='match'>e<\/span> Maio de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;[deM]&quot;)
+</code></pre>
+<div id="htmlwidget-15" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15">{"x":{"html":"<ul>\n  <li>15 <span class='match'>d<\/span>e Maio de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Qualquer caractere menos esses: <code>[^abc]</code></p>
+<pre><code class="language-r">str_view(x, &quot;[^15]&quot;)
+</code></pre>
+<div id="htmlwidget-16" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16">{"x":{"html":"<ul>\n  <li>15<span class='match'> <\/span>de Maio de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;[^15 de]&quot;)
+</code></pre>
+<div id="htmlwidget-17" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-17">{"x":{"html":"<ul>\n  <li>15 de <span class='match'>M<\/span>aio de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;[^15 de Maio de ]&quot;)
+</code></pre>
+<div id="htmlwidget-18" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-18">{"x":{"html":"<ul>\n  <li>15 de Maio de <span class='match'>2<\/span>021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Usar uma classe pra evitar digitar 5 milhões de contrabarras</p>
+<pre><code class="language-r">str_view(x, &quot;[.]&quot;)
+</code></pre>
+<div id="htmlwidget-19" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-19">{"x":{"html":"<ul>\n  <li>15 de Maio de 2021<span class='match'>.<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(&quot;a*c&quot;, &quot;[*]&quot;)
+</code></pre>
+<div id="htmlwidget-20" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-20">{"x":{"html":"<ul>\n  <li>a<span class='match'>*<\/span>c<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Você pode misturar strings com classes também</p>
+<pre><code class="language-r">x &lt;- c(&quot;15 de Maio de 2021.&quot;, &quot;16 de Maio de 2021.&quot;)
+str_view(x, &quot;1[56] de Maio&quot;)
+</code></pre>
+<div id="htmlwidget-21" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-21">{"x":{"html":"<ul>\n  <li><span class='match'>15 de Maio<\/span> de 2021.<\/li>\n  <li><span class='match'>16 de Maio<\/span> de 2021.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Infelizmente, alguns caracteres tem significado especial dentro das classes, e você tem que usar contrabarras para fugir deles: <code>]</code> <code>\</code> <code>^</code> e <code>-</code>.</p>
+<p>Você pode lidar com repetições</p>
+<pre><code class="language-r">x &lt;- c(&quot;Mariele&quot;, &quot;Marielle&quot;, &quot;Mariellle&quot;, &quot;Marie&quot;)
+str_view(x, &quot;Mariell?e&quot;) # l aparece 0 ou 1 vez
+</code></pre>
+<div id="htmlwidget-22" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-22">{"x":{"html":"<ul>\n  <li><span class='match'>Mariele<\/span><\/li>\n  <li><span class='match'>Marielle<\/span><\/li>\n  <li>Mariellle<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel+e&quot;) # l aparece 1 ou + vezes
+</code></pre>
+<div id="htmlwidget-23" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-23">{"x":{"html":"<ul>\n  <li><span class='match'>Mariele<\/span><\/li>\n  <li><span class='match'>Marielle<\/span><\/li>\n  <li><span class='match'>Mariellle<\/span><\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel*&quot;) # l aparece 0 ou + vezes
+</code></pre>
+<div id="htmlwidget-24" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-24">{"x":{"html":"<ul>\n  <li><span class='match'>Mariel<\/span>e<\/li>\n  <li><span class='match'>Mariell<\/span>e<\/li>\n  <li><span class='match'>Marielll<\/span>e<\/li>\n  <li><span class='match'>Marie<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{0}&quot;) # l aparece exatamente 0 vezes
+</code></pre>
+<div id="htmlwidget-25" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-25">{"x":{"html":"<ul>\n  <li><span class='match'>Marie<\/span>le<\/li>\n  <li><span class='match'>Marie<\/span>lle<\/li>\n  <li><span class='match'>Marie<\/span>llle<\/li>\n  <li><span class='match'>Marie<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{1}&quot;) # l aparece exatamente 1 vez
+</code></pre>
+<div id="htmlwidget-26" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-26">{"x":{"html":"<ul>\n  <li><span class='match'>Mariel<\/span>e<\/li>\n  <li><span class='match'>Mariel<\/span>le<\/li>\n  <li><span class='match'>Mariel<\/span>lle<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{2}&quot;) # l aparece exatamente 2 vezes
+</code></pre>
+<div id="htmlwidget-27" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-27">{"x":{"html":"<ul>\n  <li>Mariele<\/li>\n  <li><span class='match'>Mariell<\/span>e<\/li>\n  <li><span class='match'>Mariell<\/span>le<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{3}&quot;) # l aparece exatamente 3 vezes
+</code></pre>
+<div id="htmlwidget-28" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-28">{"x":{"html":"<ul>\n  <li>Mariele<\/li>\n  <li>Marielle<\/li>\n  <li><span class='match'>Marielll<\/span>e<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{1,}&quot;) # l aparece exatamente 1 vez ou mais
+</code></pre>
+<div id="htmlwidget-29" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-29">{"x":{"html":"<ul>\n  <li><span class='match'>Mariel<\/span>e<\/li>\n  <li><span class='match'>Mariell<\/span>e<\/li>\n  <li><span class='match'>Marielll<\/span>e<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{2,}&quot;) # l aparece exatamente 2 vezes ou mais
+</code></pre>
+<div id="htmlwidget-30" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-30">{"x":{"html":"<ul>\n  <li>Mariele<\/li>\n  <li><span class='match'>Mariell<\/span>e<\/li>\n  <li><span class='match'>Marielll<\/span>e<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{1,2}&quot;) # l aparece de 1 a 2 vezes
+</code></pre>
+<div id="htmlwidget-31" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-31">{"x":{"html":"<ul>\n  <li><span class='match'>Mariel<\/span>e<\/li>\n  <li><span class='match'>Mariell<\/span>e<\/li>\n  <li><span class='match'>Mariell<\/span>le<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre><code class="language-r">str_view(x, &quot;Mariel{2,3}&quot;) # l aparece de 2 a 3 vezes
+</code></pre>
+<div id="htmlwidget-32" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-32">{"x":{"html":"<ul>\n  <li>Mariele<\/li>\n  <li><span class='match'>Mariell<\/span>e<\/li>\n  <li><span class='match'>Marielll<\/span>e<\/li>\n  <li>Marie<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Esse assunto é enorme, e ainda estamos só na superfície. Há grupos, lookarounds, e muitos outros detalhes envolvendo expressões regulares, e vocês podem consultar os livros de referência para mergulhar mais fundo. Mas vamos parar por aqui para nos concentrar no que interessa.</p>
+<p>Em geral, temos um banco de dados com strings problemáticas, tipo erros de digitação, inconsistências etc. O primeiro passo, em geral, é detectar os problemas.</p>
+<pre><code class="language-r">x &lt;- c(&quot;São Paulo&quot;, &quot;SAO PAULO&quot;, &quot;Sao Paulo&quot;, &quot;sp&quot;, &quot;SP&quot;, &quot;Sp&quot;)
+str_detect(x, &quot;ã&quot;)
+</code></pre>
+<pre><code>## [1]  TRUE FALSE FALSE FALSE FALSE FALSE
+</code></pre>
+<pre><code class="language-r">str_detect(x, &quot;[Ss][Pp]&quot;)
+</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE
+</code></pre>
+<pre><code class="language-r">str_detect(x, &quot;[Ss][Aa][Oo]&quot;)
+</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE FALSE FALSE FALSE
+</code></pre>
+<p>Você pode se utilizar do fato da resposta ser um vetor lógico para descobrir quantos problemas você tem</p>
+<pre><code class="language-r"># Contagens
+str_detect(x, &quot;ã&quot;) %&gt;% sum()
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">str_detect(x, &quot;[Ss][Pp]&quot;) %&gt;% sum()
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<pre><code class="language-r">str_detect(x, &quot;[Ss][Aa][Oo]&quot;) %&gt;% sum()
+</code></pre>
+<pre><code>## [1] 2
+</code></pre>
+<pre><code class="language-r"># Proporções
+str_detect(x, &quot;ã&quot;) %&gt;% mean()
+</code></pre>
+<pre><code>## [1] 0.1666667
+</code></pre>
+<pre><code class="language-r">str_detect(x, &quot;[Ss][Pp]&quot;) %&gt;% mean()
+</code></pre>
+<pre><code>## [1] 0.5
+</code></pre>
+<pre><code class="language-r">str_detect(x, &quot;[Ss][Aa][Oo]&quot;) %&gt;% mean()
+</code></pre>
+<pre><code>## [1] 0.3333333
+</code></pre>
+<p>Depois de detectar seus problemas, você pode querer extrair uma parte dos seus casos: use <code>str_subset</code></p>
+<pre><code class="language-r">str_subset(x, &quot;[Ss][Pp]&quot;)
+</code></pre>
+<pre><code>## [1] &quot;sp&quot; &quot;SP&quot; &quot;Sp&quot;
+</code></pre>
+<p>Em geral, no entanto, você vai estar trabalhando num data frame. Então use <code>dplyr::filter</code> e <code>str_detect</code>.</p>
+<pre><code class="language-r">df &lt;- tibble::tibble(
+  nome = c(&quot;Marcos&quot;, &quot;rogério&quot;, &quot;cebolinha&quot;, &quot;Beiçola&quot;, &quot;nadir&quot;, &quot;Monica&quot;),
+  uf = x,
+  dtnsc = c(&quot;15 de Maio de 1980&quot;, &quot;1 de Jan de 2001&quot;, &quot;6 de Ago de 1993&quot;, 
+            &quot;20 de Abril de 1964&quot;, &quot;24 de Nov de 1975&quot;, &quot;14 de Dezembro de 1997&quot;)
+)
+df %&gt;% dplyr::filter(str_detect(uf, &quot;[Ss][Pp]&quot;))
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   nome    uf    dtnsc                 
+##   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;                 
+## 1 Beiçola sp    20 de Abril de 1964   
+## 2 nadir   SP    24 de Nov de 1975     
+## 3 Monica  Sp    14 de Dezembro de 1997
+</code></pre>
+<p>Você pode contar quantos matches você tem <code>str_count</code></p>
+<pre><code class="language-r">str_count(x, &quot;o&quot;)
+</code></pre>
+<pre><code>## [1] 2 0 2 0 0 0
+</code></pre>
+<pre><code class="language-r">str_count(x, &quot;[Oo]&quot;)
+</code></pre>
+<pre><code>## [1] 2 2 2 0 0 0
+</code></pre>
+<pre><code class="language-r"># e usar num data frame
+df %&gt;% dplyr::mutate(vogais = str_count(uf, &quot;[aeiou]&quot;),
+                     consoantes = str_count(uf, &quot;[^aeiou]&quot;))
+</code></pre>
+<pre><code>## # A tibble: 6 x 5
+##   nome      uf        dtnsc                  vogais consoantes
+##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                   &lt;int&gt;      &lt;int&gt;
+## 1 Marcos    São Paulo 15 de Maio de 1980          4          5
+## 2 rogério   SAO PAULO 1 de Jan de 2001            0          9
+## 3 cebolinha Sao Paulo 6 de Ago de 1993            5          4
+## 4 Beiçola   sp        20 de Abril de 1964         0          2
+## 5 nadir     SP        24 de Nov de 1975           0          2
+## 6 Monica    Sp        14 de Dezembro de 1997      0          2
+</code></pre>
+<p>Você pode extrair <code>str_extract</code> as informações que você quer</p>
+<pre><code class="language-r">str_extract(df$dtnsc, &quot;\\d+&quot;)
+</code></pre>
+<pre><code>## [1] &quot;15&quot; &quot;1&quot;  &quot;6&quot;  &quot;20&quot; &quot;24&quot; &quot;14&quot;
+</code></pre>
+<pre><code class="language-r">str_extract(df$dtnsc, &quot;\\d+$&quot;)
+</code></pre>
+<pre><code>## [1] &quot;1980&quot; &quot;2001&quot; &quot;1993&quot; &quot;1964&quot; &quot;1975&quot; &quot;1997&quot;
+</code></pre>
+<pre><code class="language-r">str_extract(df$dtnsc, &quot;\\D+&quot;)
+</code></pre>
+<pre><code>## [1] &quot; de Maio de &quot;     &quot; de Jan de &quot;      &quot; de Ago de &quot;      &quot; de Abril de &quot;   
+## [5] &quot; de Nov de &quot;      &quot; de Dezembro de &quot;
+</code></pre>
+<pre><code class="language-r"># Na tibble
+df %&gt;% dplyr::mutate(
+  dia = str_extract(dtnsc, &quot;\\d+&quot;),
+  mes = str_extract(df$dtnsc, &quot;\\D+&quot;),
+  ano = str_extract(dtnsc, &quot;\\d+$&quot;))
+</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   nome      uf        dtnsc                  dia   mes                ano  
+##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                  &lt;chr&gt; &lt;chr&gt;              &lt;chr&gt;
+## 1 Marcos    São Paulo 15 de Maio de 1980     15    &quot; de Maio de &quot;     1980 
+## 2 rogério   SAO PAULO 1 de Jan de 2001       1     &quot; de Jan de &quot;      2001 
+## 3 cebolinha Sao Paulo 6 de Ago de 1993       6     &quot; de Ago de &quot;      1993 
+## 4 Beiçola   sp        20 de Abril de 1964    20    &quot; de Abril de &quot;    1964 
+## 5 nadir     SP        24 de Nov de 1975      24    &quot; de Nov de &quot;      1975 
+## 6 Monica    Sp        14 de Dezembro de 1997 14    &quot; de Dezembro de &quot; 1997
+</code></pre>
+<pre><code class="language-r"># Melhor ainda
+df %&gt;% tidyr::extract(
+  dtnsc, c(&quot;dia&quot;, &quot;mes&quot;, &quot;ano&quot;), 
+  regex = &quot;(\\d+) de (\\D+) de (\\d+$)&quot;
+)
+</code></pre>
+<pre><code>## # A tibble: 6 x 5
+##   nome      uf        dia   mes      ano  
+##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;
+## 1 Marcos    São Paulo 15    Maio     1980 
+## 2 rogério   SAO PAULO 1     Jan      2001 
+## 3 cebolinha Sao Paulo 6     Ago      1993 
+## 4 Beiçola   sp        20    Abril    1964 
+## 5 nadir     SP        24    Nov      1975 
+## 6 Monica    Sp        14    Dezembro 1997
+</code></pre>
+<p>Similar a ideia de extração, podemos substituir com <code>str_replace</code></p>
+<pre><code class="language-r">str_replace(x, &quot;[Ss][Pp]&quot;, &quot;São Paulo&quot;)
+</code></pre>
+<pre><code>## [1] &quot;São Paulo&quot; &quot;SAO PAULO&quot; &quot;Sao Paulo&quot; &quot;São Paulo&quot; &quot;São Paulo&quot; &quot;São Paulo&quot;
+</code></pre>
+<pre><code class="language-r">str_replace(x, &quot;SAO PAULO&quot;, &quot;São Paulo&quot;)
+</code></pre>
+<pre><code>## [1] &quot;São Paulo&quot; &quot;São Paulo&quot; &quot;Sao Paulo&quot; &quot;sp&quot;        &quot;SP&quot;        &quot;Sp&quot;
+</code></pre>
+<pre><code class="language-r">str_replace(x, &quot;a&quot;, &quot;ã&quot;)
+</code></pre>
+<pre><code>## [1] &quot;São Pãulo&quot; &quot;SAO PAULO&quot; &quot;São Paulo&quot; &quot;sp&quot;        &quot;SP&quot;        &quot;Sp&quot;
+</code></pre>
+<p>Tanto <code>str_extract</code> quanto <code>str_replace</code> substituem apenas a primeira marca, se você quiser substituir todas, utilize <code>str_..._all</code></p>
+<pre><code class="language-r">str_extract_all(x, &quot;a&quot;, simplify = TRUE)
+</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,] &quot;a&quot;  &quot;&quot;  
+## [2,] &quot;&quot;   &quot;&quot;  
+## [3,] &quot;a&quot;  &quot;a&quot; 
+## [4,] &quot;&quot;   &quot;&quot;  
+## [5,] &quot;&quot;   &quot;&quot;  
+## [6,] &quot;&quot;   &quot;&quot;
+</code></pre>
+<pre><code class="language-r">str_replace_all(x, &quot;a&quot;, &quot;ã&quot;)
+</code></pre>
+<pre><code>## [1] &quot;São Pãulo&quot; &quot;SAO PAULO&quot; &quot;São Pãulo&quot; &quot;sp&quot;        &quot;SP&quot;        &quot;Sp&quot;
+</code></pre>
+<p>O assunto não acaba, mas vamos parar por aqui. Novamente, recomendo consultarem os materiais para quem quiser ir mais a fundo nisso. É bem capaz de no andar da carruagem aparecerem outros exemplos nos quais a manipulação de strings pode ser importante.</p>
+<h2 id="forcats"><code>forcats</code></h2>
+<p>Esse é um pacotinho muito que facilita bastante a vida de quem trabalha com variável categórica, ou, no R, os <code>factor</code>s. Ele consiste em uma série de “helper functions” baseadas em funções do <code>base</code> e do <code>stats</code> que trabalham com os componentes de um <code>factor</code>, ou seja, seus <code>levels</code> e seus <code>values</code>.</p>
+<p>Imagino que todos aqui estão familiarizados com fatores e com a sua criação, então vamos direto ao que interessa. Educação é um vetor de caracteres que vem com os níveis educacionais de um população.</p>
+<pre><code class="language-r">educacao &lt;- c(&quot;Superior&quot;, &quot;Fundamental&quot;, &quot;Médio&quot;, &quot;Superior&quot;, &quot;Fundamental&quot;, &quot;Médio&quot;,
+              &quot;Superior&quot;, &quot;Fundamental&quot;, &quot;Médio&quot;, &quot;Superior&quot;, &quot;Fundamental&quot;, &quot;Médio&quot;)
+
+x &lt;- factor(educacao, levels = c(&quot;Fundamental&quot;, &quot;Médio&quot;, &quot;Superior&quot;))
+x
+</code></pre>
+<pre><code>##  [1] Superior    Fundamental Médio       Superior    Fundamental Médio      
+##  [7] Superior    Fundamental Médio       Superior    Fundamental Médio      
+## Levels: Fundamental Médio Superior
+</code></pre>
+<pre><code class="language-r">levels(x)
+</code></pre>
+<pre><code>## [1] &quot;Fundamental&quot; &quot;Médio&quot;       &quot;Superior&quot;
+</code></pre>
+<pre><code class="language-r">relevel(x, &quot;Superior&quot;)
+</code></pre>
+<pre><code>##  [1] Superior    Fundamental Médio       Superior    Fundamental Médio      
+##  [7] Superior    Fundamental Médio       Superior    Fundamental Médio      
+## Levels: Superior Fundamental Médio
+</code></pre>
+<p>Em geral, diversas tarefas envolvendo fatores no <code>base</code> não são muito simples. Por exemplo, se eu quiser modificar os nomes dos níveis de um fator depois dele já estar criado, modificar a ordem dos níveis, ou agrupar diversos níveis em um só. <code>forcats</code> vem justamente oferecer soluções nesse sentido. Normalmente, estamos trabalhando com bancos de dados, e não com um vetor solitário, por isso, vamos usar o <code>gss_cat</code>, uma amostra do General Social Survey aplicado pelo NORC e pela Universidade de Chicago, que vem no pacote forcats.</p>
+<pre><code class="language-r">library(forcats)
+gss_cat
+</code></pre>
+<pre><code>## # A tibble: 21,483 x 9
+##     year marital     age race  rincome    partyid     relig     denom    tvhours
+##    &lt;int&gt; &lt;fct&gt;     &lt;int&gt; &lt;fct&gt; &lt;fct&gt;      &lt;fct&gt;       &lt;fct&gt;     &lt;fct&gt;      &lt;int&gt;
+##  1  2000 Never ma~    26 White $8000 to ~ Ind,near r~ Protesta~ Souther~      12
+##  2  2000 Divorced     48 White $8000 to ~ Not str re~ Protesta~ Baptist~      NA
+##  3  2000 Widowed      67 White Not appli~ Independent Protesta~ No deno~       2
+##  4  2000 Never ma~    39 White Not appli~ Ind,near r~ Orthodox~ Not app~       4
+##  5  2000 Divorced     25 White Not appli~ Not str de~ None      Not app~       1
+##  6  2000 Married      25 White $20000 - ~ Strong dem~ Protesta~ Souther~      NA
+##  7  2000 Never ma~    36 White $25000 or~ Not str re~ Christian Not app~       3
+##  8  2000 Divorced     44 White $7000 to ~ Ind,near d~ Protesta~ Luthera~      NA
+##  9  2000 Married      44 White $25000 or~ Not str de~ Protesta~ Other          0
+## 10  2000 Married      47 White $25000 or~ Strong rep~ Protesta~ Souther~       3
+## # ... with 21,473 more rows
+</code></pre>
+<p>Contagens</p>
+<p>Uma das primeiras coisas que interessa ao lidar com fatores, é obter suas contagens, o que é algo muito simples utilizando a gramática do dplyr.</p>
+<pre><code class="language-r"># Função count
+gss_cat %&gt;% 
+  count(race)
+</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   race      n
+##   &lt;fct&gt; &lt;int&gt;
+## 1 Other  1959
+## 2 Black  3129
+## 3 White 16395
+</code></pre>
+<pre><code class="language-r"># Incluindo níveis com contagem = 0.
+gss_cat %&gt;% 
+  count(race, .drop = FALSE)
+</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   race               n
+##   &lt;fct&gt;          &lt;int&gt;
+## 1 Other           1959
+## 2 Black           3129
+## 3 White          16395
+## 4 Not applicable     0
+</code></pre>
+<pre><code class="language-r"># Visualização com ggplot
+library(ggplot2)
+gss_cat %&gt;% 
+  ggplot(aes(race)) + geom_bar()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<pre><code class="language-r"># Incluindo níveis com contagem = 0.
+gss_cat %&gt;% 
+  ggplot(aes(race)) + geom_bar() + scale_x_discrete(drop = FALSE)
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-60-2.png" width="672" /></p>
+<p>Note o uso do argumento <code>drop</code> nos dois casos, para indicar que casos com 0 observações não devem ser removidos do resultado.</p>
+<h3 id="modificando-a-ordem">Modificando a ordem</h3>
+<p>A segunda tarefa comum quando trabalhamos com fatores é modificar a ordem em que eles aparecem. Não é tanto o caso quando trabalhamos com fatores ordenados, mas diversos tipos de variáveis categóricas não possuem uma ordem lógica pre-definida e, mesmo assim, nos interessa apresentá-los de acordo com uma determinada hierarquia visual, seja porque eles são os mais frequentes ou porque queremos destacar algum elemento em particular. <code>forcats</code> implementa diversas estratégias de reordenamento de fatores. Vamos vê-las brevemente.</p>
+<p>Digamos que eu queira saber o tempo médio de televisão assistida por membros das diversas religiões. Eu poderia produzir um sumário e depois plotar isso num gráfico.</p>
+<pre><code class="language-r">relig_summary &lt;- gss_cat %&gt;%
+  group_by(relig) %&gt;%
+  summarise(
+    age = mean(age, na.rm = TRUE),
+    tvhours = mean(tvhours, na.rm = TRUE),
+    n = n()
+  )
+
+relig_summary %&gt;% 
+  ggplot(aes(tvhours, relig)) + geom_point()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<p>O display está técnicamente correto, mas a forma desorganizada dos níveis no eixo Y dificulta a nossa capacidade de fazer comparações. Talvez fosse mais interessante ordenar este resultado por ordem decrescente do número de horas de tv. Mas, como fazer isso de forma direta, sem precisar realizar diversas computações?</p>
+<pre><code class="language-r"># Direto no plot
+relig_summary %&gt;% 
+  ggplot(aes(tvhours, fct_reorder(relig, tvhours))) + geom_point()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<pre><code class="language-r"># Antes de passar o data.frame para a plotagem
+relig_summary %&gt;% 
+  mutate(relig = fct_reorder(relig, tvhours)) %&gt;% 
+  ggplot(aes(tvhours, relig)) + geom_point()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-62-2.png" width="672" /></p>
+<p>Note como posso aplicar a transformação diretamente na variável durante o processo de plotagem, ou antes, e uma invocação de <code>mutate</code>. Na minha opinião, o segundo jeito é o mais adequado, por duas razões: é mais fácil de digitar, inserir e retirar do código e é mais fácil para um leitor identificar que uma transformação foi feita na variável plotada.</p>
+<p>Outro exemplo: que tal exarminarmos a relação entre a idade e a renda declarada? Primeiro, é preciso construir um sumário, parecido com o primeiro:</p>
+<pre><code class="language-r">rincome_summary &lt;- gss_cat %&gt;%
+  group_by(rincome) %&gt;%
+  summarise(
+    age = mean(age, na.rm = TRUE),
+    tvhours = mean(tvhours, na.rm = TRUE),
+    n = n()
+  )
+
+rincome_summary %&gt;% 
+  mutate(rincome = fct_reorder(rincome, age)) %&gt;% 
+  ggplot(aes(age, rincome)) + geom_point()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p>Aqui, o reordenamento das variáveis de acordo com a idade não faz muito sentido, porque os níveis de renda tem uma ordem própria. Nesse caso, não é recomendado utilizar <code>fct_reorder</code>.</p>
+<pre><code class="language-r">rincome_summary %&gt;% 
+  ggplot(aes(age, rincome)) + geom_point()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<p>Só que ao plotar, notamos um problema: a categoria “Not applicable” ficou primeiro e isso desorganiza visualmente nosso gráfico. Sem problema! Utilizamos <code>fct_relevel</code> para modificar a ordem de uma variável arbitrariamente. O padrão é colocar pro começo (Parecido com o comportamento de <code>stats::relevel</code>), mas você pode especificar outra posição.</p>
+<pre><code class="language-r">rincome_summary %&gt;% 
+  mutate(rincome = fct_relevel(rincome, &quot;Not applicable&quot;)) %&gt;% 
+  ggplot(aes(age, rincome)) + geom_point()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p>Notem como nos exemplos acima, o uso do <code>%&gt;%</code> nos permite alterar partes do nosso código de maneira interativa para chegar no resultado desejado.</p>
+<p>Outro tipo de mudança de ordem interessante ocorre quando temos uma terceira “dimensão” no nosso gráfico. Em geral, utilizamos cores, formas ou linhas quebradas para diferenciar entre categorias e gostaríamos que a nossa legenda acompanhasse a tendência do gráfico. Compare:</p>
+<pre><code class="language-r">by_age &lt;- gss_cat %&gt;%
+  filter(!is.na(age)) %&gt;%
+  count(age, marital) %&gt;%
+  group_by(age) %&gt;%
+  mutate(prop = n / sum(n))
+
+# Sem alteração na ordem
+by_age %&gt;% 
+  ggplot(aes(age, prop, colour = marital)) +
+  geom_line(na.rm = TRUE)
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<pre><code class="language-r"># Com alteração na ordem
+ggplot(by_age, aes(age, prop, colour = fct_reorder2(marital, age, prop))) +
+  geom_line() +
+  labs(colour = &quot;marital&quot;)
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-66-2.png" width="672" /></p>
+<p>No caso de <code>fct_reorder2</code>, é melhor fazer a alteração de ordem dentro da função gráfica, pois dentro uma invocação de <code>mutate</code>, ela não funcionou durante meus testes.</p>
+<p>Por último, podemos querer ordenar um gráfico de barras de acordo com a frequência das categorias, o que podemos fazer com <code>fct_infreq</code> e <code>fct_rev</code> (opcional).</p>
+<pre><code class="language-r">gss_cat %&gt;%
+  mutate(marital = marital %&gt;% fct_infreq()) %&gt;%
+  ggplot(aes(marital)) +
+    geom_bar()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<pre><code class="language-r"># OU
+gss_cat %&gt;%
+  mutate(marital = marital %&gt;% fct_infreq() %&gt;% fct_rev()) %&gt;%
+  ggplot(aes(marital)) +
+    geom_bar()
+</code></pre>
+<p><img src="/courses/tidyverse/dia2_files/figure-html/unnamed-chunk-67-2.png" width="672" /></p>
+<p>Notem o uso do pipe na hora de modificar a variável “marital.”</p>
+<h3 id="modificando-os-níveis">Modificando os níveis</h3>
+<p>O outro tipo de operação bastante comum é a alteração nos níves do fator. Em geral, queremos que os nossos níveis sejam representativos das nossas categorias de análise, sejam de fácil leitura e entendimento e contenham um número significativo de observações. Por essa razão, frequentemente precisamos alterar os rótulos, agrupar categorias, etc.</p>
+<p>Vejamos o exemplo da variável <code>partyid</code>, que registra a identificação do entrevistado com os partidos políticos dos EUA.</p>
+<pre><code class="language-r">gss_cat %&gt;% count(partyid)
+</code></pre>
+<pre><code>## # A tibble: 10 x 2
+##    partyid                n
+##    &lt;fct&gt;              &lt;int&gt;
+##  1 No answer            154
+##  2 Don't know             1
+##  3 Other party          393
+##  4 Strong republican   2314
+##  5 Not str republican  3032
+##  6 Ind,near rep        1791
+##  7 Independent         4119
+##  8 Ind,near dem        2499
+##  9 Not str democrat    3690
+## 10 Strong democrat     3490
+</code></pre>
+<p>Vamos supor que, por qualquer motivo, essa forma de representação das categorias não nos satisfaz. Vejamos algumas das ferramentas que podemos utilizar para modificar esse fator.</p>
+<p>Podemos, simplesmente, reescrever essas categorias de forma mais completa:</p>
+<pre><code class="language-r">gss_cat %&gt;% 
+  mutate(partyid = fct_recode(partyid,
+    &quot;Republicano, forte&quot; = &quot;Strong republican&quot;,
+    &quot;Republicano, fraco&quot; = &quot;Not str republican&quot;,
+    &quot;Independente, próx. repub.&quot; = &quot;Ind,near rep&quot;,
+    &quot;Independente, próx. democ.&quot; = &quot;Ind,near dem&quot;,
+    &quot;Independente&quot; = &quot;Independent&quot;,
+    &quot;Democrata, forte&quot; = &quot;Strong democrat&quot;,
+    &quot;Democrata, fraco&quot; = &quot;Not str democrat&quot;,
+    &quot;Outro partido&quot; = &quot;Other party&quot;,
+    &quot;Não sei&quot; = &quot;Don't know&quot;,
+    &quot;Sem resposta&quot; = &quot;No answer&quot;
+  )) %&gt;% 
+  count(partyid)
+</code></pre>
+<pre><code>## # A tibble: 10 x 2
+##    partyid                        n
+##    &lt;fct&gt;                      &lt;int&gt;
+##  1 Sem resposta                 154
+##  2 Não sei                        1
+##  3 Outro partido                393
+##  4 Republicano, forte          2314
+##  5 Republicano, fraco          3032
+##  6 Independente, próx. repub.  1791
+##  7 Independente                4119
+##  8 Independente, próx. democ.  2499
+##  9 Democrata, fraco            3690
+## 10 Democrata, forte            3490
+</code></pre>
+<p>A função utilizada é <code>fct_recode</code> e ela é a mais genérica e flexível de todas, porém, exige que cada nível seja modificado individualmente. Dentro dela, é possível agrupar vários níveis associando vários níveis antigos a um mesmo nível novo. Veja o exemplo:</p>
+<pre><code class="language-r">gss_cat %&gt;% 
+  mutate(partyid = fct_recode(partyid,
+    &quot;Republicano, forte&quot; = &quot;Strong republican&quot;,
+    &quot;Republicano, fraco&quot; = &quot;Not str republican&quot;,
+    &quot;Independente, próx. repub.&quot; = &quot;Ind,near rep&quot;,
+    &quot;Independente, próx. democ.&quot; = &quot;Ind,near dem&quot;,
+    &quot;Independente&quot; = &quot;Independent&quot;,
+    &quot;Democrata, forte&quot; = &quot;Strong democrat&quot;,
+    &quot;Democrata, fraco&quot; = &quot;Not str democrat&quot;,
+    # Note o nome
+    &quot;Outro&quot; = &quot;Other party&quot;,
+    &quot;Outro&quot; = &quot;Don't know&quot;,
+    &quot;Outro&quot; = &quot;No answer&quot;
+  )) %&gt;% 
+  count(partyid)
+</code></pre>
+<pre><code>## # A tibble: 8 x 2
+##   partyid                        n
+##   &lt;fct&gt;                      &lt;int&gt;
+## 1 Outro                        548
+## 2 Republicano, forte          2314
+## 3 Republicano, fraco          3032
+## 4 Independente, próx. repub.  1791
+## 5 Independente                4119
+## 6 Independente, próx. democ.  2499
+## 7 Democrata, fraco            3690
+## 8 Democrata, forte            3490
+</code></pre>
+<p>Se você quiser recategorizar um fator que tem muitos níveis para um menor, com poucos níveis, utilize <code>fct_collapse</code>:</p>
+<pre><code class="language-r">gss_cat %&gt;%
+  mutate(partyid = fct_collapse(partyid,
+    Outro = c(&quot;No answer&quot;, &quot;Don't know&quot;, &quot;Other party&quot;),
+    Republicano = c(&quot;Strong republican&quot;, &quot;Not str republican&quot;),
+    Independente = c(&quot;Ind,near rep&quot;, &quot;Independent&quot;, &quot;Ind,near dem&quot;),
+    Democrata = c(&quot;Not str democrat&quot;, &quot;Strong democrat&quot;)
+  )) %&gt;%
+  count(partyid)
+</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   partyid          n
+##   &lt;fct&gt;        &lt;int&gt;
+## 1 Outro          548
+## 2 Republicano   5346
+## 3 Independente  8409
+## 4 Democrata     7180
+</code></pre>
+<p>Repare que do lado esquerdo, nos valores novos, não foi necessário usar aspas. É preciso cuidado com essa característica dos verbos do tidyverse. Ela se chama “tidy evaluation” e está um pouco fora do escopo do curso. Basicamente, se rolar dúvida ou der erros, se for usar acentos ou algum caractere diferente, use aspas.</p>
+<pre><code class="language-r">gss_cat %&gt;%
+  mutate(partyid = fct_collapse(partyid,
+    &quot;Outro&quot; = c(&quot;No answer&quot;, &quot;Don't know&quot;, &quot;Other party&quot;),
+    &quot;Republicano&quot; = c(&quot;Strong republican&quot;, &quot;Not str republican&quot;),
+    &quot;Independente&quot; = c(&quot;Ind,near rep&quot;, &quot;Independent&quot;, &quot;Ind,near dem&quot;),
+    &quot;Democrata&quot; = c(&quot;Not str democrat&quot;, &quot;Strong democrat&quot;)
+  )) %&gt;%
+  count(partyid)
+</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   partyid          n
+##   &lt;fct&gt;        &lt;int&gt;
+## 1 Outro          548
+## 2 Republicano   5346
+## 3 Independente  8409
+## 4 Democrata     7180
+</code></pre>
+<p>Outro tipo de mudança importante no número de níveis é agrupar os níveis menos frequentes, por exemplo, para produzir uma visualização que dê maior destaque aos níveis mais frequentes. Esse é o trabalho de <code>fct_lump</code>.</p>
+<pre><code class="language-r">gss_cat %&gt;% 
+  mutate(relig = fct_lump(relig, n = 5)) %&gt;% 
+  count(relig)
+</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##   relig          n
+##   &lt;fct&gt;      &lt;int&gt;
+## 1 Christian    689
+## 2 None        3523
+## 3 Jewish       388
+## 4 Catholic    5124
+## 5 Protestant 10846
+## 6 Other        913
+</code></pre>
+<p>Note que usando o argumento <code>n</code> eu indico quantos níveis eu quero. No caso, escolhi os 5 níveis mais frequentes e todos os outros são automáticamente agrupados na categoria “Other.” Posso mudar esse nome também:</p>
+<pre><code class="language-r">gss_cat %&gt;% 
+  mutate(relig = fct_lump(relig, n = 5, other_level = &quot;Outros&quot;)) %&gt;% 
+  count(relig)
+</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##   relig          n
+##   &lt;fct&gt;      &lt;int&gt;
+## 1 Christian    689
+## 2 None        3523
+## 3 Jewish       388
+## 4 Catholic    5124
+## 5 Protestant 10846
+## 6 Outros       913
+</code></pre>
+<h2 id="exercícios">Exercícios</h2>
+<ol>
+<li>
+<p>Encontre os vôos que:</p>
+<ol>
+<li>Atrasaram mais de duas horas</li>
+<li>Com destino a Houston (<code>IAH</code> ou <code>HOU</code>)</li>
+<li>Operados pela United, American ou Delta</li>
+<li>Decolaram entre julho e setembro</li>
+<li>Chegaram com mais de duas horas de atraso, mas não decolaram com atraso</li>
+<li>Atrasaram mais de uma hora para decolar, mas recuperaram mais de 30 minutos durante o voo</li>
+<li>Decolaram entre a meia-noite e 6 da manhã (inclusive)</li>
+</ol>
+</li>
+<li>
+<p>Reordene suas colunas para encontrar os voos mais rápidos (maior velocidade de voo).</p>
+</li>
+<li>
+<p>Teste várias maneiras diferentes de selecionar as variáveis <code>dep_time</code>, <code>dep_delay</code>, <code>arr_time</code> e <code>arr_delay</code> usando as várias helper functions de <code>select</code>.</p>
+</li>
+<li>
+<p>As variáveis <code>dep_time</code> e <code>sched_dep_time</code> estão num formato incorreto (veja <code>?flights</code>). Converta-as com <code>mutate</code> para um valor em minutos passados desde a meia-noite. Dica: utilize <code>%/%</code> e <code>%%</code>.</p>
+</li>
+<li>
+<p>O que o código abaixo está fazendo? Porque mesmo após o código abaixo continuam existindo diferenças entre os valores das variáveis <code>air_time</code> e <code>travel_time</code>?</p>
+</li>
+</ol>
+<pre><code class="language-r">flights %&gt;% 
+  select(air_time, dep_time, arr_time, dep_delay, arr_delay) %&gt;% 
+  mutate(dep_hour = dep_time %/% 100,
+         dep_min = dep_time %% 100,
+         dep_time2 = dep_hour * 60 + dep_min,
+         arr_hour = arr_time %/% 100,
+         arr_min = arr_time %% 100,
+         arr_time2 = arr_hour * 60 + arr_min,
+         travel_time = arr_time2 - dep_time2) %&gt;% 
+  select(-dep_hour, -dep_min, -arr_hour, -arr_min)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 8
+##    air_time dep_time arr_time dep_delay arr_delay dep_time2 arr_time2
+##       &lt;dbl&gt;    &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+##  1      227      517      830         2        11       317       510
+##  2      227      533      850         4        20       333       530
+##  3      160      542      923         2        33       342       563
+##  4      183      544     1004        -1       -18       344       604
+##  5      116      554      812        -6       -25       354       492
+##  6      150      554      740        -4        12       354       460
+##  7      158      555      913        -5        19       355       553
+##  8       53      557      709        -3       -14       357       429
+##  9      140      557      838        -3        -8       357       518
+## 10      138      558      753        -2         8       358       473
+## # ... with 336,766 more rows, and 1 more variable: travel_time &lt;dbl&gt;
+</code></pre>
+<ol start="6">
+<li>Use o stringr para concatenar as seguintes strings em uma frase</li>
+</ol>
+<pre><code class="language-r">x &lt;- &quot;.&quot;
+y &lt;- &quot;feliz&quot;
+w &lt;- &quot;acordei&quot;
+z &lt;- &quot;hoje&quot;
+</code></pre>
+<ol start="7">
+<li>Corrija as inconsistências nas colunas país, primeiro_nome, segundo_nome e crie uma nova coluna nomes contendo as duas anteriores. No final, ordene o banco em ordem alfabética.</li>
+</ol>
+<pre><code class="language-r">df &lt;- 
+  tibble::tribble(
+    ~pais,    ~primeiro_nome, ~segundo_nome,
+    # -------|----------------|-------------|
+    &quot;BRASIL&quot;, &quot;ISABELA&quot;,       &quot;MARTINS&quot;,
+    &quot;Brasil&quot;, &quot;Eduardo&quot;,       &quot;cabellos&quot;,
+    &quot;brasil&quot;, &quot;márcia&quot;,         &quot;pinto&quot;,
+    &quot;bRaSiL&quot;, &quot;rogério&quot;,        &quot;Marinho&quot;,
+  )
+</code></pre>
+<ol start="8">
+<li>Transforme a string <code>c(&quot;Seu nome&quot;, &quot;Seu sobrenome da mãe&quot;, &quot;Seu sobrenome do pai&quot;)</code> na string <code>&quot;SEU SOBRENOME DO PAI, sua inicial do nome. sua inicial da mãe.&quot;</code>, como numa citação. Veja o exemplo abaixo:</li>
+</ol>
+<pre><code class="language-r"># Transforme
+c(&quot;Vinícius&quot;, &quot;de Souza&quot;, &quot;Maia&quot;)
+</code></pre>
+<pre><code>## [1] &quot;Vinícius&quot; &quot;de Souza&quot; &quot;Maia&quot;
+</code></pre>
+<pre><code class="language-r"># Resultado
+&quot;MAIA, V. S.&quot;
+</code></pre>
+<pre><code>## [1] &quot;MAIA, V. S.&quot;
+</code></pre>
+<ol start="9">
+<li>DESAFIO: Nos microdados da área de saúde, é comum que a variável idade esteja registrada da seguinte forma: “150,” “219,” “312,” “471.” Esses códigos indicam primeiro qual a unidade de medida da idade e segundo o valor desta unidade, 1 = horas, 2 = dias, 3 = meses, 4 = anos. Proponha um código usando <code>stringr</code> para transformar o vetor abaixo em um valor numérico.</li>
+</ol>
+<pre><code class="language-r"># Não precisa se preocupar com essa parte
+x &lt;- as.character(round(c(
+  runif(25, 100, 124),
+  runif(25, 201, 230),
+  runif(25, 301, 312),
+  runif(25, 401, 499)
+)))
+
+# Como você transformaria esse vetor em número?
+x
+</code></pre>
+<pre><code>##   [1] &quot;116&quot; &quot;117&quot; &quot;119&quot; &quot;124&quot; &quot;116&quot; &quot;123&quot; &quot;109&quot; &quot;104&quot; &quot;114&quot; &quot;107&quot; &quot;115&quot; &quot;118&quot;
+##  [13] &quot;103&quot; &quot;120&quot; &quot;107&quot; &quot;106&quot; &quot;119&quot; &quot;102&quot; &quot;122&quot; &quot;109&quot; &quot;105&quot; &quot;112&quot; &quot;120&quot; &quot;105&quot;
+##  [25] &quot;110&quot; &quot;217&quot; &quot;217&quot; &quot;205&quot; &quot;223&quot; &quot;221&quot; &quot;202&quot; &quot;226&quot; &quot;211&quot; &quot;226&quot; &quot;227&quot; &quot;225&quot;
+##  [37] &quot;219&quot; &quot;227&quot; &quot;205&quot; &quot;228&quot; &quot;230&quot; &quot;204&quot; &quot;202&quot; &quot;216&quot; &quot;229&quot; &quot;211&quot; &quot;214&quot; &quot;230&quot;
+##  [49] &quot;213&quot; &quot;219&quot; &quot;309&quot; &quot;311&quot; &quot;309&quot; &quot;307&quot; &quot;308&quot; &quot;309&quot; &quot;309&quot; &quot;306&quot; &quot;306&quot; &quot;308&quot;
+##  [61] &quot;307&quot; &quot;312&quot; &quot;311&quot; &quot;302&quot; &quot;305&quot; &quot;301&quot; &quot;303&quot; &quot;306&quot; &quot;309&quot; &quot;309&quot; &quot;302&quot; &quot;306&quot;
+##  [73] &quot;308&quot; &quot;304&quot; &quot;311&quot; &quot;482&quot; &quot;443&quot; &quot;403&quot; &quot;416&quot; &quot;499&quot; &quot;454&quot; &quot;409&quot; &quot;425&quot; &quot;406&quot;
+##  [85] &quot;498&quot; &quot;426&quot; &quot;465&quot; &quot;418&quot; &quot;485&quot; &quot;428&quot; &quot;464&quot; &quot;419&quot; &quot;422&quot; &quot;472&quot; &quot;434&quot; &quot;493&quot;
+##  [97] &quot;411&quot; &quot;405&quot; &quot;459&quot; &quot;478&quot;
+</code></pre>
+<ol start="10">
+<li>
+<p>Explore as contagens da variável <code>rincome</code> em <code>gss_cat</code>, ela ficaria bem representada num gráfico? De qual tipo?</p>
+</li>
+<li>
+<p>Qual a religião mais comum em <code>gss_cat</code>? Qual o partido (<code>partyid</code>) mais popular?</p>
+</li>
+<li>
+<p>A que religião se refere a variável <code>denom</code>? Você pode descobrir isso fazendo uma tabela de contagens?</p>
+</li>
+<li>
+<p>Como você poderia diminuir o número de categorias da variável <code>rincome</code> do banco <code>gss_cat</code>?</p>
+</li>
+</ol>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/tidyverse/dia1/" rel="next">readr, tibble e tidyr</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/tidyverse/dia3/" rel="prev">ggplot2</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on 23 May 2021</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+  
+  
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    © 2021 LADDEM
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.8b7df62fd2da18ce73e29c13cc0a6198.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
