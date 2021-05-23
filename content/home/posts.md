@@ -6,10 +6,12 @@ widget: pages
 # This file represents a page section.
 headless: true
 
-# Order that this section appears on the page.
-weight: 60
+active: false
 
-title: Recent Posts
+# Order that this section appears on the page.
+weight: 30
+
+title: Novidades
 subtitle:
 
 content:

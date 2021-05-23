@@ -3,14 +3,16 @@
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: pages
 
+active: false
+
 # This file represents a page section.
 headless: true
 
 # Order that this section appears on the page.
 weight: 90
 
-title: Recent Publications
-subtitle: ''
+title: Publicações
+subtitle: 'Publicações recentes dos membros do laboratório'
 
 content:
   # Page type to display. E.g. post, talk, publication...
@@ -38,5 +40,5 @@ design:
 ---
 
 {{% callout note %}}
-Quickly discover relevant content by [filtering publications](./publication/).
+Você pode [filtrar publicações](./publication/).
 {{% /callout %}}
