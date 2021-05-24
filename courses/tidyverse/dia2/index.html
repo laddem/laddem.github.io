@@ -290,8 +290,8 @@
   <meta property="og:site_name" content="LADDEM" />
   <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/dia2/" />
   <meta property="og:title" content="stringr, forcats e dplyr | LADDEM" />
-  <meta property="og:description" content="Operações em variáveis e bancos de dados Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados." /><meta property="og:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
-    <meta property="twitter:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="Operações em variáveis e bancos de dados Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados." /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -387,13 +387,15 @@
 
 
 
+  
+
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container-xl">
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">LADDEM</a>
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
     </div>
     
 
@@ -406,7 +408,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">LADDEM</a>
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
     </div>
     
 
@@ -1428,16 +1430,16 @@ flights %&gt;%
 <pre><code>## # A tibble: 10 x 2
 ##    dep_delay desabafo                             
 ##        &lt;dbl&gt; &lt;chr&gt;                                
-##  1         0 Atraso de menos de 1 hora é tolerável
-##  2        -3 Opa, vou chegar cedo!                
-##  3        88 Atraso de mais de 1 horas é f***.    
-##  4        -3 Opa, vou chegar cedo!                
-##  5         3 Atraso de menos de 1 hora é tolerável
-##  6        15 Atraso de menos de 1 hora é tolerável
-##  7        -3 Opa, vou chegar cedo!                
-##  8        -9 Opa, vou chegar cedo!                
-##  9         5 Atraso de menos de 1 hora é tolerável
-## 10         2 Atraso de menos de 1 hora é tolerável
+##  1        94 Atraso de mais de 1 horas é f***.    
+##  2         5 Atraso de menos de 1 hora é tolerável
+##  3        57 Atraso de menos de 1 hora é tolerável
+##  4        71 Atraso de mais de 1 horas é f***.    
+##  5        -8 Opa, vou chegar cedo!                
+##  6        -1 Opa, vou chegar cedo!                
+##  7         1 Atraso de menos de 1 hora é tolerável
+##  8        -5 Opa, vou chegar cedo!                
+##  9        -8 Opa, vou chegar cedo!                
+## 10         0 Atraso de menos de 1 hora é tolerável
 </code></pre>
 <p>Utilizando <code>summarize</code> você tira medidas resumo das suas colunas de interesse:</p>
 <pre><code class="language-r">flights %&gt;% 
@@ -2833,15 +2835,15 @@ x &lt;- as.character(round(c(
 # Como você transformaria esse vetor em número?
 x
 </code></pre>
-<pre><code>##   [1] &quot;116&quot; &quot;117&quot; &quot;119&quot; &quot;124&quot; &quot;116&quot; &quot;123&quot; &quot;109&quot; &quot;104&quot; &quot;114&quot; &quot;107&quot; &quot;115&quot; &quot;118&quot;
-##  [13] &quot;103&quot; &quot;120&quot; &quot;107&quot; &quot;106&quot; &quot;119&quot; &quot;102&quot; &quot;122&quot; &quot;109&quot; &quot;105&quot; &quot;112&quot; &quot;120&quot; &quot;105&quot;
-##  [25] &quot;110&quot; &quot;217&quot; &quot;217&quot; &quot;205&quot; &quot;223&quot; &quot;221&quot; &quot;202&quot; &quot;226&quot; &quot;211&quot; &quot;226&quot; &quot;227&quot; &quot;225&quot;
-##  [37] &quot;219&quot; &quot;227&quot; &quot;205&quot; &quot;228&quot; &quot;230&quot; &quot;204&quot; &quot;202&quot; &quot;216&quot; &quot;229&quot; &quot;211&quot; &quot;214&quot; &quot;230&quot;
-##  [49] &quot;213&quot; &quot;219&quot; &quot;309&quot; &quot;311&quot; &quot;309&quot; &quot;307&quot; &quot;308&quot; &quot;309&quot; &quot;309&quot; &quot;306&quot; &quot;306&quot; &quot;308&quot;
-##  [61] &quot;307&quot; &quot;312&quot; &quot;311&quot; &quot;302&quot; &quot;305&quot; &quot;301&quot; &quot;303&quot; &quot;306&quot; &quot;309&quot; &quot;309&quot; &quot;302&quot; &quot;306&quot;
-##  [73] &quot;308&quot; &quot;304&quot; &quot;311&quot; &quot;482&quot; &quot;443&quot; &quot;403&quot; &quot;416&quot; &quot;499&quot; &quot;454&quot; &quot;409&quot; &quot;425&quot; &quot;406&quot;
-##  [85] &quot;498&quot; &quot;426&quot; &quot;465&quot; &quot;418&quot; &quot;485&quot; &quot;428&quot; &quot;464&quot; &quot;419&quot; &quot;422&quot; &quot;472&quot; &quot;434&quot; &quot;493&quot;
-##  [97] &quot;411&quot; &quot;405&quot; &quot;459&quot; &quot;478&quot;
+<pre><code>##   [1] &quot;116&quot; &quot;119&quot; &quot;123&quot; &quot;117&quot; &quot;122&quot; &quot;120&quot; &quot;105&quot; &quot;104&quot; &quot;115&quot; &quot;119&quot; &quot;114&quot; &quot;107&quot;
+##  [13] &quot;100&quot; &quot;114&quot; &quot;106&quot; &quot;107&quot; &quot;103&quot; &quot;116&quot; &quot;121&quot; &quot;110&quot; &quot;105&quot; &quot;119&quot; &quot;119&quot; &quot;121&quot;
+##  [25] &quot;123&quot; &quot;223&quot; &quot;221&quot; &quot;217&quot; &quot;214&quot; &quot;226&quot; &quot;212&quot; &quot;230&quot; &quot;220&quot; &quot;228&quot; &quot;202&quot; &quot;216&quot;
+##  [37] &quot;224&quot; &quot;205&quot; &quot;206&quot; &quot;220&quot; &quot;211&quot; &quot;220&quot; &quot;228&quot; &quot;221&quot; &quot;225&quot; &quot;229&quot; &quot;205&quot; &quot;203&quot;
+##  [49] &quot;222&quot; &quot;224&quot; &quot;312&quot; &quot;301&quot; &quot;301&quot; &quot;304&quot; &quot;302&quot; &quot;308&quot; &quot;309&quot; &quot;311&quot; &quot;302&quot; &quot;304&quot;
+##  [61] &quot;303&quot; &quot;310&quot; &quot;305&quot; &quot;303&quot; &quot;303&quot; &quot;305&quot; &quot;305&quot; &quot;309&quot; &quot;305&quot; &quot;311&quot; &quot;305&quot; &quot;304&quot;
+##  [73] &quot;303&quot; &quot;308&quot; &quot;310&quot; &quot;418&quot; &quot;405&quot; &quot;484&quot; &quot;463&quot; &quot;432&quot; &quot;497&quot; &quot;444&quot; &quot;442&quot; &quot;437&quot;
+##  [85] &quot;481&quot; &quot;441&quot; &quot;430&quot; &quot;486&quot; &quot;467&quot; &quot;469&quot; &quot;430&quot; &quot;416&quot; &quot;414&quot; &quot;421&quot; &quot;483&quot; &quot;443&quot;
+##  [97] &quot;428&quot; &quot;437&quot; &quot;458&quot; &quot;450&quot;
 </code></pre>
 <ol start="10">
 <li>

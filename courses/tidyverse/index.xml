@@ -1059,8 +1059,8 @@ us_rent_income2
 ## 5     3 2016   0.17
 ## 6     4 2016   2.66
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Que faz os valores missing desaparecem.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;complete&lt;/code&gt; pode ser usada pra tornar valores implícitos, explícitos! A função toma todas as colunas pedidas e verifica todas as combinações possíveis de valores, preenchendo as lacunas com &lt;code&gt;NA&lt;/code&gt;. Cuidado ao utilizar complete com valores numéricos ou bancos de dados muito grandes, pois o número de combinações pode ser infinitamente grande e travar sua sessão.&lt;/p&gt;
+&lt;p&gt;Que faz os valores missing desaparecerem do resultado.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;complete&lt;/code&gt; pode ser usada pra tornar valores implícitos, explícitos! A função toma todas as colunas pedidas e verifica todas as combinações possíveis de valores, preenchendo as lacunas com &lt;code&gt;NA&lt;/code&gt;. Cuidado ao utilizar complete com valores numéricos ou conjuntos de colunas com muitas combinações possíveis, pois o número de combinações pode ser infinitamente grande e travar sua sessão!&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;acoes %&amp;gt;% complete(ano, qdr)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # A tibble: 8 x 3
@@ -1938,16 +1938,16 @@ flights %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## # A tibble: 10 x 2
 ##    dep_delay desabafo                             
 ##        &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;                                
-##  1         0 Atraso de menos de 1 hora é tolerável
-##  2        -3 Opa, vou chegar cedo!                
-##  3        88 Atraso de mais de 1 horas é f***.    
-##  4        -3 Opa, vou chegar cedo!                
-##  5         3 Atraso de menos de 1 hora é tolerável
-##  6        15 Atraso de menos de 1 hora é tolerável
-##  7        -3 Opa, vou chegar cedo!                
-##  8        -9 Opa, vou chegar cedo!                
-##  9         5 Atraso de menos de 1 hora é tolerável
-## 10         2 Atraso de menos de 1 hora é tolerável
+##  1        94 Atraso de mais de 1 horas é f***.    
+##  2         5 Atraso de menos de 1 hora é tolerável
+##  3        57 Atraso de menos de 1 hora é tolerável
+##  4        71 Atraso de mais de 1 horas é f***.    
+##  5        -8 Opa, vou chegar cedo!                
+##  6        -1 Opa, vou chegar cedo!                
+##  7         1 Atraso de menos de 1 hora é tolerável
+##  8        -5 Opa, vou chegar cedo!                
+##  9        -8 Opa, vou chegar cedo!                
+## 10         0 Atraso de menos de 1 hora é tolerável
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Utilizando &lt;code&gt;summarize&lt;/code&gt; você tira medidas resumo das suas colunas de interesse:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% 
@@ -3343,15 +3343,15 @@ x &amp;lt;- as.character(round(c(
 # Como você transformaria esse vetor em número?
 x
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;116&amp;quot; &amp;quot;117&amp;quot; &amp;quot;119&amp;quot; &amp;quot;124&amp;quot; &amp;quot;116&amp;quot; &amp;quot;123&amp;quot; &amp;quot;109&amp;quot; &amp;quot;104&amp;quot; &amp;quot;114&amp;quot; &amp;quot;107&amp;quot; &amp;quot;115&amp;quot; &amp;quot;118&amp;quot;
-##  [13] &amp;quot;103&amp;quot; &amp;quot;120&amp;quot; &amp;quot;107&amp;quot; &amp;quot;106&amp;quot; &amp;quot;119&amp;quot; &amp;quot;102&amp;quot; &amp;quot;122&amp;quot; &amp;quot;109&amp;quot; &amp;quot;105&amp;quot; &amp;quot;112&amp;quot; &amp;quot;120&amp;quot; &amp;quot;105&amp;quot;
-##  [25] &amp;quot;110&amp;quot; &amp;quot;217&amp;quot; &amp;quot;217&amp;quot; &amp;quot;205&amp;quot; &amp;quot;223&amp;quot; &amp;quot;221&amp;quot; &amp;quot;202&amp;quot; &amp;quot;226&amp;quot; &amp;quot;211&amp;quot; &amp;quot;226&amp;quot; &amp;quot;227&amp;quot; &amp;quot;225&amp;quot;
-##  [37] &amp;quot;219&amp;quot; &amp;quot;227&amp;quot; &amp;quot;205&amp;quot; &amp;quot;228&amp;quot; &amp;quot;230&amp;quot; &amp;quot;204&amp;quot; &amp;quot;202&amp;quot; &amp;quot;216&amp;quot; &amp;quot;229&amp;quot; &amp;quot;211&amp;quot; &amp;quot;214&amp;quot; &amp;quot;230&amp;quot;
-##  [49] &amp;quot;213&amp;quot; &amp;quot;219&amp;quot; &amp;quot;309&amp;quot; &amp;quot;311&amp;quot; &amp;quot;309&amp;quot; &amp;quot;307&amp;quot; &amp;quot;308&amp;quot; &amp;quot;309&amp;quot; &amp;quot;309&amp;quot; &amp;quot;306&amp;quot; &amp;quot;306&amp;quot; &amp;quot;308&amp;quot;
-##  [61] &amp;quot;307&amp;quot; &amp;quot;312&amp;quot; &amp;quot;311&amp;quot; &amp;quot;302&amp;quot; &amp;quot;305&amp;quot; &amp;quot;301&amp;quot; &amp;quot;303&amp;quot; &amp;quot;306&amp;quot; &amp;quot;309&amp;quot; &amp;quot;309&amp;quot; &amp;quot;302&amp;quot; &amp;quot;306&amp;quot;
-##  [73] &amp;quot;308&amp;quot; &amp;quot;304&amp;quot; &amp;quot;311&amp;quot; &amp;quot;482&amp;quot; &amp;quot;443&amp;quot; &amp;quot;403&amp;quot; &amp;quot;416&amp;quot; &amp;quot;499&amp;quot; &amp;quot;454&amp;quot; &amp;quot;409&amp;quot; &amp;quot;425&amp;quot; &amp;quot;406&amp;quot;
-##  [85] &amp;quot;498&amp;quot; &amp;quot;426&amp;quot; &amp;quot;465&amp;quot; &amp;quot;418&amp;quot; &amp;quot;485&amp;quot; &amp;quot;428&amp;quot; &amp;quot;464&amp;quot; &amp;quot;419&amp;quot; &amp;quot;422&amp;quot; &amp;quot;472&amp;quot; &amp;quot;434&amp;quot; &amp;quot;493&amp;quot;
-##  [97] &amp;quot;411&amp;quot; &amp;quot;405&amp;quot; &amp;quot;459&amp;quot; &amp;quot;478&amp;quot;
+&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;116&amp;quot; &amp;quot;119&amp;quot; &amp;quot;123&amp;quot; &amp;quot;117&amp;quot; &amp;quot;122&amp;quot; &amp;quot;120&amp;quot; &amp;quot;105&amp;quot; &amp;quot;104&amp;quot; &amp;quot;115&amp;quot; &amp;quot;119&amp;quot; &amp;quot;114&amp;quot; &amp;quot;107&amp;quot;
+##  [13] &amp;quot;100&amp;quot; &amp;quot;114&amp;quot; &amp;quot;106&amp;quot; &amp;quot;107&amp;quot; &amp;quot;103&amp;quot; &amp;quot;116&amp;quot; &amp;quot;121&amp;quot; &amp;quot;110&amp;quot; &amp;quot;105&amp;quot; &amp;quot;119&amp;quot; &amp;quot;119&amp;quot; &amp;quot;121&amp;quot;
+##  [25] &amp;quot;123&amp;quot; &amp;quot;223&amp;quot; &amp;quot;221&amp;quot; &amp;quot;217&amp;quot; &amp;quot;214&amp;quot; &amp;quot;226&amp;quot; &amp;quot;212&amp;quot; &amp;quot;230&amp;quot; &amp;quot;220&amp;quot; &amp;quot;228&amp;quot; &amp;quot;202&amp;quot; &amp;quot;216&amp;quot;
+##  [37] &amp;quot;224&amp;quot; &amp;quot;205&amp;quot; &amp;quot;206&amp;quot; &amp;quot;220&amp;quot; &amp;quot;211&amp;quot; &amp;quot;220&amp;quot; &amp;quot;228&amp;quot; &amp;quot;221&amp;quot; &amp;quot;225&amp;quot; &amp;quot;229&amp;quot; &amp;quot;205&amp;quot; &amp;quot;203&amp;quot;
+##  [49] &amp;quot;222&amp;quot; &amp;quot;224&amp;quot; &amp;quot;312&amp;quot; &amp;quot;301&amp;quot; &amp;quot;301&amp;quot; &amp;quot;304&amp;quot; &amp;quot;302&amp;quot; &amp;quot;308&amp;quot; &amp;quot;309&amp;quot; &amp;quot;311&amp;quot; &amp;quot;302&amp;quot; &amp;quot;304&amp;quot;
+##  [61] &amp;quot;303&amp;quot; &amp;quot;310&amp;quot; &amp;quot;305&amp;quot; &amp;quot;303&amp;quot; &amp;quot;303&amp;quot; &amp;quot;305&amp;quot; &amp;quot;305&amp;quot; &amp;quot;309&amp;quot; &amp;quot;305&amp;quot; &amp;quot;311&amp;quot; &amp;quot;305&amp;quot; &amp;quot;304&amp;quot;
+##  [73] &amp;quot;303&amp;quot; &amp;quot;308&amp;quot; &amp;quot;310&amp;quot; &amp;quot;418&amp;quot; &amp;quot;405&amp;quot; &amp;quot;484&amp;quot; &amp;quot;463&amp;quot; &amp;quot;432&amp;quot; &amp;quot;497&amp;quot; &amp;quot;444&amp;quot; &amp;quot;442&amp;quot; &amp;quot;437&amp;quot;
+##  [85] &amp;quot;481&amp;quot; &amp;quot;441&amp;quot; &amp;quot;430&amp;quot; &amp;quot;486&amp;quot; &amp;quot;467&amp;quot; &amp;quot;469&amp;quot; &amp;quot;430&amp;quot; &amp;quot;416&amp;quot; &amp;quot;414&amp;quot; &amp;quot;421&amp;quot; &amp;quot;483&amp;quot; &amp;quot;443&amp;quot;
+##  [97] &amp;quot;428&amp;quot; &amp;quot;437&amp;quot; &amp;quot;458&amp;quot; &amp;quot;450&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol start=&#34;10&#34;&gt;
 &lt;li&gt;

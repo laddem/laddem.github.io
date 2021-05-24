@@ -290,8 +290,8 @@
   <meta property="og:site_name" content="LADDEM" />
   <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/dia1/" />
   <meta property="og:title" content="readr, tibble e tidyr | LADDEM" />
-  <meta property="og:description" content="Um modelo de ciência de dados Uma forma esquemática, mas útil de encarar o processo de análise de dados e de produção de conhecimento a partir de informações secundárias é esta figura:" /><meta property="og:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
-    <meta property="twitter:image" content="https://laddem.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="Um modelo de ciência de dados Uma forma esquemática, mas útil de encarar o processo de análise de dados e de produção de conhecimento a partir de informações secundárias é esta figura:" /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -387,13 +387,15 @@
 
 
 
+  
+
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container-xl">
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">LADDEM</a>
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
     </div>
     
 
@@ -406,7 +408,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">LADDEM</a>
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
     </div>
     
 
@@ -1807,8 +1809,8 @@ us_rent_income2
 ## 5     3 2016   0.17
 ## 6     4 2016   2.66
 </code></pre>
-<p>Que faz os valores missing desaparecem.</p>
-<p><code>complete</code> pode ser usada pra tornar valores implícitos, explícitos! A função toma todas as colunas pedidas e verifica todas as combinações possíveis de valores, preenchendo as lacunas com <code>NA</code>. Cuidado ao utilizar complete com valores numéricos ou bancos de dados muito grandes, pois o número de combinações pode ser infinitamente grande e travar sua sessão.</p>
+<p>Que faz os valores missing desaparecerem do resultado.</p>
+<p><code>complete</code> pode ser usada pra tornar valores implícitos, explícitos! A função toma todas as colunas pedidas e verifica todas as combinações possíveis de valores, preenchendo as lacunas com <code>NA</code>. Cuidado ao utilizar complete com valores numéricos ou conjuntos de colunas com muitas combinações possíveis, pois o número de combinações pode ser infinitamente grande e travar sua sessão!</p>
 <pre><code class="language-r">acoes %&gt;% complete(ano, qdr)
 </code></pre>
 <pre><code>## # A tibble: 8 x 3
