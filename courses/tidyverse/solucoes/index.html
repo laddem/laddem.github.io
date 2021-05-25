@@ -1,0 +1,1775 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="LADDEM" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Soluções dos exercícios readr, tibble, tidyr # Não esqueça dos pacotes!library(tidyverse) ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 -- ## v ggplot2 3.3.3 v purrr 0.3.4## v tibble 3." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://laddem.github.io/courses/tidyverse/solucoes/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="rgb(251, 191, 183)" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/purebasic.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/purebasic.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.46f8102c91669d08bf92f59f6531234a.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://laddem.github.io/courses/tidyverse/solucoes/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="LADDEM" />
+  <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/solucoes/" />
+  <meta property="og:title" content="Soluções | LADDEM" />
+  <meta property="og:description" content="Soluções dos exercícios readr, tibble, tidyr # Não esqueça dos pacotes!library(tidyverse) ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 -- ## v ggplot2 3.3.3 v purrr 0.3.4## v tibble 3." /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-05-25T11:30:29-03:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-05-25T11:30:29-03:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Soluções | LADDEM</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="c1c74f268683837301969e7167daf1ed" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.f16be01fc8fb2b5885dd67ce942d1185.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Soluções</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    25 May 2021
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="soluções-dos-exercícios">Soluções dos exercícios</h2>
+<h3 id="readr-tibble-tidyr"><code>readr</code>, <code>tibble</code>, <code>tidyr</code></h3>
+<pre><code class="language-r"># Não esqueça dos pacotes!
+library(tidyverse)
+</code></pre>
+<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+</code></pre>
+<pre><code>## v ggplot2 3.3.3     v purrr   0.3.4
+## v tibble  3.1.2     v dplyr   1.0.6
+## v tidyr   1.1.3     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.1
+</code></pre>
+<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+</code></pre>
+<ol>
+<li>Como você importaria o banco &ldquo;epa78.csv&rdquo;</li>
+</ol>
+<pre><code class="language-r">file &lt;- readr_example(&quot;epa78.txt&quot;)
+</code></pre>
+<p>Primeiro, é bom verificar como estão dispostas as informações no arquivo texto</p>
+<pre><code class="language-r">read_lines(file, n_max = 10)
+</code></pre>
+<pre><code>##  [1] &quot;ALFA ROMEO                                                                     ALFA ROMEO           78010003&quot;
+##  [2] &quot;ALFETTA                              03  81  8    74  7   89  9                ALFETTA              78010053&quot;
+##  [3] &quot;SPIDER 2000                          01                                        SPIDER 2000          78010103&quot;
+##  [4] &quot;AMC                                                                            AMC                  78020002&quot;
+##  [5] &quot;GREMLIN                              03  79  9                    79  9        GREMLIN              78020053&quot;
+##  [6] &quot;PACER                                04  89 11                    89 11        PACER                78020103&quot;
+##  [7] &quot;PACER WAGON                          07  90 26    91 26                        PACER WAGON          78020153&quot;
+##  [8] &quot;CONCORD                              04  88 12    90 11   90 11   83 16        CONCORD              78020203&quot;
+##  [9] &quot;CONCORD WAGON                        07  91 30            91 30                CONCORD WAGON        78020253&quot;
+## [10] &quot;MATADOR COUPE                        05  97 14    97 14                        MATADOR COUPE        78020303&quot;
+</code></pre>
+<p>Ao identificar que se trata de um arquivo colunado, mas que as colunas são separadas por espaços, escolho o read_fwf com o fwf_empty.</p>
+<pre><code class="language-r">dic &lt;- fwf_empty(file)
+
+df &lt;- read_fwf(file, col_positions = dic)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   X1 = col_character(),
+##   X2 = col_character(),
+##   X3 = col_double(),
+##   X4 = col_double(),
+##   X5 = col_double(),
+##   X6 = col_double(),
+##   X7 = col_double(),
+##   X8 = col_double(),
+##   X9 = col_double(),
+##   X10 = col_double(),
+##   X11 = col_character(),
+##   X12 = col_double()
+## )
+</code></pre>
+<pre><code class="language-r">df
+</code></pre>
+<pre><code>## # A tibble: 20 x 12
+##    X1       X2       X3    X4    X5    X6    X7    X8    X9   X10 X11        X12
+##    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+##  1 ALFA RO~ &lt;NA&gt;     NA    NA    NA    NA    NA    NA    NA    NA ALFA R~ 7.80e7
+##  2 ALFETTA  03       81     8    74     7    89     9    NA    NA ALFETTA 7.80e7
+##  3 SPIDER ~ 01       NA    NA    NA    NA    NA    NA    NA    NA SPIDER~ 7.80e7
+##  4 AMC      &lt;NA&gt;     NA    NA    NA    NA    NA    NA    NA    NA AMC     7.80e7
+##  5 GREMLIN  03       79     9    NA    NA    NA    NA    79     9 GREMLIN 7.80e7
+##  6 PACER    04       89    11    NA    NA    NA    NA    89    11 PACER   7.80e7
+##  7 PACER W~ 07       90    26    91    26    NA    NA    NA    NA PACER ~ 7.80e7
+##  8 CONCORD  04       88    12    90    11    90    11    83    16 CONCORD 7.80e7
+##  9 CONCORD~ 07       91    30    NA    NA    91    30    NA    NA CONCOR~ 7.80e7
+## 10 MATADOR~ 05       97    14    97    14    NA    NA    NA    NA MATADO~ 7.80e7
+## 11 MATADOR~ 06      110    20    NA    NA   110    20    NA    NA MATADO~ 7.80e7
+## 12 MATADOR~ 09      112    50    NA    NA   112    50    NA    NA MATADO~ 7.80e7
+## 13 ASTON M~ &lt;NA&gt;     NA    NA    NA    NA    NA    NA    NA    NA ASTON ~ 7.80e7
+## 14 ASTON M~ &lt;NA&gt;     NA    NA    NA    NA    NA    NA    NA    NA ASTON ~ 7.80e7
+## 15 AUDI     &lt;NA&gt;     NA    NA    NA    NA    NA    NA    NA    NA AUDI    7.81e7
+## 16 FOX      03       84    11    84    11    84    11    NA    NA FOX     7.81e7
+## 17 FOX WAG~ 07       83    40    NA    NA    83    40    NA    NA FOX WA~ 7.81e7
+## 18 5000     04       90    15    NA    NA    90    15    NA    NA 5000    7.81e7
+## 19 AVANTI   &lt;NA&gt;     NA    NA    NA    NA    NA    NA    NA    NA AVANTI  7.81e7
+## 20 AVANTI ~ 02       75     8    75     8    NA    NA    NA    NA AVANTI~ 7.81e7
+</code></pre>
+<ol start="2">
+<li>Importe o banco &ldquo;challenge.csv&rdquo; e resolva os problemas com o tipo da coluna.</li>
+</ol>
+<p>Ao verificar as primeiras 10 linhas do banco, podemos notar algo estranho</p>
+<pre><code class="language-r">file &lt;- readr_example(&quot;challenge.csv&quot;)
+
+read_lines(file, n_max = 10)
+</code></pre>
+<pre><code>##  [1] &quot;x,y&quot;     &quot;404,NA&quot;  &quot;4172,NA&quot; &quot;3004,NA&quot; &quot;787,NA&quot;  &quot;37,NA&quot;   &quot;2332,NA&quot;
+##  [8] &quot;2489,NA&quot; &quot;1449,NA&quot; &quot;3665,NA&quot;
+</code></pre>
+<p>Parece ser um arquivo csv comum, com duas colunas, mas uma delas parece ter apenas NAs. Se a gente proceder com a importação padrão, chegaremos em</p>
+<pre><code class="language-r">df &lt;- read_csv(file)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   x = col_double(),
+##   y = col_logical()
+## )
+</code></pre>
+<pre><code>## Warning: 1000 parsing failures.
+##  row col           expected     actual                                                                     file
+## 1001   y 1/0/T/F/TRUE/FALSE 2015-01-16 'C:/Users/vinic/Documents/R/win-library/4.1/readr/extdata/challenge.csv'
+## 1002   y 1/0/T/F/TRUE/FALSE 2018-05-18 'C:/Users/vinic/Documents/R/win-library/4.1/readr/extdata/challenge.csv'
+## 1003   y 1/0/T/F/TRUE/FALSE 2015-09-05 'C:/Users/vinic/Documents/R/win-library/4.1/readr/extdata/challenge.csv'
+## 1004   y 1/0/T/F/TRUE/FALSE 2012-11-28 'C:/Users/vinic/Documents/R/win-library/4.1/readr/extdata/challenge.csv'
+## 1005   y 1/0/T/F/TRUE/FALSE 2020-01-13 'C:/Users/vinic/Documents/R/win-library/4.1/readr/extdata/challenge.csv'
+## .... ... .................. .......... ........................................................................
+## See problems(...) for more details.
+</code></pre>
+<pre><code class="language-r">df
+</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##        x y    
+##    &lt;dbl&gt; &lt;lgl&gt;
+##  1   404 NA   
+##  2  4172 NA   
+##  3  3004 NA   
+##  4   787 NA   
+##  5    37 NA   
+##  6  2332 NA   
+##  7  2489 NA   
+##  8  1449 NA   
+##  9  3665 NA   
+## 10  3863 NA   
+## # ... with 1,990 more rows
+</code></pre>
+<p>No console de vocês, deve aparecer que foram importadas as colunas x como double e y como logical. Mas uma chuva de &ldquo;parsing failures&rdquo;, indicando que expected = 1/0/T/F/TRUE/FALSE, actual = 2015-01-16.</p>
+<p>Na verdade, ao tentar adivinhar o tipo de colunas, o readr lê as primeiras 1000 observações em busca de um padrão. Você pode resolver esse problema:</p>
+<pre><code class="language-r"># 1. Aumentando o número de observações utilizadas para adivinhar as colunas
+df &lt;- read_csv(file, guess_max = 1001)
+</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   x = col_double(),
+##   y = col_date(format = &quot;&quot;)
+## )
+</code></pre>
+<pre><code class="language-r"># A específicação da coluna Y agora é &lt;date&gt;
+df
+</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##        x y         
+##    &lt;dbl&gt; &lt;date&gt;    
+##  1   404 NA        
+##  2  4172 NA        
+##  3  3004 NA        
+##  4   787 NA        
+##  5    37 NA        
+##  6  2332 NA        
+##  7  2489 NA        
+##  8  1449 NA        
+##  9  3665 NA        
+## 10  3863 NA        
+## # ... with 1,990 more rows
+</code></pre>
+<pre><code class="language-r"># 2. escolhendo diretamente o tipo de coluna antes da importação
+tipos &lt;- cols(
+  y = col_date()
+)
+
+df &lt;- read_csv(file, col_types = tipos)
+
+# Mesmo resultado
+df
+</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##        x y         
+##    &lt;dbl&gt; &lt;date&gt;    
+##  1   404 NA        
+##  2  4172 NA        
+##  3  3004 NA        
+##  4   787 NA        
+##  5    37 NA        
+##  6  2332 NA        
+##  7  2489 NA        
+##  8  1449 NA        
+##  9  3665 NA        
+## 10  3863 NA        
+## # ... with 1,990 more rows
+</code></pre>
+<ol start="3">
+<li>Com o banco sala_aula dado a seguir, transforme-o para que ele contenha as variáveis nome, avaliação e nota.</li>
+</ol>
+<pre><code class="language-r">sala_aula &lt;- tribble(
+ ~name,    ~teste1,  ~teste2,  ~prova1,
+ &quot;Billy&quot;,  &quot;&lt;NA&gt;&quot;,   &quot;D&quot;   ,   &quot;C&quot;,
+ &quot;Suzy&quot;,   &quot;F&quot;,      &quot;&lt;NA&gt;&quot;,   &quot;&lt;NA&gt;&quot;,
+ &quot;Lionel&quot;, &quot;B&quot;,      &quot;C&quot;   ,   &quot;B&quot;,
+ &quot;Jenny&quot;,  &quot;A&quot;,      &quot;A&quot;   ,   &quot;B&quot;
+)
+</code></pre>
+<p>É sempre bom começar planejando o banco que queremos construir. Queremos um banco que tenha 3 variáveis: o nome, o tipo de prova aplicada e a nota de cada aluno. Para isso, precisamos colocar os nomes das colunas teste1, teste2 e prova1 numa variável e os valores das células em outra. Vamos chamar essas colunas de &ldquo;avaliação&rdquo; e &ldquo;nota&rdquo;, elas formam um par.</p>
+<p>Agora vamos chamar <code>pivot_wider</code> e especificar esses argumentos.</p>
+<pre><code class="language-r">sala_aula %&gt;% pivot_longer(
+  # Primeiro, identificamos as colunas que serão modificadas
+  cols = c(teste1, teste2, prova1),
+  # Agora, indicamos os nomes das colunas que receberão
+  # os nomes das colunas transformadas
+  names_to = &quot;avaliacao&quot;,
+  # os valores das células
+  values_to = &quot;nota&quot;
+)
+</code></pre>
+<pre><code>## # A tibble: 12 x 3
+##    name   avaliacao nota 
+##    &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;
+##  1 Billy  teste1    &lt;NA&gt; 
+##  2 Billy  teste2    D    
+##  3 Billy  prova1    C    
+##  4 Suzy   teste1    F    
+##  5 Suzy   teste2    &lt;NA&gt; 
+##  6 Suzy   prova1    &lt;NA&gt; 
+##  7 Lionel teste1    B    
+##  8 Lionel teste2    C    
+##  9 Lionel prova1    B    
+## 10 Jenny  teste1    A    
+## 11 Jenny  teste2    A    
+## 12 Jenny  prova1    B
+</code></pre>
+<ol start="4">
+<li>Transforme o banco <code>relig_income</code> para que ele contenha as colunas religião, renda e frequência.</li>
+</ol>
+<pre><code class="language-r">relig_income
+</code></pre>
+<pre><code>## # A tibble: 18 x 11
+##    religion `&lt;$10k` `$10-20k` `$20-30k` `$30-40k` `$40-50k` `$50-75k` `$75-100k`
+##    &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+##  1 Agnostic      27        34        60        81        76       137        122
+##  2 Atheist       12        27        37        52        35        70         73
+##  3 Buddhist      27        21        30        34        33        58         62
+##  4 Catholic     418       617       732       670       638      1116        949
+##  5 Don’t k~      15        14        15        11        10        35         21
+##  6 Evangel~     575       869      1064       982       881      1486        949
+##  7 Hindu          1         9         7         9        11        34         47
+##  8 Histori~     228       244       236       238       197       223        131
+##  9 Jehovah~      20        27        24        24        21        30         15
+## 10 Jewish        19        19        25        25        30        95         69
+## 11 Mainlin~     289       495       619       655       651      1107        939
+## 12 Mormon        29        40        48        51        56       112         85
+## 13 Muslim         6         7         9        10         9        23         16
+## 14 Orthodox      13        17        23        32        32        47         38
+## 15 Other C~       9         7        11        13        13        14         18
+## 16 Other F~      20        33        40        46        49        63         46
+## 17 Other W~       5         2         3         4         2         7          3
+## 18 Unaffil~     217       299       374       365       341       528        407
+## # ... with 3 more variables: $100-150k &lt;dbl&gt;, &gt;150k &lt;dbl&gt;,
+## #   Don't know/refused &lt;dbl&gt;
+</code></pre>
+<p>O banco relig_income parece ter uma organização em que temos 2 variáveis, mas uma delas está numa coluna &ldquo;religion&rdquo; e a outra está em 10 colunas, &ldquo;income&rdquo;. Queremos um banco que tenha 3 colunas: a religião, o nível de renda, e o número de pessoas em cada combinação das duas primeiras.</p>
+<p>Como no exerício anterior, vamos chamar pivot_longer e especificar</p>
+<pre><code class="language-r">relig_income %&gt;% pivot_longer(
+  
+  # As colunas a serem modificadas, notem o uso de ':' para selecionar várias
+  # colunas em sequência
+  cols = `&lt;$10k`:`Don't know/refused`,
+  
+  # Variável recebe os nomes da antiga coluna
+  names_to = &quot;nivel_renda&quot;,
+  
+  # Variável recebe os valores das células
+  values_to = &quot;contagem&quot;
+  
+)
+</code></pre>
+<pre><code>## # A tibble: 180 x 3
+##    religion nivel_renda        contagem
+##    &lt;chr&gt;    &lt;chr&gt;                 &lt;dbl&gt;
+##  1 Agnostic &lt;$10k                    27
+##  2 Agnostic $10-20k                  34
+##  3 Agnostic $20-30k                  60
+##  4 Agnostic $30-40k                  81
+##  5 Agnostic $40-50k                  76
+##  6 Agnostic $50-75k                 137
+##  7 Agnostic $75-100k                122
+##  8 Agnostic $100-150k               109
+##  9 Agnostic &gt;150k                    84
+## 10 Agnostic Don't know/refused       96
+## # ... with 170 more rows
+</code></pre>
+<ol start="5">
+<li>Transforme o banco <code>billboard</code> para que ele contenha apenas uma coluna &ldquo;semana&rdquo; e uma coluna com a posição da música no ranking.</li>
+</ol>
+<blockquote>
+<p>Dica, você pode selecionar várias colunas usando o atalho wk1:wk76</p>
+</blockquote>
+<pre><code class="language-r">billboard
+</code></pre>
+<pre><code>## # A tibble: 317 x 79
+##    artist   track   date.entered   wk1   wk2   wk3   wk4   wk5   wk6   wk7   wk8
+##    &lt;chr&gt;    &lt;chr&gt;   &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 2 Pac    Baby D~ 2000-02-26      87    82    72    77    87    94    99    NA
+##  2 2Ge+her  The Ha~ 2000-09-02      91    87    92    NA    NA    NA    NA    NA
+##  3 3 Doors~ Krypto~ 2000-04-08      81    70    68    67    66    57    54    53
+##  4 3 Doors~ Loser   2000-10-21      76    76    72    69    67    65    55    59
+##  5 504 Boyz Wobble~ 2000-04-15      57    34    25    17    17    31    36    49
+##  6 98^0     Give M~ 2000-08-19      51    39    34    26    26    19     2     2
+##  7 A*Teens  Dancin~ 2000-07-08      97    97    96    95   100    NA    NA    NA
+##  8 Aaliyah  I Don'~ 2000-01-29      84    62    51    41    38    35    35    38
+##  9 Aaliyah  Try Ag~ 2000-03-18      59    53    38    28    21    18    16    14
+## 10 Adams, ~ Open M~ 2000-08-26      76    76    74    69    68    67    61    58
+## # ... with 307 more rows, and 68 more variables: wk9 &lt;dbl&gt;, wk10 &lt;dbl&gt;,
+## #   wk11 &lt;dbl&gt;, wk12 &lt;dbl&gt;, wk13 &lt;dbl&gt;, wk14 &lt;dbl&gt;, wk15 &lt;dbl&gt;, wk16 &lt;dbl&gt;,
+## #   wk17 &lt;dbl&gt;, wk18 &lt;dbl&gt;, wk19 &lt;dbl&gt;, wk20 &lt;dbl&gt;, wk21 &lt;dbl&gt;, wk22 &lt;dbl&gt;,
+## #   wk23 &lt;dbl&gt;, wk24 &lt;dbl&gt;, wk25 &lt;dbl&gt;, wk26 &lt;dbl&gt;, wk27 &lt;dbl&gt;, wk28 &lt;dbl&gt;,
+## #   wk29 &lt;dbl&gt;, wk30 &lt;dbl&gt;, wk31 &lt;dbl&gt;, wk32 &lt;dbl&gt;, wk33 &lt;dbl&gt;, wk34 &lt;dbl&gt;,
+## #   wk35 &lt;dbl&gt;, wk36 &lt;dbl&gt;, wk37 &lt;dbl&gt;, wk38 &lt;dbl&gt;, wk39 &lt;dbl&gt;, wk40 &lt;dbl&gt;,
+## #   wk41 &lt;dbl&gt;, wk42 &lt;dbl&gt;, wk43 &lt;dbl&gt;, wk44 &lt;dbl&gt;, wk45 &lt;dbl&gt;, wk46 &lt;dbl&gt;,
+## #   wk47 &lt;dbl&gt;, wk48 &lt;dbl&gt;, wk49 &lt;dbl&gt;, wk50 &lt;dbl&gt;, wk51 &lt;dbl&gt;, wk52 &lt;dbl&gt;,
+## #   wk53 &lt;dbl&gt;, wk54 &lt;dbl&gt;, wk55 &lt;dbl&gt;, wk56 &lt;dbl&gt;, wk57 &lt;dbl&gt;, wk58 &lt;dbl&gt;,
+## #   wk59 &lt;dbl&gt;, wk60 &lt;dbl&gt;, wk61 &lt;dbl&gt;, wk62 &lt;dbl&gt;, wk63 &lt;dbl&gt;, wk64 &lt;dbl&gt;,
+## #   wk65 &lt;dbl&gt;, wk66 &lt;lgl&gt;, wk67 &lt;lgl&gt;, wk68 &lt;lgl&gt;, wk69 &lt;lgl&gt;, wk70 &lt;lgl&gt;,
+## #   wk71 &lt;lgl&gt;, wk72 &lt;lgl&gt;, wk73 &lt;lgl&gt;, wk74 &lt;lgl&gt;, wk75 &lt;lgl&gt;, wk76 &lt;lgl&gt;
+</code></pre>
+<p>Da mesma forma como fizemos nos anteriores, queremos transformar as várias wk1:wk76 em um par de colunas, uma que me diga a semana e a outra que me diga em que posição no ranking a música estava.</p>
+<pre><code class="language-r">billboard %&gt;% pivot_longer(
+  # Colunas que serão transformadas
+  cols = wk1:wk76,
+  # Nome da variável que receberá os nomes das colunas
+  names_to = &quot;semana&quot;,
+  # Nome da variável que receberá os valores das células
+  values_to = &quot;posicao_rank&quot;,
+  # Nesse caso, uso o argumento opcional para eliminar os NAs
+  values_drop_na = TRUE
+  # Experimente mudar este argumento para FALSE e veja o resultado
+  # Quando uma música não está mais nas paradas, ela recebe NA. Acho
+  # justificado excluir os NAs nesse caso.
+)
+</code></pre>
+<pre><code>## # A tibble: 5,307 x 5
+##    artist  track                   date.entered semana posicao_rank
+##    &lt;chr&gt;   &lt;chr&gt;                   &lt;date&gt;       &lt;chr&gt;         &lt;dbl&gt;
+##  1 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk1              87
+##  2 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk2              82
+##  3 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk3              72
+##  4 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk4              77
+##  5 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk5              87
+##  6 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk6              94
+##  7 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk7              99
+##  8 2Ge+her The Hardest Part Of ... 2000-09-02   wk1              91
+##  9 2Ge+her The Hardest Part Of ... 2000-09-02   wk2              87
+## 10 2Ge+her The Hardest Part Of ... 2000-09-02   wk3              92
+## # ... with 5,297 more rows
+</code></pre>
+<ol start="6">
+<li>Experimente fazer o caminho inverso dos exercícios 3 a 5, devolvendo os datasets ao seu formato original. O que você observou?</li>
+</ol>
+<p>Vou começar enxugando os códigos anteriores para criar os resultados que produzimos e salvá-los em objetos.</p>
+<pre><code class="language-r">sala_aula_long &lt;- 
+  sala_aula %&gt;% pivot_longer(
+    cols = c(teste1, teste2, prova1),
+    names_to = &quot;avaliacao&quot;,
+    values_to = &quot;nota&quot;
+  )
+
+relig_income_long &lt;- 
+  relig_income %&gt;% pivot_longer(
+    cols = `&lt;$10k`:`Don't know/refused`,
+    names_to = &quot;nivel_renda&quot;,
+    values_to = &quot;contagem&quot;
+  )
+
+billboard_long &lt;- 
+  billboard %&gt;% pivot_longer(
+    cols = wk1:wk76,
+    names_to = &quot;semana&quot;,
+    values_to = &quot;posicao_rank&quot;,
+    values_drop_na = TRUE
+  )
+
+sala_aula_long
+</code></pre>
+<pre><code>## # A tibble: 12 x 3
+##    name   avaliacao nota 
+##    &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;
+##  1 Billy  teste1    &lt;NA&gt; 
+##  2 Billy  teste2    D    
+##  3 Billy  prova1    C    
+##  4 Suzy   teste1    F    
+##  5 Suzy   teste2    &lt;NA&gt; 
+##  6 Suzy   prova1    &lt;NA&gt; 
+##  7 Lionel teste1    B    
+##  8 Lionel teste2    C    
+##  9 Lionel prova1    B    
+## 10 Jenny  teste1    A    
+## 11 Jenny  teste2    A    
+## 12 Jenny  prova1    B
+</code></pre>
+<pre><code class="language-r">relig_income_long
+</code></pre>
+<pre><code>## # A tibble: 180 x 3
+##    religion nivel_renda        contagem
+##    &lt;chr&gt;    &lt;chr&gt;                 &lt;dbl&gt;
+##  1 Agnostic &lt;$10k                    27
+##  2 Agnostic $10-20k                  34
+##  3 Agnostic $20-30k                  60
+##  4 Agnostic $30-40k                  81
+##  5 Agnostic $40-50k                  76
+##  6 Agnostic $50-75k                 137
+##  7 Agnostic $75-100k                122
+##  8 Agnostic $100-150k               109
+##  9 Agnostic &gt;150k                    84
+## 10 Agnostic Don't know/refused       96
+## # ... with 170 more rows
+</code></pre>
+<pre><code class="language-r">billboard_long
+</code></pre>
+<pre><code>## # A tibble: 5,307 x 5
+##    artist  track                   date.entered semana posicao_rank
+##    &lt;chr&gt;   &lt;chr&gt;                   &lt;date&gt;       &lt;chr&gt;         &lt;dbl&gt;
+##  1 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk1              87
+##  2 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk2              82
+##  3 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk3              72
+##  4 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk4              77
+##  5 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk5              87
+##  6 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk6              94
+##  7 2 Pac   Baby Don't Cry (Keep... 2000-02-26   wk7              99
+##  8 2Ge+her The Hardest Part Of ... 2000-09-02   wk1              91
+##  9 2Ge+her The Hardest Part Of ... 2000-09-02   wk2              87
+## 10 2Ge+her The Hardest Part Of ... 2000-09-02   wk3              92
+## # ... with 5,297 more rows
+</code></pre>
+<p>O caminho inverso desses bancos de dados, é utilizar <code>pivot_wider</code>. Aqui, vamos escolher um par de colunas que contém:</p>
+<ol>
+<li>O nome das colunas que queremos criar</li>
+<li>O valor que queremos passar para as células dessas novas colunas</li>
+</ol>
+<p>Vamos ver exemplos comentados como no anterior</p>
+<pre><code class="language-r">sala_aula_long %&gt;% pivot_wider(
+  
+  # Aqui, identificamos colunas que NÃO SERÃO MODIFICADAS
+  # É o contrário de pivot_longer. Por padrão, são todas as que não são
+  # mencionadas na transformação, mas para deixar bem claro, 
+  # vou deixar explícito.
+  id_cols = name,
+  
+  # Variável com os nomes para as novas colunas
+  names_from = avaliacao,
+  
+  # Variável com os valores para as células
+  values_from = nota
+)
+</code></pre>
+<pre><code>## # A tibble: 4 x 4
+##   name   teste1 teste2 prova1
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; 
+## 1 Billy  &lt;NA&gt;   D      C     
+## 2 Suzy   F      &lt;NA&gt;   &lt;NA&gt;  
+## 3 Lionel B      C      B     
+## 4 Jenny  A      A      B
+</code></pre>
+<pre><code class="language-r">relig_income_long %&gt;% pivot_wider(
+  # Colunas não modificadas
+  id_cols = religion,
+  
+  # Variável com os nomes para as novas colunas
+  names_from = nivel_renda,
+  
+  # Variável com os valores para as células
+  values_from = contagem
+)
+</code></pre>
+<pre><code>## # A tibble: 18 x 11
+##    religion `&lt;$10k` `$10-20k` `$20-30k` `$30-40k` `$40-50k` `$50-75k` `$75-100k`
+##    &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+##  1 Agnostic      27        34        60        81        76       137        122
+##  2 Atheist       12        27        37        52        35        70         73
+##  3 Buddhist      27        21        30        34        33        58         62
+##  4 Catholic     418       617       732       670       638      1116        949
+##  5 Don’t k~      15        14        15        11        10        35         21
+##  6 Evangel~     575       869      1064       982       881      1486        949
+##  7 Hindu          1         9         7         9        11        34         47
+##  8 Histori~     228       244       236       238       197       223        131
+##  9 Jehovah~      20        27        24        24        21        30         15
+## 10 Jewish        19        19        25        25        30        95         69
+## 11 Mainlin~     289       495       619       655       651      1107        939
+## 12 Mormon        29        40        48        51        56       112         85
+## 13 Muslim         6         7         9        10         9        23         16
+## 14 Orthodox      13        17        23        32        32        47         38
+## 15 Other C~       9         7        11        13        13        14         18
+## 16 Other F~      20        33        40        46        49        63         46
+## 17 Other W~       5         2         3         4         2         7          3
+## 18 Unaffil~     217       299       374       365       341       528        407
+## # ... with 3 more variables: $100-150k &lt;dbl&gt;, &gt;150k &lt;dbl&gt;,
+## #   Don't know/refused &lt;dbl&gt;
+</code></pre>
+<pre><code class="language-r">billboard_long %&gt;% pivot_wider(
+  # Colunas não modificadas
+  id_cols = c(artist, track, date.entered),
+  
+  # Variável com os nomes para as novas colunas
+  names_from = semana,
+  
+  # Variável com os valores para as células
+  values_from = posicao_rank
+)
+</code></pre>
+<pre><code>## # A tibble: 317 x 68
+##    artist   track   date.entered   wk1   wk2   wk3   wk4   wk5   wk6   wk7   wk8
+##    &lt;chr&gt;    &lt;chr&gt;   &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 2 Pac    Baby D~ 2000-02-26      87    82    72    77    87    94    99    NA
+##  2 2Ge+her  The Ha~ 2000-09-02      91    87    92    NA    NA    NA    NA    NA
+##  3 3 Doors~ Krypto~ 2000-04-08      81    70    68    67    66    57    54    53
+##  4 3 Doors~ Loser   2000-10-21      76    76    72    69    67    65    55    59
+##  5 504 Boyz Wobble~ 2000-04-15      57    34    25    17    17    31    36    49
+##  6 98^0     Give M~ 2000-08-19      51    39    34    26    26    19     2     2
+##  7 A*Teens  Dancin~ 2000-07-08      97    97    96    95   100    NA    NA    NA
+##  8 Aaliyah  I Don'~ 2000-01-29      84    62    51    41    38    35    35    38
+##  9 Aaliyah  Try Ag~ 2000-03-18      59    53    38    28    21    18    16    14
+## 10 Adams, ~ Open M~ 2000-08-26      76    76    74    69    68    67    61    58
+## # ... with 307 more rows, and 57 more variables: wk9 &lt;dbl&gt;, wk10 &lt;dbl&gt;,
+## #   wk11 &lt;dbl&gt;, wk12 &lt;dbl&gt;, wk13 &lt;dbl&gt;, wk14 &lt;dbl&gt;, wk15 &lt;dbl&gt;, wk16 &lt;dbl&gt;,
+## #   wk17 &lt;dbl&gt;, wk18 &lt;dbl&gt;, wk19 &lt;dbl&gt;, wk20 &lt;dbl&gt;, wk21 &lt;dbl&gt;, wk22 &lt;dbl&gt;,
+## #   wk23 &lt;dbl&gt;, wk24 &lt;dbl&gt;, wk25 &lt;dbl&gt;, wk26 &lt;dbl&gt;, wk27 &lt;dbl&gt;, wk28 &lt;dbl&gt;,
+## #   wk29 &lt;dbl&gt;, wk30 &lt;dbl&gt;, wk31 &lt;dbl&gt;, wk32 &lt;dbl&gt;, wk33 &lt;dbl&gt;, wk34 &lt;dbl&gt;,
+## #   wk35 &lt;dbl&gt;, wk36 &lt;dbl&gt;, wk37 &lt;dbl&gt;, wk38 &lt;dbl&gt;, wk39 &lt;dbl&gt;, wk40 &lt;dbl&gt;,
+## #   wk41 &lt;dbl&gt;, wk42 &lt;dbl&gt;, wk43 &lt;dbl&gt;, wk44 &lt;dbl&gt;, wk45 &lt;dbl&gt;, wk46 &lt;dbl&gt;,
+## #   wk47 &lt;dbl&gt;, wk48 &lt;dbl&gt;, wk49 &lt;dbl&gt;, wk50 &lt;dbl&gt;, wk51 &lt;dbl&gt;, wk52 &lt;dbl&gt;,
+## #   wk53 &lt;dbl&gt;, wk54 &lt;dbl&gt;, wk55 &lt;dbl&gt;, wk56 &lt;dbl&gt;, wk57 &lt;dbl&gt;, wk58 &lt;dbl&gt;,
+## #   wk59 &lt;dbl&gt;, wk60 &lt;dbl&gt;, wk61 &lt;dbl&gt;, wk62 &lt;dbl&gt;, wk63 &lt;dbl&gt;, wk64 &lt;dbl&gt;,
+## #   wk65 &lt;dbl&gt;
+</code></pre>
+<p>Tanto <code>pivot_longer</code> quanto <code>pivot_wider</code> tem mais argumentos para lidar com situações complexas, como quando você precisa aplicar transformações em variáveis antes de reformatar o banco ou precisa utilizar múltiplas colunas, mas eu deixo isso para vocês descobrirem por conta própria quando estiverem confortáveis com a sintaxe básica.</p>
+<ol start="7">
+<li>O que os argumentos <code>extra</code> e <code>fill</code> em separate fazem? Utilize o exemplo a seguir como guia.</li>
+</ol>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;))
+</code></pre>
+<pre><code>## Warning: Expected 3 pieces. Additional pieces discarded in 1 rows [2].
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f    
+## 3 h     i     j
+</code></pre>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;))
+</code></pre>
+<pre><code>## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 1 rows [2].
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     &lt;NA&gt; 
+## 3 f     g     i
+</code></pre>
+<p>Por padrão, <code>separate</code> espera que todas as colunas sendo separadas tenham o mesmo comprimento. Por exemplo, no primeiro caso, indicamos que vamos criar três novas colunas, chamadas de &ldquo;um&rdquo;, &ldquo;dois&rdquo; e &ldquo;tres&rdquo;. Mas os vetores tem tamanhos diferentes. Um deles tem 4 letras ao invés de 3. No segundo exemplo, um deles tem duas letras ao invés de três. Esse tipo de situação é bastante comum quando lidamos com erros de digitação. Então, o que fazer com o elemento que está sobrando ou faltando?</p>
+<pre><code class="language-r"># Sobrando
+tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;), extra = &quot;warn&quot;) # avise que ocorreu (padrão)
+</code></pre>
+<pre><code>## Warning: Expected 3 pieces. Additional pieces discarded in 1 rows [2].
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f    
+## 3 h     i     j
+</code></pre>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;), extra = &quot;drop&quot;) # descarte o que sobrou
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f    
+## 3 h     i     j
+</code></pre>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e,f,g&quot;, &quot;h,i,j&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;), extra = &quot;merge&quot;) # junte com o último
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     f,g  
+## 3 h     i     j
+</code></pre>
+<pre><code class="language-r"># Note especialmente no último caso o que ocorreu com as colunas.
+
+# Faltando
+tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;), fill = &quot;warn&quot;) # avise e preencha a direita
+</code></pre>
+<pre><code>## Warning: Expected 3 pieces. Missing pieces filled with `NA` in 1 rows [2].
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     &lt;NA&gt; 
+## 3 f     g     i
+</code></pre>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;), fill = &quot;left&quot;) # preencha a esquerda
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 &lt;NA&gt;  d     e    
+## 3 f     g     i
+</code></pre>
+<pre><code class="language-r">tibble(x = c(&quot;a,b,c&quot;, &quot;d,e&quot;, &quot;f,g,i&quot;)) %&gt;% 
+  separate(x, c(&quot;um&quot;, &quot;dois&quot;, &quot;tres&quot;), fill = &quot;right&quot;) # preencha a direta
+</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   um    dois  tres 
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 a     b     c    
+## 2 d     e     &lt;NA&gt; 
+## 3 f     g     i
+</code></pre>
+<pre><code class="language-r"># Note na sua saída do R como ficou a tibble e onde foram colocados NAs
+# em cada caso
+</code></pre>
+<ol start="8">
+<li>Tanto <code>unite</code> como <code>separate</code> possuem um argumento <code>remove</code>. Pra que ele serve e quando você o utilizaria no valor <code>FALSE</code>?</li>
+</ol>
+<p>Acho que a melhor forma de compreender isso é utilizar um banco de dados. Vamos pegar aquele da população retirado da Wikipédia.</p>
+<pre><code class="language-r">populacao &lt;- tribble(
+  ~Rank, ~Country, ~Population,	~'% of world', ~Day, ~Month, ~Year, ~Source,
+  1L,         &quot;China&quot;,    1411778724, &quot;17.9%&quot;,  &quot;1&quot;, &quot;Nov&quot;, &quot;2020&quot;,       &quot;Seventh Census on 2020&quot;,
+  2L,         &quot;India&quot;,    1377123716, &quot;17.5%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[3]&quot;,
+  3L, &quot;United States&quot;,     331695937, &quot;4.22%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[4]&quot;,
+  4L,     &quot;Indonesia&quot;,     271350000, &quot;3.45%&quot;, &quot;31&quot;, &quot;Dec&quot;, &quot;2020&quot;,  &quot;National annual estimate[5]&quot;,
+  5L,      &quot;Pakistan&quot;,     225200000, &quot;2.86%&quot;,  &quot;1&quot;, &quot;Jul&quot;, &quot;2021&quot;,             &quot;UN projection[2]&quot;,
+  6L,        &quot;Brazil&quot;,     213154869, &quot;2.71%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[6]&quot;,
+  7L,       &quot;Nigeria&quot;,     211401000, &quot;2.69%&quot;,  &quot;1&quot;, &quot;Jul&quot;, &quot;2021&quot;,             &quot;UN projection[2]&quot;,
+  8L,    &quot;Bangladesh&quot;,     170689832, &quot;2.17%&quot;, &quot;19&quot;, &quot;May&quot;, &quot;2021&quot;, &quot;National population clock[7]&quot;,
+  9L,        &quot;Russia&quot;,     146171015, &quot;1.86%&quot;,  &quot;1&quot;, &quot;Jan&quot;, &quot;2021&quot;,  &quot;National annual estimate[8]&quot;,
+  10L,       &quot;Mexico&quot;,     126014024, &quot;1.60%&quot;,  &quot;2&quot;, &quot;Mar&quot;, &quot;2020&quot;,        &quot;2020 census result[9]&quot;
+)
+populacao
+</code></pre>
+<pre><code>## # A tibble: 10 x 8
+##     Rank Country     Population `% of world` Day   Month Year  Source           
+##    &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;            
+##  1     1 China       1411778724 17.9%        1     Nov   2020  Seventh Census o~
+##  2     2 India       1377123716 17.5%        19    May   2021  National populat~
+##  3     3 United Sta~  331695937 4.22%        19    May   2021  National populat~
+##  4     4 Indonesia    271350000 3.45%        31    Dec   2020  National annual ~
+##  5     5 Pakistan     225200000 2.86%        1     Jul   2021  UN projection[2] 
+##  6     6 Brazil       213154869 2.71%        19    May   2021  National populat~
+##  7     7 Nigeria      211401000 2.69%        1     Jul   2021  UN projection[2] 
+##  8     8 Bangladesh   170689832 2.17%        19    May   2021  National populat~
+##  9     9 Russia       146171015 1.86%        1     Jan   2021  National annual ~
+## 10    10 Mexico       126014024 1.60%        2     Mar   2020  2020 census resu~
+</code></pre>
+<p>Vamos ver dois exemplos, um com <code>unite</code> e outro com <code>separate</code> para exemplificar o que <code>remove</code> faz.</p>
+<pre><code class="language-r"># Unir as colunas Day, Month, Year, remove = TRUE
+populacao %&gt;% unite(Data, Day, Month, Year, remove = TRUE) # padrão
+</code></pre>
+<pre><code>## # A tibble: 10 x 6
+##     Rank Country      Population `% of world` Data       Source                 
+##    &lt;int&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;                  
+##  1     1 China        1411778724 17.9%        1_Nov_2020 Seventh Census on 2020 
+##  2     2 India        1377123716 17.5%        19_May_20~ National population cl~
+##  3     3 United Stat~  331695937 4.22%        19_May_20~ National population cl~
+##  4     4 Indonesia     271350000 3.45%        31_Dec_20~ National annual estima~
+##  5     5 Pakistan      225200000 2.86%        1_Jul_2021 UN projection[2]       
+##  6     6 Brazil        213154869 2.71%        19_May_20~ National population cl~
+##  7     7 Nigeria       211401000 2.69%        1_Jul_2021 UN projection[2]       
+##  8     8 Bangladesh    170689832 2.17%        19_May_20~ National population cl~
+##  9     9 Russia        146171015 1.86%        1_Jan_2021 National annual estima~
+## 10    10 Mexico        126014024 1.60%        2_Mar_2020 2020 census result[9]
+</code></pre>
+<pre><code class="language-r"># Unir as colunas Day, Month, Year, remove = FALSE
+populacao %&gt;% unite(Data, Day, Month, Year, remove = FALSE)
+</code></pre>
+<pre><code>## # A tibble: 10 x 9
+##     Rank Country   Population `% of world` Data    Day   Month Year  Source     
+##    &lt;int&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      
+##  1     1 China     1411778724 17.9%        1_Nov_~ 1     Nov   2020  Seventh Ce~
+##  2     2 India     1377123716 17.5%        19_May~ 19    May   2021  National p~
+##  3     3 United S~  331695937 4.22%        19_May~ 19    May   2021  National p~
+##  4     4 Indonesia  271350000 3.45%        31_Dec~ 31    Dec   2020  National a~
+##  5     5 Pakistan   225200000 2.86%        1_Jul_~ 1     Jul   2021  UN project~
+##  6     6 Brazil     213154869 2.71%        19_May~ 19    May   2021  National p~
+##  7     7 Nigeria    211401000 2.69%        1_Jul_~ 1     Jul   2021  UN project~
+##  8     8 Banglade~  170689832 2.17%        19_May~ 19    May   2021  National p~
+##  9     9 Russia     146171015 1.86%        1_Jan_~ 1     Jan   2021  National a~
+## 10    10 Mexico     126014024 1.60%        2_Mar_~ 2     Mar   2020  2020 censu~
+</code></pre>
+<pre><code class="language-r"># Vejam o que aconteceu com as colunas nos dois bancos.
+</code></pre>
+<p>Agora com <code>separate</code>: Separar a coluna <code>year</code> em século e ano, apenas como exemplo</p>
+<pre><code class="language-r"># remove = TRUE, padrão
+populacao %&gt;% separate(Year, c(&quot;seculo&quot;, &quot;ano&quot;), sep = 2, remove = TRUE)
+</code></pre>
+<pre><code>## # A tibble: 10 x 9
+##     Rank Country   Population `% of world` Day   Month seculo ano   Source      
+##    &lt;int&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;       
+##  1     1 China     1411778724 17.9%        1     Nov   20     20    Seventh Cen~
+##  2     2 India     1377123716 17.5%        19    May   20     21    National po~
+##  3     3 United S~  331695937 4.22%        19    May   20     21    National po~
+##  4     4 Indonesia  271350000 3.45%        31    Dec   20     20    National an~
+##  5     5 Pakistan   225200000 2.86%        1     Jul   20     21    UN projecti~
+##  6     6 Brazil     213154869 2.71%        19    May   20     21    National po~
+##  7     7 Nigeria    211401000 2.69%        1     Jul   20     21    UN projecti~
+##  8     8 Banglade~  170689832 2.17%        19    May   20     21    National po~
+##  9     9 Russia     146171015 1.86%        1     Jan   20     21    National an~
+## 10    10 Mexico     126014024 1.60%        2     Mar   20     20    2020 census~
+</code></pre>
+<pre><code class="language-r"># remove = FALSE
+populacao %&gt;% separate(Year, c(&quot;seculo&quot;, &quot;ano&quot;), sep = 2, remove = FALSE)
+</code></pre>
+<pre><code>## # A tibble: 10 x 10
+##     Rank Country  Population `% of world` Day   Month Year  seculo ano   Source 
+##    &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  
+##  1     1 China    1411778724 17.9%        1     Nov   2020  20     20    Sevent~
+##  2     2 India    1377123716 17.5%        19    May   2021  20     21    Nation~
+##  3     3 United ~  331695937 4.22%        19    May   2021  20     21    Nation~
+##  4     4 Indones~  271350000 3.45%        31    Dec   2020  20     20    Nation~
+##  5     5 Pakistan  225200000 2.86%        1     Jul   2021  20     21    UN pro~
+##  6     6 Brazil    213154869 2.71%        19    May   2021  20     21    Nation~
+##  7     7 Nigeria   211401000 2.69%        1     Jul   2021  20     21    UN pro~
+##  8     8 Banglad~  170689832 2.17%        19    May   2021  20     21    Nation~
+##  9     9 Russia    146171015 1.86%        1     Jan   2021  20     21    Nation~
+## 10    10 Mexico    126014024 1.60%        2     Mar   2020  20     20    2020 c~
+</code></pre>
+<pre><code class="language-r"># Vejam o que aconteceu com as colunas nos dois bancos.
+</code></pre>
+<p>Eu gosto de utilizar esse argumento quando eu tenho dúvida sobre o resultado e quero fazer inspeção visual para detectar eventuais problemas na separação ou junção. Uma vez que estou satisfeito com o resultado, em geral eu uso o <code>remove=TRUE</code>. Vocês tem que decidir se precisam manter as colunas originais ou se a coluna transformada é o suficiente.</p>
+<ol start="9">
+<li>Compare o argumento <code>values_fill</code> em <code>pivot_wider</code> e <code>fill</code> em <code>complete</code>. Qual é a diferença?</li>
+</ol>
+<p>A resposta curta é simples: em <code>pivot_wider</code>, podemos ter aqueles missings &ldquo;implícitos&rdquo; que não apareciam no nosso banco longo e, durante a transformação, eles viram <code>NA</code>s nas colunas. Ó argumento <code>values_fill</code> indica um valor para ser preenchido no lugar de <code>NA</code>.</p>
+<p>Em <code>complete</code>, temos uma situação similar. O que fazer quando for encontrada uma combinação de valores no banco longo que é um &ldquo;missing implícito&rdquo;? Você pode especificar um valor padrão para preenchê-lo.</p>
+<p>São funções similares, mas uma funciona sem reformatar o banco e a outra durante o processo de reformatação. Veja um exemplo abaixo com aquela <code>tibble</code> das ações.</p>
+<pre><code class="language-r">acoes &lt;- tibble(
+  ano   = c(2015, 2015, 2015, 2015, 2016, 2016, 2016),
+  qdr   = c(   1,    2,    3,    4,    2,    3,    4),
+  lucro = c(1.88, 0.59, 0.35,   NA, 0.92, 0.17, 2.66)
+)
+
+acoes
+</code></pre>
+<pre><code>## # A tibble: 7 x 3
+##     ano   qdr lucro
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  2015     1  1.88
+## 2  2015     2  0.59
+## 3  2015     3  0.35
+## 4  2015     4 NA   
+## 5  2016     2  0.92
+## 6  2016     3  0.17
+## 7  2016     4  2.66
+</code></pre>
+<pre><code class="language-r"># Vamos supor que o NA implícito significa que a empresa teve 
+# lucro = 0 naquele quadrimestre.
+
+# pivot_wider, values_fill
+acoes %&gt;% pivot_wider(
+  id_cols = ano,
+  names_from = qdr,
+  values_from = lucro,
+  values_fill = 0
+)
+</code></pre>
+<pre><code>## # A tibble: 2 x 5
+##     ano   `1`   `2`   `3`   `4`
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  2015  1.88  0.59  0.35 NA   
+## 2  2016  0     0.92  0.17  2.66
+</code></pre>
+<pre><code class="language-r"># complete, fill
+acoes %&gt;% complete(ano, qdr, fill = list(lucro = 0))
+</code></pre>
+<pre><code>## # A tibble: 8 x 3
+##     ano   qdr lucro
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  2015     1  1.88
+## 2  2015     2  0.59
+## 3  2015     3  0.35
+## 4  2015     4  0   
+## 5  2016     1  0   
+## 6  2016     2  0.92
+## 7  2016     3  0.17
+## 8  2016     4  2.66
+</code></pre>
+<p>Note o resultado. E note também que <code>values_fill</code> em <code>pivot_wider</code> é um pouco mais criterioso na hora de fazer as transformações.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://laddem.github.io/courses/tidyverse/solucoes/&amp;text=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://laddem.github.io/courses/tidyverse/solucoes/&amp;t=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Solu%c3%a7%c3%b5es&amp;body=https://laddem.github.io/courses/tidyverse/solucoes/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://laddem.github.io/courses/tidyverse/solucoes/&amp;title=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Solu%c3%a7%c3%b5es%20https://laddem.github.io/courses/tidyverse/solucoes/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://laddem.github.io/courses/tidyverse/solucoes/&amp;title=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="/author/laddem/"><img class="avatar mr-3 avatar-circle" src="/author/laddem/avatar_hu9f1bf5134929e5e12370052690438b0e_18476_270x270_fill_lanczos_center_2.png" alt="LADDEM"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/author/laddem/">LADDEM</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    © 2021 LADDEM
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.8b7df62fd2da18ce73e29c13cc0a6198.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
