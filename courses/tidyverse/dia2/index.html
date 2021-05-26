@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-us" >
+<!DOCTYPE html><html lang="pt" >
 
 <head>
   <meta charset="utf-8" />
@@ -33,7 +33,7 @@
   <meta name="description" content="Operações em variáveis e bancos de dados Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://laddem.github.io/courses/tidyverse/dia2/" />
+  <link rel="alternate" hreflang="pt" href="https://laddem.github.io/courses/tidyverse/dia2/" />
 
   
 
@@ -291,7 +291,7 @@
   <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/dia2/" />
   <meta property="og:title" content="stringr, forcats e dplyr | LADDEM" />
   <meta property="og:description" content="Operações em variáveis e bancos de dados Hoje vamos apresentar dois pacotes com finalidades mais específicas para trabalhar com variáveis de tipo caractere e fator e um pacote super importante para as operações com bancos de dados." /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
-    <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="pt" />
   
     
       <meta
@@ -1434,16 +1434,16 @@ flights %&gt;%
 <pre><code>## # A tibble: 10 x 2
 ##    dep_delay desabafo                             
 ##        &lt;dbl&gt; &lt;chr&gt;                                
-##  1        94 Atraso de mais de 1 horas é f***.    
-##  2         5 Atraso de menos de 1 hora é tolerável
-##  3        57 Atraso de menos de 1 hora é tolerável
-##  4        71 Atraso de mais de 1 horas é f***.    
+##  1        -5 Opa, vou chegar cedo!                
+##  2        23 Atraso de menos de 1 hora é tolerável
+##  3        -4 Opa, vou chegar cedo!                
+##  4        -3 Opa, vou chegar cedo!                
 ##  5        -8 Opa, vou chegar cedo!                
-##  6        -1 Opa, vou chegar cedo!                
-##  7         1 Atraso de menos de 1 hora é tolerável
-##  8        -5 Opa, vou chegar cedo!                
-##  9        -8 Opa, vou chegar cedo!                
-## 10         0 Atraso de menos de 1 hora é tolerável
+##  6        -3 Opa, vou chegar cedo!                
+##  7        -5 Opa, vou chegar cedo!                
+##  8        22 Atraso de menos de 1 hora é tolerável
+##  9        23 Atraso de menos de 1 hora é tolerável
+## 10        -2 Opa, vou chegar cedo!
 </code></pre>
 <p>Utilizando <code>summarize</code> você tira medidas resumo das suas colunas de interesse:</p>
 <pre><code class="language-r">flights %&gt;% 
@@ -1731,7 +1731,7 @@ atrasos
 <h3 id="dplyr-para-bancos-de-dados-relacionais"><code>dplyr</code> para bancos de dados relacionais</h3>
 <p>Nesta seção, o nosso problema não é mais a análise de dados presentes em um banco, mas o problema de relacionar informações sobre uma mesma unidade de análise que estão presentes em vários bancos de dados distintos.</p>
 <p>O banco <code>nycflights13</code> contém várias tabelas que se relacionam, e elas funcionam como um excelente exemplo de banco de dados relacionais.</p>
-<p><img src="/courses/tidyverse/dia2_files/relational-nycflights.png" alt="Banco de dados relacional de vôos"></p>
+<p><img src="/courses/tidyverse/dia2_files/relational-nycflights.png" alt="Banco de dados relacional"></p>
 <p>Note que além do banco de dados dos vôos, temos informações sobre clima, aviões e companhias aéreas. Para nós, pode ser relevante reunir informações de diferentes fontes em um mesmo banco de dados, algo que é possível através de <code>joins</code>. Por uma questão de tempo, não vamos entrar muito a fundo no assunto, mas vamos introduzir dois conceitos chave e partir pros exemplos.</p>
 <ul>
 <li>
@@ -1741,8 +1741,8 @@ atrasos
 <p><code>joins</code> são tipos de operação no qual se opta por priorizar um grupo de observações em detrimento de outras. Podemos vê-los didaticamente a partir de duas figuras:</p>
 </li>
 </ul>
-<p><img src="/courses/tidyverse/dia2_files/join-venn.png" alt="Joins como diagramas de Venn"></p>
-<p><img src="/courses/tidyverse/dia2_files/join-outer.png" alt="Joins como “pontos”"></p>
+<p><img src="/courses/tidyverse/dia2_files/join-venn.png" alt="Joins como diagrama de Venn"></p>
+<p><img src="/courses/tidyverse/dia2_files/join-outer.png" alt="Join como “pontos”"></p>
 <p>A primeira figura é interessante porque nos dá uma ideia de quais observações serão mantidas e quais serão descartadas, podemos imaginá-la como uma abstração da nossa escolha.</p>
 <blockquote>
 <p>Quero todas as informações sobre os vôos e os aeroportos, e as duas são igualmente importantes (inner_join, x = flights, y = airports).</p>
@@ -2839,15 +2839,15 @@ x &lt;- as.character(round(c(
 # Como você transformaria esse vetor em número?
 x
 </code></pre>
-<pre><code>##   [1] &quot;116&quot; &quot;119&quot; &quot;123&quot; &quot;117&quot; &quot;122&quot; &quot;120&quot; &quot;105&quot; &quot;104&quot; &quot;115&quot; &quot;119&quot; &quot;114&quot; &quot;107&quot;
-##  [13] &quot;100&quot; &quot;114&quot; &quot;106&quot; &quot;107&quot; &quot;103&quot; &quot;116&quot; &quot;121&quot; &quot;110&quot; &quot;105&quot; &quot;119&quot; &quot;119&quot; &quot;121&quot;
-##  [25] &quot;123&quot; &quot;223&quot; &quot;221&quot; &quot;217&quot; &quot;214&quot; &quot;226&quot; &quot;212&quot; &quot;230&quot; &quot;220&quot; &quot;228&quot; &quot;202&quot; &quot;216&quot;
-##  [37] &quot;224&quot; &quot;205&quot; &quot;206&quot; &quot;220&quot; &quot;211&quot; &quot;220&quot; &quot;228&quot; &quot;221&quot; &quot;225&quot; &quot;229&quot; &quot;205&quot; &quot;203&quot;
-##  [49] &quot;222&quot; &quot;224&quot; &quot;312&quot; &quot;301&quot; &quot;301&quot; &quot;304&quot; &quot;302&quot; &quot;308&quot; &quot;309&quot; &quot;311&quot; &quot;302&quot; &quot;304&quot;
-##  [61] &quot;303&quot; &quot;310&quot; &quot;305&quot; &quot;303&quot; &quot;303&quot; &quot;305&quot; &quot;305&quot; &quot;309&quot; &quot;305&quot; &quot;311&quot; &quot;305&quot; &quot;304&quot;
-##  [73] &quot;303&quot; &quot;308&quot; &quot;310&quot; &quot;418&quot; &quot;405&quot; &quot;484&quot; &quot;463&quot; &quot;432&quot; &quot;497&quot; &quot;444&quot; &quot;442&quot; &quot;437&quot;
-##  [85] &quot;481&quot; &quot;441&quot; &quot;430&quot; &quot;486&quot; &quot;467&quot; &quot;469&quot; &quot;430&quot; &quot;416&quot; &quot;414&quot; &quot;421&quot; &quot;483&quot; &quot;443&quot;
-##  [97] &quot;428&quot; &quot;437&quot; &quot;458&quot; &quot;450&quot;
+<pre><code>##   [1] &quot;115&quot; &quot;113&quot; &quot;119&quot; &quot;121&quot; &quot;118&quot; &quot;116&quot; &quot;100&quot; &quot;108&quot; &quot;113&quot; &quot;119&quot; &quot;121&quot; &quot;103&quot;
+##  [13] &quot;116&quot; &quot;111&quot; &quot;111&quot; &quot;115&quot; &quot;114&quot; &quot;102&quot; &quot;116&quot; &quot;103&quot; &quot;120&quot; &quot;115&quot; &quot;123&quot; &quot;103&quot;
+##  [25] &quot;119&quot; &quot;230&quot; &quot;228&quot; &quot;225&quot; &quot;214&quot; &quot;225&quot; &quot;206&quot; &quot;207&quot; &quot;208&quot; &quot;202&quot; &quot;210&quot; &quot;229&quot;
+##  [37] &quot;204&quot; &quot;207&quot; &quot;215&quot; &quot;218&quot; &quot;223&quot; &quot;221&quot; &quot;205&quot; &quot;214&quot; &quot;220&quot; &quot;227&quot; &quot;202&quot; &quot;224&quot;
+##  [49] &quot;214&quot; &quot;201&quot; &quot;305&quot; &quot;310&quot; &quot;309&quot; &quot;310&quot; &quot;305&quot; &quot;305&quot; &quot;309&quot; &quot;303&quot; &quot;312&quot; &quot;310&quot;
+##  [61] &quot;303&quot; &quot;302&quot; &quot;305&quot; &quot;303&quot; &quot;304&quot; &quot;306&quot; &quot;309&quot; &quot;304&quot; &quot;303&quot; &quot;309&quot; &quot;306&quot; &quot;311&quot;
+##  [73] &quot;306&quot; &quot;307&quot; &quot;310&quot; &quot;417&quot; &quot;477&quot; &quot;470&quot; &quot;493&quot; &quot;414&quot; &quot;446&quot; &quot;402&quot; &quot;423&quot; &quot;476&quot;
+##  [85] &quot;432&quot; &quot;490&quot; &quot;499&quot; &quot;429&quot; &quot;414&quot; &quot;455&quot; &quot;409&quot; &quot;462&quot; &quot;447&quot; &quot;483&quot; &quot;458&quot; &quot;471&quot;
+##  [97] &quot;402&quot; &quot;423&quot; &quot;464&quot; &quot;483&quot;
 </code></pre>
 <ol start="10">
 <li>

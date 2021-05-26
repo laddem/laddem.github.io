@@ -5,7 +5,7 @@
     <link>https://laddem.github.io/courses/tidyverse/</link>
       <atom:link href="https://laddem.github.io/courses/tidyverse/index.xml" rel="self" type="application/rss+xml" />
     <description>📊 Aprenda a utilizar o tidyverse</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 LADDEM</copyright><lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 LADDEM</copyright><lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://laddem.github.io/courses/tidyverse/featured.png</url>
       <title>📊 Aprenda a utilizar o tidyverse</title>
@@ -1938,16 +1938,16 @@ flights %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## # A tibble: 10 x 2
 ##    dep_delay desabafo                             
 ##        &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;                                
-##  1        94 Atraso de mais de 1 horas é f***.    
-##  2         5 Atraso de menos de 1 hora é tolerável
-##  3        57 Atraso de menos de 1 hora é tolerável
-##  4        71 Atraso de mais de 1 horas é f***.    
+##  1        -5 Opa, vou chegar cedo!                
+##  2        23 Atraso de menos de 1 hora é tolerável
+##  3        -4 Opa, vou chegar cedo!                
+##  4        -3 Opa, vou chegar cedo!                
 ##  5        -8 Opa, vou chegar cedo!                
-##  6        -1 Opa, vou chegar cedo!                
-##  7         1 Atraso de menos de 1 hora é tolerável
-##  8        -5 Opa, vou chegar cedo!                
-##  9        -8 Opa, vou chegar cedo!                
-## 10         0 Atraso de menos de 1 hora é tolerável
+##  6        -3 Opa, vou chegar cedo!                
+##  7        -5 Opa, vou chegar cedo!                
+##  8        22 Atraso de menos de 1 hora é tolerável
+##  9        23 Atraso de menos de 1 hora é tolerável
+## 10        -2 Opa, vou chegar cedo!
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Utilizando &lt;code&gt;summarize&lt;/code&gt; você tira medidas resumo das suas colunas de interesse:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% 
@@ -2235,7 +2235,7 @@ atrasos
 &lt;h3 id=&#34;dplyr-para-bancos-de-dados-relacionais&#34;&gt;&lt;code&gt;dplyr&lt;/code&gt; para bancos de dados relacionais&lt;/h3&gt;
 &lt;p&gt;Nesta seção, o nosso problema não é mais a análise de dados presentes em um banco, mas o problema de relacionar informações sobre uma mesma unidade de análise que estão presentes em vários bancos de dados distintos.&lt;/p&gt;
 &lt;p&gt;O banco &lt;code&gt;nycflights13&lt;/code&gt; contém várias tabelas que se relacionam, e elas funcionam como um excelente exemplo de banco de dados relacionais.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/dia2_files/relational-nycflights.png&#34; alt=&#34;Banco de dados relacional de vôos&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/dia2_files/relational-nycflights.png&#34; alt=&#34;Banco de dados relacional&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Note que além do banco de dados dos vôos, temos informações sobre clima, aviões e companhias aéreas. Para nós, pode ser relevante reunir informações de diferentes fontes em um mesmo banco de dados, algo que é possível através de &lt;code&gt;joins&lt;/code&gt;. Por uma questão de tempo, não vamos entrar muito a fundo no assunto, mas vamos introduzir dois conceitos chave e partir pros exemplos.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -2245,8 +2245,8 @@ atrasos
 &lt;p&gt;&lt;code&gt;joins&lt;/code&gt; são tipos de operação no qual se opta por priorizar um grupo de observações em detrimento de outras. Podemos vê-los didaticamente a partir de duas figuras:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/dia2_files/join-venn.png&#34; alt=&#34;Joins como diagramas de Venn&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/dia2_files/join-outer.png&#34; alt=&#34;Joins como “pontos”&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/dia2_files/join-venn.png&#34; alt=&#34;Joins como diagrama de Venn&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/dia2_files/join-outer.png&#34; alt=&#34;Join como “pontos”&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A primeira figura é interessante porque nos dá uma ideia de quais observações serão mantidas e quais serão descartadas, podemos imaginá-la como uma abstração da nossa escolha.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Quero todas as informações sobre os vôos e os aeroportos, e as duas são igualmente importantes (inner_join, x = flights, y = airports).&lt;/p&gt;
@@ -3343,15 +3343,15 @@ x &amp;lt;- as.character(round(c(
 # Como você transformaria esse vetor em número?
 x
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;116&amp;quot; &amp;quot;119&amp;quot; &amp;quot;123&amp;quot; &amp;quot;117&amp;quot; &amp;quot;122&amp;quot; &amp;quot;120&amp;quot; &amp;quot;105&amp;quot; &amp;quot;104&amp;quot; &amp;quot;115&amp;quot; &amp;quot;119&amp;quot; &amp;quot;114&amp;quot; &amp;quot;107&amp;quot;
-##  [13] &amp;quot;100&amp;quot; &amp;quot;114&amp;quot; &amp;quot;106&amp;quot; &amp;quot;107&amp;quot; &amp;quot;103&amp;quot; &amp;quot;116&amp;quot; &amp;quot;121&amp;quot; &amp;quot;110&amp;quot; &amp;quot;105&amp;quot; &amp;quot;119&amp;quot; &amp;quot;119&amp;quot; &amp;quot;121&amp;quot;
-##  [25] &amp;quot;123&amp;quot; &amp;quot;223&amp;quot; &amp;quot;221&amp;quot; &amp;quot;217&amp;quot; &amp;quot;214&amp;quot; &amp;quot;226&amp;quot; &amp;quot;212&amp;quot; &amp;quot;230&amp;quot; &amp;quot;220&amp;quot; &amp;quot;228&amp;quot; &amp;quot;202&amp;quot; &amp;quot;216&amp;quot;
-##  [37] &amp;quot;224&amp;quot; &amp;quot;205&amp;quot; &amp;quot;206&amp;quot; &amp;quot;220&amp;quot; &amp;quot;211&amp;quot; &amp;quot;220&amp;quot; &amp;quot;228&amp;quot; &amp;quot;221&amp;quot; &amp;quot;225&amp;quot; &amp;quot;229&amp;quot; &amp;quot;205&amp;quot; &amp;quot;203&amp;quot;
-##  [49] &amp;quot;222&amp;quot; &amp;quot;224&amp;quot; &amp;quot;312&amp;quot; &amp;quot;301&amp;quot; &amp;quot;301&amp;quot; &amp;quot;304&amp;quot; &amp;quot;302&amp;quot; &amp;quot;308&amp;quot; &amp;quot;309&amp;quot; &amp;quot;311&amp;quot; &amp;quot;302&amp;quot; &amp;quot;304&amp;quot;
-##  [61] &amp;quot;303&amp;quot; &amp;quot;310&amp;quot; &amp;quot;305&amp;quot; &amp;quot;303&amp;quot; &amp;quot;303&amp;quot; &amp;quot;305&amp;quot; &amp;quot;305&amp;quot; &amp;quot;309&amp;quot; &amp;quot;305&amp;quot; &amp;quot;311&amp;quot; &amp;quot;305&amp;quot; &amp;quot;304&amp;quot;
-##  [73] &amp;quot;303&amp;quot; &amp;quot;308&amp;quot; &amp;quot;310&amp;quot; &amp;quot;418&amp;quot; &amp;quot;405&amp;quot; &amp;quot;484&amp;quot; &amp;quot;463&amp;quot; &amp;quot;432&amp;quot; &amp;quot;497&amp;quot; &amp;quot;444&amp;quot; &amp;quot;442&amp;quot; &amp;quot;437&amp;quot;
-##  [85] &amp;quot;481&amp;quot; &amp;quot;441&amp;quot; &amp;quot;430&amp;quot; &amp;quot;486&amp;quot; &amp;quot;467&amp;quot; &amp;quot;469&amp;quot; &amp;quot;430&amp;quot; &amp;quot;416&amp;quot; &amp;quot;414&amp;quot; &amp;quot;421&amp;quot; &amp;quot;483&amp;quot; &amp;quot;443&amp;quot;
-##  [97] &amp;quot;428&amp;quot; &amp;quot;437&amp;quot; &amp;quot;458&amp;quot; &amp;quot;450&amp;quot;
+&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;115&amp;quot; &amp;quot;113&amp;quot; &amp;quot;119&amp;quot; &amp;quot;121&amp;quot; &amp;quot;118&amp;quot; &amp;quot;116&amp;quot; &amp;quot;100&amp;quot; &amp;quot;108&amp;quot; &amp;quot;113&amp;quot; &amp;quot;119&amp;quot; &amp;quot;121&amp;quot; &amp;quot;103&amp;quot;
+##  [13] &amp;quot;116&amp;quot; &amp;quot;111&amp;quot; &amp;quot;111&amp;quot; &amp;quot;115&amp;quot; &amp;quot;114&amp;quot; &amp;quot;102&amp;quot; &amp;quot;116&amp;quot; &amp;quot;103&amp;quot; &amp;quot;120&amp;quot; &amp;quot;115&amp;quot; &amp;quot;123&amp;quot; &amp;quot;103&amp;quot;
+##  [25] &amp;quot;119&amp;quot; &amp;quot;230&amp;quot; &amp;quot;228&amp;quot; &amp;quot;225&amp;quot; &amp;quot;214&amp;quot; &amp;quot;225&amp;quot; &amp;quot;206&amp;quot; &amp;quot;207&amp;quot; &amp;quot;208&amp;quot; &amp;quot;202&amp;quot; &amp;quot;210&amp;quot; &amp;quot;229&amp;quot;
+##  [37] &amp;quot;204&amp;quot; &amp;quot;207&amp;quot; &amp;quot;215&amp;quot; &amp;quot;218&amp;quot; &amp;quot;223&amp;quot; &amp;quot;221&amp;quot; &amp;quot;205&amp;quot; &amp;quot;214&amp;quot; &amp;quot;220&amp;quot; &amp;quot;227&amp;quot; &amp;quot;202&amp;quot; &amp;quot;224&amp;quot;
+##  [49] &amp;quot;214&amp;quot; &amp;quot;201&amp;quot; &amp;quot;305&amp;quot; &amp;quot;310&amp;quot; &amp;quot;309&amp;quot; &amp;quot;310&amp;quot; &amp;quot;305&amp;quot; &amp;quot;305&amp;quot; &amp;quot;309&amp;quot; &amp;quot;303&amp;quot; &amp;quot;312&amp;quot; &amp;quot;310&amp;quot;
+##  [61] &amp;quot;303&amp;quot; &amp;quot;302&amp;quot; &amp;quot;305&amp;quot; &amp;quot;303&amp;quot; &amp;quot;304&amp;quot; &amp;quot;306&amp;quot; &amp;quot;309&amp;quot; &amp;quot;304&amp;quot; &amp;quot;303&amp;quot; &amp;quot;309&amp;quot; &amp;quot;306&amp;quot; &amp;quot;311&amp;quot;
+##  [73] &amp;quot;306&amp;quot; &amp;quot;307&amp;quot; &amp;quot;310&amp;quot; &amp;quot;417&amp;quot; &amp;quot;477&amp;quot; &amp;quot;470&amp;quot; &amp;quot;493&amp;quot; &amp;quot;414&amp;quot; &amp;quot;446&amp;quot; &amp;quot;402&amp;quot; &amp;quot;423&amp;quot; &amp;quot;476&amp;quot;
+##  [85] &amp;quot;432&amp;quot; &amp;quot;490&amp;quot; &amp;quot;499&amp;quot; &amp;quot;429&amp;quot; &amp;quot;414&amp;quot; &amp;quot;455&amp;quot; &amp;quot;409&amp;quot; &amp;quot;462&amp;quot; &amp;quot;447&amp;quot; &amp;quot;483&amp;quot; &amp;quot;458&amp;quot; &amp;quot;471&amp;quot;
+##  [97] &amp;quot;402&amp;quot; &amp;quot;423&amp;quot; &amp;quot;464&amp;quot; &amp;quot;483&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol start=&#34;10&#34;&gt;
 &lt;li&gt;
@@ -4009,7 +4009,7 @@ ggplot(mpg, aes(displ, hwy, color = class, size = cyl)) +
     <item>
       <title>Soluções</title>
       <link>https://laddem.github.io/courses/tidyverse/solucoes/</link>
-      <pubDate>Tue, 25 May 2021 11:30:29 -0300</pubDate>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       <guid>https://laddem.github.io/courses/tidyverse/solucoes/</guid>
       <description>&lt;h2 id=&#34;soluções-dos-exercícios&#34;&gt;Soluções dos exercícios&lt;/h2&gt;
 &lt;h3 id=&#34;readr-tibble-tidyr&#34;&gt;&lt;code&gt;readr&lt;/code&gt;, &lt;code&gt;tibble&lt;/code&gt;, &lt;code&gt;tidyr&lt;/code&gt;&lt;/h3&gt;
@@ -4804,6 +4804,823 @@ acoes %&amp;gt;% complete(ano, qdr, fill = list(lucro = 0))
 ## 8  2016     4  2.66
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Note o resultado. E note também que &lt;code&gt;values_fill&lt;/code&gt; em &lt;code&gt;pivot_wider&lt;/code&gt; é um pouco mais criterioso na hora de fazer as transformações.&lt;/p&gt;
+&lt;h3 id=&#34;stringr-forcats-e-dplyr&#34;&gt;&lt;code&gt;stringr&lt;/code&gt;, &lt;code&gt;forcats&lt;/code&gt; e &lt;code&gt;dplyr&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(nycflights13)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Encontre os vôos que:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Atrasaram mais de duas horas&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% filter(dep_delay &amp;gt; 120)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 9,723 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     1     1      848           1835       853     1001           1950
+##  2  2013     1     1      957            733       144     1056            853
+##  3  2013     1     1     1114            900       134     1447           1222
+##  4  2013     1     1     1540           1338       122     2020           1825
+##  5  2013     1     1     1815           1325       290     2120           1542
+##  6  2013     1     1     1842           1422       260     1958           1535
+##  7  2013     1     1     1856           1645       131     2212           2005
+##  8  2013     1     1     1934           1725       129     2126           1855
+##  9  2013     1     1     1938           1703       155     2109           1823
+## 10  2013     1     1     1942           1705       157     2124           1830
+## # ... with 9,713 more rows, and 11 more variables: arr_delay &amp;lt;dbl&amp;gt;,
+## #   carrier &amp;lt;chr&amp;gt;, flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;,
+## #   air_time &amp;lt;dbl&amp;gt;, distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Com destino a Houston (&lt;code&gt;IAH&lt;/code&gt; ou &lt;code&gt;HOU&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% filter(dest %in% c(&amp;quot;IAH&amp;quot;, &amp;quot;HOU&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 9,313 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      623            627        -4      933            932
+##  4  2013     1     1      728            732        -4     1041           1038
+##  5  2013     1     1      739            739         0     1104           1038
+##  6  2013     1     1      908            908         0     1228           1219
+##  7  2013     1     1     1028           1026         2     1350           1339
+##  8  2013     1     1     1044           1045        -1     1352           1351
+##  9  2013     1     1     1114            900       134     1447           1222
+## 10  2013     1     1     1205           1200         5     1503           1505
+## # ... with 9,303 more rows, and 11 more variables: arr_delay &amp;lt;dbl&amp;gt;,
+## #   carrier &amp;lt;chr&amp;gt;, flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;,
+## #   air_time &amp;lt;dbl&amp;gt;, distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Operados pela United, American ou Delta&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;unique(flights$carrier)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;UA&amp;quot; &amp;quot;AA&amp;quot; &amp;quot;B6&amp;quot; &amp;quot;DL&amp;quot; &amp;quot;EV&amp;quot; &amp;quot;MQ&amp;quot; &amp;quot;US&amp;quot; &amp;quot;WN&amp;quot; &amp;quot;VX&amp;quot; &amp;quot;FL&amp;quot; &amp;quot;AS&amp;quot; &amp;quot;9E&amp;quot; &amp;quot;F9&amp;quot; &amp;quot;HA&amp;quot; &amp;quot;YV&amp;quot;
+## [16] &amp;quot;OO&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% filter(carrier %in% c(&amp;quot;UA&amp;quot;, &amp;quot;AA&amp;quot;, &amp;quot;DL&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 139,504 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      554            600        -6      812            837
+##  5  2013     1     1      554            558        -4      740            728
+##  6  2013     1     1      558            600        -2      753            745
+##  7  2013     1     1      558            600        -2      924            917
+##  8  2013     1     1      558            600        -2      923            937
+##  9  2013     1     1      559            600        -1      941            910
+## 10  2013     1     1      559            600        -1      854            902
+## # ... with 139,494 more rows, and 11 more variables: arr_delay &amp;lt;dbl&amp;gt;,
+## #   carrier &amp;lt;chr&amp;gt;, flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;,
+## #   air_time &amp;lt;dbl&amp;gt;, distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Decolaram entre julho e setembro&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% filter(between(month, 7, 9))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 86,326 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     7     1        1           2029       212      236           2359
+##  2  2013     7     1        2           2359         3      344            344
+##  3  2013     7     1       29           2245       104      151              1
+##  4  2013     7     1       43           2130       193      322             14
+##  5  2013     7     1       44           2150       174      300            100
+##  6  2013     7     1       46           2051       235      304           2358
+##  7  2013     7     1       48           2001       287      308           2305
+##  8  2013     7     1       58           2155       183      335             43
+##  9  2013     7     1      100           2146       194      327             30
+## 10  2013     7     1      100           2245       135      337            135
+## # ... with 86,316 more rows, and 11 more variables: arr_delay &amp;lt;dbl&amp;gt;,
+## #   carrier &amp;lt;chr&amp;gt;, flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;,
+## #   air_time &amp;lt;dbl&amp;gt;, distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Chegaram com mais de duas horas de atraso, mas não decolaram com atraso&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% filter(arr_delay &amp;gt; 120, dep_delay &amp;lt;= 0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 29 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     1    27     1419           1420        -1     1754           1550
+##  2  2013    10     7     1350           1350         0     1736           1526
+##  3  2013    10     7     1357           1359        -2     1858           1654
+##  4  2013    10    16      657            700        -3     1258           1056
+##  5  2013    11     1      658            700        -2     1329           1015
+##  6  2013     3    18     1844           1847        -3       39           2219
+##  7  2013     4    17     1635           1640        -5     2049           1845
+##  8  2013     4    18      558            600        -2     1149            850
+##  9  2013     4    18      655            700        -5     1213            950
+## 10  2013     5    22     1827           1830        -3     2217           2010
+## # ... with 19 more rows, and 11 more variables: arr_delay &amp;lt;dbl&amp;gt;, carrier &amp;lt;chr&amp;gt;,
+## #   flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;, air_time &amp;lt;dbl&amp;gt;,
+## #   distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Atrasaram mais de uma hora para decolar, mas recuperaram mais de 30 minutos durante o voo&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% filter(dep_delay &amp;gt; 60, dep_delay - arr_delay &amp;gt;= 30)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 2,046 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     1     1     1716           1545        91     2140           2039
+##  2  2013     1     1     2205           1720       285       46           2040
+##  3  2013     1     1     2326           2130       116      131             18
+##  4  2013     1     3     1503           1221       162     1803           1555
+##  5  2013     1     3     1821           1530       171     2131           1910
+##  6  2013     1     3     1839           1700        99     2056           1950
+##  7  2013     1     3     1850           1745        65     2148           2120
+##  8  2013     1     3     1923           1815        68     2036           1958
+##  9  2013     1     3     1941           1759       102     2246           2139
+## 10  2013     1     3     1950           1845        65     2228           2227
+## # ... with 2,036 more rows, and 11 more variables: arr_delay &amp;lt;dbl&amp;gt;,
+## #   carrier &amp;lt;chr&amp;gt;, flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;,
+## #   air_time &amp;lt;dbl&amp;gt;, distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Decolaram entre a meia-noite e 6 da manhã (inclusive)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% filter(between(hour, 0, 5) | (hour == 6 &amp;amp; minute == 0))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 8,970 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 8,960 more rows, and 11 more variables: arr_delay &amp;lt;dbl&amp;gt;,
+## #   carrier &amp;lt;chr&amp;gt;, flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;,
+## #   air_time &amp;lt;dbl&amp;gt;, distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Reordene suas colunas para encontrar os voos mais rápidos (maior velocidade de voo).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% 
+  select(air_time, distance) %&amp;gt;% 
+  mutate(speed = distance/air_time) %&amp;gt;% 
+  arrange(desc(speed))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 3
+##    air_time distance speed
+##       &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+##  1       65      762 11.7 
+##  2       93     1008 10.8 
+##  3       55      594 10.8 
+##  4       70      748 10.7 
+##  5      105     1035  9.86
+##  6      170     1598  9.4 
+##  7      172     1598  9.29
+##  8      175     1623  9.27
+##  9      173     1598  9.24
+## 10      173     1598  9.24
+## # ... with 336,766 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Teste várias maneiras diferentes de selecionar as variáveis &lt;code&gt;dep_time&lt;/code&gt;, &lt;code&gt;dep_delay&lt;/code&gt;, &lt;code&gt;arr_time&lt;/code&gt; e &lt;code&gt;arr_delay&lt;/code&gt; usando as várias helper functions de &lt;code&gt;select&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% select(dep_time, dep_delay, arr_time, arr_delay)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 4
+##    dep_time dep_delay arr_time arr_delay
+##       &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;
+##  1      517         2      830        11
+##  2      533         4      850        20
+##  3      542         2      923        33
+##  4      544        -1     1004       -18
+##  5      554        -6      812       -25
+##  6      554        -4      740        12
+##  7      555        -5      913        19
+##  8      557        -3      709       -14
+##  9      557        -3      838        -8
+## 10      558        -2      753         8
+## # ... with 336,766 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% select(starts_with(&amp;quot;dep&amp;quot;), starts_with(&amp;quot;arr&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 4
+##    dep_time dep_delay arr_time arr_delay
+##       &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;
+##  1      517         2      830        11
+##  2      533         4      850        20
+##  3      542         2      923        33
+##  4      544        -1     1004       -18
+##  5      554        -6      812       -25
+##  6      554        -4      740        12
+##  7      555        -5      913        19
+##  8      557        -3      709       -14
+##  9      557        -3      838        -8
+## 10      558        -2      753         8
+## # ... with 336,766 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% select(starts_with(c(&amp;quot;dep&amp;quot;, &amp;quot;arr&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 4
+##    dep_time dep_delay arr_time arr_delay
+##       &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;
+##  1      517         2      830        11
+##  2      533         4      850        20
+##  3      542         2      923        33
+##  4      544        -1     1004       -18
+##  5      554        -6      812       -25
+##  6      554        -4      740        12
+##  7      555        -5      913        19
+##  8      557        -3      709       -14
+##  9      557        -3      838        -8
+## 10      558        -2      753         8
+## # ... with 336,766 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% select(matches(&amp;quot;^arr|^dep&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 4
+##    dep_time dep_delay arr_time arr_delay
+##       &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;
+##  1      517         2      830        11
+##  2      533         4      850        20
+##  3      542         2      923        33
+##  4      544        -1     1004       -18
+##  5      554        -6      812       -25
+##  6      554        -4      740        12
+##  7      555        -5      913        19
+##  8      557        -3      709       -14
+##  9      557        -3      838        -8
+## 10      558        -2      753         8
+## # ... with 336,766 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% select(!starts_with(c(&amp;quot;sched&amp;quot;, &amp;quot;car&amp;quot;)) &amp;amp; contains(c(&amp;quot;dep&amp;quot;, &amp;quot;arr&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 4
+##    dep_time dep_delay arr_time arr_delay
+##       &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;
+##  1      517         2      830        11
+##  2      533         4      850        20
+##  3      542         2      923        33
+##  4      544        -1     1004       -18
+##  5      554        -6      812       -25
+##  6      554        -4      740        12
+##  7      555        -5      913        19
+##  8      557        -3      709       -14
+##  9      557        -3      838        -8
+## 10      558        -2      753         8
+## # ... with 336,766 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% select(ends_with(c(&amp;quot;time&amp;quot;, &amp;quot;delay&amp;quot;)) &amp;amp; !starts_with(c(&amp;quot;sched&amp;quot;, &amp;quot;air&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 4
+##    dep_time arr_time dep_delay arr_delay
+##       &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+##  1      517      830         2        11
+##  2      533      850         4        20
+##  3      542      923         2        33
+##  4      544     1004        -1       -18
+##  5      554      812        -6       -25
+##  6      554      740        -4        12
+##  7      555      913        -5        19
+##  8      557      709        -3       -14
+##  9      557      838        -3        -8
+## 10      558      753        -2         8
+## # ... with 336,766 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;As variáveis &lt;code&gt;dep_time&lt;/code&gt; e &lt;code&gt;sched_dep_time&lt;/code&gt; estão num formato incorreto (veja &lt;code&gt;?flights&lt;/code&gt;). Converta-as com &lt;code&gt;mutate&lt;/code&gt; para um valor em minutos passados desde a meia-noite. Dica: utilize &lt;code&gt;%/%&lt;/code&gt; e &lt;code&gt;%%&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% mutate(
+  dep_hour         = dep_time %/% 100,
+  dep_minute       = dep_time %% 100,
+  sched_dep_hour   = sched_dep_time %/% 100,
+  sched_arr_minute = sched_arr_time %% 100
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 23
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ... with 336,766 more rows, and 15 more variables: arr_delay &amp;lt;dbl&amp;gt;,
+## #   carrier &amp;lt;chr&amp;gt;, flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;,
+## #   air_time &amp;lt;dbl&amp;gt;, distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;,
+## #   dep_hour &amp;lt;dbl&amp;gt;, dep_minute &amp;lt;dbl&amp;gt;, sched_dep_hour &amp;lt;dbl&amp;gt;,
+## #   sched_arr_minute &amp;lt;dbl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Há uma outra solução com separate!
+flights %&amp;gt;% 
+  separate(
+    col = dep_time,
+    into = c(&amp;quot;dep_hour&amp;quot;, &amp;quot;dep_minute&amp;quot;),
+    sep = 1,
+    # Esse argumento é importante! Teste com FALSE para ver a diferença
+    convert = TRUE) %&amp;gt;% 
+  separate(
+    col = sched_dep_time,
+    into = c(&amp;quot;sched_dep_hour&amp;quot;, &amp;quot;sched_dep_minute&amp;quot;),
+    sep = 1,
+    convert = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 21
+##     year month   day dep_hour dep_minute sched_dep_hour sched_dep_minute
+##    &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;          &amp;lt;int&amp;gt;            &amp;lt;int&amp;gt;
+##  1  2013     1     1        5         17              5               15
+##  2  2013     1     1        5         33              5               29
+##  3  2013     1     1        5         42              5               40
+##  4  2013     1     1        5         44              5               45
+##  5  2013     1     1        5         54              6                0
+##  6  2013     1     1        5         54              5               58
+##  7  2013     1     1        5         55              6                0
+##  8  2013     1     1        5         57              6                0
+##  9  2013     1     1        5         57              6                0
+## 10  2013     1     1        5         58              6                0
+## # ... with 336,766 more rows, and 14 more variables: dep_delay &amp;lt;dbl&amp;gt;,
+## #   arr_time &amp;lt;int&amp;gt;, sched_arr_time &amp;lt;int&amp;gt;, arr_delay &amp;lt;dbl&amp;gt;, carrier &amp;lt;chr&amp;gt;,
+## #   flight &amp;lt;int&amp;gt;, tailnum &amp;lt;chr&amp;gt;, origin &amp;lt;chr&amp;gt;, dest &amp;lt;chr&amp;gt;, air_time &amp;lt;dbl&amp;gt;,
+## #   distance &amp;lt;dbl&amp;gt;, hour &amp;lt;dbl&amp;gt;, minute &amp;lt;dbl&amp;gt;, time_hour &amp;lt;dttm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Existe uma outra solução possível para essa questão usando manipulação de strings, com &lt;code&gt;str_sub&lt;/code&gt; também. Fica como desafio!&lt;/p&gt;
+&lt;p&gt;Pensando na legibilidade do código e na flexibilidade da abordagem, qual das duas soluções acima você implementaria? &lt;code&gt;mutate&lt;/code&gt; ou duas &lt;code&gt;separate&lt;/code&gt;? Reflita.&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;O que o código abaixo está fazendo? Porque mesmo após o código abaixo continuam existindo diferenças entre os valores das variáveis &lt;code&gt;air_time&lt;/code&gt; e &lt;code&gt;travel_time&lt;/code&gt;?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;flights %&amp;gt;% 
+  select(air_time, dep_time, arr_time, dep_delay, arr_delay) %&amp;gt;% 
+  mutate(dep_hour = dep_time %/% 100,
+         dep_min = dep_time %% 100,
+         dep_time2 = dep_hour * 60 + dep_min,
+         arr_hour = arr_time %/% 100,
+         arr_min = arr_time %% 100,
+         arr_time2 = arr_hour * 60 + arr_min,
+         travel_time = arr_time2 - dep_time2) %&amp;gt;% 
+  select(-dep_hour, -dep_min, -arr_hour, -arr_min)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 336,776 x 8
+##    air_time dep_time arr_time dep_delay arr_delay dep_time2 arr_time2
+##       &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+##  1      227      517      830         2        11       317       510
+##  2      227      533      850         4        20       333       530
+##  3      160      542      923         2        33       342       563
+##  4      183      544     1004        -1       -18       344       604
+##  5      116      554      812        -6       -25       354       492
+##  6      150      554      740        -4        12       354       460
+##  7      158      555      913        -5        19       355       553
+##  8       53      557      709        -3       -14       357       429
+##  9      140      557      838        -3        -8       357       518
+## 10      138      558      753        -2         8       358       473
+## # ... with 336,766 more rows, and 1 more variable: travel_time &amp;lt;dbl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Essa tem uma resposta mais qualitativa. A primeira parte é parecida com a questão anterior, mas estamos manualmente tentando calcular os tempos de viagem. Acontece que os valores não batem com os tempos de vôo identificados no banco. Isso se deve a pelo menos três questões distintas.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma delas diz respeito ao registro dos tempos, a definição de &lt;code&gt;air_time&lt;/code&gt; pode não estar considerando tempos em que o avião está manobrando ou em solo ou mesmo podem existir erros de preenchimento.&lt;/li&gt;
+&lt;li&gt;A segunda diz respeito ao fuso horário distinto entre aeroportos de saída e chegada, que complica o cálculo dos tempos reais, então nosso cálculo está muito cru para identificar isso.&lt;/li&gt;
+&lt;li&gt;A última questão são os vôos longos, que começam em um dia e terminam no dia seguinte, que podem prejudicar nosso método de cálculo. Para corrigir alguns desses problemas, você precisaria escrever um código que minimamente levasse essas questões em consideração. Como esse não é o objetivo do curso, eu deixo para quem quiser tentar. &lt;a href=&#34;https://jrnold.github.io/r4ds-exercise-solutions/transform.html#exercise-5.5.2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Há uma solução postada aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Use o stringr para concatenar as seguintes strings em uma frase&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- &amp;quot;.&amp;quot;
+y &amp;lt;- &amp;quot;feliz&amp;quot;
+w &amp;lt;- &amp;quot;acordei&amp;quot;
+z &amp;lt;- &amp;quot;hoje&amp;quot;
+
+str_c(z, w, y, sep = &amp;quot; &amp;quot;) %&amp;gt;% 
+  str_c(x, sep = &amp;quot;&amp;quot;) %&amp;gt;% 
+  str_to_sentence()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Hoje acordei feliz.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Corrija as inconsistências nas colunas país, primeiro_nome, segundo_nome e crie uma nova coluna nomes contendo as duas anteriores. No final, ordene o banco em ordem alfabética.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- 
+  tibble::tribble(
+    ~pais,    ~primeiro_nome, ~segundo_nome,
+    # -------|----------------|-------------|
+    &amp;quot;BRASIL&amp;quot;, &amp;quot;ISABELA&amp;quot;,       &amp;quot;MARTINS&amp;quot;,
+    &amp;quot;Brasil&amp;quot;, &amp;quot;Eduardo&amp;quot;,       &amp;quot;cabellos&amp;quot;,
+    &amp;quot;brasil&amp;quot;, &amp;quot;márcia&amp;quot;,         &amp;quot;pinto&amp;quot;,
+    &amp;quot;bRaSiL&amp;quot;, &amp;quot;rogério&amp;quot;,        &amp;quot;Marinho&amp;quot;,
+  )
+
+# Sem dplyr
+df$pais &amp;lt;- str_to_title(df$pais)
+df$primeiro_nome &amp;lt;-  str_to_title(df$primeiro_nome)
+df$segundo_nome &amp;lt;- str_to_title(df$segundo_nome)
+
+df &amp;lt;- df %&amp;gt;% tidyr::unite(nomes, primeiro_nome, segundo_nome, sep = &amp;quot; &amp;quot;)
+df[ str_order(df$nomes), ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 4 x 2
+##   pais   nomes           
+##   &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt;           
+## 1 Brasil Eduardo Cabellos
+## 2 Brasil Isabela Martins 
+## 3 Brasil Márcia Pinto    
+## 4 Brasil Rogério Marinho
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Com dplyr
+df &amp;lt;- 
+  tibble::tribble(
+    ~pais,    ~primeiro_nome, ~segundo_nome,
+    # -------|----------------|-------------|
+    &amp;quot;BRASIL&amp;quot;, &amp;quot;ISABELA&amp;quot;,       &amp;quot;MARTINS&amp;quot;,
+    &amp;quot;Brasil&amp;quot;, &amp;quot;Eduardo&amp;quot;,       &amp;quot;cabellos&amp;quot;,
+    &amp;quot;brasil&amp;quot;, &amp;quot;márcia&amp;quot;,         &amp;quot;pinto&amp;quot;,
+    &amp;quot;bRaSiL&amp;quot;, &amp;quot;rogério&amp;quot;,        &amp;quot;Marinho&amp;quot;,
+  )
+
+df %&amp;gt;% 
+  mutate(pais = str_to_title(pais),
+         primeiro_nome = str_to_title(primeiro_nome),
+         segundo_nome = str_to_title(segundo_nome)) %&amp;gt;% 
+  unite(nomes, primeiro_nome, segundo_nome, sep = &amp;quot; &amp;quot;) %&amp;gt;% 
+  arrange(str_order(nomes))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 4 x 2
+##   pais   nomes           
+##   &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt;           
+## 1 Brasil Eduardo Cabellos
+## 2 Brasil Isabela Martins 
+## 3 Brasil Márcia Pinto    
+## 4 Brasil Rogério Marinho
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Transforme a string &lt;code&gt;c(&amp;quot;Seu nome&amp;quot;, &amp;quot;Seu sobrenome da mãe&amp;quot;, &amp;quot;Seu sobrenome do pai&amp;quot;)&lt;/code&gt; na string &lt;code&gt;&amp;quot;SEU SOBRENOME DO PAI, sua inicial do nome. sua inicial da mãe.&amp;quot;&lt;/code&gt;, como numa citação. Veja o exemplo abaixo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Transforme
+c(&amp;quot;Vinícius&amp;quot;, &amp;quot;de Souza&amp;quot;, &amp;quot;Maia&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Vinícius&amp;quot; &amp;quot;de Souza&amp;quot; &amp;quot;Maia&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Resultado
+&amp;quot;MAIA, V. S.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;MAIA, V. S.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(&amp;quot;Vinícius&amp;quot;, &amp;quot;de Souza&amp;quot;, &amp;quot;Maia&amp;quot;)
+x[1] &amp;lt;- str_sub(x[1], 1, 1) %&amp;gt;% str_c(&amp;quot;.&amp;quot;)
+x[2] &amp;lt;- str_sub(x[2], 4, 4) %&amp;gt;% str_c(&amp;quot;.&amp;quot;)
+x[3] &amp;lt;- str_to_upper(x[3])
+str_c(c(x[3], x[1], x[2]), collapse = &amp;quot; &amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;MAIA V. S.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;DESAFIO: Nos microdados da área de saúde, é comum que a variável idade esteja registrada da seguinte forma: &amp;ldquo;150&amp;rdquo;, &amp;ldquo;219&amp;rdquo;, &amp;ldquo;312&amp;rdquo;, &amp;ldquo;471&amp;rdquo;. Esses códigos indicam primeiro qual a unidade de medida da idade e segundo o valor desta unidade, 1 = horas, 2 = dias, 3 = meses, 4 = anos. Proponha um código usando &lt;code&gt;stringr&lt;/code&gt; para transformar o vetor abaixo em um valor numérico.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Não precisa se preocupar com essa parte
+x &amp;lt;- as.character(round(c(
+  runif(25, 100, 124),
+  runif(25, 201, 230),
+  runif(25, 301, 312),
+  runif(25, 401, 499)
+)))
+
+# Como você transformaria esse vetor em número?
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;105&amp;quot; &amp;quot;101&amp;quot; &amp;quot;108&amp;quot; &amp;quot;107&amp;quot; &amp;quot;112&amp;quot; &amp;quot;122&amp;quot; &amp;quot;112&amp;quot; &amp;quot;102&amp;quot; &amp;quot;100&amp;quot; &amp;quot;100&amp;quot; &amp;quot;110&amp;quot; &amp;quot;102&amp;quot;
+##  [13] &amp;quot;116&amp;quot; &amp;quot;124&amp;quot; &amp;quot;102&amp;quot; &amp;quot;110&amp;quot; &amp;quot;122&amp;quot; &amp;quot;102&amp;quot; &amp;quot;102&amp;quot; &amp;quot;120&amp;quot; &amp;quot;101&amp;quot; &amp;quot;104&amp;quot; &amp;quot;105&amp;quot; &amp;quot;118&amp;quot;
+##  [25] &amp;quot;106&amp;quot; &amp;quot;202&amp;quot; &amp;quot;229&amp;quot; &amp;quot;202&amp;quot; &amp;quot;202&amp;quot; &amp;quot;219&amp;quot; &amp;quot;224&amp;quot; &amp;quot;205&amp;quot; &amp;quot;221&amp;quot; &amp;quot;223&amp;quot; &amp;quot;228&amp;quot; &amp;quot;206&amp;quot;
+##  [37] &amp;quot;220&amp;quot; &amp;quot;212&amp;quot; &amp;quot;226&amp;quot; &amp;quot;212&amp;quot; &amp;quot;202&amp;quot; &amp;quot;215&amp;quot; &amp;quot;204&amp;quot; &amp;quot;219&amp;quot; &amp;quot;221&amp;quot; &amp;quot;225&amp;quot; &amp;quot;208&amp;quot; &amp;quot;214&amp;quot;
+##  [49] &amp;quot;207&amp;quot; &amp;quot;220&amp;quot; &amp;quot;301&amp;quot; &amp;quot;311&amp;quot; &amp;quot;311&amp;quot; &amp;quot;303&amp;quot; &amp;quot;302&amp;quot; &amp;quot;308&amp;quot; &amp;quot;304&amp;quot; &amp;quot;309&amp;quot; &amp;quot;309&amp;quot; &amp;quot;309&amp;quot;
+##  [61] &amp;quot;306&amp;quot; &amp;quot;304&amp;quot; &amp;quot;310&amp;quot; &amp;quot;309&amp;quot; &amp;quot;305&amp;quot; &amp;quot;305&amp;quot; &amp;quot;310&amp;quot; &amp;quot;306&amp;quot; &amp;quot;301&amp;quot; &amp;quot;310&amp;quot; &amp;quot;305&amp;quot; &amp;quot;307&amp;quot;
+##  [73] &amp;quot;311&amp;quot; &amp;quot;306&amp;quot; &amp;quot;302&amp;quot; &amp;quot;498&amp;quot; &amp;quot;405&amp;quot; &amp;quot;418&amp;quot; &amp;quot;471&amp;quot; &amp;quot;453&amp;quot; &amp;quot;455&amp;quot; &amp;quot;481&amp;quot; &amp;quot;435&amp;quot; &amp;quot;419&amp;quot;
+##  [85] &amp;quot;447&amp;quot; &amp;quot;420&amp;quot; &amp;quot;431&amp;quot; &amp;quot;439&amp;quot; &amp;quot;484&amp;quot; &amp;quot;425&amp;quot; &amp;quot;445&amp;quot; &amp;quot;438&amp;quot; &amp;quot;452&amp;quot; &amp;quot;445&amp;quot; &amp;quot;409&amp;quot; &amp;quot;452&amp;quot;
+##  [97] &amp;quot;468&amp;quot; &amp;quot;447&amp;quot; &amp;quot;414&amp;quot; &amp;quot;498&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Esse exercício é um pouco mais difícil mesmo!
+x %&amp;gt;% str_extract(&amp;quot;\\d&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot;
+##  [19] &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;1&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot;
+##  [37] &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot;
+##  [55] &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot;
+##  [73] &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;3&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot;
+##  [91] &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot; &amp;quot;4&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tibble(
+  tipo_idade = str_sub(x, 1, 1),
+  idade = str_sub(x, 2, 3),
+  idade_anos =
+    if_else(
+      str_detect(tipo_idade, &amp;quot;1&amp;quot;),
+      as.numeric(idade) / (24 * 30 * 12),
+      if_else(
+        str_detect(tipo_idade, &amp;quot;2&amp;quot;),
+        as.numeric(idade) / (30 * 12),
+        if_else(
+          str_detect(tipo_idade, &amp;quot;3&amp;quot;),
+          as.numeric(idade) / 12,
+          as.numeric(idade)
+        )
+      )
+    )
+) %&amp;gt;% 
+  print(n = Inf)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 100 x 3
+##     tipo_idade idade idade_anos
+##     &amp;lt;chr&amp;gt;      &amp;lt;chr&amp;gt;      &amp;lt;dbl&amp;gt;
+##   1 1          05      0.000579
+##   2 1          01      0.000116
+##   3 1          08      0.000926
+##   4 1          07      0.000810
+##   5 1          12      0.00139 
+##   6 1          22      0.00255 
+##   7 1          12      0.00139 
+##   8 1          02      0.000231
+##   9 1          00      0       
+##  10 1          00      0       
+##  11 1          10      0.00116 
+##  12 1          02      0.000231
+##  13 1          16      0.00185 
+##  14 1          24      0.00278 
+##  15 1          02      0.000231
+##  16 1          10      0.00116 
+##  17 1          22      0.00255 
+##  18 1          02      0.000231
+##  19 1          02      0.000231
+##  20 1          20      0.00231 
+##  21 1          01      0.000116
+##  22 1          04      0.000463
+##  23 1          05      0.000579
+##  24 1          18      0.00208 
+##  25 1          06      0.000694
+##  26 2          02      0.00556 
+##  27 2          29      0.0806  
+##  28 2          02      0.00556 
+##  29 2          02      0.00556 
+##  30 2          19      0.0528  
+##  31 2          24      0.0667  
+##  32 2          05      0.0139  
+##  33 2          21      0.0583  
+##  34 2          23      0.0639  
+##  35 2          28      0.0778  
+##  36 2          06      0.0167  
+##  37 2          20      0.0556  
+##  38 2          12      0.0333  
+##  39 2          26      0.0722  
+##  40 2          12      0.0333  
+##  41 2          02      0.00556 
+##  42 2          15      0.0417  
+##  43 2          04      0.0111  
+##  44 2          19      0.0528  
+##  45 2          21      0.0583  
+##  46 2          25      0.0694  
+##  47 2          08      0.0222  
+##  48 2          14      0.0389  
+##  49 2          07      0.0194  
+##  50 2          20      0.0556  
+##  51 3          01      0.0833  
+##  52 3          11      0.917   
+##  53 3          11      0.917   
+##  54 3          03      0.25    
+##  55 3          02      0.167   
+##  56 3          08      0.667   
+##  57 3          04      0.333   
+##  58 3          09      0.75    
+##  59 3          09      0.75    
+##  60 3          09      0.75    
+##  61 3          06      0.5     
+##  62 3          04      0.333   
+##  63 3          10      0.833   
+##  64 3          09      0.75    
+##  65 3          05      0.417   
+##  66 3          05      0.417   
+##  67 3          10      0.833   
+##  68 3          06      0.5     
+##  69 3          01      0.0833  
+##  70 3          10      0.833   
+##  71 3          05      0.417   
+##  72 3          07      0.583   
+##  73 3          11      0.917   
+##  74 3          06      0.5     
+##  75 3          02      0.167   
+##  76 4          98     98       
+##  77 4          05      5       
+##  78 4          18     18       
+##  79 4          71     71       
+##  80 4          53     53       
+##  81 4          55     55       
+##  82 4          81     81       
+##  83 4          35     35       
+##  84 4          19     19       
+##  85 4          47     47       
+##  86 4          20     20       
+##  87 4          31     31       
+##  88 4          39     39       
+##  89 4          84     84       
+##  90 4          25     25       
+##  91 4          45     45       
+##  92 4          38     38       
+##  93 4          52     52       
+##  94 4          45     45       
+##  95 4          09      9       
+##  96 4          52     52       
+##  97 4          68     68       
+##  98 4          47     47       
+##  99 4          14     14       
+## 100 4          98     98
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ao invés de utilizar essas chamadas recursivas de &lt;code&gt;if_else&lt;/code&gt;, que são muito ruins de ler, como você poderia reescrever a condição usando &lt;code&gt;case_when&lt;/code&gt;?&lt;/p&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;Explore as contagens da variável &lt;code&gt;rincome&lt;/code&gt; em &lt;code&gt;gss_cat&lt;/code&gt;, ela ficaria bem representada num gráfico? De qual tipo?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;gss_cat %&amp;gt;% count(rincome)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 16 x 2
+##    rincome            n
+##    &amp;lt;fct&amp;gt;          &amp;lt;int&amp;gt;
+##  1 No answer        183
+##  2 Don&#39;t know       267
+##  3 Refused          975
+##  4 $25000 or more  7363
+##  5 $20000 - 24999  1283
+##  6 $15000 - 19999  1048
+##  7 $10000 - 14999  1168
+##  8 $8000 to 9999    340
+##  9 $7000 to 7999    188
+## 10 $6000 to 6999    215
+## 11 $5000 to 5999    227
+## 12 $4000 to 4999    226
+## 13 $3000 to 3999    276
+## 14 $1000 to 2999    395
+## 15 Lt $1000         286
+## 16 Not applicable  7043
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em geral, contagens de variáveis ficam bem em gráficos de barras ou visualizações equivalentes, em que é possível comparar visualmente as contagens das diversas categorias. Mais sobre isso na aula do &lt;code&gt;ggplot2&lt;/code&gt;.&lt;/p&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;Qual a religião mais comum em &lt;code&gt;gss_cat&lt;/code&gt;? Qual o partido (&lt;code&gt;partyid&lt;/code&gt;) mais popular?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Religião
+gss_cat %&amp;gt;% count(relig) %&amp;gt;% arrange(desc(n))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 15 x 2
+##    relig                       n
+##    &amp;lt;fct&amp;gt;                   &amp;lt;int&amp;gt;
+##  1 Protestant              10846
+##  2 Catholic                 5124
+##  3 None                     3523
+##  4 Christian                 689
+##  5 Jewish                    388
+##  6 Other                     224
+##  7 Buddhism                  147
+##  8 Inter-nondenominational   109
+##  9 Moslem/islam              104
+## 10 Orthodox-christian         95
+## 11 No answer                  93
+## 12 Hinduism                   71
+## 13 Other eastern              32
+## 14 Native american            23
+## 15 Don&#39;t know                 15
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Partido
+gss_cat %&amp;gt;% count(partyid) %&amp;gt;% arrange(desc(n))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 10 x 2
+##    partyid                n
+##    &amp;lt;fct&amp;gt;              &amp;lt;int&amp;gt;
+##  1 Independent         4119
+##  2 Not str democrat    3690
+##  3 Strong democrat     3490
+##  4 Not str republican  3032
+##  5 Ind,near dem        2499
+##  6 Strong republican   2314
+##  7 Ind,near rep        1791
+##  8 Other party          393
+##  9 No answer            154
+## 10 Don&#39;t know             1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;A que religião se refere a variável &lt;code&gt;denom&lt;/code&gt;? Você pode descobrir isso fazendo uma tabela de contagens?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Você pode chamar count com várias variáveis para fazer uma tabulação cruzada.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;gss_cat %&amp;gt;% count(relig, denom) %&amp;gt;% print(n = Inf)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 47 x 3
+##    relig                   denom                    n
+##    &amp;lt;fct&amp;gt;                   &amp;lt;fct&amp;gt;                &amp;lt;int&amp;gt;
+##  1 No answer               No answer               93
+##  2 Don&#39;t know              Not applicable          15
+##  3 Inter-nondenominational Not applicable         109
+##  4 Native american         Not applicable          23
+##  5 Christian               No answer                2
+##  6 Christian               Don&#39;t know              11
+##  7 Christian               No denomination        452
+##  8 Christian               Not applicable         224
+##  9 Orthodox-christian      Not applicable          95
+## 10 Moslem/islam            Not applicable         104
+## 11 Other eastern           Not applicable          32
+## 12 Hinduism                Not applicable          71
+## 13 Buddhism                Not applicable         147
+## 14 Other                   No denomination          7
+## 15 Other                   Not applicable         217
+## 16 None                    Not applicable        3523
+## 17 Jewish                  Not applicable         388
+## 18 Catholic                Not applicable        5124
+## 19 Protestant              No answer               22
+## 20 Protestant              Don&#39;t know              41
+## 21 Protestant              No denomination       1224
+## 22 Protestant              Other                 2534
+## 23 Protestant              Episcopal              397
+## 24 Protestant              Presbyterian-dk wh     244
+## 25 Protestant              Presbyterian, merged    67
+## 26 Protestant              Other presbyterian      47
+## 27 Protestant              United pres ch in us   110
+## 28 Protestant              Presbyterian c in us   104
+## 29 Protestant              Lutheran-dk which      267
+## 30 Protestant              Evangelical luth       122
+## 31 Protestant              Other lutheran          30
+## 32 Protestant              Wi evan luth synod      71
+## 33 Protestant              Lutheran-mo synod      212
+## 34 Protestant              Luth ch in america      71
+## 35 Protestant              Am lutheran            146
+## 36 Protestant              Methodist-dk which     239
+## 37 Protestant              Other methodist         33
+## 38 Protestant              United methodist      1067
+## 39 Protestant              Afr meth ep zion        32
+## 40 Protestant              Afr meth episcopal      77
+## 41 Protestant              Baptist-dk which      1457
+## 42 Protestant              Other baptists         213
+## 43 Protestant              Southern baptist      1536
+## 44 Protestant              Nat bapt conv usa       40
+## 45 Protestant              Nat bapt conv of am     76
+## 46 Protestant              Am bapt ch in usa      130
+## 47 Protestant              Am baptist asso        237
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;13&#34;&gt;
+&lt;li&gt;Como você poderia diminuir o número de categorias da variável &lt;code&gt;rincome&lt;/code&gt; do banco &lt;code&gt;gss_cat&lt;/code&gt;?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A melhor função para redução de fatores é &lt;code&gt;fct_collapse&lt;/code&gt;. Veja como ficam a coluna original e a transformada.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;gss_cat2 &amp;lt;- 
+  gss_cat %&amp;gt;% 
+  # Aqui vou salvar em &amp;quot;rincome2&amp;quot; para a gente poder ver as duas
+  mutate(rincome2 = fct_collapse(
+    rincome,
+    &amp;quot;Non-response&amp;quot; = c(&amp;quot;No answer&amp;quot;, &amp;quot;Don&#39;t know&amp;quot;, &amp;quot;Refused&amp;quot;, &amp;quot;Not applicable&amp;quot;),
+    &amp;quot;Até 5k&amp;quot;       = c(&amp;quot;$4000 to 4999&amp;quot;, &amp;quot;$3000 to 3999&amp;quot;, &amp;quot;$1000 to 2999&amp;quot;, &amp;quot;Lt $1000&amp;quot;),
+    &amp;quot;5k-10k&amp;quot;       = c( &amp;quot;$8000 to 9999&amp;quot;, &amp;quot;$7000 to 7999&amp;quot;, &amp;quot;$6000 to 6999&amp;quot;, &amp;quot;$5000 to 5999&amp;quot;),
+    &amp;quot;10k-20k&amp;quot;      = c(&amp;quot;$15000 - 19999&amp;quot;, &amp;quot;$10000 - 14999&amp;quot;),
+    &amp;quot;20k+&amp;quot;         = c(&amp;quot;$25000 or more&amp;quot;, &amp;quot;$20000 - 24999&amp;quot;))) %&amp;gt;% 
+  select(rincome, rincome2)
+
+# E veja as contagens
+gss_cat2 %&amp;gt;% count(rincome)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 16 x 2
+##    rincome            n
+##    &amp;lt;fct&amp;gt;          &amp;lt;int&amp;gt;
+##  1 No answer        183
+##  2 Don&#39;t know       267
+##  3 Refused          975
+##  4 $25000 or more  7363
+##  5 $20000 - 24999  1283
+##  6 $15000 - 19999  1048
+##  7 $10000 - 14999  1168
+##  8 $8000 to 9999    340
+##  9 $7000 to 7999    188
+## 10 $6000 to 6999    215
+## 11 $5000 to 5999    227
+## 12 $4000 to 4999    226
+## 13 $3000 to 3999    276
+## 14 $1000 to 2999    395
+## 15 Lt $1000         286
+## 16 Not applicable  7043
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;gss_cat2 %&amp;gt;% count(rincome2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 5 x 2
+##   rincome2         n
+##   &amp;lt;fct&amp;gt;        &amp;lt;int&amp;gt;
+## 1 Non-response  8468
+## 2 20k+          8646
+## 3 10k-20k       2216
+## 4 5k-10k         970
+## 5 Até 5k        1183
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
