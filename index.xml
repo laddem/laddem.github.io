@@ -5301,15 +5301,15 @@ x &amp;lt;- as.character(round(c(
 # Como você transformaria esse vetor em número?
 x
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;105&amp;quot; &amp;quot;101&amp;quot; &amp;quot;108&amp;quot; &amp;quot;107&amp;quot; &amp;quot;112&amp;quot; &amp;quot;122&amp;quot; &amp;quot;112&amp;quot; &amp;quot;102&amp;quot; &amp;quot;100&amp;quot; &amp;quot;100&amp;quot; &amp;quot;110&amp;quot; &amp;quot;102&amp;quot;
-##  [13] &amp;quot;116&amp;quot; &amp;quot;124&amp;quot; &amp;quot;102&amp;quot; &amp;quot;110&amp;quot; &amp;quot;122&amp;quot; &amp;quot;102&amp;quot; &amp;quot;102&amp;quot; &amp;quot;120&amp;quot; &amp;quot;101&amp;quot; &amp;quot;104&amp;quot; &amp;quot;105&amp;quot; &amp;quot;118&amp;quot;
-##  [25] &amp;quot;106&amp;quot; &amp;quot;202&amp;quot; &amp;quot;229&amp;quot; &amp;quot;202&amp;quot; &amp;quot;202&amp;quot; &amp;quot;219&amp;quot; &amp;quot;224&amp;quot; &amp;quot;205&amp;quot; &amp;quot;221&amp;quot; &amp;quot;223&amp;quot; &amp;quot;228&amp;quot; &amp;quot;206&amp;quot;
-##  [37] &amp;quot;220&amp;quot; &amp;quot;212&amp;quot; &amp;quot;226&amp;quot; &amp;quot;212&amp;quot; &amp;quot;202&amp;quot; &amp;quot;215&amp;quot; &amp;quot;204&amp;quot; &amp;quot;219&amp;quot; &amp;quot;221&amp;quot; &amp;quot;225&amp;quot; &amp;quot;208&amp;quot; &amp;quot;214&amp;quot;
-##  [49] &amp;quot;207&amp;quot; &amp;quot;220&amp;quot; &amp;quot;301&amp;quot; &amp;quot;311&amp;quot; &amp;quot;311&amp;quot; &amp;quot;303&amp;quot; &amp;quot;302&amp;quot; &amp;quot;308&amp;quot; &amp;quot;304&amp;quot; &amp;quot;309&amp;quot; &amp;quot;309&amp;quot; &amp;quot;309&amp;quot;
-##  [61] &amp;quot;306&amp;quot; &amp;quot;304&amp;quot; &amp;quot;310&amp;quot; &amp;quot;309&amp;quot; &amp;quot;305&amp;quot; &amp;quot;305&amp;quot; &amp;quot;310&amp;quot; &amp;quot;306&amp;quot; &amp;quot;301&amp;quot; &amp;quot;310&amp;quot; &amp;quot;305&amp;quot; &amp;quot;307&amp;quot;
-##  [73] &amp;quot;311&amp;quot; &amp;quot;306&amp;quot; &amp;quot;302&amp;quot; &amp;quot;498&amp;quot; &amp;quot;405&amp;quot; &amp;quot;418&amp;quot; &amp;quot;471&amp;quot; &amp;quot;453&amp;quot; &amp;quot;455&amp;quot; &amp;quot;481&amp;quot; &amp;quot;435&amp;quot; &amp;quot;419&amp;quot;
-##  [85] &amp;quot;447&amp;quot; &amp;quot;420&amp;quot; &amp;quot;431&amp;quot; &amp;quot;439&amp;quot; &amp;quot;484&amp;quot; &amp;quot;425&amp;quot; &amp;quot;445&amp;quot; &amp;quot;438&amp;quot; &amp;quot;452&amp;quot; &amp;quot;445&amp;quot; &amp;quot;409&amp;quot; &amp;quot;452&amp;quot;
-##  [97] &amp;quot;468&amp;quot; &amp;quot;447&amp;quot; &amp;quot;414&amp;quot; &amp;quot;498&amp;quot;
+&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;107&amp;quot; &amp;quot;107&amp;quot; &amp;quot;104&amp;quot; &amp;quot;115&amp;quot; &amp;quot;109&amp;quot; &amp;quot;112&amp;quot; &amp;quot;105&amp;quot; &amp;quot;101&amp;quot; &amp;quot;101&amp;quot; &amp;quot;113&amp;quot; &amp;quot;118&amp;quot; &amp;quot;110&amp;quot;
+##  [13] &amp;quot;122&amp;quot; &amp;quot;112&amp;quot; &amp;quot;113&amp;quot; &amp;quot;113&amp;quot; &amp;quot;114&amp;quot; &amp;quot;118&amp;quot; &amp;quot;115&amp;quot; &amp;quot;100&amp;quot; &amp;quot;112&amp;quot; &amp;quot;123&amp;quot; &amp;quot;102&amp;quot; &amp;quot;104&amp;quot;
+##  [25] &amp;quot;115&amp;quot; &amp;quot;219&amp;quot; &amp;quot;229&amp;quot; &amp;quot;212&amp;quot; &amp;quot;210&amp;quot; &amp;quot;221&amp;quot; &amp;quot;204&amp;quot; &amp;quot;221&amp;quot; &amp;quot;209&amp;quot; &amp;quot;227&amp;quot; &amp;quot;216&amp;quot; &amp;quot;202&amp;quot;
+##  [37] &amp;quot;215&amp;quot; &amp;quot;218&amp;quot; &amp;quot;203&amp;quot; &amp;quot;208&amp;quot; &amp;quot;223&amp;quot; &amp;quot;227&amp;quot; &amp;quot;215&amp;quot; &amp;quot;203&amp;quot; &amp;quot;227&amp;quot; &amp;quot;203&amp;quot; &amp;quot;201&amp;quot; &amp;quot;228&amp;quot;
+##  [49] &amp;quot;211&amp;quot; &amp;quot;212&amp;quot; &amp;quot;309&amp;quot; &amp;quot;309&amp;quot; &amp;quot;310&amp;quot; &amp;quot;309&amp;quot; &amp;quot;303&amp;quot; &amp;quot;302&amp;quot; &amp;quot;308&amp;quot; &amp;quot;303&amp;quot; &amp;quot;310&amp;quot; &amp;quot;304&amp;quot;
+##  [61] &amp;quot;306&amp;quot; &amp;quot;303&amp;quot; &amp;quot;302&amp;quot; &amp;quot;308&amp;quot; &amp;quot;304&amp;quot; &amp;quot;303&amp;quot; &amp;quot;304&amp;quot; &amp;quot;303&amp;quot; &amp;quot;303&amp;quot; &amp;quot;301&amp;quot; &amp;quot;311&amp;quot; &amp;quot;302&amp;quot;
+##  [73] &amp;quot;303&amp;quot; &amp;quot;311&amp;quot; &amp;quot;310&amp;quot; &amp;quot;434&amp;quot; &amp;quot;460&amp;quot; &amp;quot;469&amp;quot; &amp;quot;439&amp;quot; &amp;quot;413&amp;quot; &amp;quot;436&amp;quot; &amp;quot;479&amp;quot; &amp;quot;440&amp;quot; &amp;quot;441&amp;quot;
+##  [85] &amp;quot;455&amp;quot; &amp;quot;484&amp;quot; &amp;quot;491&amp;quot; &amp;quot;436&amp;quot; &amp;quot;468&amp;quot; &amp;quot;420&amp;quot; &amp;quot;472&amp;quot; &amp;quot;474&amp;quot; &amp;quot;496&amp;quot; &amp;quot;407&amp;quot; &amp;quot;449&amp;quot; &amp;quot;405&amp;quot;
+##  [97] &amp;quot;470&amp;quot; &amp;quot;469&amp;quot; &amp;quot;442&amp;quot; &amp;quot;473&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Esse exercício é um pouco mais difícil mesmo!
 x %&amp;gt;% str_extract(&amp;quot;\\d&amp;quot;)
@@ -5344,106 +5344,106 @@ x %&amp;gt;% str_extract(&amp;quot;\\d&amp;quot;)
 &lt;pre&gt;&lt;code&gt;## # A tibble: 100 x 3
 ##     tipo_idade idade idade_anos
 ##     &amp;lt;chr&amp;gt;      &amp;lt;chr&amp;gt;      &amp;lt;dbl&amp;gt;
-##   1 1          05      0.000579
-##   2 1          01      0.000116
-##   3 1          08      0.000926
-##   4 1          07      0.000810
-##   5 1          12      0.00139 
-##   6 1          22      0.00255 
-##   7 1          12      0.00139 
-##   8 1          02      0.000231
-##   9 1          00      0       
-##  10 1          00      0       
-##  11 1          10      0.00116 
-##  12 1          02      0.000231
-##  13 1          16      0.00185 
-##  14 1          24      0.00278 
-##  15 1          02      0.000231
-##  16 1          10      0.00116 
-##  17 1          22      0.00255 
-##  18 1          02      0.000231
-##  19 1          02      0.000231
-##  20 1          20      0.00231 
-##  21 1          01      0.000116
-##  22 1          04      0.000463
-##  23 1          05      0.000579
-##  24 1          18      0.00208 
-##  25 1          06      0.000694
-##  26 2          02      0.00556 
+##   1 1          07      0.000810
+##   2 1          07      0.000810
+##   3 1          04      0.000463
+##   4 1          15      0.00174 
+##   5 1          09      0.00104 
+##   6 1          12      0.00139 
+##   7 1          05      0.000579
+##   8 1          01      0.000116
+##   9 1          01      0.000116
+##  10 1          13      0.00150 
+##  11 1          18      0.00208 
+##  12 1          10      0.00116 
+##  13 1          22      0.00255 
+##  14 1          12      0.00139 
+##  15 1          13      0.00150 
+##  16 1          13      0.00150 
+##  17 1          14      0.00162 
+##  18 1          18      0.00208 
+##  19 1          15      0.00174 
+##  20 1          00      0       
+##  21 1          12      0.00139 
+##  22 1          23      0.00266 
+##  23 1          02      0.000231
+##  24 1          04      0.000463
+##  25 1          15      0.00174 
+##  26 2          19      0.0528  
 ##  27 2          29      0.0806  
-##  28 2          02      0.00556 
-##  29 2          02      0.00556 
-##  30 2          19      0.0528  
-##  31 2          24      0.0667  
-##  32 2          05      0.0139  
-##  33 2          21      0.0583  
-##  34 2          23      0.0639  
-##  35 2          28      0.0778  
-##  36 2          06      0.0167  
-##  37 2          20      0.0556  
-##  38 2          12      0.0333  
-##  39 2          26      0.0722  
-##  40 2          12      0.0333  
-##  41 2          02      0.00556 
-##  42 2          15      0.0417  
-##  43 2          04      0.0111  
-##  44 2          19      0.0528  
-##  45 2          21      0.0583  
-##  46 2          25      0.0694  
-##  47 2          08      0.0222  
-##  48 2          14      0.0389  
-##  49 2          07      0.0194  
-##  50 2          20      0.0556  
-##  51 3          01      0.0833  
-##  52 3          11      0.917   
-##  53 3          11      0.917   
-##  54 3          03      0.25    
-##  55 3          02      0.167   
-##  56 3          08      0.667   
-##  57 3          04      0.333   
-##  58 3          09      0.75    
-##  59 3          09      0.75    
-##  60 3          09      0.75    
+##  28 2          12      0.0333  
+##  29 2          10      0.0278  
+##  30 2          21      0.0583  
+##  31 2          04      0.0111  
+##  32 2          21      0.0583  
+##  33 2          09      0.025   
+##  34 2          27      0.075   
+##  35 2          16      0.0444  
+##  36 2          02      0.00556 
+##  37 2          15      0.0417  
+##  38 2          18      0.05    
+##  39 2          03      0.00833 
+##  40 2          08      0.0222  
+##  41 2          23      0.0639  
+##  42 2          27      0.075   
+##  43 2          15      0.0417  
+##  44 2          03      0.00833 
+##  45 2          27      0.075   
+##  46 2          03      0.00833 
+##  47 2          01      0.00278 
+##  48 2          28      0.0778  
+##  49 2          11      0.0306  
+##  50 2          12      0.0333  
+##  51 3          09      0.75    
+##  52 3          09      0.75    
+##  53 3          10      0.833   
+##  54 3          09      0.75    
+##  55 3          03      0.25    
+##  56 3          02      0.167   
+##  57 3          08      0.667   
+##  58 3          03      0.25    
+##  59 3          10      0.833   
+##  60 3          04      0.333   
 ##  61 3          06      0.5     
-##  62 3          04      0.333   
-##  63 3          10      0.833   
-##  64 3          09      0.75    
-##  65 3          05      0.417   
-##  66 3          05      0.417   
-##  67 3          10      0.833   
-##  68 3          06      0.5     
-##  69 3          01      0.0833  
-##  70 3          10      0.833   
-##  71 3          05      0.417   
-##  72 3          07      0.583   
-##  73 3          11      0.917   
-##  74 3          06      0.5     
-##  75 3          02      0.167   
-##  76 4          98     98       
-##  77 4          05      5       
-##  78 4          18     18       
-##  79 4          71     71       
-##  80 4          53     53       
-##  81 4          55     55       
-##  82 4          81     81       
-##  83 4          35     35       
-##  84 4          19     19       
-##  85 4          47     47       
-##  86 4          20     20       
-##  87 4          31     31       
-##  88 4          39     39       
-##  89 4          84     84       
-##  90 4          25     25       
-##  91 4          45     45       
-##  92 4          38     38       
-##  93 4          52     52       
-##  94 4          45     45       
-##  95 4          09      9       
-##  96 4          52     52       
-##  97 4          68     68       
-##  98 4          47     47       
-##  99 4          14     14       
-## 100 4          98     98
+##  62 3          03      0.25    
+##  63 3          02      0.167   
+##  64 3          08      0.667   
+##  65 3          04      0.333   
+##  66 3          03      0.25    
+##  67 3          04      0.333   
+##  68 3          03      0.25    
+##  69 3          03      0.25    
+##  70 3          01      0.0833  
+##  71 3          11      0.917   
+##  72 3          02      0.167   
+##  73 3          03      0.25    
+##  74 3          11      0.917   
+##  75 3          10      0.833   
+##  76 4          34     34       
+##  77 4          60     60       
+##  78 4          69     69       
+##  79 4          39     39       
+##  80 4          13     13       
+##  81 4          36     36       
+##  82 4          79     79       
+##  83 4          40     40       
+##  84 4          41     41       
+##  85 4          55     55       
+##  86 4          84     84       
+##  87 4          91     91       
+##  88 4          36     36       
+##  89 4          68     68       
+##  90 4          20     20       
+##  91 4          72     72       
+##  92 4          74     74       
+##  93 4          96     96       
+##  94 4          07      7       
+##  95 4          49     49       
+##  96 4          05      5       
+##  97 4          70     70       
+##  98 4          69     69       
+##  99 4          42     42       
+## 100 4          73     73
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Ao invés de utilizar essas chamadas recursivas de &lt;code&gt;if_else&lt;/code&gt;, que são muito ruins de ler, como você poderia reescrever a condição usando &lt;code&gt;case_when&lt;/code&gt;?&lt;/p&gt;
 &lt;ol start=&#34;10&#34;&gt;
@@ -5621,6 +5621,222 @@ gss_cat2 %&amp;gt;% count(rincome)
 ## 4 5k-10k         970
 ## 5 Até 5k        1183
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;ggplot2&#34;&gt;&lt;code&gt;ggplot2&lt;/code&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;O que tem de errado no código abaixo? Por que os pontos não ficaram azuis?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = &amp;quot;blue&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-42-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Os pontos não ficam azuis porque você não está especificando cores! Dentro da função &lt;code&gt;aes()&lt;/code&gt; você está especificando variáveis para serem mapeadas a uma escala de cores. Portanto, o &lt;code&gt;ggplot&lt;/code&gt; interpreta &amp;ldquo;blue&amp;rdquo; como uma variável sem nome que tem o valor &amp;ldquo;blue&amp;rdquo; e mapeia ela para a escala de cores padrão, que é vermelha. Se você quer controlar apenas a &amp;ldquo;aparência&amp;rdquo; dos pontos e não está preocupada em mapear nenhuma variável, você pode passar essa estética fora da função &lt;code&gt;aes()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data = mpg) + 
+  geom_point(
+    mapping = aes(x = displ, y = hwy), # aqui acabam os mapeamentos estéticos
+    color = &amp;quot;blue&amp;quot;, # alteração apenas na aparência do geom
+    size = 2, # alteração apenas na aparência do geom
+    shape = 6 # alteração apenas na aparência do geom
+    ) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-43-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Utilizando o banco &lt;code&gt;mpg&lt;/code&gt;, faça o diagrama de dispersão de &lt;code&gt;displ&lt;/code&gt; por &lt;code&gt;hwy&lt;/code&gt; e mapeie a cor para &lt;code&gt;class&lt;/code&gt;, o tamanho para &lt;code&gt;cyl&lt;/code&gt; e a forma para &lt;code&gt;manufacturer&lt;/code&gt;. Como esses atributos estéticos se comportam diferente para variáveis categóricas vs contínuas?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(
+  displ, 
+  hwy, 
+  color = class, 
+  size = cyl,
+  shape = manufacturer)) +
+  geom_point()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: The shape palette can deal with a maximum of 6 discrete values because
+## more than 6 becomes difficult to discriminate; you have 15. Consider
+## specifying shapes manually if you must have them.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: Removed 112 rows containing missing values (geom_point).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-44-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Ao cumprir as instruções como dadas, logo de cara você recebe um aviso do &lt;code&gt;ggplot2&lt;/code&gt;. A paleta de &amp;ldquo;shapes&amp;rdquo; só recebe por padrão 6 shapes diferentes, porque de acordo com o autor, mais de 6 torna difícil de distinguir. Mas eu sou teimoso.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(
+  displ, 
+  hwy, 
+  color = class, 
+  size = cyl,
+  shape = manufacturer)) +
+  geom_point() +
+  scale_shape_manual(values = 1:15, guide = &amp;quot;legend&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-45-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Esse gráfico é mais um exemplo para vocês verem como diferentes escalas se comportam. A variável &lt;code&gt;cyl&lt;/code&gt; é numérica e ordenada, então faz sentido colocá-la num mapeamento como &lt;code&gt;size&lt;/code&gt;, já que visualmente é possível indicar que a grandeza aumenta com o tamanho. Classe é uma variável categórica, então ela fica melhor em mapeamentos que ressaltam diferenças entre as categorias, como &lt;code&gt;colors&lt;/code&gt; ou &lt;code&gt;shapes&lt;/code&gt;. O pacote também impõe algumas restrições sobre o que é possível mapear. Por exemplo, ele retorna erro se você tenta mapear uma variável discreta para uma escala contínua.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point() +
+  scale_color_continuous()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Error: Discrete value supplied to continuous scale
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-46-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Experimentem tentar mapear diferentes variáveis no banco &lt;code&gt;mpg&lt;/code&gt; para as diferentes escalas e vejam os resultados. Em alguns casos, é possível, mas o gráfico é pouco informativo, em outros, você verá mensagens de erro.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Utilizando o &lt;code&gt;diamonds&lt;/code&gt;, crie um diagrama de dispersão que relacione &lt;code&gt;carat&lt;/code&gt; com &lt;code&gt;price&lt;/code&gt;. Explore algumas outras variáveis utilizando escalas de cor para ver se você identifica algum padrão. Aplique transformações nas variáveis que você considerar justificadas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Esse exercício não tem uma resposta correta. O objetivo era que vocês explorassem as transformações estatísticas e as escalas de cores diferentes presentes no &lt;code&gt;ggplot&lt;/code&gt;, através do argumento &lt;code&gt;trans&lt;/code&gt;, ou mesmo fazer outras transformações que interessassem vocês nas variáveis. Abaixo um exemplo de transformação de Yeo-Johnson, um tipo de transformação BoxCox que aceita valores negativos e uma das escalas de cor do pacote &lt;code&gt;viridis&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(diamonds, aes(carat, price, color = clarity)) +
+  geom_point() +
+  scale_x_continuous(trans = scales::yj_trans(p = 2)) +
+  scale_color_viridis_d(option = &amp;quot;magma&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-47-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Ainda continuando o exemplo anterior, aplique um &lt;code&gt;geom_smooth&lt;/code&gt; utilizando várias opções de &lt;code&gt;method&lt;/code&gt; para as variáveis originais ou transformadas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Segundo a mesma lógica, o objetivo era explorar as opções de visualização de modelos simples através do argumento &lt;code&gt;method&lt;/code&gt;. Abaixo um exemplo de &lt;code&gt;gam&lt;/code&gt;. Uma mudança que fiz foi usar a variável &lt;code&gt;cut&lt;/code&gt; ao invés de &lt;code&gt;clarity&lt;/code&gt;, porque o gráfico não-transformado de &lt;code&gt;clarity&lt;/code&gt; estava muito poluído.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(diamonds, aes(carat, price, color = cut)) +
+  geom_point(alpha = 0.1) + # pontos translúcidos para reduzir a poluição
+  geom_smooth(method = &amp;quot;gam&amp;quot;, se = FALSE) +
+  scale_color_viridis_d(option = &amp;quot;plasma&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using formula &#39;y ~ s(x, bs = &amp;quot;cs&amp;quot;)&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-48-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;No nosso gráfico de barras usando &lt;code&gt;stat(prop)&lt;/code&gt; a gente precisou colocar &lt;code&gt;group = 1&lt;/code&gt;, porque? Qual é a diferença entre esses dois códigos?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = after_stat(prop)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-49-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = color, y = after_stat(prop)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-49-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Acabei explicando isso na aula, devido a uma pergunta, mas para quem perdeu, trata-se do comportamento padrão quando há proporções: cada barra terá sua própria proporção e todas somarão a 100%. O uso de &lt;code&gt;group = 1&lt;/code&gt; indica à função que as proporções que somam a 100% são o total dos níveis do fator e não cada nível individualmente.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = after_stat(prop), group = 1))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-50-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# No caso em que há um &amp;quot;fill&amp;quot;, precisamos normalizar as alturas das barras
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(
+    x = cut,
+    y = stat(prop),
+    fill = clarity
+  ))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-50-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data = diamonds) +
+  geom_bar(mapping = aes(
+    x = cut,
+    y = stat(count)/sum(stat(count)),
+    fill = clarity
+  ))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-50-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;code&gt;stat_smooth&lt;/code&gt; é muito parecido com &lt;code&gt;geom_smooth&lt;/code&gt;, mas há uma diferença sutil. Compare os códigos abaixo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;geom_smooth&lt;/code&gt; chama &lt;code&gt;stat_smooth&lt;/code&gt; quando você utiliza a função para calcular as &amp;ldquo;médias condicionais&amp;rdquo; que correspondem a linha de tendência desenhada no gráfico. É assim com todos os &lt;code&gt;geom&lt;/code&gt;s no pacote. Há uma conexão entre o objeto geométrico e uma transformação estatística. Mesmo que seja a transformação &lt;code&gt;_identity&lt;/code&gt;, que mantém a variável exatamente como ela estava no dado. A grande vantagem de construir um gráfico com &lt;code&gt;stat_smooth&lt;/code&gt; ao invés de &lt;code&gt;geom_smooth&lt;/code&gt; é que você pode especificar outro objeto geométrico que não seja o padrão (&lt;code&gt;geom_line&lt;/code&gt; + &lt;code&gt;geom_ribbon&lt;/code&gt;). É isso que os gráficos abaixo demonstram.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() +
+  geom_smooth()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-51-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() +
+  stat_smooth(geom = &amp;quot;step&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-51-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() +
+  stat_smooth(geom = &amp;quot;linerange&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-51-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() +
+  stat_smooth(geom = &amp;quot;errorbar&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-51-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() +
+  stat_smooth(geom = &amp;quot;crossbar&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-51-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Usando o &lt;code&gt;mpg&lt;/code&gt; e &lt;code&gt;facet_grid&lt;/code&gt;, crie um scatterplot que contenha &lt;code&gt;displ&lt;/code&gt; no eixo x, &lt;code&gt;hwy&lt;/code&gt; no eixo y, &lt;code&gt;class&lt;/code&gt; na cor, &lt;code&gt;drv&lt;/code&gt; nas facetas-coluna e &lt;code&gt;cyl&lt;/code&gt; nas facetas linha.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Esse aqui é para demonstrar o uso de &lt;code&gt;facet_grid&lt;/code&gt;, que permite especificar fatores de classificação diferentes nas linhas e colunas, diferente de &lt;code&gt;facet_wrap&lt;/code&gt; mostrado na aula, que só permite especificar uma dimensão.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
+  geom_point() +
+  facet_grid(cyl ~ drv)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-52-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Você acha que os dois gráficos abaixo ficarão diferentes um do outro? Porque? Tente responder antes de rodar o código.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-53-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot() + 
+  geom_point(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_smooth(data = mpg, mapping = aes(x = displ, y = hwy))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-53-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Mesmo antes de rodar o código, o observador astuto notará que os mapeamentos locais no segundo gráfico são idênticos entre si e aos mapeamentos globais, então os dois gráficos são iguais.&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;Tente recriar o seguinte gráfico&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;O objetivo dessa era fazer vocês fuçarem um pouco na ajuda para tentar recriar o mais fielmente possível o gráfico final. Não precisava ter acertado, o objetivo era chegar o mais próximo possível.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mpg, aes(displ, hwy, color = drv)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE) +
+  labs(x = &amp;quot;Rodovia&amp;quot;, y = &amp;quot;Toneladas&amp;quot;, color = &amp;quot;Tração&amp;quot;) +
+  scale_color_brewer(palette = &amp;quot;Set1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using formula &#39;y ~ x&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-54-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;Transforme o gráfico seguir em um gráfico de pizza usando &lt;code&gt;coord_polar&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(diamonds, aes(cut, fill = cut)) +
+  geom_bar()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-55-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Depois de simplesmente especificar &lt;code&gt;coord_polar&lt;/code&gt;, em geral o gráfico fica meio estranho, não tem aquela cara bonita de pizza. É preciso corrigir os seguintes problemas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A largura das barras deve ser igual a proporção das contagens, mas a altura deve ser igual a 1! Portanto, eu inverto as coisas e passo as contagens/proporções para &amp;ldquo;x&amp;rdquo; e &amp;ldquo;y&amp;rdquo; fica com o valor fixo = 1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(diamonds, 
+       aes(
+         # calculando as proporções do total,
+         # também funciona com o padrão stat(count)
+         x = stat(count)/sum(stat(count)),
+         y = 1, # altura igual a 1
+         fill = cut)) + # cores
+  geom_bar() +
+  coord_polar() + # coordenadas polares
+  # opcional: remover aspectos do tema para um visual mais clean
+  theme_void()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-56-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Como desafio, tentem adicionar elementos textuais das proporções no gráfico. O problema a ser resolvido é como posicionar o texto num sistema de coordenadas polares. Boa sorte!&lt;/p&gt;
+&lt;p&gt;Gráficos de pizza são polêmicos na análise de dados porque nossos olhos não captam bem diferenças entre formatos curvos e complexos, então a comparação entre as categorias fica prejudicada se houverem mais de 2 ou 3. Eu sempre dou preferência para barras. Há um tipo de gráfico de pizza melhorzinho chamado &amp;ldquo;donut plot&amp;rdquo;, em que o meio do círculo é oco, mas eu ainda prefiro as barras.&lt;/p&gt;
 </description>
     </item>
     
