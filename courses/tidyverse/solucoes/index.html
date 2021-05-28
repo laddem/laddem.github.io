@@ -697,7 +697,6 @@
     <li><a href="#stringr-forcats-e-dplyr"><code>stringr</code>, <code>forcats</code> e <code>dplyr</code></a></li>
     <li><a href="#ggplot2"><code>ggplot2</code></a></li>
     <li><a href="#purrr"><code>purrr</code></a></li>
-    <li><a href="#exercícios">Exercícios</a></li>
   </ul>
 </nav>
 
@@ -2048,15 +2047,15 @@ x &lt;- as.character(round(c(
 # Como você transformaria esse vetor em número?
 x
 </code></pre>
-<pre><code>##   [1] &quot;119&quot; &quot;118&quot; &quot;105&quot; &quot;101&quot; &quot;118&quot; &quot;117&quot; &quot;113&quot; &quot;123&quot; &quot;105&quot; &quot;107&quot; &quot;111&quot; &quot;110&quot;
-##  [13] &quot;109&quot; &quot;118&quot; &quot;117&quot; &quot;116&quot; &quot;101&quot; &quot;105&quot; &quot;104&quot; &quot;118&quot; &quot;119&quot; &quot;104&quot; &quot;111&quot; &quot;104&quot;
-##  [25] &quot;112&quot; &quot;218&quot; &quot;229&quot; &quot;230&quot; &quot;216&quot; &quot;221&quot; &quot;216&quot; &quot;213&quot; &quot;214&quot; &quot;213&quot; &quot;211&quot; &quot;214&quot;
-##  [37] &quot;206&quot; &quot;226&quot; &quot;207&quot; &quot;223&quot; &quot;206&quot; &quot;209&quot; &quot;218&quot; &quot;207&quot; &quot;223&quot; &quot;201&quot; &quot;226&quot; &quot;219&quot;
-##  [49] &quot;201&quot; &quot;216&quot; &quot;310&quot; &quot;306&quot; &quot;307&quot; &quot;305&quot; &quot;308&quot; &quot;301&quot; &quot;304&quot; &quot;309&quot; &quot;310&quot; &quot;301&quot;
-##  [61] &quot;308&quot; &quot;309&quot; &quot;303&quot; &quot;306&quot; &quot;305&quot; &quot;301&quot; &quot;310&quot; &quot;303&quot; &quot;303&quot; &quot;304&quot; &quot;308&quot; &quot;309&quot;
-##  [73] &quot;306&quot; &quot;305&quot; &quot;307&quot; &quot;454&quot; &quot;464&quot; &quot;437&quot; &quot;454&quot; &quot;454&quot; &quot;414&quot; &quot;481&quot; &quot;484&quot; &quot;434&quot;
-##  [85] &quot;416&quot; &quot;447&quot; &quot;444&quot; &quot;411&quot; &quot;407&quot; &quot;407&quot; &quot;491&quot; &quot;473&quot; &quot;475&quot; &quot;426&quot; &quot;441&quot; &quot;469&quot;
-##  [97] &quot;438&quot; &quot;468&quot; &quot;455&quot; &quot;427&quot;
+<pre><code>##   [1] &quot;118&quot; &quot;114&quot; &quot;118&quot; &quot;120&quot; &quot;109&quot; &quot;104&quot; &quot;114&quot; &quot;117&quot; &quot;122&quot; &quot;109&quot; &quot;110&quot; &quot;113&quot;
+##  [13] &quot;106&quot; &quot;100&quot; &quot;122&quot; &quot;121&quot; &quot;124&quot; &quot;124&quot; &quot;110&quot; &quot;100&quot; &quot;117&quot; &quot;119&quot; &quot;105&quot; &quot;118&quot;
+##  [25] &quot;122&quot; &quot;201&quot; &quot;205&quot; &quot;212&quot; &quot;216&quot; &quot;228&quot; &quot;213&quot; &quot;227&quot; &quot;221&quot; &quot;214&quot; &quot;227&quot; &quot;206&quot;
+##  [37] &quot;207&quot; &quot;215&quot; &quot;224&quot; &quot;223&quot; &quot;203&quot; &quot;221&quot; &quot;215&quot; &quot;225&quot; &quot;210&quot; &quot;208&quot; &quot;219&quot; &quot;207&quot;
+##  [49] &quot;221&quot; &quot;227&quot; &quot;310&quot; &quot;305&quot; &quot;301&quot; &quot;304&quot; &quot;310&quot; &quot;307&quot; &quot;305&quot; &quot;309&quot; &quot;308&quot; &quot;306&quot;
+##  [61] &quot;308&quot; &quot;305&quot; &quot;304&quot; &quot;303&quot; &quot;306&quot; &quot;302&quot; &quot;310&quot; &quot;306&quot; &quot;301&quot; &quot;310&quot; &quot;306&quot; &quot;304&quot;
+##  [73] &quot;305&quot; &quot;304&quot; &quot;307&quot; &quot;401&quot; &quot;459&quot; &quot;429&quot; &quot;435&quot; &quot;435&quot; &quot;415&quot; &quot;475&quot; &quot;414&quot; &quot;419&quot;
+##  [85] &quot;495&quot; &quot;475&quot; &quot;431&quot; &quot;460&quot; &quot;478&quot; &quot;447&quot; &quot;436&quot; &quot;412&quot; &quot;403&quot; &quot;423&quot; &quot;467&quot; &quot;438&quot;
+##  [97] &quot;475&quot; &quot;467&quot; &quot;418&quot; &quot;476&quot;
 </code></pre>
 <pre><code class="language-r"># Esse exercício é um pouco mais difícil mesmo!
 x %&gt;% str_extract(&quot;\\d&quot;)
@@ -2091,106 +2090,106 @@ x %&gt;% str_extract(&quot;\\d&quot;)
 <pre><code>## # A tibble: 100 x 3
 ##     tipo_idade idade idade_anos
 ##     &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt;
-##   1 1          19      0.00220 
-##   2 1          18      0.00208 
-##   3 1          05      0.000579
-##   4 1          01      0.000116
-##   5 1          18      0.00208 
-##   6 1          17      0.00197 
-##   7 1          13      0.00150 
-##   8 1          23      0.00266 
-##   9 1          05      0.000579
-##  10 1          07      0.000810
-##  11 1          11      0.00127 
-##  12 1          10      0.00116 
-##  13 1          09      0.00104 
-##  14 1          18      0.00208 
-##  15 1          17      0.00197 
-##  16 1          16      0.00185 
-##  17 1          01      0.000116
-##  18 1          05      0.000579
-##  19 1          04      0.000463
-##  20 1          18      0.00208 
-##  21 1          19      0.00220 
-##  22 1          04      0.000463
-##  23 1          11      0.00127 
-##  24 1          04      0.000463
-##  25 1          12      0.00139 
-##  26 2          18      0.05    
-##  27 2          29      0.0806  
-##  28 2          30      0.0833  
+##   1 1          18      0.00208 
+##   2 1          14      0.00162 
+##   3 1          18      0.00208 
+##   4 1          20      0.00231 
+##   5 1          09      0.00104 
+##   6 1          04      0.000463
+##   7 1          14      0.00162 
+##   8 1          17      0.00197 
+##   9 1          22      0.00255 
+##  10 1          09      0.00104 
+##  11 1          10      0.00116 
+##  12 1          13      0.00150 
+##  13 1          06      0.000694
+##  14 1          00      0       
+##  15 1          22      0.00255 
+##  16 1          21      0.00243 
+##  17 1          24      0.00278 
+##  18 1          24      0.00278 
+##  19 1          10      0.00116 
+##  20 1          00      0       
+##  21 1          17      0.00197 
+##  22 1          19      0.00220 
+##  23 1          05      0.000579
+##  24 1          18      0.00208 
+##  25 1          22      0.00255 
+##  26 2          01      0.00278 
+##  27 2          05      0.0139  
+##  28 2          12      0.0333  
 ##  29 2          16      0.0444  
-##  30 2          21      0.0583  
-##  31 2          16      0.0444  
-##  32 2          13      0.0361  
-##  33 2          14      0.0389  
-##  34 2          13      0.0361  
-##  35 2          11      0.0306  
-##  36 2          14      0.0389  
-##  37 2          06      0.0167  
-##  38 2          26      0.0722  
-##  39 2          07      0.0194  
+##  30 2          28      0.0778  
+##  31 2          13      0.0361  
+##  32 2          27      0.075   
+##  33 2          21      0.0583  
+##  34 2          14      0.0389  
+##  35 2          27      0.075   
+##  36 2          06      0.0167  
+##  37 2          07      0.0194  
+##  38 2          15      0.0417  
+##  39 2          24      0.0667  
 ##  40 2          23      0.0639  
-##  41 2          06      0.0167  
-##  42 2          09      0.025   
-##  43 2          18      0.05    
-##  44 2          07      0.0194  
-##  45 2          23      0.0639  
-##  46 2          01      0.00278 
-##  47 2          26      0.0722  
-##  48 2          19      0.0528  
-##  49 2          01      0.00278 
-##  50 2          16      0.0444  
+##  41 2          03      0.00833 
+##  42 2          21      0.0583  
+##  43 2          15      0.0417  
+##  44 2          25      0.0694  
+##  45 2          10      0.0278  
+##  46 2          08      0.0222  
+##  47 2          19      0.0528  
+##  48 2          07      0.0194  
+##  49 2          21      0.0583  
+##  50 2          27      0.075   
 ##  51 3          10      0.833   
-##  52 3          06      0.5     
-##  53 3          07      0.583   
-##  54 3          05      0.417   
-##  55 3          08      0.667   
-##  56 3          01      0.0833  
-##  57 3          04      0.333   
+##  52 3          05      0.417   
+##  53 3          01      0.0833  
+##  54 3          04      0.333   
+##  55 3          10      0.833   
+##  56 3          07      0.583   
+##  57 3          05      0.417   
 ##  58 3          09      0.75    
-##  59 3          10      0.833   
-##  60 3          01      0.0833  
+##  59 3          08      0.667   
+##  60 3          06      0.5     
 ##  61 3          08      0.667   
-##  62 3          09      0.75    
-##  63 3          03      0.25    
-##  64 3          06      0.5     
-##  65 3          05      0.417   
-##  66 3          01      0.0833  
+##  62 3          05      0.417   
+##  63 3          04      0.333   
+##  64 3          03      0.25    
+##  65 3          06      0.5     
+##  66 3          02      0.167   
 ##  67 3          10      0.833   
-##  68 3          03      0.25    
-##  69 3          03      0.25    
-##  70 3          04      0.333   
-##  71 3          08      0.667   
-##  72 3          09      0.75    
-##  73 3          06      0.5     
-##  74 3          05      0.417   
+##  68 3          06      0.5     
+##  69 3          01      0.0833  
+##  70 3          10      0.833   
+##  71 3          06      0.5     
+##  72 3          04      0.333   
+##  73 3          05      0.417   
+##  74 3          04      0.333   
 ##  75 3          07      0.583   
-##  76 4          54     54       
-##  77 4          64     64       
-##  78 4          37     37       
-##  79 4          54     54       
-##  80 4          54     54       
-##  81 4          14     14       
-##  82 4          81     81       
-##  83 4          84     84       
-##  84 4          34     34       
-##  85 4          16     16       
-##  86 4          47     47       
-##  87 4          44     44       
-##  88 4          11     11       
-##  89 4          07      7       
-##  90 4          07      7       
-##  91 4          91     91       
-##  92 4          73     73       
-##  93 4          75     75       
-##  94 4          26     26       
-##  95 4          41     41       
-##  96 4          69     69       
-##  97 4          38     38       
-##  98 4          68     68       
-##  99 4          55     55       
-## 100 4          27     27
+##  76 4          01      1       
+##  77 4          59     59       
+##  78 4          29     29       
+##  79 4          35     35       
+##  80 4          35     35       
+##  81 4          15     15       
+##  82 4          75     75       
+##  83 4          14     14       
+##  84 4          19     19       
+##  85 4          95     95       
+##  86 4          75     75       
+##  87 4          31     31       
+##  88 4          60     60       
+##  89 4          78     78       
+##  90 4          47     47       
+##  91 4          36     36       
+##  92 4          12     12       
+##  93 4          03      3       
+##  94 4          23     23       
+##  95 4          67     67       
+##  96 4          38     38       
+##  97 4          75     75       
+##  98 4          67     67       
+##  99 4          18     18       
+## 100 4          76     76
 </code></pre>
 <p>Ao invés de utilizar essas chamadas recursivas de <code>if_else</code>, que são muito ruins de ler, como você poderia reescrever a condição usando <code>case_when</code>?</p>
 <ol start="10">
@@ -2585,7 +2584,6 @@ ggplot(data = diamonds) +
 <p>Como desafio, tentem adicionar elementos textuais das proporções no gráfico. O problema a ser resolvido é como posicionar o texto num sistema de coordenadas polares. Boa sorte!</p>
 <p>Gráficos de pizza são polêmicos na análise de dados porque nossos olhos não captam bem diferenças entre formatos curvos e complexos, então a comparação entre as categorias fica prejudicada se houverem mais de 2 ou 3. Eu sempre dou preferência para barras. Há um tipo de gráfico de pizza melhorzinho chamado &ldquo;donut plot&rdquo;, em que o meio do círculo é oco, mas eu ainda prefiro as barras.</p>
 <h2 id="purrr"><code>purrr</code></h2>
-<h2 id="exercícios">Exercícios</h2>
 <ol>
 <li>Utilize uma das funções <code>map_</code> para:</li>
 </ol>
@@ -2688,46 +2686,46 @@ medias &lt;- rep(c(-10, 0, 10, 100), each = 10)
 map2(x, medias, ~rnorm(.x, mean = .y)) %&gt;% str()
 </code></pre>
 <pre><code>## List of 40
-##  $ : num [1:100] -8.92 -8.53 -11.61 -9.52 -9.87 ...
-##  $ : num [1:100] -11.32 -10.93 -10.21 -8.82 -8.99 ...
-##  $ : num [1:100] -10.93 -9.66 -8.71 -9.56 -9.16 ...
-##  $ : num [1:100] -9.58 -11.3 -9.09 -11.25 -10.07 ...
-##  $ : num [1:100] -10.8 -10.1 -10.2 -10.1 -10.6 ...
-##  $ : num [1:100] -10.52 -9.92 -8.23 -10.25 -10.63 ...
-##  $ : num [1:100] -9.82 -10.4 -9.66 -9.49 -10.09 ...
-##  $ : num [1:100] -10.28 -8.87 -10.4 -11.11 -9.64 ...
-##  $ : num [1:100] -10.35 -9.83 -8.92 -10.44 -9.71 ...
-##  $ : num [1:100] -9.53 -9.73 -9.36 -12.1 -10.49 ...
-##  $ : num [1:100] -0.256 1.089 -0.34 -0.927 -0.122 ...
-##  $ : num [1:100] -0.1104 0.2669 0.3751 1.1893 0.0686 ...
-##  $ : num [1:100] 0.439 -0.559 0.297 -0.224 -0.867 ...
-##  $ : num [1:100] 1.355 1.162 -2.14 -0.488 0.713 ...
-##  $ : num [1:100] -0.72 -0.749 0.997 -1.678 -0.518 ...
-##  $ : num [1:100] 0.92 -1.887 0.409 -0.373 0.397 ...
-##  $ : num [1:100] -0.598 -0.404 -0.201 -2.721 1.595 ...
-##  $ : num [1:100] -0.361 -0.146 0.637 0.832 0.63 ...
-##  $ : num [1:100] -1.232 0.759 -1.84 0.426 1.995 ...
-##  $ : num [1:100] 0.555 0.973 0.69 -1.3 1.051 ...
-##  $ : num [1:100] 10.68 8.6 9.25 9.67 10.12 ...
-##  $ : num [1:100] 10.06 10.25 8.43 8.84 8.44 ...
-##  $ : num [1:100] 12.12 10.81 8.61 9.53 9.8 ...
-##  $ : num [1:100] 9.79 9.37 11.48 10.19 10.74 ...
-##  $ : num [1:100] 9.15 7.77 9.18 9.1 9.73 ...
-##  $ : num [1:100] 9.29 9.7 7.82 9.97 10.05 ...
-##  $ : num [1:100] 10.42 10.54 11.12 9.66 10.7 ...
-##  $ : num [1:100] 9.39 9.69 9.8 8.1 10.96 ...
-##  $ : num [1:100] 10.78 9.66 9.84 10.87 9.87 ...
-##  $ : num [1:100] 9.15 9.71 10.08 8.88 8.55 ...
-##  $ : num [1:100] 99.2 99.3 100.6 98.6 99.5 ...
-##  $ : num [1:100] 101 101 100 100 101 ...
-##  $ : num [1:100] 99.5 99.2 100.4 100.1 101.4 ...
-##  $ : num [1:100] 99.3 99.4 100.1 99.5 101.6 ...
-##  $ : num [1:100] 99.4 98.1 100.7 101.9 101.3 ...
-##  $ : num [1:100] 98.3 99.6 100.4 100.9 100.6 ...
-##  $ : num [1:100] 101.7 101.4 100.3 97.8 99.7 ...
-##  $ : num [1:100] 103.1 102.3 99.4 100 100.2 ...
-##  $ : num [1:100] 99.9 97.3 102.2 98.4 98.6 ...
-##  $ : num [1:100] 101 99.5 99.8 99.2 101.5 ...
+##  $ : num [1:100] -9.96 -9.53 -9.12 -9.64 -10.36 ...
+##  $ : num [1:100] -11.71 -10.76 -9.41 -9.22 -10.53 ...
+##  $ : num [1:100] -11.33 -9.51 -8.98 -10.91 -9.52 ...
+##  $ : num [1:100] -11.4 -10.9 -10.7 -12.1 -9.8 ...
+##  $ : num [1:100] -11.06 -10.66 -10.33 -9.13 -9.13 ...
+##  $ : num [1:100] -10.22 -9.59 -9.81 -10.71 -10.24 ...
+##  $ : num [1:100] -11 -9.14 -10.91 -9.38 -9.63 ...
+##  $ : num [1:100] -9.83 -9.61 -11.23 -9.68 -10.47 ...
+##  $ : num [1:100] -9.11 -10.03 -10.62 -9.65 -10.2 ...
+##  $ : num [1:100] -9.06 -10.41 -10.84 -9.16 -9.41 ...
+##  $ : num [1:100] -0.8378 0.1102 0.7519 -0.2477 0.0342 ...
+##  $ : num [1:100] 0.607 -0.902 -2.185 -0.397 -1.019 ...
+##  $ : num [1:100] -0.452 2.067 1.45 -1.184 0.893 ...
+##  $ : num [1:100] -0.604 -0.783 1.767 -0.632 1.322 ...
+##  $ : num [1:100] -2.515 0.43 0.694 1.239 1.091 ...
+##  $ : num [1:100] -1.462 1.177 -0.376 0.037 0.387 ...
+##  $ : num [1:100] -0.0803 -0.0421 2.4765 0.0509 -0.1479 ...
+##  $ : num [1:100] 1.118 0.662 -1.439 -1.074 0.493 ...
+##  $ : num [1:100] -0.3136 0.4455 -0.947 2.0658 -0.0188 ...
+##  $ : num [1:100] 0.193 0.625 2.281 0.297 -0.629 ...
+##  $ : num [1:100] 9.29 9.1 9.54 9.99 10.2 ...
+##  $ : num [1:100] 7.96 7.32 10.7 9.13 10.3 ...
+##  $ : num [1:100] 9.96 10.24 10.31 10.54 11.65 ...
+##  $ : num [1:100] 10.88 10.41 8.19 10.37 10.28 ...
+##  $ : num [1:100] 11.27 9.74 11.75 11.7 9.31 ...
+##  $ : num [1:100] 9.62 11.35 10.78 10.79 9.7 ...
+##  $ : num [1:100] 9.04 10.24 11.85 9.82 10.66 ...
+##  $ : num [1:100] 10.48 6.97 8.97 9.69 11.03 ...
+##  $ : num [1:100] 8.48 10.12 9.09 8.18 10.11 ...
+##  $ : num [1:100] 9.97 9.27 10.19 10.93 11.07 ...
+##  $ : num [1:100] 100 99.2 99.6 100.3 99.2 ...
+##  $ : num [1:100] 99 99.9 100.7 98.7 99.7 ...
+##  $ : num [1:100] 99.6 99.2 100.1 100 99.9 ...
+##  $ : num [1:100] 100.5 100.4 100.2 98.4 98.9 ...
+##  $ : num [1:100] 99.8 99.8 100 99.1 101.1 ...
+##  $ : num [1:100] 100.7 100 100.1 98.6 100 ...
+##  $ : num [1:100] 99 99.4 100.5 100.1 99.3 ...
+##  $ : num [1:100] 99.2 98.6 99.2 100.9 97.4 ...
+##  $ : num [1:100] 99.7 99.8 100.9 100.5 99.9 ...
+##  $ : num [1:100] 99.5 100.9 98.5 99.7 100 ...
 </code></pre>
 <ol start="2">
 <li>Como você pode criar um vetor indicando se cada coluna em um <code>data.frame</code> é um fator?</li>
@@ -2983,62 +2981,48 @@ map(x, ~tibble(var1 = rnorm(.x), var2 = rnorm(.x))) %&gt;%
 <pre><code class="language-r"># Nossos arquivos estão salvos no diretório temporário:
 dir(pasta)
 </code></pre>
-<pre><code>##   [1] &quot;arquivo1.csv&quot;     &quot;arquivo10.csv&quot;    &quot;arquivo100.csv&quot;  
-##   [4] &quot;arquivo11.csv&quot;    &quot;arquivo12.csv&quot;    &quot;arquivo13.csv&quot;   
-##   [7] &quot;arquivo14.csv&quot;    &quot;arquivo15.csv&quot;    &quot;arquivo16.csv&quot;   
-##  [10] &quot;arquivo17.csv&quot;    &quot;arquivo18.csv&quot;    &quot;arquivo19.csv&quot;   
-##  [13] &quot;arquivo2.csv&quot;     &quot;arquivo20.csv&quot;    &quot;arquivo21.csv&quot;   
-##  [16] &quot;arquivo22.csv&quot;    &quot;arquivo23.csv&quot;    &quot;arquivo24.csv&quot;   
-##  [19] &quot;arquivo25.csv&quot;    &quot;arquivo26.csv&quot;    &quot;arquivo27.csv&quot;   
-##  [22] &quot;arquivo28.csv&quot;    &quot;arquivo29.csv&quot;    &quot;arquivo3.csv&quot;    
-##  [25] &quot;arquivo30.csv&quot;    &quot;arquivo31.csv&quot;    &quot;arquivo32.csv&quot;   
-##  [28] &quot;arquivo33.csv&quot;    &quot;arquivo34.csv&quot;    &quot;arquivo35.csv&quot;   
-##  [31] &quot;arquivo36.csv&quot;    &quot;arquivo37.csv&quot;    &quot;arquivo38.csv&quot;   
-##  [34] &quot;arquivo39.csv&quot;    &quot;arquivo4.csv&quot;     &quot;arquivo40.csv&quot;   
-##  [37] &quot;arquivo41.csv&quot;    &quot;arquivo42.csv&quot;    &quot;arquivo43.csv&quot;   
-##  [40] &quot;arquivo44.csv&quot;    &quot;arquivo45.csv&quot;    &quot;arquivo46.csv&quot;   
-##  [43] &quot;arquivo47.csv&quot;    &quot;arquivo48.csv&quot;    &quot;arquivo49.csv&quot;   
-##  [46] &quot;arquivo5.csv&quot;     &quot;arquivo50.csv&quot;    &quot;arquivo51.csv&quot;   
-##  [49] &quot;arquivo52.csv&quot;    &quot;arquivo53.csv&quot;    &quot;arquivo54.csv&quot;   
-##  [52] &quot;arquivo55.csv&quot;    &quot;arquivo56.csv&quot;    &quot;arquivo57.csv&quot;   
-##  [55] &quot;arquivo58.csv&quot;    &quot;arquivo59.csv&quot;    &quot;arquivo6.csv&quot;    
-##  [58] &quot;arquivo60.csv&quot;    &quot;arquivo61.csv&quot;    &quot;arquivo62.csv&quot;   
-##  [61] &quot;arquivo63.csv&quot;    &quot;arquivo64.csv&quot;    &quot;arquivo65.csv&quot;   
-##  [64] &quot;arquivo66.csv&quot;    &quot;arquivo67.csv&quot;    &quot;arquivo68.csv&quot;   
-##  [67] &quot;arquivo69.csv&quot;    &quot;arquivo7.csv&quot;     &quot;arquivo70.csv&quot;   
-##  [70] &quot;arquivo71.csv&quot;    &quot;arquivo72.csv&quot;    &quot;arquivo73.csv&quot;   
-##  [73] &quot;arquivo74.csv&quot;    &quot;arquivo75.csv&quot;    &quot;arquivo76.csv&quot;   
-##  [76] &quot;arquivo77.csv&quot;    &quot;arquivo78.csv&quot;    &quot;arquivo79.csv&quot;   
-##  [79] &quot;arquivo8.csv&quot;     &quot;arquivo80.csv&quot;    &quot;arquivo81.csv&quot;   
-##  [82] &quot;arquivo82.csv&quot;    &quot;arquivo83.csv&quot;    &quot;arquivo84.csv&quot;   
-##  [85] &quot;arquivo85.csv&quot;    &quot;arquivo86.csv&quot;    &quot;arquivo87.csv&quot;   
-##  [88] &quot;arquivo88.csv&quot;    &quot;arquivo89.csv&quot;    &quot;arquivo9.csv&quot;    
-##  [91] &quot;arquivo90.csv&quot;    &quot;arquivo91.csv&quot;    &quot;arquivo92.csv&quot;   
-##  [94] &quot;arquivo93.csv&quot;    &quot;arquivo94.csv&quot;    &quot;arquivo95.csv&quot;   
-##  [97] &quot;arquivo96.csv&quot;    &quot;arquivo97.csv&quot;    &quot;arquivo98.csv&quot;   
-## [100] &quot;arquivo99.csv&quot;    &quot;file3234100447a&quot;  &quot;file323412c326bc&quot;
-## [103] &quot;file32341300602b&quot; &quot;file323413c2b2c&quot;  &quot;file323413eafe9&quot; 
-## [106] &quot;file323417ad21ab&quot; &quot;file32341abc531e&quot; &quot;file32341ac8364c&quot;
-## [109] &quot;file32341dd679a&quot;  &quot;file32341e04123c&quot; &quot;file32341fa128d7&quot;
-## [112] &quot;file323425f07c97&quot; &quot;file323426f95b32&quot; &quot;file323428fe69ee&quot;
-## [115] &quot;file32342db2db4&quot;  &quot;file32342e5f1ca7&quot; &quot;file323431df1e32&quot;
-## [118] &quot;file323432de7c35&quot; &quot;file323433724e9c&quot; &quot;file323435323fc1&quot;
-## [121] &quot;file3234366b1bec&quot; &quot;file3234398e11d4&quot; &quot;file3234399ea71&quot; 
-## [124] &quot;file32343a7e55a4&quot; &quot;file32343aec7d4d&quot; &quot;file323441574b58&quot;
-## [127] &quot;file323442661a98&quot; &quot;file3234444257a7&quot; &quot;file323446fd2bea&quot;
-## [130] &quot;file3234474a2b97&quot; &quot;file323447d51cfc&quot; &quot;file323450b153ce&quot;
-## [133] &quot;file323451155c21&quot; &quot;file323451a91520&quot; &quot;file323453151861&quot;
-## [136] &quot;file323453941276&quot; &quot;file323453de27a7&quot; &quot;file323457ae7f2c&quot;
-## [139] &quot;file323457dd1df3&quot; &quot;file3234588a1638&quot; &quot;file3234596f2780&quot;
-## [142] &quot;file323459dca5f&quot;  &quot;file32345b1b30a6&quot; &quot;file32345c4c615e&quot;
-## [145] &quot;file32345e4f253b&quot; &quot;file32345fce2875&quot; &quot;file323461335028&quot;
-## [148] &quot;file323463406aab&quot; &quot;file3234689013ad&quot; &quot;file3234699d2845&quot;
-## [151] &quot;file32346a2953dc&quot; &quot;file32346aca1e0e&quot; &quot;file32346f512ff8&quot;
-## [154] &quot;file323470553e5b&quot; &quot;file323470a856a9&quot; &quot;file323471585e8c&quot;
-## [157] &quot;file32347166317e&quot; &quot;file32347348266c&quot; &quot;file323474132885&quot;
-## [160] &quot;file323476c360f1&quot; &quot;file323477002aee&quot; &quot;file323479e7a39&quot; 
-## [163] &quot;file32347d7176eb&quot; &quot;file323493278c0&quot;  &quot;file3234a441449&quot; 
-## [166] &quot;file3234ad0519&quot;   &quot;file3234cb17692&quot;
+<pre><code>##   [1] &quot;arquivo1.csv&quot;    &quot;arquivo10.csv&quot;   &quot;arquivo100.csv&quot;  &quot;arquivo11.csv&quot;  
+##   [5] &quot;arquivo12.csv&quot;   &quot;arquivo13.csv&quot;   &quot;arquivo14.csv&quot;   &quot;arquivo15.csv&quot;  
+##   [9] &quot;arquivo16.csv&quot;   &quot;arquivo17.csv&quot;   &quot;arquivo18.csv&quot;   &quot;arquivo19.csv&quot;  
+##  [13] &quot;arquivo2.csv&quot;    &quot;arquivo20.csv&quot;   &quot;arquivo21.csv&quot;   &quot;arquivo22.csv&quot;  
+##  [17] &quot;arquivo23.csv&quot;   &quot;arquivo24.csv&quot;   &quot;arquivo25.csv&quot;   &quot;arquivo26.csv&quot;  
+##  [21] &quot;arquivo27.csv&quot;   &quot;arquivo28.csv&quot;   &quot;arquivo29.csv&quot;   &quot;arquivo3.csv&quot;   
+##  [25] &quot;arquivo30.csv&quot;   &quot;arquivo31.csv&quot;   &quot;arquivo32.csv&quot;   &quot;arquivo33.csv&quot;  
+##  [29] &quot;arquivo34.csv&quot;   &quot;arquivo35.csv&quot;   &quot;arquivo36.csv&quot;   &quot;arquivo37.csv&quot;  
+##  [33] &quot;arquivo38.csv&quot;   &quot;arquivo39.csv&quot;   &quot;arquivo4.csv&quot;    &quot;arquivo40.csv&quot;  
+##  [37] &quot;arquivo41.csv&quot;   &quot;arquivo42.csv&quot;   &quot;arquivo43.csv&quot;   &quot;arquivo44.csv&quot;  
+##  [41] &quot;arquivo45.csv&quot;   &quot;arquivo46.csv&quot;   &quot;arquivo47.csv&quot;   &quot;arquivo48.csv&quot;  
+##  [45] &quot;arquivo49.csv&quot;   &quot;arquivo5.csv&quot;    &quot;arquivo50.csv&quot;   &quot;arquivo51.csv&quot;  
+##  [49] &quot;arquivo52.csv&quot;   &quot;arquivo53.csv&quot;   &quot;arquivo54.csv&quot;   &quot;arquivo55.csv&quot;  
+##  [53] &quot;arquivo56.csv&quot;   &quot;arquivo57.csv&quot;   &quot;arquivo58.csv&quot;   &quot;arquivo59.csv&quot;  
+##  [57] &quot;arquivo6.csv&quot;    &quot;arquivo60.csv&quot;   &quot;arquivo61.csv&quot;   &quot;arquivo62.csv&quot;  
+##  [61] &quot;arquivo63.csv&quot;   &quot;arquivo64.csv&quot;   &quot;arquivo65.csv&quot;   &quot;arquivo66.csv&quot;  
+##  [65] &quot;arquivo67.csv&quot;   &quot;arquivo68.csv&quot;   &quot;arquivo69.csv&quot;   &quot;arquivo7.csv&quot;   
+##  [69] &quot;arquivo70.csv&quot;   &quot;arquivo71.csv&quot;   &quot;arquivo72.csv&quot;   &quot;arquivo73.csv&quot;  
+##  [73] &quot;arquivo74.csv&quot;   &quot;arquivo75.csv&quot;   &quot;arquivo76.csv&quot;   &quot;arquivo77.csv&quot;  
+##  [77] &quot;arquivo78.csv&quot;   &quot;arquivo79.csv&quot;   &quot;arquivo8.csv&quot;    &quot;arquivo80.csv&quot;  
+##  [81] &quot;arquivo81.csv&quot;   &quot;arquivo82.csv&quot;   &quot;arquivo83.csv&quot;   &quot;arquivo84.csv&quot;  
+##  [85] &quot;arquivo85.csv&quot;   &quot;arquivo86.csv&quot;   &quot;arquivo87.csv&quot;   &quot;arquivo88.csv&quot;  
+##  [89] &quot;arquivo89.csv&quot;   &quot;arquivo9.csv&quot;    &quot;arquivo90.csv&quot;   &quot;arquivo91.csv&quot;  
+##  [93] &quot;arquivo92.csv&quot;   &quot;arquivo93.csv&quot;   &quot;arquivo94.csv&quot;   &quot;arquivo95.csv&quot;  
+##  [97] &quot;arquivo96.csv&quot;   &quot;arquivo97.csv&quot;   &quot;arquivo98.csv&quot;   &quot;arquivo99.csv&quot;  
+## [101] &quot;filecf810bd36a5&quot; &quot;filecf81149221d&quot; &quot;filecf81164e23&quot;  &quot;filecf8161f65f7&quot;
+## [105] &quot;filecf8171030fd&quot; &quot;filecf819e43f49&quot; &quot;filecf81ad26a9f&quot; &quot;filecf81bed9f1&quot; 
+## [109] &quot;filecf81e7a7e68&quot; &quot;filecf81ef03542&quot; &quot;filecf81fa64a3e&quot; &quot;filecf8239d75ab&quot;
+## [113] &quot;filecf8261936&quot;   &quot;filecf826d55378&quot; &quot;filecf8291061a0&quot; &quot;filecf82b985019&quot;
+## [117] &quot;filecf82c00737b&quot; &quot;filecf8339f5&quot;    &quot;filecf8341e67d6&quot; &quot;filecf8344158ac&quot;
+## [121] &quot;filecf837a47cc7&quot; &quot;filecf837f15510&quot; &quot;filecf8387a3d29&quot; &quot;filecf83a71232b&quot;
+## [125] &quot;filecf83ac3253a&quot; &quot;filecf83af94598&quot; &quot;filecf83f794f64&quot; &quot;filecf8402156c1&quot;
+## [129] &quot;filecf840c15566&quot; &quot;filecf84163761c&quot; &quot;filecf841d3b53&quot;  &quot;filecf844d5642&quot; 
+## [133] &quot;filecf845e73bac&quot; &quot;filecf8462819d6&quot; &quot;filecf84b8b3144&quot; &quot;filecf84ddc73a0&quot;
+## [137] &quot;filecf84fe515d4&quot; &quot;filecf8500a5a10&quot; &quot;filecf8512766ea&quot; &quot;filecf852fe119b&quot;
+## [141] &quot;filecf8550a39d&quot;  &quot;filecf85b14fec&quot;  &quot;filecf85e053c83&quot; &quot;filecf85e6a12f4&quot;
+## [145] &quot;filecf8639c6053&quot; &quot;filecf863dc5f3b&quot; &quot;filecf8646e477f&quot; &quot;filecf865645c5d&quot;
+## [149] &quot;filecf868634c0d&quot; &quot;filecf869137c8a&quot; &quot;filecf86a7852d4&quot; &quot;filecf86b5b250&quot; 
+## [153] &quot;filecf86b9e3bb7&quot; &quot;filecf86d216ac&quot;  &quot;filecf86e894a16&quot; &quot;filecf86ea916d3&quot;
+## [157] &quot;filecf86f22266&quot;  &quot;filecf86f975377&quot; &quot;filecf8757a72be&quot; &quot;filecf876956e82&quot;
+## [161] &quot;filecf876967b1&quot;  &quot;filecf8787a1370&quot; &quot;filecf879037c39&quot; &quot;filecf87964711&quot; 
+## [165] &quot;filecf87afe7046&quot; &quot;filecf88456ae0&quot;  &quot;filecf898344ab&quot;
 </code></pre>
 <pre><code class="language-r"># Agora vamos ler todos de volta para uma tibble só.
 arqs &lt;- dir(pasta, pattern = &quot;.csv&quot;, full.names = T)
@@ -3048,18 +3032,18 @@ df &lt;- map_dfr(arqs, read_csv)
 df
 </code></pre>
 <pre><code>## # A tibble: 1,000 x 2
-##      var1     var2
-##     &lt;dbl&gt;    &lt;dbl&gt;
-##  1  1.31   1.24   
-##  2  0.657  1.03   
-##  3 -0.199 -0.202  
-##  4 -0.427  0.0398 
-##  5  0.452 -0.490  
-##  6 -0.364 -0.00223
-##  7 -0.645 -0.324  
-##  8  0.296  0.468  
-##  9  1.45   0.578  
-## 10 -2.40   1.02   
+##      var1   var2
+##     &lt;dbl&gt;  &lt;dbl&gt;
+##  1  0.837 -0.554
+##  2 -1.12   1.08 
+##  3 -0.821  1.21 
+##  4  0.384  0.465
+##  5  0.885  0.477
+##  6 -0.194  0.517
+##  7  0.710  0.128
+##  8 -1.04  -0.947
+##  9  0.782  1.58 
+## 10  0.571  0.990
 ## # ... with 990 more rows
 </code></pre>
 <pre><code class="language-r"># Juntando colunas
@@ -3069,16 +3053,16 @@ df
 <pre><code>## # A tibble: 10 x 200
 ##    var1...1 var2...2 var1...3 var2...4 var1...5 var2...6 var1...7 var2...8
 ##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-##  1    1.31   1.24      -0.475   -1.36   -1.04    -0.310   -0.808    -0.324
-##  2    0.657  1.03      -0.779    0.934   0.154    0.157   -1.64     -0.903
-##  3   -0.199 -0.202      2.07    -1.44   -1.13     1.10    -0.485    -1.49 
-##  4   -0.427  0.0398    -0.585   -0.701   0.0158  -1.01     1.96     -0.380
-##  5    0.452 -0.490     -0.778    0.185   0.0528  -0.289    0.760     0.568
-##  6   -0.364 -0.00223   -0.577    1.35    0.461    0.757    1.33     -1.51 
-##  7   -0.645 -0.324     -1.14     0.452   0.608   -0.100    0.732    -0.968
-##  8    0.296  0.468     -0.464    0.540   0.443   -0.523   -1.20     -0.212
-##  9    1.45   0.578      1.17    -0.488   0.259   -0.0197   0.477    -0.283
-## 10   -2.40   1.02      -1.00     0.520   1.80     1.53    -0.0785   -1.22 
+##  1    0.837   -0.554 -1.35       0.522  1.49      0.648    -0.567   -0.868
+##  2   -1.12     1.08   0.876      2.11   0.0449    0.0737   -0.808    0.177
+##  3   -0.821    1.21   1.77      -1.31   1.51      1.35      0.559   -0.119
+##  4    0.384    0.465 -0.496      1.10   1.13     -0.331     0.427    0.131
+##  5    0.885    0.477 -0.514     -0.573 -0.0704    0.581     0.751    0.629
+##  6   -0.194    0.517  0.362     -1.62  -0.725    -2.37      0.710   -0.293
+##  7    0.710    0.128  1.11       0.144  0.00462   1.66      1.32    -0.414
+##  8   -1.04    -0.947  0.00775   -1.27   0.0365    0.0813   -1.10     0.757
+##  9    0.782    1.58   0.695     -0.375 -0.342     0.341    -0.325    0.834
+## 10    0.571    0.990 -0.475     -0.356 -1.17     -0.827    -0.148   -1.29 
 ## # ... with 192 more variables: var1...9 &lt;dbl&gt;, var2...10 &lt;dbl&gt;,
 ## #   var1...11 &lt;dbl&gt;, var2...12 &lt;dbl&gt;, var1...13 &lt;dbl&gt;, var2...14 &lt;dbl&gt;,
 ## #   var1...15 &lt;dbl&gt;, var2...16 &lt;dbl&gt;, var1...17 &lt;dbl&gt;, var2...18 &lt;dbl&gt;,
@@ -3112,18 +3096,18 @@ df &lt;- map(arqs, read_csv) %&gt;% reduce(bind_rows)
 df
 </code></pre>
 <pre><code>## # A tibble: 1,000 x 2
-##      var1     var2
-##     &lt;dbl&gt;    &lt;dbl&gt;
-##  1  1.31   1.24   
-##  2  0.657  1.03   
-##  3 -0.199 -0.202  
-##  4 -0.427  0.0398 
-##  5  0.452 -0.490  
-##  6 -0.364 -0.00223
-##  7 -0.645 -0.324  
-##  8  0.296  0.468  
-##  9  1.45   0.578  
-## 10 -2.40   1.02   
+##      var1   var2
+##     &lt;dbl&gt;  &lt;dbl&gt;
+##  1  0.837 -0.554
+##  2 -1.12   1.08 
+##  3 -0.821  1.21 
+##  4  0.384  0.465
+##  5  0.885  0.477
+##  6 -0.194  0.517
+##  7  0.710  0.128
+##  8 -1.04  -0.947
+##  9  0.782  1.58 
+## 10  0.571  0.990
 ## # ... with 990 more rows
 </code></pre>
 <pre><code class="language-r"># colunas
@@ -3133,16 +3117,16 @@ df
 <pre><code>## # A tibble: 10 x 200
 ##    var1...1 var2...2 var1...3 var2...4 var1...5 var2...6 var1...7 var2...8
 ##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-##  1    1.31   1.24      -0.475   -1.36   -1.04    -0.310   -0.808    -0.324
-##  2    0.657  1.03      -0.779    0.934   0.154    0.157   -1.64     -0.903
-##  3   -0.199 -0.202      2.07    -1.44   -1.13     1.10    -0.485    -1.49 
-##  4   -0.427  0.0398    -0.585   -0.701   0.0158  -1.01     1.96     -0.380
-##  5    0.452 -0.490     -0.778    0.185   0.0528  -0.289    0.760     0.568
-##  6   -0.364 -0.00223   -0.577    1.35    0.461    0.757    1.33     -1.51 
-##  7   -0.645 -0.324     -1.14     0.452   0.608   -0.100    0.732    -0.968
-##  8    0.296  0.468     -0.464    0.540   0.443   -0.523   -1.20     -0.212
-##  9    1.45   0.578      1.17    -0.488   0.259   -0.0197   0.477    -0.283
-## 10   -2.40   1.02      -1.00     0.520   1.80     1.53    -0.0785   -1.22 
+##  1    0.837   -0.554 -1.35       0.522  1.49      0.648    -0.567   -0.868
+##  2   -1.12     1.08   0.876      2.11   0.0449    0.0737   -0.808    0.177
+##  3   -0.821    1.21   1.77      -1.31   1.51      1.35      0.559   -0.119
+##  4    0.384    0.465 -0.496      1.10   1.13     -0.331     0.427    0.131
+##  5    0.885    0.477 -0.514     -0.573 -0.0704    0.581     0.751    0.629
+##  6   -0.194    0.517  0.362     -1.62  -0.725    -2.37      0.710   -0.293
+##  7    0.710    0.128  1.11       0.144  0.00462   1.66      1.32    -0.414
+##  8   -1.04    -0.947  0.00775   -1.27   0.0365    0.0813   -1.10     0.757
+##  9    0.782    1.58   0.695     -0.375 -0.342     0.341    -0.325    0.834
+## 10    0.571    0.990 -0.475     -0.356 -1.17     -0.827    -0.148   -1.29 
 ## # ... with 192 more variables: var1...9 &lt;dbl&gt;, var2...10 &lt;dbl&gt;,
 ## #   var1...11 &lt;dbl&gt;, var2...12 &lt;dbl&gt;, var1...13 &lt;dbl&gt;, var2...14 &lt;dbl&gt;,
 ## #   var1...15 &lt;dbl&gt;, var2...16 &lt;dbl&gt;, var1...17 &lt;dbl&gt;, var2...18 &lt;dbl&gt;,
