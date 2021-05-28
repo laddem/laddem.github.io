@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="Soluções dos exercícios readr, tibble, tidyr # Não esqueça dos pacotes!library(tidyverse) ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 -- ## v ggplot2 3.3.3 v purrr 0.3.4## v tibble 3." />
+  <meta name="description" content="Soluções dos exercícios" />
 
   
   <link rel="alternate" hreflang="pt" href="https://laddem.github.io/courses/tidyverse/solucoes/" />
@@ -290,7 +290,7 @@
   <meta property="og:site_name" content="LADDEM" />
   <meta property="og:url" content="https://laddem.github.io/courses/tidyverse/solucoes/" />
   <meta property="og:title" content="Soluções | LADDEM" />
-  <meta property="og:description" content="Soluções dos exercícios readr, tibble, tidyr # Não esqueça dos pacotes!library(tidyverse) ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 -- ## v ggplot2 3.3.3 v purrr 0.3.4## v tibble 3." /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
+  <meta property="og:description" content="Soluções dos exercícios" /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
     <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="pt" />
   
     
@@ -693,13 +693,11 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#soluções-dos-exercícios">Soluções dos exercícios</a>
-      <ul>
-        <li><a href="#readr-tibble-tidyr"><code>readr</code>, <code>tibble</code>, <code>tidyr</code></a></li>
-        <li><a href="#stringr-forcats-e-dplyr"><code>stringr</code>, <code>forcats</code> e <code>dplyr</code></a></li>
-        <li><a href="#ggplot2"><code>ggplot2</code></a></li>
-      </ul>
-    </li>
+    <li><a href="#readr-tibble-tidyr"><code>readr</code>, <code>tibble</code>, <code>tidyr</code></a></li>
+    <li><a href="#stringr-forcats-e-dplyr"><code>stringr</code>, <code>forcats</code> e <code>dplyr</code></a></li>
+    <li><a href="#ggplot2"><code>ggplot2</code></a></li>
+    <li><a href="#purrr"><code>purrr</code></a></li>
+    <li><a href="#exercícios">Exercícios</a></li>
   </ul>
 </nav>
 
@@ -760,8 +758,8 @@
           <h1>Soluções</h1>
 
           <div class="article-style">
-            <h2 id="soluções-dos-exercícios">Soluções dos exercícios</h2>
-<h3 id="readr-tibble-tidyr"><code>readr</code>, <code>tibble</code>, <code>tidyr</code></h3>
+            <p>Soluções dos exercícios.</p>
+<h2 id="readr-tibble-tidyr"><code>readr</code>, <code>tibble</code>, <code>tidyr</code></h2>
 <pre><code class="language-r"># Não esqueça dos pacotes!
 library(tidyverse)
 </code></pre>
@@ -1553,7 +1551,7 @@ acoes %&gt;% complete(ano, qdr, fill = list(lucro = 0))
 ## 8  2016     4  2.66
 </code></pre>
 <p>Note o resultado. E note também que <code>values_fill</code> em <code>pivot_wider</code> é um pouco mais criterioso na hora de fazer as transformações.</p>
-<h3 id="stringr-forcats-e-dplyr"><code>stringr</code>, <code>forcats</code> e <code>dplyr</code></h3>
+<h2 id="stringr-forcats-e-dplyr"><code>stringr</code>, <code>forcats</code> e <code>dplyr</code></h2>
 <pre><code class="language-r">library(nycflights13)
 </code></pre>
 <ol>
@@ -2050,15 +2048,15 @@ x &lt;- as.character(round(c(
 # Como você transformaria esse vetor em número?
 x
 </code></pre>
-<pre><code>##   [1] &quot;107&quot; &quot;107&quot; &quot;104&quot; &quot;115&quot; &quot;109&quot; &quot;112&quot; &quot;105&quot; &quot;101&quot; &quot;101&quot; &quot;113&quot; &quot;118&quot; &quot;110&quot;
-##  [13] &quot;122&quot; &quot;112&quot; &quot;113&quot; &quot;113&quot; &quot;114&quot; &quot;118&quot; &quot;115&quot; &quot;100&quot; &quot;112&quot; &quot;123&quot; &quot;102&quot; &quot;104&quot;
-##  [25] &quot;115&quot; &quot;219&quot; &quot;229&quot; &quot;212&quot; &quot;210&quot; &quot;221&quot; &quot;204&quot; &quot;221&quot; &quot;209&quot; &quot;227&quot; &quot;216&quot; &quot;202&quot;
-##  [37] &quot;215&quot; &quot;218&quot; &quot;203&quot; &quot;208&quot; &quot;223&quot; &quot;227&quot; &quot;215&quot; &quot;203&quot; &quot;227&quot; &quot;203&quot; &quot;201&quot; &quot;228&quot;
-##  [49] &quot;211&quot; &quot;212&quot; &quot;309&quot; &quot;309&quot; &quot;310&quot; &quot;309&quot; &quot;303&quot; &quot;302&quot; &quot;308&quot; &quot;303&quot; &quot;310&quot; &quot;304&quot;
-##  [61] &quot;306&quot; &quot;303&quot; &quot;302&quot; &quot;308&quot; &quot;304&quot; &quot;303&quot; &quot;304&quot; &quot;303&quot; &quot;303&quot; &quot;301&quot; &quot;311&quot; &quot;302&quot;
-##  [73] &quot;303&quot; &quot;311&quot; &quot;310&quot; &quot;434&quot; &quot;460&quot; &quot;469&quot; &quot;439&quot; &quot;413&quot; &quot;436&quot; &quot;479&quot; &quot;440&quot; &quot;441&quot;
-##  [85] &quot;455&quot; &quot;484&quot; &quot;491&quot; &quot;436&quot; &quot;468&quot; &quot;420&quot; &quot;472&quot; &quot;474&quot; &quot;496&quot; &quot;407&quot; &quot;449&quot; &quot;405&quot;
-##  [97] &quot;470&quot; &quot;469&quot; &quot;442&quot; &quot;473&quot;
+<pre><code>##   [1] &quot;119&quot; &quot;118&quot; &quot;105&quot; &quot;101&quot; &quot;118&quot; &quot;117&quot; &quot;113&quot; &quot;123&quot; &quot;105&quot; &quot;107&quot; &quot;111&quot; &quot;110&quot;
+##  [13] &quot;109&quot; &quot;118&quot; &quot;117&quot; &quot;116&quot; &quot;101&quot; &quot;105&quot; &quot;104&quot; &quot;118&quot; &quot;119&quot; &quot;104&quot; &quot;111&quot; &quot;104&quot;
+##  [25] &quot;112&quot; &quot;218&quot; &quot;229&quot; &quot;230&quot; &quot;216&quot; &quot;221&quot; &quot;216&quot; &quot;213&quot; &quot;214&quot; &quot;213&quot; &quot;211&quot; &quot;214&quot;
+##  [37] &quot;206&quot; &quot;226&quot; &quot;207&quot; &quot;223&quot; &quot;206&quot; &quot;209&quot; &quot;218&quot; &quot;207&quot; &quot;223&quot; &quot;201&quot; &quot;226&quot; &quot;219&quot;
+##  [49] &quot;201&quot; &quot;216&quot; &quot;310&quot; &quot;306&quot; &quot;307&quot; &quot;305&quot; &quot;308&quot; &quot;301&quot; &quot;304&quot; &quot;309&quot; &quot;310&quot; &quot;301&quot;
+##  [61] &quot;308&quot; &quot;309&quot; &quot;303&quot; &quot;306&quot; &quot;305&quot; &quot;301&quot; &quot;310&quot; &quot;303&quot; &quot;303&quot; &quot;304&quot; &quot;308&quot; &quot;309&quot;
+##  [73] &quot;306&quot; &quot;305&quot; &quot;307&quot; &quot;454&quot; &quot;464&quot; &quot;437&quot; &quot;454&quot; &quot;454&quot; &quot;414&quot; &quot;481&quot; &quot;484&quot; &quot;434&quot;
+##  [85] &quot;416&quot; &quot;447&quot; &quot;444&quot; &quot;411&quot; &quot;407&quot; &quot;407&quot; &quot;491&quot; &quot;473&quot; &quot;475&quot; &quot;426&quot; &quot;441&quot; &quot;469&quot;
+##  [97] &quot;438&quot; &quot;468&quot; &quot;455&quot; &quot;427&quot;
 </code></pre>
 <pre><code class="language-r"># Esse exercício é um pouco mais difícil mesmo!
 x %&gt;% str_extract(&quot;\\d&quot;)
@@ -2093,106 +2091,106 @@ x %&gt;% str_extract(&quot;\\d&quot;)
 <pre><code>## # A tibble: 100 x 3
 ##     tipo_idade idade idade_anos
 ##     &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt;
-##   1 1          07      0.000810
-##   2 1          07      0.000810
-##   3 1          04      0.000463
-##   4 1          15      0.00174 
-##   5 1          09      0.00104 
-##   6 1          12      0.00139 
-##   7 1          05      0.000579
-##   8 1          01      0.000116
-##   9 1          01      0.000116
-##  10 1          13      0.00150 
-##  11 1          18      0.00208 
+##   1 1          19      0.00220 
+##   2 1          18      0.00208 
+##   3 1          05      0.000579
+##   4 1          01      0.000116
+##   5 1          18      0.00208 
+##   6 1          17      0.00197 
+##   7 1          13      0.00150 
+##   8 1          23      0.00266 
+##   9 1          05      0.000579
+##  10 1          07      0.000810
+##  11 1          11      0.00127 
 ##  12 1          10      0.00116 
-##  13 1          22      0.00255 
-##  14 1          12      0.00139 
-##  15 1          13      0.00150 
-##  16 1          13      0.00150 
-##  17 1          14      0.00162 
-##  18 1          18      0.00208 
-##  19 1          15      0.00174 
-##  20 1          00      0       
-##  21 1          12      0.00139 
-##  22 1          23      0.00266 
-##  23 1          02      0.000231
+##  13 1          09      0.00104 
+##  14 1          18      0.00208 
+##  15 1          17      0.00197 
+##  16 1          16      0.00185 
+##  17 1          01      0.000116
+##  18 1          05      0.000579
+##  19 1          04      0.000463
+##  20 1          18      0.00208 
+##  21 1          19      0.00220 
+##  22 1          04      0.000463
+##  23 1          11      0.00127 
 ##  24 1          04      0.000463
-##  25 1          15      0.00174 
-##  26 2          19      0.0528  
+##  25 1          12      0.00139 
+##  26 2          18      0.05    
 ##  27 2          29      0.0806  
-##  28 2          12      0.0333  
-##  29 2          10      0.0278  
+##  28 2          30      0.0833  
+##  29 2          16      0.0444  
 ##  30 2          21      0.0583  
-##  31 2          04      0.0111  
-##  32 2          21      0.0583  
-##  33 2          09      0.025   
-##  34 2          27      0.075   
-##  35 2          16      0.0444  
-##  36 2          02      0.00556 
-##  37 2          15      0.0417  
-##  38 2          18      0.05    
-##  39 2          03      0.00833 
-##  40 2          08      0.0222  
-##  41 2          23      0.0639  
-##  42 2          27      0.075   
-##  43 2          15      0.0417  
-##  44 2          03      0.00833 
-##  45 2          27      0.075   
-##  46 2          03      0.00833 
-##  47 2          01      0.00278 
-##  48 2          28      0.0778  
-##  49 2          11      0.0306  
-##  50 2          12      0.0333  
-##  51 3          09      0.75    
-##  52 3          09      0.75    
-##  53 3          10      0.833   
-##  54 3          09      0.75    
-##  55 3          03      0.25    
-##  56 3          02      0.167   
-##  57 3          08      0.667   
-##  58 3          03      0.25    
+##  31 2          16      0.0444  
+##  32 2          13      0.0361  
+##  33 2          14      0.0389  
+##  34 2          13      0.0361  
+##  35 2          11      0.0306  
+##  36 2          14      0.0389  
+##  37 2          06      0.0167  
+##  38 2          26      0.0722  
+##  39 2          07      0.0194  
+##  40 2          23      0.0639  
+##  41 2          06      0.0167  
+##  42 2          09      0.025   
+##  43 2          18      0.05    
+##  44 2          07      0.0194  
+##  45 2          23      0.0639  
+##  46 2          01      0.00278 
+##  47 2          26      0.0722  
+##  48 2          19      0.0528  
+##  49 2          01      0.00278 
+##  50 2          16      0.0444  
+##  51 3          10      0.833   
+##  52 3          06      0.5     
+##  53 3          07      0.583   
+##  54 3          05      0.417   
+##  55 3          08      0.667   
+##  56 3          01      0.0833  
+##  57 3          04      0.333   
+##  58 3          09      0.75    
 ##  59 3          10      0.833   
-##  60 3          04      0.333   
-##  61 3          06      0.5     
-##  62 3          03      0.25    
-##  63 3          02      0.167   
-##  64 3          08      0.667   
-##  65 3          04      0.333   
-##  66 3          03      0.25    
-##  67 3          04      0.333   
+##  60 3          01      0.0833  
+##  61 3          08      0.667   
+##  62 3          09      0.75    
+##  63 3          03      0.25    
+##  64 3          06      0.5     
+##  65 3          05      0.417   
+##  66 3          01      0.0833  
+##  67 3          10      0.833   
 ##  68 3          03      0.25    
 ##  69 3          03      0.25    
-##  70 3          01      0.0833  
-##  71 3          11      0.917   
-##  72 3          02      0.167   
-##  73 3          03      0.25    
-##  74 3          11      0.917   
-##  75 3          10      0.833   
-##  76 4          34     34       
-##  77 4          60     60       
-##  78 4          69     69       
-##  79 4          39     39       
-##  80 4          13     13       
-##  81 4          36     36       
-##  82 4          79     79       
-##  83 4          40     40       
-##  84 4          41     41       
-##  85 4          55     55       
-##  86 4          84     84       
-##  87 4          91     91       
-##  88 4          36     36       
-##  89 4          68     68       
-##  90 4          20     20       
-##  91 4          72     72       
-##  92 4          74     74       
-##  93 4          96     96       
-##  94 4          07      7       
-##  95 4          49     49       
-##  96 4          05      5       
-##  97 4          70     70       
-##  98 4          69     69       
-##  99 4          42     42       
-## 100 4          73     73
+##  70 3          04      0.333   
+##  71 3          08      0.667   
+##  72 3          09      0.75    
+##  73 3          06      0.5     
+##  74 3          05      0.417   
+##  75 3          07      0.583   
+##  76 4          54     54       
+##  77 4          64     64       
+##  78 4          37     37       
+##  79 4          54     54       
+##  80 4          54     54       
+##  81 4          14     14       
+##  82 4          81     81       
+##  83 4          84     84       
+##  84 4          34     34       
+##  85 4          16     16       
+##  86 4          47     47       
+##  87 4          44     44       
+##  88 4          11     11       
+##  89 4          07      7       
+##  90 4          07      7       
+##  91 4          91     91       
+##  92 4          73     73       
+##  93 4          75     75       
+##  94 4          26     26       
+##  95 4          41     41       
+##  96 4          69     69       
+##  97 4          38     38       
+##  98 4          68     68       
+##  99 4          55     55       
+## 100 4          27     27
 </code></pre>
 <p>Ao invés de utilizar essas chamadas recursivas de <code>if_else</code>, que são muito ruins de ler, como você poderia reescrever a condição usando <code>case_when</code>?</p>
 <ol start="10">
@@ -2370,7 +2368,7 @@ gss_cat2 %&gt;% count(rincome)
 ## 4 5k-10k         970
 ## 5 Até 5k        1183
 </code></pre>
-<h3 id="ggplot2"><code>ggplot2</code></h3>
+<h2 id="ggplot2"><code>ggplot2</code></h2>
 <ol>
 <li>O que tem de errado no código abaixo? Por que os pontos não ficaram azuis?</li>
 </ol>
@@ -2586,6 +2584,700 @@ ggplot(data = diamonds) +
 <p><img src="/courses/tidyverse/solucoes_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 <p>Como desafio, tentem adicionar elementos textuais das proporções no gráfico. O problema a ser resolvido é como posicionar o texto num sistema de coordenadas polares. Boa sorte!</p>
 <p>Gráficos de pizza são polêmicos na análise de dados porque nossos olhos não captam bem diferenças entre formatos curvos e complexos, então a comparação entre as categorias fica prejudicada se houverem mais de 2 ou 3. Eu sempre dou preferência para barras. Há um tipo de gráfico de pizza melhorzinho chamado &ldquo;donut plot&rdquo;, em que o meio do círculo é oco, mas eu ainda prefiro as barras.</p>
+<h2 id="purrr"><code>purrr</code></h2>
+<h2 id="exercícios">Exercícios</h2>
+<ol>
+<li>Utilize uma das funções <code>map_</code> para:</li>
+</ol>
+<p>Nos exemplos abaixo, eu utilizo sempre <code>str()</code> no final para facilitar a visualização das listas, mas não é obrigatório utilizar esse comando.</p>
+<pre><code>1. Calcular a média de cada coluna em `mtcars`.
+</code></pre>
+<pre><code class="language-r">map(mtcars, mean) %&gt;% str()
+</code></pre>
+<pre><code>## List of 11
+##  $ mpg : num 20.1
+##  $ cyl : num 6.19
+##  $ disp: num 231
+##  $ hp  : num 147
+##  $ drat: num 3.6
+##  $ wt  : num 3.22
+##  $ qsec: num 17.8
+##  $ vs  : num 0.438
+##  $ am  : num 0.406
+##  $ gear: num 3.69
+##  $ carb: num 2.81
+</code></pre>
+<pre><code>2. Determinar o tipo de cada coluna em `flights`.
+</code></pre>
+<pre><code class="language-r">flights %&gt;% map(class) %&gt;% str()
+</code></pre>
+<pre><code>## List of 19
+##  $ year          : chr &quot;integer&quot;
+##  $ month         : chr &quot;integer&quot;
+##  $ day           : chr &quot;integer&quot;
+##  $ dep_time      : chr &quot;integer&quot;
+##  $ sched_dep_time: chr &quot;integer&quot;
+##  $ dep_delay     : chr &quot;numeric&quot;
+##  $ arr_time      : chr &quot;integer&quot;
+##  $ sched_arr_time: chr &quot;integer&quot;
+##  $ arr_delay     : chr &quot;numeric&quot;
+##  $ carrier       : chr &quot;character&quot;
+##  $ flight        : chr &quot;integer&quot;
+##  $ tailnum       : chr &quot;character&quot;
+##  $ origin        : chr &quot;character&quot;
+##  $ dest          : chr &quot;character&quot;
+##  $ air_time      : chr &quot;numeric&quot;
+##  $ distance      : chr &quot;numeric&quot;
+##  $ hour          : chr &quot;numeric&quot;
+##  $ minute        : chr &quot;numeric&quot;
+##  $ time_hour     : chr [1:2] &quot;POSIXct&quot; &quot;POSIXt&quot;
+</code></pre>
+<pre><code>3. Computar o número de valores únicos em cada coluna de `iris`.
+</code></pre>
+<pre><code class="language-r">flights %&gt;% map(unique) %&gt;% map(length) %&gt;% str()
+</code></pre>
+<pre><code>## List of 19
+##  $ year          : int 1
+##  $ month         : int 12
+##  $ day           : int 31
+##  $ dep_time      : int 1319
+##  $ sched_dep_time: int 1021
+##  $ dep_delay     : int 528
+##  $ arr_time      : int 1412
+##  $ sched_arr_time: int 1163
+##  $ arr_delay     : int 578
+##  $ carrier       : int 16
+##  $ flight        : int 3844
+##  $ tailnum       : int 4044
+##  $ origin        : int 3
+##  $ dest          : int 105
+##  $ air_time      : int 510
+##  $ distance      : int 214
+##  $ hour          : int 20
+##  $ minute        : int 60
+##  $ time_hour     : int 6936
+</code></pre>
+<pre><code class="language-r"># Sugestão do Pedro Gomes
+flights %&gt;% map(n_distinct) %&gt;% str()
+</code></pre>
+<pre><code>## List of 19
+##  $ year          : int 1
+##  $ month         : int 12
+##  $ day           : int 31
+##  $ dep_time      : int 1319
+##  $ sched_dep_time: int 1021
+##  $ dep_delay     : int 528
+##  $ arr_time      : int 1412
+##  $ sched_arr_time: int 1163
+##  $ arr_delay     : int 578
+##  $ carrier       : int 16
+##  $ flight        : int 3844
+##  $ tailnum       : int 4044
+##  $ origin        : int 3
+##  $ dest          : int 105
+##  $ air_time      : int 510
+##  $ distance      : int 214
+##  $ hour          : int 20
+##  $ minute        : int 60
+##  $ time_hour     : int 6936
+</code></pre>
+<pre><code>4. Gere 10 distribuições aleatórias (`rnorm`) com médias -10, 0, 10 e 100.
+</code></pre>
+<pre><code class="language-r">x &lt;- rep(100, 40)
+medias &lt;- rep(c(-10, 0, 10, 100), each = 10)
+map2(x, medias, ~rnorm(.x, mean = .y)) %&gt;% str()
+</code></pre>
+<pre><code>## List of 40
+##  $ : num [1:100] -8.92 -8.53 -11.61 -9.52 -9.87 ...
+##  $ : num [1:100] -11.32 -10.93 -10.21 -8.82 -8.99 ...
+##  $ : num [1:100] -10.93 -9.66 -8.71 -9.56 -9.16 ...
+##  $ : num [1:100] -9.58 -11.3 -9.09 -11.25 -10.07 ...
+##  $ : num [1:100] -10.8 -10.1 -10.2 -10.1 -10.6 ...
+##  $ : num [1:100] -10.52 -9.92 -8.23 -10.25 -10.63 ...
+##  $ : num [1:100] -9.82 -10.4 -9.66 -9.49 -10.09 ...
+##  $ : num [1:100] -10.28 -8.87 -10.4 -11.11 -9.64 ...
+##  $ : num [1:100] -10.35 -9.83 -8.92 -10.44 -9.71 ...
+##  $ : num [1:100] -9.53 -9.73 -9.36 -12.1 -10.49 ...
+##  $ : num [1:100] -0.256 1.089 -0.34 -0.927 -0.122 ...
+##  $ : num [1:100] -0.1104 0.2669 0.3751 1.1893 0.0686 ...
+##  $ : num [1:100] 0.439 -0.559 0.297 -0.224 -0.867 ...
+##  $ : num [1:100] 1.355 1.162 -2.14 -0.488 0.713 ...
+##  $ : num [1:100] -0.72 -0.749 0.997 -1.678 -0.518 ...
+##  $ : num [1:100] 0.92 -1.887 0.409 -0.373 0.397 ...
+##  $ : num [1:100] -0.598 -0.404 -0.201 -2.721 1.595 ...
+##  $ : num [1:100] -0.361 -0.146 0.637 0.832 0.63 ...
+##  $ : num [1:100] -1.232 0.759 -1.84 0.426 1.995 ...
+##  $ : num [1:100] 0.555 0.973 0.69 -1.3 1.051 ...
+##  $ : num [1:100] 10.68 8.6 9.25 9.67 10.12 ...
+##  $ : num [1:100] 10.06 10.25 8.43 8.84 8.44 ...
+##  $ : num [1:100] 12.12 10.81 8.61 9.53 9.8 ...
+##  $ : num [1:100] 9.79 9.37 11.48 10.19 10.74 ...
+##  $ : num [1:100] 9.15 7.77 9.18 9.1 9.73 ...
+##  $ : num [1:100] 9.29 9.7 7.82 9.97 10.05 ...
+##  $ : num [1:100] 10.42 10.54 11.12 9.66 10.7 ...
+##  $ : num [1:100] 9.39 9.69 9.8 8.1 10.96 ...
+##  $ : num [1:100] 10.78 9.66 9.84 10.87 9.87 ...
+##  $ : num [1:100] 9.15 9.71 10.08 8.88 8.55 ...
+##  $ : num [1:100] 99.2 99.3 100.6 98.6 99.5 ...
+##  $ : num [1:100] 101 101 100 100 101 ...
+##  $ : num [1:100] 99.5 99.2 100.4 100.1 101.4 ...
+##  $ : num [1:100] 99.3 99.4 100.1 99.5 101.6 ...
+##  $ : num [1:100] 99.4 98.1 100.7 101.9 101.3 ...
+##  $ : num [1:100] 98.3 99.6 100.4 100.9 100.6 ...
+##  $ : num [1:100] 101.7 101.4 100.3 97.8 99.7 ...
+##  $ : num [1:100] 103.1 102.3 99.4 100 100.2 ...
+##  $ : num [1:100] 99.9 97.3 102.2 98.4 98.6 ...
+##  $ : num [1:100] 101 99.5 99.8 99.2 101.5 ...
+</code></pre>
+<ol start="2">
+<li>Como você pode criar um vetor indicando se cada coluna em um <code>data.frame</code> é um fator?</li>
+</ol>
+<pre><code class="language-r"># Flights por exemplo
+flights %&gt;% 
+  # Lembrem-se que a pergunta pedia para criar um vetor!
+  map_lgl(is.factor)
+</code></pre>
+<pre><code>##           year          month            day       dep_time sched_dep_time 
+##          FALSE          FALSE          FALSE          FALSE          FALSE 
+##      dep_delay       arr_time sched_arr_time      arr_delay        carrier 
+##          FALSE          FALSE          FALSE          FALSE          FALSE 
+##         flight        tailnum         origin           dest       air_time 
+##          FALSE          FALSE          FALSE          FALSE          FALSE 
+##       distance           hour         minute      time_hour 
+##          FALSE          FALSE          FALSE          FALSE
+</code></pre>
+<ol start="3">
+<li>
+<p>Usando as funções predicado <code>keep</code> e <code>discard</code>:</p>
+<ol>
+<li>Selecione todas as colunas caractere no banco <code>flights</code>.</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-r">flights %&gt;% keep(is.character)
+</code></pre>
+<pre><code>## # A tibble: 336,776 x 4
+##    carrier tailnum origin dest 
+##    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;
+##  1 UA      N14228  EWR    IAH  
+##  2 UA      N24211  LGA    IAH  
+##  3 AA      N619AA  JFK    MIA  
+##  4 B6      N804JB  JFK    BQN  
+##  5 DL      N668DN  LGA    ATL  
+##  6 UA      N39463  EWR    ORD  
+##  7 B6      N516JB  EWR    FLL  
+##  8 EV      N829AS  LGA    IAD  
+##  9 B6      N593JB  JFK    MCO  
+## 10 AA      N3ALAA  LGA    ORD  
+## # ... with 336,766 more rows
+</code></pre>
+<pre><code>2. Descarte os caracteres em `mpg`.
+</code></pre>
+<pre><code class="language-r">mpg %&gt;% discard(is.character)
+</code></pre>
+<pre><code>## # A tibble: 234 x 5
+##    displ  year   cyl   cty   hwy
+##    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1   1.8  1999     4    18    29
+##  2   1.8  1999     4    21    29
+##  3   2    2008     4    20    31
+##  4   2    2008     4    21    30
+##  5   2.8  1999     6    16    26
+##  6   2.8  1999     6    18    26
+##  7   3.1  2008     6    18    27
+##  8   1.8  1999     4    18    26
+##  9   1.8  1999     4    16    25
+## 10   2    2008     4    20    28
+## # ... with 224 more rows
+</code></pre>
+<pre><code>3. Selecione os fatores ordenados em `diamonds`.
+</code></pre>
+<pre><code class="language-r">diamonds %&gt;% keep(is.ordered)
+</code></pre>
+<pre><code>## # A tibble: 53,940 x 3
+##    cut       color clarity
+##    &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;  
+##  1 Ideal     E     SI2    
+##  2 Premium   E     SI1    
+##  3 Good      E     VS1    
+##  4 Premium   I     VS2    
+##  5 Good      J     SI2    
+##  6 Very Good J     VVS2   
+##  7 Very Good I     VVS1   
+##  8 Very Good H     SI1    
+##  9 Fair      E     VS2    
+## 10 Very Good H     VS1    
+## # ... with 53,930 more rows
+</code></pre>
+<pre><code>4. Descarte as variáveis não-numéricas em `iris`
+</code></pre>
+<pre><code class="language-r">iris %&gt;% discard(negate(is.numeric))
+</code></pre>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width
+## 1            5.1         3.5          1.4         0.2
+## 2            4.9         3.0          1.4         0.2
+## 3            4.7         3.2          1.3         0.2
+## 4            4.6         3.1          1.5         0.2
+## 5            5.0         3.6          1.4         0.2
+## 6            5.4         3.9          1.7         0.4
+## 7            4.6         3.4          1.4         0.3
+## 8            5.0         3.4          1.5         0.2
+## 9            4.4         2.9          1.4         0.2
+## 10           4.9         3.1          1.5         0.1
+## 11           5.4         3.7          1.5         0.2
+## 12           4.8         3.4          1.6         0.2
+## 13           4.8         3.0          1.4         0.1
+## 14           4.3         3.0          1.1         0.1
+## 15           5.8         4.0          1.2         0.2
+## 16           5.7         4.4          1.5         0.4
+## 17           5.4         3.9          1.3         0.4
+## 18           5.1         3.5          1.4         0.3
+## 19           5.7         3.8          1.7         0.3
+## 20           5.1         3.8          1.5         0.3
+## 21           5.4         3.4          1.7         0.2
+## 22           5.1         3.7          1.5         0.4
+## 23           4.6         3.6          1.0         0.2
+## 24           5.1         3.3          1.7         0.5
+## 25           4.8         3.4          1.9         0.2
+## 26           5.0         3.0          1.6         0.2
+## 27           5.0         3.4          1.6         0.4
+## 28           5.2         3.5          1.5         0.2
+## 29           5.2         3.4          1.4         0.2
+## 30           4.7         3.2          1.6         0.2
+## 31           4.8         3.1          1.6         0.2
+## 32           5.4         3.4          1.5         0.4
+## 33           5.2         4.1          1.5         0.1
+## 34           5.5         4.2          1.4         0.2
+## 35           4.9         3.1          1.5         0.2
+## 36           5.0         3.2          1.2         0.2
+## 37           5.5         3.5          1.3         0.2
+## 38           4.9         3.6          1.4         0.1
+## 39           4.4         3.0          1.3         0.2
+## 40           5.1         3.4          1.5         0.2
+## 41           5.0         3.5          1.3         0.3
+## 42           4.5         2.3          1.3         0.3
+## 43           4.4         3.2          1.3         0.2
+## 44           5.0         3.5          1.6         0.6
+## 45           5.1         3.8          1.9         0.4
+## 46           4.8         3.0          1.4         0.3
+## 47           5.1         3.8          1.6         0.2
+## 48           4.6         3.2          1.4         0.2
+## 49           5.3         3.7          1.5         0.2
+## 50           5.0         3.3          1.4         0.2
+## 51           7.0         3.2          4.7         1.4
+## 52           6.4         3.2          4.5         1.5
+## 53           6.9         3.1          4.9         1.5
+## 54           5.5         2.3          4.0         1.3
+## 55           6.5         2.8          4.6         1.5
+## 56           5.7         2.8          4.5         1.3
+## 57           6.3         3.3          4.7         1.6
+## 58           4.9         2.4          3.3         1.0
+## 59           6.6         2.9          4.6         1.3
+## 60           5.2         2.7          3.9         1.4
+## 61           5.0         2.0          3.5         1.0
+## 62           5.9         3.0          4.2         1.5
+## 63           6.0         2.2          4.0         1.0
+## 64           6.1         2.9          4.7         1.4
+## 65           5.6         2.9          3.6         1.3
+## 66           6.7         3.1          4.4         1.4
+## 67           5.6         3.0          4.5         1.5
+## 68           5.8         2.7          4.1         1.0
+## 69           6.2         2.2          4.5         1.5
+## 70           5.6         2.5          3.9         1.1
+## 71           5.9         3.2          4.8         1.8
+## 72           6.1         2.8          4.0         1.3
+## 73           6.3         2.5          4.9         1.5
+## 74           6.1         2.8          4.7         1.2
+## 75           6.4         2.9          4.3         1.3
+## 76           6.6         3.0          4.4         1.4
+## 77           6.8         2.8          4.8         1.4
+## 78           6.7         3.0          5.0         1.7
+## 79           6.0         2.9          4.5         1.5
+## 80           5.7         2.6          3.5         1.0
+## 81           5.5         2.4          3.8         1.1
+## 82           5.5         2.4          3.7         1.0
+## 83           5.8         2.7          3.9         1.2
+## 84           6.0         2.7          5.1         1.6
+## 85           5.4         3.0          4.5         1.5
+## 86           6.0         3.4          4.5         1.6
+## 87           6.7         3.1          4.7         1.5
+## 88           6.3         2.3          4.4         1.3
+## 89           5.6         3.0          4.1         1.3
+## 90           5.5         2.5          4.0         1.3
+## 91           5.5         2.6          4.4         1.2
+## 92           6.1         3.0          4.6         1.4
+## 93           5.8         2.6          4.0         1.2
+## 94           5.0         2.3          3.3         1.0
+## 95           5.6         2.7          4.2         1.3
+## 96           5.7         3.0          4.2         1.2
+## 97           5.7         2.9          4.2         1.3
+## 98           6.2         2.9          4.3         1.3
+## 99           5.1         2.5          3.0         1.1
+## 100          5.7         2.8          4.1         1.3
+## 101          6.3         3.3          6.0         2.5
+## 102          5.8         2.7          5.1         1.9
+## 103          7.1         3.0          5.9         2.1
+## 104          6.3         2.9          5.6         1.8
+## 105          6.5         3.0          5.8         2.2
+## 106          7.6         3.0          6.6         2.1
+## 107          4.9         2.5          4.5         1.7
+## 108          7.3         2.9          6.3         1.8
+## 109          6.7         2.5          5.8         1.8
+## 110          7.2         3.6          6.1         2.5
+## 111          6.5         3.2          5.1         2.0
+## 112          6.4         2.7          5.3         1.9
+## 113          6.8         3.0          5.5         2.1
+## 114          5.7         2.5          5.0         2.0
+## 115          5.8         2.8          5.1         2.4
+## 116          6.4         3.2          5.3         2.3
+## 117          6.5         3.0          5.5         1.8
+## 118          7.7         3.8          6.7         2.2
+## 119          7.7         2.6          6.9         2.3
+## 120          6.0         2.2          5.0         1.5
+## 121          6.9         3.2          5.7         2.3
+## 122          5.6         2.8          4.9         2.0
+## 123          7.7         2.8          6.7         2.0
+## 124          6.3         2.7          4.9         1.8
+## 125          6.7         3.3          5.7         2.1
+## 126          7.2         3.2          6.0         1.8
+## 127          6.2         2.8          4.8         1.8
+## 128          6.1         3.0          4.9         1.8
+## 129          6.4         2.8          5.6         2.1
+## 130          7.2         3.0          5.8         1.6
+## 131          7.4         2.8          6.1         1.9
+## 132          7.9         3.8          6.4         2.0
+## 133          6.4         2.8          5.6         2.2
+## 134          6.3         2.8          5.1         1.5
+## 135          6.1         2.6          5.6         1.4
+## 136          7.7         3.0          6.1         2.3
+## 137          6.3         3.4          5.6         2.4
+## 138          6.4         3.1          5.5         1.8
+## 139          6.0         3.0          4.8         1.8
+## 140          6.9         3.1          5.4         2.1
+## 141          6.7         3.1          5.6         2.4
+## 142          6.9         3.1          5.1         2.3
+## 143          5.8         2.7          5.1         1.9
+## 144          6.8         3.2          5.9         2.3
+## 145          6.7         3.3          5.7         2.5
+## 146          6.7         3.0          5.2         2.3
+## 147          6.3         2.5          5.0         1.9
+## 148          6.5         3.0          5.2         2.0
+## 149          6.2         3.4          5.4         2.3
+## 150          5.9         3.0          5.1         1.8
+</code></pre>
+<ol start="4">
+<li>Imagine que você tem um diretório cheio de arquivos <code>.csv</code> que correspondem a um único banco de dados. Você tem os caminhos de todos eles num vetor com a forma <code>c(arquivo_1.csv, ..., arquivo_n.csv)</code>. Como você importaria esses arquivos? Tente fazer duas soluções diferentes.</li>
+</ol>
+<pre><code class="language-r"># Vamos usar um diretório temporário que vamos preencher com vários tibbles
+pasta &lt;- tempdir()
+
+# Criamos 100 tibbles e guardamos em 100 arquivos csv.
+x &lt;- rep(10, 100)
+
+arqs &lt;- sprintf(&quot;arquivo%s.csv&quot;, 1:100)
+
+map(x, ~tibble(var1 = rnorm(.x), var2 = rnorm(.x))) %&gt;% 
+  map2(arqs, ~write_csv(.x, file.path(pasta, .y))) %&gt;% 
+  str()
+</code></pre>
+<pre><code class="language-r"># Nossos arquivos estão salvos no diretório temporário:
+dir(pasta)
+</code></pre>
+<pre><code>##   [1] &quot;arquivo1.csv&quot;     &quot;arquivo10.csv&quot;    &quot;arquivo100.csv&quot;  
+##   [4] &quot;arquivo11.csv&quot;    &quot;arquivo12.csv&quot;    &quot;arquivo13.csv&quot;   
+##   [7] &quot;arquivo14.csv&quot;    &quot;arquivo15.csv&quot;    &quot;arquivo16.csv&quot;   
+##  [10] &quot;arquivo17.csv&quot;    &quot;arquivo18.csv&quot;    &quot;arquivo19.csv&quot;   
+##  [13] &quot;arquivo2.csv&quot;     &quot;arquivo20.csv&quot;    &quot;arquivo21.csv&quot;   
+##  [16] &quot;arquivo22.csv&quot;    &quot;arquivo23.csv&quot;    &quot;arquivo24.csv&quot;   
+##  [19] &quot;arquivo25.csv&quot;    &quot;arquivo26.csv&quot;    &quot;arquivo27.csv&quot;   
+##  [22] &quot;arquivo28.csv&quot;    &quot;arquivo29.csv&quot;    &quot;arquivo3.csv&quot;    
+##  [25] &quot;arquivo30.csv&quot;    &quot;arquivo31.csv&quot;    &quot;arquivo32.csv&quot;   
+##  [28] &quot;arquivo33.csv&quot;    &quot;arquivo34.csv&quot;    &quot;arquivo35.csv&quot;   
+##  [31] &quot;arquivo36.csv&quot;    &quot;arquivo37.csv&quot;    &quot;arquivo38.csv&quot;   
+##  [34] &quot;arquivo39.csv&quot;    &quot;arquivo4.csv&quot;     &quot;arquivo40.csv&quot;   
+##  [37] &quot;arquivo41.csv&quot;    &quot;arquivo42.csv&quot;    &quot;arquivo43.csv&quot;   
+##  [40] &quot;arquivo44.csv&quot;    &quot;arquivo45.csv&quot;    &quot;arquivo46.csv&quot;   
+##  [43] &quot;arquivo47.csv&quot;    &quot;arquivo48.csv&quot;    &quot;arquivo49.csv&quot;   
+##  [46] &quot;arquivo5.csv&quot;     &quot;arquivo50.csv&quot;    &quot;arquivo51.csv&quot;   
+##  [49] &quot;arquivo52.csv&quot;    &quot;arquivo53.csv&quot;    &quot;arquivo54.csv&quot;   
+##  [52] &quot;arquivo55.csv&quot;    &quot;arquivo56.csv&quot;    &quot;arquivo57.csv&quot;   
+##  [55] &quot;arquivo58.csv&quot;    &quot;arquivo59.csv&quot;    &quot;arquivo6.csv&quot;    
+##  [58] &quot;arquivo60.csv&quot;    &quot;arquivo61.csv&quot;    &quot;arquivo62.csv&quot;   
+##  [61] &quot;arquivo63.csv&quot;    &quot;arquivo64.csv&quot;    &quot;arquivo65.csv&quot;   
+##  [64] &quot;arquivo66.csv&quot;    &quot;arquivo67.csv&quot;    &quot;arquivo68.csv&quot;   
+##  [67] &quot;arquivo69.csv&quot;    &quot;arquivo7.csv&quot;     &quot;arquivo70.csv&quot;   
+##  [70] &quot;arquivo71.csv&quot;    &quot;arquivo72.csv&quot;    &quot;arquivo73.csv&quot;   
+##  [73] &quot;arquivo74.csv&quot;    &quot;arquivo75.csv&quot;    &quot;arquivo76.csv&quot;   
+##  [76] &quot;arquivo77.csv&quot;    &quot;arquivo78.csv&quot;    &quot;arquivo79.csv&quot;   
+##  [79] &quot;arquivo8.csv&quot;     &quot;arquivo80.csv&quot;    &quot;arquivo81.csv&quot;   
+##  [82] &quot;arquivo82.csv&quot;    &quot;arquivo83.csv&quot;    &quot;arquivo84.csv&quot;   
+##  [85] &quot;arquivo85.csv&quot;    &quot;arquivo86.csv&quot;    &quot;arquivo87.csv&quot;   
+##  [88] &quot;arquivo88.csv&quot;    &quot;arquivo89.csv&quot;    &quot;arquivo9.csv&quot;    
+##  [91] &quot;arquivo90.csv&quot;    &quot;arquivo91.csv&quot;    &quot;arquivo92.csv&quot;   
+##  [94] &quot;arquivo93.csv&quot;    &quot;arquivo94.csv&quot;    &quot;arquivo95.csv&quot;   
+##  [97] &quot;arquivo96.csv&quot;    &quot;arquivo97.csv&quot;    &quot;arquivo98.csv&quot;   
+## [100] &quot;arquivo99.csv&quot;    &quot;file3234100447a&quot;  &quot;file323412c326bc&quot;
+## [103] &quot;file32341300602b&quot; &quot;file323413c2b2c&quot;  &quot;file323413eafe9&quot; 
+## [106] &quot;file323417ad21ab&quot; &quot;file32341abc531e&quot; &quot;file32341ac8364c&quot;
+## [109] &quot;file32341dd679a&quot;  &quot;file32341e04123c&quot; &quot;file32341fa128d7&quot;
+## [112] &quot;file323425f07c97&quot; &quot;file323426f95b32&quot; &quot;file323428fe69ee&quot;
+## [115] &quot;file32342db2db4&quot;  &quot;file32342e5f1ca7&quot; &quot;file323431df1e32&quot;
+## [118] &quot;file323432de7c35&quot; &quot;file323433724e9c&quot; &quot;file323435323fc1&quot;
+## [121] &quot;file3234366b1bec&quot; &quot;file3234398e11d4&quot; &quot;file3234399ea71&quot; 
+## [124] &quot;file32343a7e55a4&quot; &quot;file32343aec7d4d&quot; &quot;file323441574b58&quot;
+## [127] &quot;file323442661a98&quot; &quot;file3234444257a7&quot; &quot;file323446fd2bea&quot;
+## [130] &quot;file3234474a2b97&quot; &quot;file323447d51cfc&quot; &quot;file323450b153ce&quot;
+## [133] &quot;file323451155c21&quot; &quot;file323451a91520&quot; &quot;file323453151861&quot;
+## [136] &quot;file323453941276&quot; &quot;file323453de27a7&quot; &quot;file323457ae7f2c&quot;
+## [139] &quot;file323457dd1df3&quot; &quot;file3234588a1638&quot; &quot;file3234596f2780&quot;
+## [142] &quot;file323459dca5f&quot;  &quot;file32345b1b30a6&quot; &quot;file32345c4c615e&quot;
+## [145] &quot;file32345e4f253b&quot; &quot;file32345fce2875&quot; &quot;file323461335028&quot;
+## [148] &quot;file323463406aab&quot; &quot;file3234689013ad&quot; &quot;file3234699d2845&quot;
+## [151] &quot;file32346a2953dc&quot; &quot;file32346aca1e0e&quot; &quot;file32346f512ff8&quot;
+## [154] &quot;file323470553e5b&quot; &quot;file323470a856a9&quot; &quot;file323471585e8c&quot;
+## [157] &quot;file32347166317e&quot; &quot;file32347348266c&quot; &quot;file323474132885&quot;
+## [160] &quot;file323476c360f1&quot; &quot;file323477002aee&quot; &quot;file323479e7a39&quot; 
+## [163] &quot;file32347d7176eb&quot; &quot;file323493278c0&quot;  &quot;file3234a441449&quot; 
+## [166] &quot;file3234ad0519&quot;   &quot;file3234cb17692&quot;
+</code></pre>
+<pre><code class="language-r"># Agora vamos ler todos de volta para uma tibble só.
+arqs &lt;- dir(pasta, pattern = &quot;.csv&quot;, full.names = T)
+</code></pre>
+<pre><code class="language-r"># Juntando linhas
+df &lt;- map_dfr(arqs, read_csv)
+df
+</code></pre>
+<pre><code>## # A tibble: 1,000 x 2
+##      var1     var2
+##     &lt;dbl&gt;    &lt;dbl&gt;
+##  1  1.31   1.24   
+##  2  0.657  1.03   
+##  3 -0.199 -0.202  
+##  4 -0.427  0.0398 
+##  5  0.452 -0.490  
+##  6 -0.364 -0.00223
+##  7 -0.645 -0.324  
+##  8  0.296  0.468  
+##  9  1.45   0.578  
+## 10 -2.40   1.02   
+## # ... with 990 more rows
+</code></pre>
+<pre><code class="language-r"># Juntando colunas
+df &lt;- map_dfc(arqs, read_csv)
+df
+</code></pre>
+<pre><code>## # A tibble: 10 x 200
+##    var1...1 var2...2 var1...3 var2...4 var1...5 var2...6 var1...7 var2...8
+##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1    1.31   1.24      -0.475   -1.36   -1.04    -0.310   -0.808    -0.324
+##  2    0.657  1.03      -0.779    0.934   0.154    0.157   -1.64     -0.903
+##  3   -0.199 -0.202      2.07    -1.44   -1.13     1.10    -0.485    -1.49 
+##  4   -0.427  0.0398    -0.585   -0.701   0.0158  -1.01     1.96     -0.380
+##  5    0.452 -0.490     -0.778    0.185   0.0528  -0.289    0.760     0.568
+##  6   -0.364 -0.00223   -0.577    1.35    0.461    0.757    1.33     -1.51 
+##  7   -0.645 -0.324     -1.14     0.452   0.608   -0.100    0.732    -0.968
+##  8    0.296  0.468     -0.464    0.540   0.443   -0.523   -1.20     -0.212
+##  9    1.45   0.578      1.17    -0.488   0.259   -0.0197   0.477    -0.283
+## 10   -2.40   1.02      -1.00     0.520   1.80     1.53    -0.0785   -1.22 
+## # ... with 192 more variables: var1...9 &lt;dbl&gt;, var2...10 &lt;dbl&gt;,
+## #   var1...11 &lt;dbl&gt;, var2...12 &lt;dbl&gt;, var1...13 &lt;dbl&gt;, var2...14 &lt;dbl&gt;,
+## #   var1...15 &lt;dbl&gt;, var2...16 &lt;dbl&gt;, var1...17 &lt;dbl&gt;, var2...18 &lt;dbl&gt;,
+## #   var1...19 &lt;dbl&gt;, var2...20 &lt;dbl&gt;, var1...21 &lt;dbl&gt;, var2...22 &lt;dbl&gt;,
+## #   var1...23 &lt;dbl&gt;, var2...24 &lt;dbl&gt;, var1...25 &lt;dbl&gt;, var2...26 &lt;dbl&gt;,
+## #   var1...27 &lt;dbl&gt;, var2...28 &lt;dbl&gt;, var1...29 &lt;dbl&gt;, var2...30 &lt;dbl&gt;,
+## #   var1...31 &lt;dbl&gt;, var2...32 &lt;dbl&gt;, var1...33 &lt;dbl&gt;, var2...34 &lt;dbl&gt;,
+## #   var1...35 &lt;dbl&gt;, var2...36 &lt;dbl&gt;, var1...37 &lt;dbl&gt;, var2...38 &lt;dbl&gt;,
+## #   var1...39 &lt;dbl&gt;, var2...40 &lt;dbl&gt;, var1...41 &lt;dbl&gt;, var2...42 &lt;dbl&gt;,
+## #   var1...43 &lt;dbl&gt;, var2...44 &lt;dbl&gt;, var1...45 &lt;dbl&gt;, var2...46 &lt;dbl&gt;,
+## #   var1...47 &lt;dbl&gt;, var2...48 &lt;dbl&gt;, var1...49 &lt;dbl&gt;, var2...50 &lt;dbl&gt;,
+## #   var1...51 &lt;dbl&gt;, var2...52 &lt;dbl&gt;, var1...53 &lt;dbl&gt;, var2...54 &lt;dbl&gt;,
+## #   var1...55 &lt;dbl&gt;, var2...56 &lt;dbl&gt;, var1...57 &lt;dbl&gt;, var2...58 &lt;dbl&gt;,
+## #   var1...59 &lt;dbl&gt;, var2...60 &lt;dbl&gt;, var1...61 &lt;dbl&gt;, var2...62 &lt;dbl&gt;,
+## #   var1...63 &lt;dbl&gt;, var2...64 &lt;dbl&gt;, var1...65 &lt;dbl&gt;, var2...66 &lt;dbl&gt;,
+## #   var1...67 &lt;dbl&gt;, var2...68 &lt;dbl&gt;, var1...69 &lt;dbl&gt;, var2...70 &lt;dbl&gt;,
+## #   var1...71 &lt;dbl&gt;, var2...72 &lt;dbl&gt;, var1...73 &lt;dbl&gt;, var2...74 &lt;dbl&gt;,
+## #   var1...75 &lt;dbl&gt;, var2...76 &lt;dbl&gt;, var1...77 &lt;dbl&gt;, var2...78 &lt;dbl&gt;,
+## #   var1...79 &lt;dbl&gt;, var2...80 &lt;dbl&gt;, var1...81 &lt;dbl&gt;, var2...82 &lt;dbl&gt;,
+## #   var1...83 &lt;dbl&gt;, var2...84 &lt;dbl&gt;, var1...85 &lt;dbl&gt;, var2...86 &lt;dbl&gt;,
+## #   var1...87 &lt;dbl&gt;, var2...88 &lt;dbl&gt;, var1...89 &lt;dbl&gt;, var2...90 &lt;dbl&gt;,
+## #   var1...91 &lt;dbl&gt;, var2...92 &lt;dbl&gt;, var1...93 &lt;dbl&gt;, var2...94 &lt;dbl&gt;,
+## #   var1...95 &lt;dbl&gt;, var2...96 &lt;dbl&gt;, var1...97 &lt;dbl&gt;, var2...98 &lt;dbl&gt;,
+## #   var1...99 &lt;dbl&gt;, var2...100 &lt;dbl&gt;, var1...101 &lt;dbl&gt;, var2...102 &lt;dbl&gt;,
+## #   var1...103 &lt;dbl&gt;, var2...104 &lt;dbl&gt;, var1...105 &lt;dbl&gt;, var2...106 &lt;dbl&gt;,
+## #   var1...107 &lt;dbl&gt;, var2...108 &lt;dbl&gt;, ...
+</code></pre>
+<pre><code class="language-r"># Usando reduce
+# linhas
+df &lt;- map(arqs, read_csv) %&gt;% reduce(bind_rows)
+df
+</code></pre>
+<pre><code>## # A tibble: 1,000 x 2
+##      var1     var2
+##     &lt;dbl&gt;    &lt;dbl&gt;
+##  1  1.31   1.24   
+##  2  0.657  1.03   
+##  3 -0.199 -0.202  
+##  4 -0.427  0.0398 
+##  5  0.452 -0.490  
+##  6 -0.364 -0.00223
+##  7 -0.645 -0.324  
+##  8  0.296  0.468  
+##  9  1.45   0.578  
+## 10 -2.40   1.02   
+## # ... with 990 more rows
+</code></pre>
+<pre><code class="language-r"># colunas
+df &lt;- map(arqs, read_csv) %&gt;% reduce(bind_cols)
+df
+</code></pre>
+<pre><code>## # A tibble: 10 x 200
+##    var1...1 var2...2 var1...3 var2...4 var1...5 var2...6 var1...7 var2...8
+##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1    1.31   1.24      -0.475   -1.36   -1.04    -0.310   -0.808    -0.324
+##  2    0.657  1.03      -0.779    0.934   0.154    0.157   -1.64     -0.903
+##  3   -0.199 -0.202      2.07    -1.44   -1.13     1.10    -0.485    -1.49 
+##  4   -0.427  0.0398    -0.585   -0.701   0.0158  -1.01     1.96     -0.380
+##  5    0.452 -0.490     -0.778    0.185   0.0528  -0.289    0.760     0.568
+##  6   -0.364 -0.00223   -0.577    1.35    0.461    0.757    1.33     -1.51 
+##  7   -0.645 -0.324     -1.14     0.452   0.608   -0.100    0.732    -0.968
+##  8    0.296  0.468     -0.464    0.540   0.443   -0.523   -1.20     -0.212
+##  9    1.45   0.578      1.17    -0.488   0.259   -0.0197   0.477    -0.283
+## 10   -2.40   1.02      -1.00     0.520   1.80     1.53    -0.0785   -1.22 
+## # ... with 192 more variables: var1...9 &lt;dbl&gt;, var2...10 &lt;dbl&gt;,
+## #   var1...11 &lt;dbl&gt;, var2...12 &lt;dbl&gt;, var1...13 &lt;dbl&gt;, var2...14 &lt;dbl&gt;,
+## #   var1...15 &lt;dbl&gt;, var2...16 &lt;dbl&gt;, var1...17 &lt;dbl&gt;, var2...18 &lt;dbl&gt;,
+## #   var1...19 &lt;dbl&gt;, var2...20 &lt;dbl&gt;, var1...21 &lt;dbl&gt;, var2...22 &lt;dbl&gt;,
+## #   var1...23 &lt;dbl&gt;, var2...24 &lt;dbl&gt;, var1...25 &lt;dbl&gt;, var2...26 &lt;dbl&gt;,
+## #   var1...27 &lt;dbl&gt;, var2...28 &lt;dbl&gt;, var1...29 &lt;dbl&gt;, var2...30 &lt;dbl&gt;,
+## #   var1...31 &lt;dbl&gt;, var2...32 &lt;dbl&gt;, var1...33 &lt;dbl&gt;, var2...34 &lt;dbl&gt;,
+## #   var1...35 &lt;dbl&gt;, var2...36 &lt;dbl&gt;, var1...37 &lt;dbl&gt;, var2...38 &lt;dbl&gt;,
+## #   var1...39 &lt;dbl&gt;, var2...40 &lt;dbl&gt;, var1...41 &lt;dbl&gt;, var2...42 &lt;dbl&gt;,
+## #   var1...43 &lt;dbl&gt;, var2...44 &lt;dbl&gt;, var1...45 &lt;dbl&gt;, var2...46 &lt;dbl&gt;,
+## #   var1...47 &lt;dbl&gt;, var2...48 &lt;dbl&gt;, var1...49 &lt;dbl&gt;, var2...50 &lt;dbl&gt;,
+## #   var1...51 &lt;dbl&gt;, var2...52 &lt;dbl&gt;, var1...53 &lt;dbl&gt;, var2...54 &lt;dbl&gt;,
+## #   var1...55 &lt;dbl&gt;, var2...56 &lt;dbl&gt;, var1...57 &lt;dbl&gt;, var2...58 &lt;dbl&gt;,
+## #   var1...59 &lt;dbl&gt;, var2...60 &lt;dbl&gt;, var1...61 &lt;dbl&gt;, var2...62 &lt;dbl&gt;,
+## #   var1...63 &lt;dbl&gt;, var2...64 &lt;dbl&gt;, var1...65 &lt;dbl&gt;, var2...66 &lt;dbl&gt;,
+## #   var1...67 &lt;dbl&gt;, var2...68 &lt;dbl&gt;, var1...69 &lt;dbl&gt;, var2...70 &lt;dbl&gt;,
+## #   var1...71 &lt;dbl&gt;, var2...72 &lt;dbl&gt;, var1...73 &lt;dbl&gt;, var2...74 &lt;dbl&gt;,
+## #   var1...75 &lt;dbl&gt;, var2...76 &lt;dbl&gt;, var1...77 &lt;dbl&gt;, var2...78 &lt;dbl&gt;,
+## #   var1...79 &lt;dbl&gt;, var2...80 &lt;dbl&gt;, var1...81 &lt;dbl&gt;, var2...82 &lt;dbl&gt;,
+## #   var1...83 &lt;dbl&gt;, var2...84 &lt;dbl&gt;, var1...85 &lt;dbl&gt;, var2...86 &lt;dbl&gt;,
+## #   var1...87 &lt;dbl&gt;, var2...88 &lt;dbl&gt;, var1...89 &lt;dbl&gt;, var2...90 &lt;dbl&gt;,
+## #   var1...91 &lt;dbl&gt;, var2...92 &lt;dbl&gt;, var1...93 &lt;dbl&gt;, var2...94 &lt;dbl&gt;,
+## #   var1...95 &lt;dbl&gt;, var2...96 &lt;dbl&gt;, var1...97 &lt;dbl&gt;, var2...98 &lt;dbl&gt;,
+## #   var1...99 &lt;dbl&gt;, var2...100 &lt;dbl&gt;, var1...101 &lt;dbl&gt;, var2...102 &lt;dbl&gt;,
+## #   var1...103 &lt;dbl&gt;, var2...104 &lt;dbl&gt;, var1...105 &lt;dbl&gt;, var2...106 &lt;dbl&gt;,
+## #   var1...107 &lt;dbl&gt;, var2...108 &lt;dbl&gt;, ...
+</code></pre>
+<ol start="5">
+<li>Escreva um código sucinto que implemente vários modelos lineares especificados por você. Salve os resultados numa <code>tibble</code> com colunas-lista. Depois, extraia os resultados com <code>unnest()</code>. Use o exemplo como guia.</li>
+</ol>
+<pre><code class="language-r">mtcars
+</code></pre>
+<pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+## Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+</code></pre>
+<pre><code class="language-r">modelos &lt;- c(&quot;mpg ~ wt&quot;,
+             &quot;mpg ~ wt + cyl&quot;,
+             &quot;mpg ~ wt + cyl + drat&quot;,
+             &quot;mpg ~ wt + cyl + drat + am&quot;)
+
+# Estou usando funções do pacote broom, mas você não era obrigado a apresentar
+# os resultados bonitinho. O objetivo era treinar esse tipo de workflow.
+modelos_saida &lt;- tibble(
+  especificacao = modelos,
+  ajuste = map(especificacao, lm, data = mtcars),
+  coefs = map(ajuste, broom::tidy),
+  stats = map(ajuste, broom::glance),
+  aums = map(ajuste, broom::augment)
+)
+
+modelos_saida %&gt;% 
+  select(especificacao, coefs) %&gt;% 
+  unnest(coefs) %&gt;% 
+  filter(term != &quot;(Intercept)&quot;) 
+</code></pre>
+<pre><code>## # A tibble: 10 x 6
+##    especificacao              term  estimate std.error statistic  p.value
+##    &lt;chr&gt;                      &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+##  1 mpg ~ wt                   wt     -5.34       0.559   -9.56   1.29e-10
+##  2 mpg ~ wt + cyl             wt     -3.19       0.757   -4.22   2.22e- 4
+##  3 mpg ~ wt + cyl             cyl    -1.51       0.415   -3.64   1.06e- 3
+##  4 mpg ~ wt + cyl + drat      wt     -3.19       0.829   -3.85   6.24e- 4
+##  5 mpg ~ wt + cyl + drat      cyl    -1.51       0.446   -3.38   2.14e- 3
+##  6 mpg ~ wt + cyl + drat      drat   -0.0162     1.32    -0.0122 9.90e- 1
+##  7 mpg ~ wt + cyl + drat + am wt     -3.13       0.932   -3.36   2.32e- 3
+##  8 mpg ~ wt + cyl + drat + am cyl    -1.53       0.465   -3.28   2.88e- 3
+##  9 mpg ~ wt + cyl + drat + am drat   -0.130      1.53    -0.0851 9.33e- 1
+## 10 mpg ~ wt + cyl + drat + am am      0.237      1.51     0.157  8.76e- 1
+</code></pre>
+<pre><code class="language-r">modelos_saida %&gt;% 
+  select(especificacao, stats) %&gt;% 
+  unnest(stats)
+</code></pre>
+<pre><code>## # A tibble: 4 x 13
+##   especificacao    r.squared adj.r.squared sigma statistic  p.value    df logLik
+##   &lt;chr&gt;                &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1 mpg ~ wt             0.753         0.745  3.05      91.4 1.29e-10     1  -80.0
+## 2 mpg ~ wt + cyl       0.830         0.819  2.57      70.9 6.81e-12     2  -74.0
+## 3 mpg ~ wt + cyl ~     0.830         0.812  2.61      45.6 6.57e-11     3  -74.0
+## 4 mpg ~ wt + cyl ~     0.830         0.805  2.66      33.0 4.84e-10     4  -74.0
+## # ... with 5 more variables: AIC &lt;dbl&gt;, BIC &lt;dbl&gt;, deviance &lt;dbl&gt;,
+## #   df.residual &lt;int&gt;, nobs &lt;int&gt;
+</code></pre>
+<pre><code class="language-r">modelos_saida %&gt;% 
+  select(especificacao, aums) %&gt;% 
+  filter(especificacao == &quot;mpg ~ wt + cyl + drat + am&quot;) %&gt;% 
+  unnest(aums)
+</code></pre>
+<pre><code>## # A tibble: 32 x 13
+##    especificacao   .rownames   mpg    wt   cyl  drat    am .fitted .resid   .hat
+##    &lt;chr&gt;           &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##  1 mpg ~ wt + cyl~ Mazda RX4  21    2.62     6  3.9      1    22.3 -1.35  0.0899
+##  2 mpg ~ wt + cyl~ Mazda RX~  21    2.88     6  3.9      1    21.6 -0.550 0.0924
+##  3 mpg ~ wt + cyl~ Datsun 7~  22.8  2.32     4  3.85     1    26.3 -3.55  0.137 
+##  4 mpg ~ wt + cyl~ Hornet 4~  21.4  3.22     6  3.08     0    20.4  1.05  0.113 
+##  5 mpg ~ wt + cyl~ Hornet S~  18.7  3.44     8  3.15     0    16.6  2.11  0.122 
+##  6 mpg ~ wt + cyl~ Valiant    18.1  3.46     6  2.76     0    19.6 -1.53  0.207 
+##  7 mpg ~ wt + cyl~ Duster 3~  14.3  3.57     8  3.21     0    16.2 -1.87  0.103 
+##  8 mpg ~ wt + cyl~ Merc 240D  24.4  3.19     4  3.69     0    23.4  0.996 0.189 
+##  9 mpg ~ wt + cyl~ Merc 230   22.8  3.15     4  3.92     0    23.5 -0.700 0.207 
+## 10 mpg ~ wt + cyl~ Merc 280   19.2  3.44     6  3.92     0    19.5 -0.340 0.149 
+## # ... with 22 more rows, and 3 more variables: .sigma &lt;dbl&gt;, .cooksd &lt;dbl&gt;,
+## #   .std.resid &lt;dbl&gt;
+</code></pre>
 
           </div>
 
