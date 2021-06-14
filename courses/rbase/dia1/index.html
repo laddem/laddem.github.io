@@ -1,0 +1,1925 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="LADDEM" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Os conceitos-chave que vão fundamentar sua aprendizagem e seu uso da língua" />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://laddem.github.io/courses/rbase/dia1/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="rgb(251, 191, 183)" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/purebasic.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/purebasic.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.46f8102c91669d08bf92f59f6531234a.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://laddem.github.io/courses/rbase/dia1/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="LADDEM" />
+  <meta property="og:url" content="https://laddem.github.io/courses/rbase/dia1/" />
+  <meta property="og:title" content="A base da linguagem R | LADDEM" />
+  <meta property="og:description" content="Os conceitos-chave que vão fundamentar sua aprendizagem e seu uso da língua" /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-06-14T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-06-14T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>A base da linguagem R | LADDEM</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="97cca2b38f9d47320ccaf84cbbcc3468" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.f16be01fc8fb2b5885dd67ce942d1185.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          R-base
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Cursos</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/courses/rbase/">R-base</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class="active"><a href="/courses/rbase/dia1/">Básico</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fundamentos">Fundamentos</a>
+      <ul>
+        <li><a href="#a-interface-do-r-e-do-rstudio">A interface do R e do RStudio</a></li>
+        <li><a href="#objetos">Objetos</a></li>
+        <li><a href="#funções">Funções</a></li>
+        <li><a href="#argumentos">Argumentos</a></li>
+        <li><a href="#sua-primeira-função">Sua primeira função</a></li>
+        <li><a href="#programas-scripts">Programas (scripts)</a></li>
+        <li><a href="#pacotes">Pacotes</a></li>
+        <li><a href="#ajuda">Ajuda</a></li>
+      </ul>
+    </li>
+    <li><a href="#objetos-em-r">Objetos em R</a>
+      <ul>
+        <li><a href="#vetores">Vetores</a></li>
+        <li><a href="#atributos">Atributos</a></li>
+        <li><a href="#matrizes">Matrizes</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#classe">Classe</a></li>
+        <li><a href="#coerção">Coerção</a></li>
+        <li><a href="#listas">Listas</a></li>
+        <li><a href="#data-frames">Data Frames</a></li>
+        <li><a href="#fórmulas">Fórmulas</a></li>
+      </ul>
+    </li>
+    <li><a href="#revisão">Revisão</a>
+      <ul>
+        <li><a href="#exercícios">Exercícios</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+            
+  <nav class="d-none d-md-flex" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      
+  
+  
+  
+
+  <li class="breadcrumb-item">
+    <a href="/">
+      
+        Home
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/">
+      
+        Cursos
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/rbase/">
+      
+        R-base
+      
+    </a>
+  </li>
+
+
+      <li class="breadcrumb-item active" aria-current="page">
+        Básico
+      </li>
+    </ol>
+  </nav>
+
+
+          
+
+          <h1>A base da linguagem R</h1>
+
+          <div class="article-style">
+            <h2 id="fundamentos">Fundamentos</h2>
+<h3 id="a-interface-do-r-e-do-rstudio">A interface do R e do RStudio</h3>
+<p>O RStudio oferece uma maneira de falar com seu computador. O R te fornece um idioma para falar. 
+Para começar, abra o RStudio da mesma forma que você abriria qualquer outro aplicativo em seu computador.</p>
+<p>Você digita o código R na linha superior do painel do console RStudio e, em seguida, clica em Enter para executá-lo. O código que você digita é chamado de comando, porque ele comandará seu computador para fazer algo por você. A linha em que você digita é chamada de linha de comando.</p>
+<p>A interface do RStudio é simples. Para  criar um script novo é necessário ir em <code>File &gt; New File &gt; R &gt; script</code> no menu no canto esquerdo. É recomendado fortemente que você escreva e edite todo o seu código R em um script antes de executá-lo no console. Por quê? Esse hábito cria um registro reproduzível de seu trabalho. Ao terminar o dia, você pode salvar seu script e usá-lo para executar novamente toda a sua análise no dia seguinte, além disso os scripts são muito úteis para editar e revisar seu código e são uma ótima cópia de seu trabalho para compartilhar com outras pessoas. Para salvar é só clicar no disquete no painel do script e depois ir em <code>File &gt; Save</code>.</p>
+<p>Quando você digita um comando no script e pressiona Ctrl + Enter ou Run, o computador executa o comando e mostra os resultados no console logo abaixo. Por exemplo, se você digitar 1 + 1 e pressionar Ctrl + Enter, o RStudio exibirá:</p>
+<pre><code class="language-r">1 + 1
+</code></pre>
+<pre><code>## [1] 2
+</code></pre>
+<h3 id="objetos">Objetos</h3>
+<p>Agora que você já sabe como o R funciona, vamos ver alguns operadores e objetos que podem ser criados. Se você quer que o R crie um vetor, use o operador <code>:</code>, esse operador vai retornar um conjunto unidimensional de números:</p>
+<pre><code class="language-r">1:6
+</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6
+</code></pre>
+<p>Mas quando você roda assim dessa forma, o R gera o vetor que você poderá ver o resultado no console, porém esse vetor não vai ficar salvo em lugar nenhum, é basicamente uma pegada de seis números que existiram naquela execução pontual. Se você quiser usar novamente essa sequência de número, você precisa pedir para o R guardar ele em algum lugar. Você pode fazer isso criando um <code>objeto</code>.</p>
+<p>O R permite salvar dados armazenando-os dentro de um objeto R. O que é um objeto? Apenas um nome que você pode usar para acessar os dados armazenados. Por exemplo, você pode salvar dados em um objeto como <code>a</code> ou <code>b</code> ou qualquer nome que faça sentido para o que você está fazendo. Sempre que o R encontrar o objeto, ele irá substituí-lo pelos dados salvos nele, da seguinte forma:</p>
+<pre><code class="language-r">a &lt;- 1
+
+a
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">a + 2
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<p>Ou seja, para você criar um objeto no R, você escolhe um nome e depois usa o símbolo <code>&lt;-</code> para salvar o dado naquele objeto no qual você deu um nome. No caso do exemplo acima, o R criou um objeto, deu a ele seu nome e armazenou nele tudo o que vier após a seta. Portanto, <code>a &lt;- 1</code> armazena 1 em um objeto denominado a.</p>
+<p>Você também pode usar seu objeto em novos comandos R. Já que armazenou anteriormente o valor de 1, agora você está adicionando 1 ao a armazenando no objeto <code>a + 1</code></p>
+<p>Então, como você faria para armazenar esse vetor de seis números <code>1:6</code>, que a gente criou anteriormente, em um objeto?</p>
+<pre><code class="language-r">vetor &lt;- 1:6
+
+vetor
+</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6
+</code></pre>
+<p>Quando você cria um objeto no R, esse objeto vai aparecer armazenado na seção <code>Environment</code> no lado direito, do lado da seção script (essa que você digita os comandos para usá-los depois).</p>
+<p>Você pode nomear um objeto no R de praticamente qualquer nome, só tem algumas regras: não pode começar com número, e também não pode ter alguns símbolos, como por exemplo:  <code>^</code>, <code>!</code>, <code>$</code>, <code>@</code>, <code>+</code>, <code>-</code>, <code>/</code>, <code>%</code> or <code>*</code>.</p>
+<p>Além disso, o R é <em>case-sensitive</em>, portanto se eu colocar um nome de objeto como <code>Name</code> e outro como <code>name</code> eles vão se referir a objetos diferentes, ou seja, ele considera se a letra é maíuscula ou minúscula.</p>
+<p>E se você criar um objeto, salvar uma informação neste objeto e logo em seguida salvar outra, ele subscreve o que estava anteriormente, então tome cuidado para não perder informações. O exemplo abaixo mostra exatamente isso:</p>
+<pre><code class="language-r">meu_numero &lt;- 1
+
+meu_numero
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">meu_numero &lt;- 999
+meu_numero
+</code></pre>
+<pre><code>## [1] 999
+</code></pre>
+<p>Com a função <code>ls()</code> você consegue listar no console todos os objetos criados.</p>
+<p>O que é possível fazer com esses objetos no R que você criou? Muita coisa! Por exemplo: é possível usar o objeto vetor e fazer uma operação de divisão</p>
+<pre><code class="language-r">vetor/2
+</code></pre>
+<pre><code>## [1] 0.5 1.0 1.5 2.0 2.5 3.0
+</code></pre>
+<pre><code class="language-r">vetor - 1
+</code></pre>
+<pre><code>## [1] 0 1 2 3 4 5
+</code></pre>
+<p>O R dividiu por 2 todos os números dentro daquele vetor. Se você subtrair 1 desse objeto, o R vai subtrair 1 de cada elemento dentro deste objeto.</p>
+<p>Quando você usa dois ou mais vetores em uma operação, o R alinhará os vetores e executará uma sequência de operações individuais. Por exemplo, quando você executa vetor * vetor, o R alinha os dois vetores de dados e, em seguida, multiplica o primeiro elemento do vetor 1 pelo primeiro elemento do vetor 2, então multiplica o segundo elemento do vetor 1 pelo segundo elemento do vetor 2, e assim por diante, até que cada elemento tenha sido multiplicado. O resultado será um novo vetor com o mesmo comprimento dos dois primeiros:</p>
+<pre><code class="language-r">vetor * vetor
+</code></pre>
+<pre><code>## [1]  1  4  9 16 25 36
+</code></pre>
+<p>Se você der ao R uma operação com dois vetores de comprimentos diferentes, o R repetirá o vetor mais curto até que seja do mesmo tamanho do vetor maior e, em seguida, fará as contas. Esta não é uma mudança permanente - o vetor mais curto terá seu tamanho original depois que o R fizer as contas. Se o comprimento do vetor curto não se dividir igualmente no comprimento do vetor longo, o R retornará uma mensagem de aviso. Esse comportamento é conhecido como <strong>reciclagem</strong> de vetor e ajuda o R a fazer operações em elementos:</p>
+<pre><code class="language-r">vetor * 1:4
+</code></pre>
+<pre><code>## Warning in vetor * 1:4: comprimento do objeto maior não é múltiplo do
+## comprimento do objeto menor
+</code></pre>
+<pre><code>## [1]  1  4  9 16  5 12
+</code></pre>
+<pre><code class="language-r">vetor * 1:2
+</code></pre>
+<pre><code>## [1]  1  4  3  8  5 12
+</code></pre>
+<p>Porém, é preciso cuidado pois se você não estava querendo <strong>reciclar</strong>, é possível cometer erros. No exemplo abaixo, eu crio um segundo vetor com os valores para multiplicação, mas ele tem tamanho menor que o primeiro. Por isso, é bom ficar atento aos <code>Warning message:</code>s:</p>
+<pre><code class="language-r">vetor2 &lt;- c(1, 2, 3, 4, 5)
+
+vetor * vetor2
+</code></pre>
+<pre><code>## Warning in vetor * vetor2: comprimento do objeto maior não é múltiplo do
+## comprimento do objeto menor
+</code></pre>
+<pre><code>## [1]  1  4  9 16 25  6
+</code></pre>
+<h3 id="funções">Funções</h3>
+<p>O R vem com muitas funções instaladas. Praticamente tudo que você vê que não são <code>objetos</code> que você criou são funções e seus componentes. Por isso, dizemos que, no seu núcleo, o R é uma linguagem &ldquo;funcional&rdquo;. Vejamos alguns exemplos de funções:</p>
+<pre><code class="language-r">round(3.1415)
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<pre><code class="language-r">factorial(3)
+</code></pre>
+<pre><code>## [1] 6
+</code></pre>
+<h4 id="exercício">Exercício</h4>
+<p>Só de olhar para as funções e seus resultados, você conseguíria dizer:</p>
+<ul>
+<li>O que cada função faz?</li>
+<li>Quais entradas (inputs) ela pede?</li>
+<li>Qual saída ela produz (output)?</li>
+<li>Que opções alternativas (argumentos) elas poderiam conter?</li>
+</ul>
+<h3 id="argumentos">Argumentos</h3>
+<p>As informações que são colocadas dentro dos <code>()</code> depois do nome de uma função são chamados de <strong>argumentos</strong>. Em geral, uma função tem alguns argumentos obrigatórios (o valor a ser arrendodado, o número para calcular o fatorial) e argumentos opcionais (arredondar para cima ou para baixo? descartar valores nulos?).</p>
+<pre><code class="language-r">mean(1:6)
+</code></pre>
+<pre><code>## [1] 3.5
+</code></pre>
+<pre><code class="language-r">mean(vetor)
+</code></pre>
+<pre><code>## [1] 3.5
+</code></pre>
+<pre><code class="language-r">vetor_com_nulo &lt;- c(1, 2, 3, 4, 5, 6, NA)
+
+mean(vetor_com_nulo)
+</code></pre>
+<pre><code>## [1] NA
+</code></pre>
+<pre><code class="language-r">mean(vetor_com_nulo, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 3.5
+</code></pre>
+<p>Argumentos obrigatórios e opcionais tornam as nossas funções mais flexíveis. Essa flexibilidade é crucial para muitas operações, pois podemos passar funções como argumentos de outras funções. Por exemplo:</p>
+<pre><code class="language-r">round(mean(vetor))
+</code></pre>
+<pre><code>## [1] 4
+</code></pre>
+<p>Quando você reúne as funções dessa forma, o R vai avaliar a função de dentro para fora, como uma boneca matrioshka:</p>
+<pre><code class="language-r">resultado &lt;- vetor
+resultado
+</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6
+</code></pre>
+<pre><code class="language-r">resultado &lt;- mean(resultado)
+resultado
+</code></pre>
+<pre><code>## [1] 3.5
+</code></pre>
+<pre><code class="language-r">resultado &lt;- round(resultado)
+resultado
+</code></pre>
+<pre><code>## [1] 4
+</code></pre>
+<p>Outro exemplo de argumentos opcionais é a função <code>sample</code>, que produz amostras aleatórias:</p>
+<pre><code class="language-r">sample(x = vetor, size = 1)
+</code></pre>
+<pre><code>## [1] 4
+</code></pre>
+<pre><code class="language-r">sample(x = vetor, size = 1)
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">sample(x = vetor, size = 1)
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<p>Com os argumentos opcionais, podemos mudar detalhes do processo de amostragem</p>
+<pre><code class="language-r">sample(x = vetor, size = 1, prob = c(1/8, 1/8, 1/8, 1/8, 1/8, 3/8))
+</code></pre>
+<pre><code>## [1] 4
+</code></pre>
+<p>E ao mudar as probabilidades de como cada amostra vai ser selecionada, eu criei um dado viciado!</p>
+<p>Você pode verificar os argumentos de uma função com:</p>
+<pre><code class="language-r">args(sample)
+</code></pre>
+<pre><code>## function (x, size, replace = FALSE, prob = NULL) 
+## NULL
+</code></pre>
+<h4 id="exercício-1">Exercício</h4>
+<p>Repita a operação de <code>sample</code> acima com o dado &ldquo;viciado&rdquo; e com o dado &ldquo;limpo&rdquo; e verifique se você consegue perceber empiricamente que meu dado está &ldquo;viciado&rdquo;.</p>
+<p>Que outros argumentos existem na função <code>sample</code>? Qual o papel do argumento <code>replace</code>?</p>
+<h3 id="sua-primeira-função">Sua primeira função</h3>
+<p>Ok, mas suponha que você esteja cansado de repetir as coisas no seu programa. Existe uma operação que você realiza de novo e novo, e ela é relativamente simples, mas é um tédio ficar copiando e colando a mesma coisa. Por exemplo, se você tem o vetor que criamos com seis números, e precisa sortear dois valores e somar seu resultado, como se estivesse jogando dois dados de 6 faces e somando os resultados?</p>
+<pre><code class="language-r">x &lt;- sample(vetor, size = 1)
+y &lt;- sample(vetor, size = 1)
+x + y
+</code></pre>
+<pre><code>## [1] 10
+</code></pre>
+<p>Seu código funciona bem, mas você quer simplificar isso para uma função que faça tudo de uma vez, podemos chamar ela de <code>role</code>, como se fosse &ldquo;role dois dados&rdquo;.</p>
+<pre><code class="language-r">role()
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<pre><code class="language-r">role()
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<pre><code class="language-r">role()
+</code></pre>
+<pre><code>## [1] 11
+</code></pre>
+<p>A função <code>role</code> não existe no R base, mas você mesmo pode construí-la:</p>
+<pre><code class="language-r">role &lt;- function() {
+  x &lt;- sample(vetor, size = 1)
+  y &lt;- sample(vetor, size = 1)
+  x + y
+}
+
+role()
+</code></pre>
+<pre><code>## [1] 7
+</code></pre>
+<p>Pause para contemplar os diferentes elementos do construtor de funções do R:</p>
+<ul>
+<li><code>role</code> é o nome da função, e ele deve ser atribuído <code>&lt;-</code> para que você possa chamar sua função</li>
+<li><code>function</code> é uma função que constrói funções, e os argumentos dela que vão nos parenteses são aqueles que o usuário deverá digitar. Nesse caso, nenhum argumento é necessário.</li>
+<li>Os <code>{}</code> indicam o início e o fim do <code>corpo</code> da função, onde a magia acontece.</li>
+<li>Ao rodar o construtor da função, nada acontece. A função só entra em funcionamento na hora que o usuário a utiliza posteriormente <code>role()</code>.</li>
+</ul>
+<h4 id="exercício-2">Exercício</h4>
+<p>Escreva uma função que role 2 dados de 10 faces e some seus resultados.</p>
+<h3 id="programas-scripts">Programas (scripts)</h3>
+<!-- 
+
+N: Eu coloquei o script direto lá em cima, pra mim não faz muito sentido passar pelo console primeiro, mas não sei, o que você acha?
+
+V: Olha, pra mim depende muito do aluno. Acho que as vezes gente que começa a estudar o R nunca para pra pensar na distinção entre as duas coisas. Pessoalmente acho útil porque eu uso o console o tempo todo para testar coisas que eu não quero que poluam o script, mas muita gente faz isso no script e depois apaga. Meu ponto aqui é outra coisa, é só introduzir pra eles o conceito de programa/script. O que é, o que tem num programa, talvez um ou outro exemplo de um programa. Tipo um programa de importação e tratamento de dados. Um programa que produz uma visualização. Um programa que gera um modelo estatístico. Um programa que faz uma tabela, etc.
+
+-->
+<p>Na maioria das situações, esses conceitos soltos que introduzimos não são muito úteis isoladamente. Afinal de contas, objetos, funções e números individuais não servem para muita coisa. Esses conceitos ganham corpo quando os utilizamos juntos para produzir nossos programas. O que são programas? A metáfora mais comumemente utilizada é a culinária. Um programa é uma sequência de instruções, uma receita para produzir alguma coisa. A diferença é que ao invés de produtos culinários, os ingredientes são informações na memória de um computador, e ao invés de um prato, estamos tentando produzir resultados que podem ser analisados: estatísticas descritivas, representações gráficas, modelos matemáticos, tabelas, etc.</p>
+<p>Falaremos mais sobre programas e estratégias de construção de programas (se der tempo), em outra aula. Por aqui, seria interessante que vocês levassem adiante a noção de que o programa é o conjunto da obra. É comum desenvolvermos ou encontrarmos programas para:</p>
+<ul>
+<li>importar e corrigir quaisquer problemas nos meus dados</li>
+<li>produzir estatísticas descritivas a partir de meus dados</li>
+<li>produzir diversos gráficos que descrevem meus dados</li>
+<li>produzir tabulações e exportá-las para outros softwares</li>
+</ul>
+<p>Como vários aspectos do R, a flexibilidade aqui é imensa, e vocês são livres para definir o <strong>escopo</strong> dos seus programas. Você vai preferir colocar tudo num programa só, ou talvez dividí-lo em diversos programas e tarefas menores? Cada abordagem carrega consigo vantagens e desvantagens que vocês terão que decidir se valem ou não a pena.</p>
+<h3 id="pacotes">Pacotes</h3>
+<p>Você não é a única pessoa que escreve suas próprias funções com R. Muitos professores, programadores e estatísticos usam R para projetar ferramentas que podem ajudar as pessoas a analisar dados. Eles então tornam essas ferramentas gratuitas para qualquer pessoa usar. Para usar essas ferramentas, basta baixá-las. Eles reúnem coleções pré-montadas de funções e objetos chamados pacotes. Veremos o básico aqui.</p>
+<!-- Acho melhor evitar qplot. Vamos usar as funções do graphics mesmo para fazer uns gráficos simples. Pode deixar o exemplo de baixar o ggplot2, sem problema, mas é melhor a gente produzir os gráficos no base mesmo para o pessoal ter uma ideia quando eles encontrarem base graphics por aí. -->
+<p>Vamos usar a função qplot para fazer alguns gráficos rápidos. qplot vem no pacote ggplot2, o pacote popular para fazer gráficos. Antes de usar o qplot, ou qualquer outra coisa no pacote ggplot2, você precisa fazer o download e instalá-lo.</p>
+<p>Os pacotes do R em geral estão hospedados em <a href="http://cran.r-project.org">http://cran.r-project.org</a>, o mesmo site de onde você baixou sua versão do R. No entanto, você não precisa visitar o site para baixar um pacote R; você pode baixar pacotes direto da linha de comando do R.</p>
+<pre><code class="language-r">install.packages('ggplot2')
+</code></pre>
+<p>É isso. O R fará com que seu computador visite o site, baixe ggplot2 e instale o pacote em seu disco rígido exatamente onde o R deseja encontrá-lo. Agora você tem o pacote ggplot2. Se você gostaria de instalar outro pacote, substitua ggplot2 pelo nome do seu pacote no código.</p>
+<h3 id="ajuda">Ajuda</h3>
+<h4 id="no-r">No R</h4>
+<p>Existem mais de 1.000 funções no núcleo do R e novas funções são criadas o tempo todo. Isso pode ser muito material para memorizar e aprender! Felizmente, cada função R vem com sua própria página de ajuda, que você pode acessar digitando o nome da função após um ponto de interrogação. Por exemplo, cada um desses comandos abrirá uma página de ajuda. Procure as páginas que aparecem na guia Ajuda do painel inferior direito do RStudio:</p>
+<pre><code class="language-r">?sqrt
+?log10
+?sample
+</code></pre>
+<p>As páginas de ajuda contem informações úteis sobre o que cada função faz. Essas páginas de ajuda também servem como documentação de código, portanto, pode ser algo um pouco chato. Muitas vezes parecem ter sido escritas para pessoas que já entendem a função e não precisam de ajuda. Não deixe que isso te faça desistir de entender uma função que você queira usar - você pode ganhar muito com uma página de ajuda examinando-a em busca de informações que façam sentido e ignorando o resto. Essa técnica inevitavelmente o levará à parte mais útil de cada página de ajuda: a parte inferior. Aqui, quase todas as páginas de ajuda incluem algum código de exemplo que coloca a função em ação. Executar esse código é uma ótima maneira de aprender com o exemplo dado.</p>
+<p>Se você gostaria de consultar a página de ajuda de uma função, mas esqueceu o nome da função, você pode pesquisar por palavra-chave. Para fazer isso, digite dois pontos de interrogação seguidos por uma palavra-chave na linha de comando de R, o R exibirá uma lista de links para páginas de ajuda relacionadas à palavra-chave. Você pode pensar nisso como a página de ajuda para a página de ajuda:</p>
+<pre><code class="language-r">??log
+</code></pre>
+<p>Muitos pacotes também incluem <strong>vinhetas</strong>, que são pequenas aulinhas que resumem as principais funções de um pacote através de explicações de uso detalhados. Você pode ver as vinhetas disponíveis num pacote instalado assim:</p>
+<pre><code class="language-r">vignette(package = &quot;ggplot2&quot;)
+</code></pre>
+<p>E a vinheta em si é acessada assim:</p>
+<pre><code class="language-r">vignette(&quot;ggplot2-specs&quot;, package = &quot;ggplot2&quot;)
+</code></pre>
+<p>Que deve abrir a vinheta na sua seção &ldquo;Help&rdquo; do RStudio. A maioria dessas vinhetas também está disponível online numa consulta rápida ao Google.</p>
+<h4 id="online">Online</h4>
+<p>Em geral, após uma consulta a página de ajuda, pode ser que você não esteja satisfeito. Você pode complementar sua página de ajuda com diversos recursos online. Vamos deixar alguns links abaixo que utilizamos cotidianamente.</p>
+<ul>
+<li><a href="https://www.google.com" target="_blank" rel="noopener">Google</a>: em geral, uma pesquisa com &ldquo;r &lt;função&gt;&rdquo; ou &ldquo;r &lt;pacote&gt;&rdquo; te leva para onde você quer ir.</li>
+<li><a href="https://stackoverflow.com" target="_blank" rel="noopener">Stack Overflow</a>: similar, mas no stackoverflow se usam <code>[tags]</code>, então seria algo como <code>[r][pacote] sua pergunta</code></li>
+<li><a href="https://community.rstudio.com" target="_blank" rel="noopener">RStudio Community</a>: mais pra perguntas relacionadas ao RStudio</li>
+<li><a href="http://r-br.2285057.n4.nabble.com/" target="_blank" rel="noopener">Lista R-Br</a>: lista ativa e em português, em geral, o pessoal é prestativo.</li>
+<li><a href="https://twitter.com/rstudiotips" target="_blank" rel="noopener">RStudio Tips - Twitter</a>: dicas no twitter para ir melhorando no cotidiano.</li>
+</ul>
+<h4 id="exercício-3">Exercício</h4>
+<p>Consulte a ajuda das funções <code>sum</code>, <code>mean</code>, <code>min</code>, <code>max</code>, <code>range</code>. Porque todas elas tem o argumento <code>na.rm</code>? O que argumento o <code>trim</code> em <code>mean</code> faz? Qual a melhor maneira de rapidamente entender o que uma função faz através da página de ajuda?</p>
+<h2 id="objetos-em-r">Objetos em R</h2>
+<h3 id="vetores">Vetores</h3>
+<p>Já trabalhamos com alguns vetores lá em cima, é inevitável. Pensou em salvar um objeto na memória do computador no R, pensou em vetor. Pra ser preciso, estamos usando <strong>vetores atômicos</strong>. Os vetores atômicos são em geral o objeto mais frequentemente usado em R. Para construir um, você utiliza a função <code>c</code>:</p>
+<pre><code class="language-r">vetor &lt;- c(1, 2, 3, 4, 5, 6)
+vetor
+</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6
+</code></pre>
+<p>E você pode verificar se ele é um vetor mesmo:</p>
+<pre><code class="language-r">is.vector(vetor)
+</code></pre>
+<pre><code>## [1] TRUE
+</code></pre>
+<p><code>is.vector</code> testa se o objeto é um vetor, e retorna <code>TRUE</code> se sim, e <code>FALSE</code> se não.</p>
+<h4 id="exercício-4">Exercício</h4>
+<p>Teste se <code>vetor2</code>, criado anteriormente é um vetor. Crie um vetor com os nomes de cinco pessoas da sala.</p>
+<h4 id="tamanho">Tamanho</h4>
+<p>Ao contrário de outras linguagens, o R não diferencia entre escalares e vetores. Se você salvar só 1 valor, ele salva num vetor atômico de tamanho 1.</p>
+<pre><code class="language-r">v &lt;- 1
+is.vector(v)
+</code></pre>
+<pre><code>## [1] TRUE
+</code></pre>
+<pre><code class="language-r">length(v)
+</code></pre>
+<pre><code>## [1] 1
+</code></pre>
+<pre><code class="language-r">length(vetor)
+</code></pre>
+<pre><code>## [1] 6
+</code></pre>
+<p>Vetores atômicos guardam suas informações em uma única dimensão (como se fosse uma caixinha de pílulas semanal), cada compartimento guarda um valor. E todos os valores tem que ser do mesmo tipo! Números com números, caracteres com caracteres. Não pode misturar.</p>
+<pre><code class="language-r">inteiro &lt;- 1L
+double &lt;- 1
+texto &lt;- &quot;um&quot;
+</code></pre>
+<p>Ou com mais de um valor:</p>
+<pre><code class="language-r">inteiros &lt;- c(1L, 2L)
+doubles &lt;- c(1, 2)
+textos &lt;- c(&quot;um&quot;, &quot;dois&quot;)
+</code></pre>
+<p>Esses tipos de vetores são importantes pois eles interagem com as funções de maneira lógica:</p>
+<pre><code class="language-r">sum(inteiros)
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<pre><code class="language-r">sum(doubles)
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<pre><code class="language-r">sum(textos)
+</code></pre>
+<pre><code>## Error in sum(textos): 'type' inválido (character) do argumento
+</code></pre>
+<p>Veja a mensagem de erro ao tentar somar os textos.</p>
+<h4 id="exercício-5">Exercício</h4>
+<p>Considerando os dois vetores abaixo, calcule as suas médias. Porque não é possível calcular a média do segundo vetor.</p>
+<pre><code class="language-r">idade1 &lt;- c(20, 25, 30, 35, 40, 45, 50)
+idade2 &lt;- c(&quot;20&quot;, &quot;25&quot;, &quot;30&quot;, &quot;35&quot;, &quot;40&quot;, &quot;45&quot;, &quot;50&quot;)
+</code></pre>
+<h4 id="tipos">Tipos</h4>
+<p>Vetores atômicos podem ser de 6 tipos, dois são mais utilizados.</p>
+<h4 id="números-reais">Números reais</h4>
+<pre><code class="language-r">vetor
+</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6
+</code></pre>
+<pre><code class="language-r">typeof(vetor)
+</code></pre>
+<pre><code>## [1] &quot;double&quot;
+</code></pre>
+<p>A função <code>typeof</code> me diz qual o tipo de um vetor atômico.</p>
+<h4 id="números-inteiros">Números inteiros</h4>
+<pre><code class="language-r">inteiros
+</code></pre>
+<pre><code>## [1] 1 2
+</code></pre>
+<pre><code class="language-r">typeof(inteiros)
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<p>O padrão do R é aceitar números reais, se você não especificar. Para forçar números inteiros, é precisar utilizar:</p>
+<pre><code class="language-r">inteiros &lt;- c(1, 2)
+
+typeof(inteiros)
+</code></pre>
+<pre><code>## [1] &quot;double&quot;
+</code></pre>
+<pre><code class="language-r">inteiros &lt;- c(1L, 2L)
+
+typeof(inteiros)
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<p>Essas diferenças em geral são inconsequentes, mas existem alguns casos, como resultados de divisão e raíz quadrada, em que podemos encontrar resultados curiosos.</p>
+<pre><code class="language-r">sqrt(2)^2 - 2
+</code></pre>
+<pre><code>## [1] 4.440892e-16
+</code></pre>
+<p>Em teoria, a operação acima deveria ser 0, mas como o computador tem uma quantidade limitada de memória para armazenar as casas decimais, ele acaba gerando uma &ldquo;sobrinha&rdquo; infinitesimal da raíz quadrada de dois.</p>
+<h5 id="caracteres">Caracteres</h5>
+<pre><code class="language-r">texto &lt;- c(&quot;Bem&quot;, &quot;Vindos&quot;)
+
+texto
+</code></pre>
+<pre><code>## [1] &quot;Bem&quot;    &quot;Vindos&quot;
+</code></pre>
+<pre><code class="language-r">typeof(texto)
+</code></pre>
+<pre><code>## [1] &quot;character&quot;
+</code></pre>
+<h6 id="exercício-6">Exercício</h6>
+<p>Qual a diferença entre: 1, &ldquo;1&rdquo;, &ldquo;one&rdquo; no R? Quais são números e quais são caracteres?</p>
+<h5 id="lógicos">Lógicos</h5>
+<pre><code class="language-r">3 &lt; 4
+</code></pre>
+<pre><code>## [1] TRUE
+</code></pre>
+<pre><code class="language-r">3 &gt; 4
+</code></pre>
+<pre><code>## [1] FALSE
+</code></pre>
+<pre><code class="language-r">logico &lt;- c(TRUE, FALSE)
+
+logico
+</code></pre>
+<pre><code>## [1]  TRUE FALSE
+</code></pre>
+<pre><code class="language-r">typeof(logico)
+</code></pre>
+<pre><code>## [1] &quot;logical&quot;
+</code></pre>
+<p>Vetores lógicos são a base de várias operações úteis no R e vamos voltar a eles em diversos momentos.</p>
+<p>Complexos e crus:</p>
+<pre><code class="language-r">comp &lt;- c(1 + 1i, 1 + 2i, 1 + 3i)
+comp
+</code></pre>
+<pre><code>## [1] 1+1i 1+2i 1+3i
+</code></pre>
+<pre><code class="language-r">typeof(comp)
+</code></pre>
+<pre><code>## [1] &quot;complex&quot;
+</code></pre>
+<pre><code class="language-r">raw(3)
+</code></pre>
+<pre><code>## [1] 00 00 00
+</code></pre>
+<pre><code class="language-r">typeof(raw(3))
+</code></pre>
+<pre><code>## [1] &quot;raw&quot;
+</code></pre>
+<p>Vetores complexos servem para armazenar número complexos, enquanto vetores crus servem para armazenar os valores em bits de uma informação. Ambos são menos utilizados na análise de dados e eu os introduzo apenas para vocês saberem que eles existem.</p>
+<h3 id="atributos">Atributos</h3>
+<p>Atributos são informações adicionais que podemos colocar em um objeto para cumprir uma série de tarefas auxiliares. Pense, por exemplo, em dar nomes para os meses do ano, ou classificar um objeto de acordo com seu tipo. Atributos são <strong>metadados</strong> ou dados sobre os dados, e eles nos interessam porque o R pode aproveitar os atributos de um objeto para realizar tarefas específicas.</p>
+<p>Você pode ver os atributos de um objeto assim:</p>
+<pre><code class="language-r">attributes(vetor)
+</code></pre>
+<pre><code>## NULL
+</code></pre>
+<p>O nosso vetor não tem nenhum atributo ainda, por isso <code>NULL</code>.</p>
+<p>O atributo mais comum que os objetos podem ter em R são nomes. Podemos ver o atributo nomes assim:</p>
+<pre><code class="language-r">names(vetor)
+</code></pre>
+<pre><code>## NULL
+</code></pre>
+<p>Novamente, <code>NULL</code> indica que o vetor não tem nomes.</p>
+<p>A maioria das funções que trabalham com atributos vai ter esses &ldquo;dois empregos&rdquo;. De um lado, você pode utilizá-las para obter (get) os atributos, de outro, você pode utilizá-las para modificar (set) os atributos, veja:</p>
+<pre><code class="language-r">names(vetor) &lt;- c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;)
+</code></pre>
+<p>Agora, veja como ficaram os resultados das duas funções anteriores.</p>
+<pre><code class="language-r">attributes(vetor)
+</code></pre>
+<pre><code>## $names
+## [1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;  &quot;six&quot;
+</code></pre>
+<pre><code class="language-r">names(vetor)
+</code></pre>
+<pre><code>## [1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;  &quot;six&quot;
+</code></pre>
+<p>O R também vai mostrar o atributo nomes quando você chamar o vetor.</p>
+<pre><code class="language-r">vetor
+</code></pre>
+<pre><code>##   one   two three  four  five   six 
+##     1     2     3     4     5     6
+</code></pre>
+<p>Da mesma forma que você modificou os atributos antes, você pode modificá-los ou removê-los:</p>
+<pre><code class="language-r">names(vetor) &lt;- c(&quot;um&quot;, &quot;dois&quot;, &quot;três&quot;, &quot;quatro&quot;, &quot;cinco&quot;, &quot;seis&quot;)
+names(vetor)
+</code></pre>
+<pre><code>## [1] &quot;um&quot;     &quot;dois&quot;   &quot;três&quot;   &quot;quatro&quot; &quot;cinco&quot;  &quot;seis&quot;
+</code></pre>
+<pre><code class="language-r">names(vetor) &lt;- NULL
+names(vetor)
+</code></pre>
+<pre><code>## NULL
+</code></pre>
+<p>O outro atributo importante para muitas tarefas são as dimensões de um objeto. Lembre que os nossos vetores atômicos são limitados pela exigência de só ter uma dimensão, mas e se quisermos organizar nossos dados em várias dimensões? Um jeito possível é alterar as dimensões:</p>
+<pre><code class="language-r">dim(vetor)
+</code></pre>
+<pre><code>## NULL
+</code></pre>
+<pre><code class="language-r"># 2 linhas e 3 colunas
+dim(vetor) &lt;- c(2, 3)
+
+vetor
+</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+</code></pre>
+<pre><code class="language-r"># 3 linhas e 2 colunas
+
+dim(vetor) &lt;- c(3, 2)
+
+vetor
+</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
+</code></pre>
+<p>E não precisa se limitar a objetos bidimensionais. Você pode passar n dimensões para o objeto e o R distribuirá os valores do seu vetor no número de dimensões necessários. O único detalhe importante é você reparar que o R tem uma certa preferência de ir preenchendo os valores da coluna antes dos valores da linha e se você quiser fazer isso de forma diferente, é melhor utilizar as funções <code>matrix</code> ou <code>array</code>, que veremos adiante.</p>
+<h4 id="exercício-7">Exercício</h4>
+<p>Usando seus conhecimentos sobre atributos, construa uma pequena matriz com o nome de 5 pessoas da turma e seu sexo.</p>
+<h3 id="matrizes">Matrizes</h3>
+<p>Matrizes são muito parecidas com o que acabamos de construir: elas guardam informações em um <code>array</code> de duas dimensões. A grande diferença é que as matrizes são programadas para executar as operações matemáticas com matrizes de acordo com os princípios e convenções da álgebra linear. Portanto, o R vem com funções para transpor, inverter, solucionar, etc. matrizes. Você pode construir matrizes no R com:</p>
+<pre><code class="language-r">m &lt;- matrix(vetor, nrow = 2)
+m
+</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+</code></pre>
+<p>Ou, se você quiser mudar a ordem de preenchimento:</p>
+<pre><code class="language-r">m2 &lt;- matrix(vetor, nrow = 2, byrow = TRUE)
+m2
+</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+</code></pre>
+<p>Para mais informações, consulte <code>?matrix</code>.</p>
+<h4 id="exercício-8">Exercício</h4>
+<p>Reconstrua a sua matriz original usando a função <code>matrix</code> ao invés de alterar os atributos. E os nomes das colunas?</p>
+<h3 id="arrays">Arrays</h3>
+<p>O array é uma extensão da ideia de matriz para quantas dimensões você quiser, ou n-dimensões. 3, 4, 5, 10 dimensões, isso é com você. Na prática os arrays não são muito frequentes na análise de dados, mas eles existem se você precisar deles um dia:</p>
+<pre><code class="language-r">a &lt;- array(c(11:14, 21:24, 31:34), dim = c(2, 2, 3))
+a
+</code></pre>
+<pre><code>## , , 1
+## 
+##      [,1] [,2]
+## [1,]   11   13
+## [2,]   12   14
+## 
+## , , 2
+## 
+##      [,1] [,2]
+## [1,]   21   23
+## [2,]   22   24
+## 
+## , , 3
+## 
+##      [,1] [,2]
+## [1,]   31   33
+## [2,]   32   34
+</code></pre>
+<p>O display de um array multidimensional é meio confuso, porque o R vai te mostrar as &ldquo;fatias&rdquo; do array. Quanto mais dimensões, mais fatias. Boa sorte se você precisar deles um dia!</p>
+<h3 id="classe">Classe</h3>
+<p>A classe de um objeto é um atributo importante para seu funcionamento no R, porque diferentes classes estão associadas a diferentes métodos! Pense, por exemplo, que você deseja organizar uma sequência de valores em um vetor. Se esses valores são números, a ordem crescente ou decrescente é bastante intuitiva. Se são textos, podemos usar a ordem alfabética. Mas e se forem meses do ano? Grupos etários? Categorias educacionais?</p>
+<p>Problemas dessa natureza são resolvidos no R através da atribuição de classes aos objetos. Transposição e solução de matrizes utilizarão o atributo classe para saber se aquele objeto é uma matriz, para citar apenas um exemplo. Podemos descobrir a classe de um objeto assim:</p>
+<pre><code class="language-r">class(vetor)
+</code></pre>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;
+</code></pre>
+<p>Mas esse é o nosso vetor modificado. Vejamos o que acontece se retiramos o atributo <code>dim</code>:</p>
+<pre><code class="language-r">dim(vetor) &lt;- NULL
+class(vetor)
+</code></pre>
+<pre><code>## [1] &quot;numeric&quot;
+</code></pre>
+<p>Veja que não mudamos o tipo do vetor, ele continua sendo &ldquo;double&rdquo;,</p>
+<pre><code class="language-r">typeof(vetor)
+</code></pre>
+<pre><code>## [1] &quot;double&quot;
+</code></pre>
+<p>Mas sua classe mudou. Podemos mudar a classe de um objeto de maneira arbitrária, mas em geral a gente evita fazer isso, porque esse atributo está muito relacionado com as propriedades desse objeto. Veja dois exemplos do que ocorre ao alterar manualmente a classe de um objeto:</p>
+<pre><code class="language-r">agora &lt;- Sys.time()
+agora
+</code></pre>
+<pre><code>## [1] &quot;2021-06-14 12:51:59 -03&quot;
+</code></pre>
+<pre><code class="language-r">typeof(agora)
+</code></pre>
+<pre><code>## [1] &quot;double&quot;
+</code></pre>
+<pre><code class="language-r">class(agora)
+</code></pre>
+<pre><code>## [1] &quot;POSIXct&quot; &quot;POSIXt&quot;
+</code></pre>
+<p>Nesse primeiro exemplo, usando <code>Sys.time</code> para obter o horário local. O tipo dessa informação é &ldquo;double&rdquo;, pois o R armazena variáveis tempo como o número de segundos passados entre uma data de início arbitrária e o momento que o seu tempo representa. Mas a classe desse objeto é POSIXct e POSIXt, que são as classes do R para lidar com objetos que registram data e tempo.</p>
+<p>Veja o que acontece se eu temporariamente remover a classe desse objeto:</p>
+<pre><code class="language-r">unclass(agora)
+</code></pre>
+<pre><code>## [1] 1623685919
+</code></pre>
+<p>R transformou meu objeto data/tempo em um número. O que ocorre é que quando meu objeto tem as classes adequadas, isso alerta o R para que ele trate esse objeto de forma diferente. As funções do R utilizarão métodos de <code>print</code> para facilitar a visualização de objetos data/tempo, mas, por debaixo do capô, preservarão suas características computacionais numéricas. Você pode, por exemplo, somar 24h ao seu objeto:</p>
+<pre><code class="language-r">agora + (24 * 60 * 60)
+</code></pre>
+<pre><code>## [1] &quot;2021-06-15 12:51:59 -03&quot;
+</code></pre>
+<p>Você também pode, se assim desejar, transformar um valor numérico arbitrário numa data (só demonstração, não vale a pena fazer isso) atribuindo uma classe para ele:</p>
+<pre><code class="language-r">objeto &lt;- 1000000000
+class(objeto) &lt;- c(&quot;POSIXct&quot;, &quot;POSIXt&quot;)
+
+objeto
+</code></pre>
+<pre><code>## [1] &quot;2001-09-08 22:46:40 -03&quot;
+</code></pre>
+<h4 id="exercício-9">Exercício</h4>
+<p>Experimente brincar com o valor de objeto e ver</p>
+<ul>
+<li>Qual é a data de referência do R para calcular tempos?</li>
+<li>O que acontece se o valor for negativo?</li>
+</ul>
+<p>O segundo exemplo relevante são os fatores. Fatores são a classe utilizada pelo R para trabalhar com variáveis categóricas, ou informação qualitativa. Um fator só pode ter alguns valores pré-definidos pelo usuário. Pense, por exemplo, nas categorias de sexo ou raça que o IBGE utiliza em suas pesquisas amostrais. Há um pequeno número pré-definido de categorias. Para construir um fator, você pode fazer o seguinte:</p>
+<pre><code class="language-r">genero &lt;- factor(c(&quot;homem&quot;, &quot;mulher&quot;, &quot;mulher&quot;, &quot;homem&quot;))
+
+typeof(genero)
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<pre><code class="language-r">attributes(genero)
+</code></pre>
+<pre><code>## $levels
+## [1] &quot;homem&quot;  &quot;mulher&quot;
+## 
+## $class
+## [1] &quot;factor&quot;
+</code></pre>
+<p>Fatores seguem aquela linha que descrevemos para datas. R guarda os valores do seu fator utilizando números simples:</p>
+<pre><code class="language-r">unclass(genero)
+</code></pre>
+<pre><code>## [1] 1 2 2 1
+## attr(,&quot;levels&quot;)
+## [1] &quot;homem&quot;  &quot;mulher&quot;
+</code></pre>
+<p>Mas na hora que você utiliza esse fator, o software apresenta para você os rótulos das categorias.</p>
+<pre><code class="language-r">genero
+</code></pre>
+<pre><code>## [1] homem  mulher mulher homem 
+## Levels: homem mulher
+</code></pre>
+<p>Através do atributo <code>levels</code>, o R está associando cada valor numérico com um rótulo, e no momento em que você procurar construir uma tabela ou trabalhar com esses fatores de qualquer maneira, o software utilizará o atributo classe para dar-lhe o tratamento adequado. Por exemplo, se eu tentar transformar os vetores a seguir em caractere, o R saberá distinguir:</p>
+<pre><code class="language-r">as.character(c(1, 2, 2, 1))
+</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;2&quot; &quot;1&quot;
+</code></pre>
+<pre><code class="language-r">as.character(genero)
+</code></pre>
+<pre><code>## [1] &quot;homem&quot;  &quot;mulher&quot; &quot;mulher&quot; &quot;homem&quot;
+</code></pre>
+<p>O uso da função <code>as.character</code> é um gancho perfeito para o próximo assunto. Mas antes:</p>
+<h4 id="exercício-10">Exercício</h4>
+<p>Construa um fator a partir do vetor a seguir que registre os meses do ano. Dica: utilize o argumento <code>levels</code> da função <code>factor</code>.</p>
+<pre><code class="language-r">f &lt;- c(1, 3, 9, 4, 11, 2, 6, 6, 3, 2, 9, 11, 12, 12, 1, 8)
+</code></pre>
+<h3 id="coerção">Coerção</h3>
+<p>Coerção é o comportamento da linguagem R ao encontrar situações em que diferentes tipos de dados estão misturados em um mesmo vetor atômico. Lembrem que cada vetor atômico só pode armazenar 1 tipo de informação, portanto, ao tentar inserir uma informação de outro tipo, R devolverá:</p>
+<ul>
+<li>um erro, indicando que a operação é impossível, OU</li>
+<li>a operação será realizada, porém, o tipo da informação será modificado</li>
+</ul>
+<p>No segundo caso, o R aplica uma coerção na tentativa de preservar ao máximo as informações. Veja exemplos:</p>
+<pre><code class="language-r">v &lt;- c(1, 0, 1, TRUE, FALSE)
+v
+</code></pre>
+<pre><code>## [1] 1 0 1 1 0
+</code></pre>
+<pre><code class="language-r">v &lt;- c(1, 2, 3, &quot;4&quot;)
+v
+</code></pre>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot;
+</code></pre>
+<pre><code class="language-r">v &lt;- c(TRUE, FALSE, &quot;TRUE&quot;)
+v
+</code></pre>
+<pre><code>## [1] &quot;TRUE&quot;  &quot;FALSE&quot; &quot;TRUE&quot;
+</code></pre>
+<p>R vai tentar transformar o tipo de dados mais específico num tipo de dado mais geral, assim, evitando que a informação seja perdida.</p>
+<p>Em outros casos, o processo de coerção pode ser iniciado pelo próprio usuário, porque este deseja transformar um tipo de dado em outro:</p>
+<pre><code class="language-r">v &lt;- c(1, 0, 1, TRUE, FALSE)
+as.logical(v)
+</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE FALSE
+</code></pre>
+<pre><code class="language-r">v &lt;- c(1, 2, 3, &quot;4&quot;)
+as.numeric(v)
+</code></pre>
+<pre><code>## [1] 1 2 3 4
+</code></pre>
+<pre><code class="language-r">v &lt;- c(TRUE, FALSE, &quot;TRUE&quot;)
+as.logical(v)
+</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE
+</code></pre>
+<p>Existem funções <code>as.____</code> para todos os tipos de dados e classes mais comuns do R, e é praxe que autores de novos pacotes que trazem classes também incluam seus próprios métodos de coerção para suas novas classes.</p>
+<h4 id="exercício-11">Exercício</h4>
+<p>Porque o R prefere coagir vetores lógicos mistos para números e vetores numéricos e lógicos para caractere?</p>
+<h3 id="listas">Listas</h3>
+<p>Até esse momento, trabalhamos com variações no vetor atômico. O vetor atômico tem uma limitação repetidamente discutida: ele só armazena um tipo de dado. Bancos de dados reais certamente armazenarão informações de vários tipos distintos, então precisamos de uma estrutura de dado que tenha a capacidade de guardar estas informações díspares. É aí que entram as listas.</p>
+<p>Listas são como vetores atômicos, mas elas não guardam valores! Listas guardam OBJETOS R. Qualquer um. Vetores atômicos? Sim. Funções? Sim. Outras listas? Pode também. Para criar listas:</p>
+<pre><code class="language-r">list1 &lt;- list(100:130, &quot;R&quot;, list(TRUE, FALSE))
+list1
+</code></pre>
+<pre><code>## [[1]]
+##  [1] 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118
+## [20] 119 120 121 122 123 124 125 126 127 128 129 130
+## 
+## [[2]]
+## [1] &quot;R&quot;
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] TRUE
+## 
+## [[3]][[2]]
+## [1] FALSE
+</code></pre>
+<p>Note como cada elemento da lista é um objeto R diferente. A lista não julga, ela apenas armazena seus objetos. Um detalhe interessante e que será importante mais tarde: note como a saída do R diferencia [1] de [[1]] no índice dos elementos da lista. Isso é necessário porque a lista pode guardar muitas coisas dentro de si, e o usuário precisa ter a capacidade de recuperar essas informações que estão lá nas profundezas da lista. Falaremos um pouco mais sobre isso na aula de amanhã, quando discutirmos indexação.</p>
+<h4 id="exercício-12">Exercício</h4>
+<p>Crie uma lista de compras em que cada elemento da lista seja um vetor atômico de itens que você vai comprar de cada seção do supermercado. Para simplificar, utilize as seções: &ldquo;limpeza&rdquo;, &ldquo;mercearia&rdquo; e &ldquo;hortifruti&rdquo;.</p>
+<h3 id="data-frames">Data Frames</h3>
+<p>Data frames são o formato de dados mais popular em análise de dados, e por um bom motivo: eles combinam a flexibilidade necessária para armazenar diversos tipos de informações diferentes com a consistência das matrizes e dos vetores. Por trás da cortina, eles são listas com restrições: todos os elementos da lista devem ter o mesmo comprimento, isso garante a retangularidade da nossa informação.</p>
+<p>Essa retangularidade é importante do ponto de vista analítico: o data frame deve conter uma observação para cada unidade de análise e uma coluna para cada informação ou variável que foi coletada sobre essa unidade de análise. Se, de alguma forma esta informação não está disponível, isso deverá ficar <strong>explícito</strong> por uma célula com valor desconhecido.</p>
+<p>No R, embora isso não seja tão comum, você pode construir data frames manualmente:</p>
+<pre><code class="language-r">df &lt;- data.frame(x = c(1, 2, 3, 4, 5),
+                 y = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;),
+                 z = c(TRUE, FALSE, TRUE, TRUE, FALSE))
+df
+</code></pre>
+<pre><code>##   x y     z
+## 1 1 a  TRUE
+## 2 2 b FALSE
+## 3 3 c  TRUE
+## 4 4 d  TRUE
+## 5 5 e FALSE
+</code></pre>
+<p>Logo de cara, vemos que o <code>data.frame</code> do R tem aquela cara de tabela com a qual estamos acostumados. Podemos ver como o <code>data.frame</code> é construído observado alguns de seus atributos:</p>
+<pre><code class="language-r">typeof(df)
+</code></pre>
+<pre><code>## [1] &quot;list&quot;
+</code></pre>
+<pre><code class="language-r">class(df)
+</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r">attributes(df)
+</code></pre>
+<pre><code>## $names
+## [1] &quot;x&quot; &quot;y&quot; &quot;z&quot;
+## 
+## $class
+## [1] &quot;data.frame&quot;
+## 
+## $row.names
+## [1] 1 2 3 4 5
+</code></pre>
+<p>Secretamente, o data.frame é uma lista, com nomes, um atributo menos importante, chamado <code>row.names</code>, e algumas características como aquelas que mencionamos acima. O <code>data.frame</code> e o <code>vetor</code> são as principais ferramentas no cotidiano do analista e, portanto, são as que mais vamos utilizar daqui pra frente. Outra função útil é a e<code>str</code>utura de uma lista ou data frame:</p>
+<pre><code class="language-r">str(df)
+</code></pre>
+<pre><code>## 'data.frame':	5 obs. of  3 variables:
+##  $ x: num  1 2 3 4 5
+##  $ y: chr  &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; ...
+##  $ z: logi  TRUE FALSE TRUE TRUE FALSE
+</code></pre>
+<p>Ela oferece uma visão geral do data.frame, e é especialmente útil quando seu data.frame é grande e contém muitas variáveis.</p>
+<p>Em geral, a digitação de data sets no R não é recomendada. A interface do programa não te ajuda a produzir dados no formato necessário. É provável que você cometa muitos erros no caminho e não há uma ferramenta muito completa dentro do software que facilite esse processo. Isso ocorre porque o R não é um software de produção ou tabulação de dados, como o Microsoft Excel, o OpenOffice Calc ou o IBM SPSS, mas sim um software de análise de dados. O mais comum é você importar um banco de dados pronto e previamente tabulado utilizando uma das funções do R, como no exemplo abaixo, em que importamos uma pequena amostra da PNAD Contínua do primeiro trimestre diretamente um link na internet.</p>
+<pre><code class="language-r">url &lt;- &quot;https://raw.githubusercontent.com/laddem/site/master/amostra_pnad.csv&quot;
+df &lt;- read.csv(url)
+head(df)
+</code></pre>
+<pre><code>##    Ano Trimestre               UF  V1022  V2007 V2009  V2010 VD2003
+## 1 2021         1            Ceará Urbana  Homem    80 Branca      2
+## 2 2021         1 Distrito Federal Urbana Mulher    19  Parda      4
+## 3 2021         1       Pernambuco Urbana Mulher    36  Preta      2
+## 4 2021         1   Santa Catarina Urbana  Homem    50  Parda      2
+## 5 2021         1        São Paulo Urbana Mulher    43  Parda      3
+## 6 2021         1            Goiás Urbana  Homem    35  Parda      3
+##                      VD3005 VD4016
+## 1 16 anos ou mais de estudo     NA
+## 2         11 anos de estudo     NA
+## 3         12 anos de estudo   1045
+## 4          5 anos de estudo   1500
+## 5          9 anos de estudo   1600
+## 6         14 anos de estudo   3000
+</code></pre>
+<p>Veremos mais sobre importação na aula de amanhã!</p>
+<h4 id="exercício-13">Exercício</h4>
+<p>Crie um data frame contendo informações de cinco colegas de turma: registre o nome, a idade presumida, o sexo, a profissão e a renda presumida. Não precisa perguntar, basta chutar um valor que você ache.</p>
+<h3 id="fórmulas">Fórmulas</h3>
+<p>Fórmulas são a maneira que os desenvolvedores do R encontraram para representar equações matemáticas. Porém, como tudo no software livre, elas foram apropriadas por desenvolvedores para muitas tarefas criativas e vocês irão encontrá-las por aí cumprindo diversos papéis. Vejamos alguns exemplos.</p>
+<p>Fórmulas são usadas para especificar as equações de modelos matemáticos no R:</p>
+<pre><code class="language-r">modelo_linear &lt;- lm(VD4016 ~ VD3005, data = df)
+summary(modelo_linear)
+</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = VD4016 ~ VD3005, data = df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3786.1  -744.7  -345.1   382.7 15013.9 
+## 
+## Coefficients:
+##                                                Estimate Std. Error t value
+## (Intercept)                                       682.5      946.1   0.721
+## VD300510 anos de estudo                           467.5     1221.4   0.383
+## VD300511 anos de estudo                           434.8     1064.8   0.408
+## VD300512 anos de estudo                           905.3      960.2   0.943
+## VD300513 anos de estudo                          1584.8     1104.8   1.434
+## VD300514 anos de estudo                          1497.5     1119.4   1.338
+## VD300515 anos de estudo                          1525.8     1092.5   1.397
+## VD300516 anos ou mais de estudo                  3303.6      970.1   3.406
+## VD30052 anos de estudo                            217.5     1445.2   0.150
+## VD30053 anos de estudo                            261.5     1269.3   0.206
+## VD30054 anos de estudo                            727.8     1119.4   0.650
+## VD30055 anos de estudo                            649.5     1019.0   0.637
+## VD30056 anos de estudo                            610.5     1064.8   0.573
+## VD30057 anos de estudo                           -163.7     1158.7  -0.141
+## VD30058 anos de estudo                            990.8     1064.8   0.931
+## VD30059 anos de estudo                            762.6     1007.2   0.757
+## VD3005Sem instrução e menos de 1 ano de estudo    131.8     1186.0   0.111
+##                                                Pr(&gt;|t|)    
+## (Intercept)                                    0.471128    
+## VD300510 anos de estudo                        0.702120    
+## VD300511 anos de estudo                        0.683236    
+## VD300512 anos de estudo                        0.346404    
+## VD300513 anos de estudo                        0.152291    
+## VD300514 anos de estudo                        0.181807    
+## VD300515 anos de estudo                        0.163341    
+## VD300516 anos ou mais de estudo                0.000733 ***
+## VD30052 anos de estudo                         0.880452    
+## VD30053 anos de estudo                         0.836892    
+## VD30054 anos de estudo                         0.515999    
+## VD30055 anos de estudo                         0.524230    
+## VD30056 anos de estudo                         0.566756    
+## VD30057 anos de estudo                         0.887695    
+## VD30058 anos de estudo                         0.352699    
+## VD30059 anos de estudo                         0.449441    
+## VD3005Sem instrução e menos de 1 ano de estudo 0.911583    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 1892 on 370 degrees of freedom
+##   (613 observations deleted due to missingness)
+## Multiple R-squared:  0.2427,	Adjusted R-squared:  0.2099 
+## F-statistic: 7.409 on 16 and 370 DF,  p-value: 4.467e-15
+</code></pre>
+<p>Também são usadas para algumas funções que produzem tabulações cruzadas:</p>
+<pre><code class="language-r">xtabs(~ VD3005 + V2007, data = df)
+</code></pre>
+<pre><code>##                                           V2007
+## VD3005                                     Homem Mulher
+##   1 ano de estudo                             12     17
+##   10 anos de estudo                            8     16
+##   11 anos de estudo                           10     14
+##   12 anos de estudo                          105    111
+##   13 anos de estudo                           12      7
+##   14 anos de estudo                            6     13
+##   15 anos de estudo                            9      8
+##   16 anos ou mais de estudo                   51     61
+##   2 anos de estudo                            14     13
+##   3 anos de estudo                            16     15
+##   4 anos de estudo                            19     27
+##   5 anos de estudo                            44     46
+##   6 anos de estudo                            25     23
+##   7 anos de estudo                            13     20
+##   8 anos de estudo                            25     19
+##   9 anos de estudo                            44     27
+##   Sem instrução e menos de 1 ano de estudo    47     45
+</code></pre>
+<p>Algumas funções que produzem gráficos também utilizam fórmulas:</p>
+<pre><code class="language-r">boxplot(VD4016 ~ V2010, data = df)
+</code></pre>
+<p><img src="/courses/rbase/dia1_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<p>Falaremos mais de fórmulas no futuro, a medida que elas forem aparecendo. Nos exemplos acima, é possível ver que a fórmula não tem apenas um significado. Dependendo do contexto da função, ela pode fazer coisas muito diferentes, usando seus lados esquerdo e direito para tarefas distintas. O que é importante vocês levarem com vocês é o formato das fórmulas, e uma intuição de que quando uma fórmula aparece, algo está sendo feito com uma lógica do tipo: &ldquo;Para cada x, corresponde um y&rdquo;, ou algo similar.</p>
+<h4 id="exerício">Exerício</h4>
+<p>Consulte o <code>?xtabs</code>, qual o significado da fórmula e para que servem os lados esquerdo e direito?</p>
+<h2 id="revisão">Revisão</h2>
+<p>Cobrimos bastante coisa na aula de hoje, e não é nosso interesse que vocês saiam dessa aula decorando tudo. Vamos destacar alguns pontos mais importantes, que são a chave para vocês trabalharem no R.</p>
+<p>Objetos são formas de armazenar coisas na memória do computador, eles podem ser de uma variedade de tipos e classes, e ter vários formatos mais ou menos adequados as nossas necessidades. Os objetos mais comuns no nosso arsenal são as funções, os vetores e os data frames.</p>
+<p>As funções são os verbos de uma linguagem de programação, elas fazem coisas aos nossos objetos. Você provavelmente vai passar a maior parte do tempo usando funções pré-programadas, mas também pode escrever suas próprias.</p>
+<p>Os vetores são a forma mais simples de organizar dados, em geral, trabalharemos com vetores atômicos, que guardam sequências de informações do mesmo tipo e uma única dimensão. Vetores de 2 dimensões, ou matrizes, podem ser ocasionalmente importantes para vocês em algum momento.</p>
+<p>Os data frames são o feijão com arroz da análise de dados, eles são flexíveis para acomodar tipos de dados distintos e respeitam as convenções que são importantes para nós: consistência de operações, uma observação por linha, uma variável por coluna.</p>
+<p>Os objetos podem ter diversos atributos. Muito deles são apenas estéticos para facilitar a comunicação com o usuário, outros são mais substanciais, e alteram a forma como o R processa os dados guardados ali. Citamos exemplos de fatores e data/tempo como exemplos. Um dos atributos mais importantes de um objeto é sua classe, que discutimos um pouco.</p>
+<p>Por fim, falamos de dois comportamentos importantes do software: coerção e reciclagem. Eles podem facilitar ou complicar a nossa vida se não tomamos cuidado com esse comportamento. A coerção transforma o tipo dos vetores para um tipo mais genérico com o intuito de preservar informações. A reciclagem aumenta o tamanho de objetos menores para bater com o tamanho de objetos maiores numa mesma operação.</p>
+<h3 id="exercícios">Exercícios</h3>
+<ol>
+<li>
+<p>Como você poderia identificar o tipo de um objeto? Como você poderia identificar a classe dele? Qual a diferença entre essas duas coisas? Porque isso é relevante?</p>
+</li>
+<li>
+<p>Digamos que você quer armazenar algumas informações na memória do computador. Que tipo de objeto você utilizaria para armanzenar:</p>
+</li>
+</ol>
+<ul>
+<li>Os nomes dos colegas da sua turma</li>
+<li>Seus números de telefone</li>
+<li>Uma variável que indica se esta pessoa nasceu antes de 1989</li>
+<li>A idade de um grupo de pessoas</li>
+<li>Informações de cadastro de uma pessoa: nome completo, afiliações, telefones para contato, endereços, etc.</li>
+<li>Uma coleção de funções que você utiliza frequentemente</li>
+</ul>
+<ol start="3">
+<li>
+<p>Porque no resumo eu disse que as funções são verbos? Que tipo de ações as funções que vimos na aula fazem nos nossos objetos? Se as funções são verbos, que classe de palavras a gente poderia dizer que são os nossos objetos? E nós, que usamos o software, o que somos?</p>
+</li>
+<li>
+<p>Digamos que eu quero armazenar as informações de cadastro dos membros da turma. Que estrutura de dados eu deveria utilizar? Como você implementaria esta estrutura no R? Desenvolva um pequeno exemplo.</p>
+</li>
+<li>
+<p>Quais são os atributos de um data frame? Como você poderia descobrí-los e alterá-los? Em que situações isso seria proveitoso?</p>
+</li>
+<li>
+<p>Suponha que você têm o vetor atômico abaixo:</p>
+</li>
+</ol>
+<pre><code class="language-r">v &lt;- c(1, 1, TRUE, FALSE)
+</code></pre>
+<p>O que acontecerá com as informações desse vetor ao ser armazenado no R? Como você poderia alterar esse resultado? Porque o R se comporta dessa maneira?</p>
+<ol start="7">
+<li>Considere a operação matemática abaixo:</li>
+</ol>
+<pre><code class="language-r">v1 &lt;- c(1, 2, 3)
+v2 &lt;- c(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+
+v1 * v2
+</code></pre>
+<p>O que você espera encontrar na saída do R ao rodar essa seção? Rode o código e responda: você se surpreendeu? O que aconteceu e porquê? Qual o significado da mensagem de aviso?</p>
+<ol start="8">
+<li>Considere o banco de dados abaixo:</li>
+</ol>
+<pre><code class="language-r">sala &lt;- data.frame(
+  id = c(1, 2, 3),
+  idade = c(20, 25, 30, 35, 40, 45),
+  nome = c(&quot;Fulano&quot;, &quot;Cicrano&quot;, &quot;Beltrano&quot;, &quot;Herculano&quot;, &quot;Mariano&quot;, &quot;Carrano&quot;),
+  sexo = &quot;Masculino&quot;,
+  origem = c(&quot;Campinas&quot;, &quot;Barueri&quot;, &quot;Monte Verde&quot;, &quot;Rio de Janeiro&quot;, &quot;Natal&quot;, &quot;Belo Horizonte&quot;)
+)
+</code></pre>
+<p>Verifique as variáveis <code>id</code> e <code>sexo</code>. Os valores dessas variáveis fazem sentido? Elas não impedem a construção do data frame, por quê? Que característica do R está operando nessas variáveis?</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on 14 Jun 2021</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+  
+  
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    © 2021 LADDEM
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.8b7df62fd2da18ce73e29c13cc0a6198.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

@@ -5,12 +5,945 @@
     <link>https://laddem.github.io/</link>
       <atom:link href="https://laddem.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>LADDEM</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 LADDEM</copyright><lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 LADDEM</copyright><lastBuildDate>Mon, 14 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png</url>
       <title>LADDEM</title>
       <link>https://laddem.github.io/</link>
     </image>
+    
+    <item>
+      <title>A base da linguagem R</title>
+      <link>https://laddem.github.io/courses/rbase/dia1/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://laddem.github.io/courses/rbase/dia1/</guid>
+      <description>&lt;h2 id=&#34;fundamentos&#34;&gt;Fundamentos&lt;/h2&gt;
+&lt;h3 id=&#34;a-interface-do-r-e-do-rstudio&#34;&gt;A interface do R e do RStudio&lt;/h3&gt;
+&lt;p&gt;O RStudio oferece uma maneira de falar com seu computador. O R te fornece um idioma para falar. 
+Para começar, abra o RStudio da mesma forma que você abriria qualquer outro aplicativo em seu computador.&lt;/p&gt;
+&lt;p&gt;Você digita o código R na linha superior do painel do console RStudio e, em seguida, clica em Enter para executá-lo. O código que você digita é chamado de comando, porque ele comandará seu computador para fazer algo por você. A linha em que você digita é chamada de linha de comando.&lt;/p&gt;
+&lt;p&gt;A interface do RStudio é simples. Para  criar um script novo é necessário ir em &lt;code&gt;File &amp;gt; New File &amp;gt; R &amp;gt; script&lt;/code&gt; no menu no canto esquerdo. É recomendado fortemente que você escreva e edite todo o seu código R em um script antes de executá-lo no console. Por quê? Esse hábito cria um registro reproduzível de seu trabalho. Ao terminar o dia, você pode salvar seu script e usá-lo para executar novamente toda a sua análise no dia seguinte, além disso os scripts são muito úteis para editar e revisar seu código e são uma ótima cópia de seu trabalho para compartilhar com outras pessoas. Para salvar é só clicar no disquete no painel do script e depois ir em &lt;code&gt;File &amp;gt; Save&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Quando você digita um comando no script e pressiona Ctrl + Enter ou Run, o computador executa o comando e mostra os resultados no console logo abaixo. Por exemplo, se você digitar 1 + 1 e pressionar Ctrl + Enter, o RStudio exibirá:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;1 + 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;objetos&#34;&gt;Objetos&lt;/h3&gt;
+&lt;p&gt;Agora que você já sabe como o R funciona, vamos ver alguns operadores e objetos que podem ser criados. Se você quer que o R crie um vetor, use o operador &lt;code&gt;:&lt;/code&gt;, esse operador vai retornar um conjunto unidimensional de números:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;1:6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4 5 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mas quando você roda assim dessa forma, o R gera o vetor que você poderá ver o resultado no console, porém esse vetor não vai ficar salvo em lugar nenhum, é basicamente uma pegada de seis números que existiram naquela execução pontual. Se você quiser usar novamente essa sequência de número, você precisa pedir para o R guardar ele em algum lugar. Você pode fazer isso criando um &lt;code&gt;objeto&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;O R permite salvar dados armazenando-os dentro de um objeto R. O que é um objeto? Apenas um nome que você pode usar para acessar os dados armazenados. Por exemplo, você pode salvar dados em um objeto como &lt;code&gt;a&lt;/code&gt; ou &lt;code&gt;b&lt;/code&gt; ou qualquer nome que faça sentido para o que você está fazendo. Sempre que o R encontrar o objeto, ele irá substituí-lo pelos dados salvos nele, da seguinte forma:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;a &amp;lt;- 1
+
+a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;a + 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ou seja, para você criar um objeto no R, você escolhe um nome e depois usa o símbolo &lt;code&gt;&amp;lt;-&lt;/code&gt; para salvar o dado naquele objeto no qual você deu um nome. No caso do exemplo acima, o R criou um objeto, deu a ele seu nome e armazenou nele tudo o que vier após a seta. Portanto, &lt;code&gt;a &amp;lt;- 1&lt;/code&gt; armazena 1 em um objeto denominado a.&lt;/p&gt;
+&lt;p&gt;Você também pode usar seu objeto em novos comandos R. Já que armazenou anteriormente o valor de 1, agora você está adicionando 1 ao a armazenando no objeto &lt;code&gt;a + 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Então, como você faria para armazenar esse vetor de seis números &lt;code&gt;1:6&lt;/code&gt;, que a gente criou anteriormente, em um objeto?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor &amp;lt;- 1:6
+
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4 5 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Quando você cria um objeto no R, esse objeto vai aparecer armazenado na seção &lt;code&gt;Environment&lt;/code&gt; no lado direito, do lado da seção script (essa que você digita os comandos para usá-los depois).&lt;/p&gt;
+&lt;p&gt;Você pode nomear um objeto no R de praticamente qualquer nome, só tem algumas regras: não pode começar com número, e também não pode ter alguns símbolos, como por exemplo:  &lt;code&gt;^&lt;/code&gt;, &lt;code&gt;!&lt;/code&gt;, &lt;code&gt;$&lt;/code&gt;, &lt;code&gt;@&lt;/code&gt;, &lt;code&gt;+&lt;/code&gt;, &lt;code&gt;-&lt;/code&gt;, &lt;code&gt;/&lt;/code&gt;, &lt;code&gt;%&lt;/code&gt; or &lt;code&gt;*&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Além disso, o R é &lt;em&gt;case-sensitive&lt;/em&gt;, portanto se eu colocar um nome de objeto como &lt;code&gt;Name&lt;/code&gt; e outro como &lt;code&gt;name&lt;/code&gt; eles vão se referir a objetos diferentes, ou seja, ele considera se a letra é maíuscula ou minúscula.&lt;/p&gt;
+&lt;p&gt;E se você criar um objeto, salvar uma informação neste objeto e logo em seguida salvar outra, ele subscreve o que estava anteriormente, então tome cuidado para não perder informações. O exemplo abaixo mostra exatamente isso:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;meu_numero &amp;lt;- 1
+
+meu_numero
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;meu_numero &amp;lt;- 999
+meu_numero
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 999
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Com a função &lt;code&gt;ls()&lt;/code&gt; você consegue listar no console todos os objetos criados.&lt;/p&gt;
+&lt;p&gt;O que é possível fazer com esses objetos no R que você criou? Muita coisa! Por exemplo: é possível usar o objeto vetor e fazer uma operação de divisão&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor/2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.5 1.0 1.5 2.0 2.5 3.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor - 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0 1 2 3 4 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O R dividiu por 2 todos os números dentro daquele vetor. Se você subtrair 1 desse objeto, o R vai subtrair 1 de cada elemento dentro deste objeto.&lt;/p&gt;
+&lt;p&gt;Quando você usa dois ou mais vetores em uma operação, o R alinhará os vetores e executará uma sequência de operações individuais. Por exemplo, quando você executa vetor * vetor, o R alinha os dois vetores de dados e, em seguida, multiplica o primeiro elemento do vetor 1 pelo primeiro elemento do vetor 2, então multiplica o segundo elemento do vetor 1 pelo segundo elemento do vetor 2, e assim por diante, até que cada elemento tenha sido multiplicado. O resultado será um novo vetor com o mesmo comprimento dos dois primeiros:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor * vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  1  4  9 16 25 36
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Se você der ao R uma operação com dois vetores de comprimentos diferentes, o R repetirá o vetor mais curto até que seja do mesmo tamanho do vetor maior e, em seguida, fará as contas. Esta não é uma mudança permanente - o vetor mais curto terá seu tamanho original depois que o R fizer as contas. Se o comprimento do vetor curto não se dividir igualmente no comprimento do vetor longo, o R retornará uma mensagem de aviso. Esse comportamento é conhecido como &lt;strong&gt;reciclagem&lt;/strong&gt; de vetor e ajuda o R a fazer operações em elementos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor * 1:4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in vetor * 1:4: comprimento do objeto maior não é múltiplo do
+## comprimento do objeto menor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  1  4  9 16  5 12
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor * 1:2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  1  4  3  8  5 12
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Porém, é preciso cuidado pois se você não estava querendo &lt;strong&gt;reciclar&lt;/strong&gt;, é possível cometer erros. No exemplo abaixo, eu crio um segundo vetor com os valores para multiplicação, mas ele tem tamanho menor que o primeiro. Por isso, é bom ficar atento aos &lt;code&gt;Warning message:&lt;/code&gt;s:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor2 &amp;lt;- c(1, 2, 3, 4, 5)
+
+vetor * vetor2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in vetor * vetor2: comprimento do objeto maior não é múltiplo do
+## comprimento do objeto menor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  1  4  9 16 25  6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;funções&#34;&gt;Funções&lt;/h3&gt;
+&lt;p&gt;O R vem com muitas funções instaladas. Praticamente tudo que você vê que não são &lt;code&gt;objetos&lt;/code&gt; que você criou são funções e seus componentes. Por isso, dizemos que, no seu núcleo, o R é uma linguagem &amp;ldquo;funcional&amp;rdquo;. Vejamos alguns exemplos de funções:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;round(3.1415)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;factorial(3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;exercício&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Só de olhar para as funções e seus resultados, você conseguíria dizer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;O que cada função faz?&lt;/li&gt;
+&lt;li&gt;Quais entradas (inputs) ela pede?&lt;/li&gt;
+&lt;li&gt;Qual saída ela produz (output)?&lt;/li&gt;
+&lt;li&gt;Que opções alternativas (argumentos) elas poderiam conter?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;argumentos&#34;&gt;Argumentos&lt;/h3&gt;
+&lt;p&gt;As informações que são colocadas dentro dos &lt;code&gt;()&lt;/code&gt; depois do nome de uma função são chamados de &lt;strong&gt;argumentos&lt;/strong&gt;. Em geral, uma função tem alguns argumentos obrigatórios (o valor a ser arrendodado, o número para calcular o fatorial) e argumentos opcionais (arredondar para cima ou para baixo? descartar valores nulos?).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(1:6)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor_com_nulo &amp;lt;- c(1, 2, 3, 4, 5, 6, NA)
+
+mean(vetor_com_nulo)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(vetor_com_nulo, na.rm = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Argumentos obrigatórios e opcionais tornam as nossas funções mais flexíveis. Essa flexibilidade é crucial para muitas operações, pois podemos passar funções como argumentos de outras funções. Por exemplo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;round(mean(vetor))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Quando você reúne as funções dessa forma, o R vai avaliar a função de dentro para fora, como uma boneca matrioshka:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;resultado &amp;lt;- vetor
+resultado
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4 5 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;resultado &amp;lt;- mean(resultado)
+resultado
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;resultado &amp;lt;- round(resultado)
+resultado
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Outro exemplo de argumentos opcionais é a função &lt;code&gt;sample&lt;/code&gt;, que produz amostras aleatórias:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sample(x = vetor, size = 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sample(x = vetor, size = 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sample(x = vetor, size = 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Com os argumentos opcionais, podemos mudar detalhes do processo de amostragem&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sample(x = vetor, size = 1, prob = c(1/8, 1/8, 1/8, 1/8, 1/8, 3/8))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E ao mudar as probabilidades de como cada amostra vai ser selecionada, eu criei um dado viciado!&lt;/p&gt;
+&lt;p&gt;Você pode verificar os argumentos de uma função com:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;args(sample)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## function (x, size, replace = FALSE, prob = NULL) 
+## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;exercício-1&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Repita a operação de &lt;code&gt;sample&lt;/code&gt; acima com o dado &amp;ldquo;viciado&amp;rdquo; e com o dado &amp;ldquo;limpo&amp;rdquo; e verifique se você consegue perceber empiricamente que meu dado está &amp;ldquo;viciado&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Que outros argumentos existem na função &lt;code&gt;sample&lt;/code&gt;? Qual o papel do argumento &lt;code&gt;replace&lt;/code&gt;?&lt;/p&gt;
+&lt;h3 id=&#34;sua-primeira-função&#34;&gt;Sua primeira função&lt;/h3&gt;
+&lt;p&gt;Ok, mas suponha que você esteja cansado de repetir as coisas no seu programa. Existe uma operação que você realiza de novo e novo, e ela é relativamente simples, mas é um tédio ficar copiando e colando a mesma coisa. Por exemplo, se você tem o vetor que criamos com seis números, e precisa sortear dois valores e somar seu resultado, como se estivesse jogando dois dados de 6 faces e somando os resultados?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- sample(vetor, size = 1)
+y &amp;lt;- sample(vetor, size = 1)
+x + y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Seu código funciona bem, mas você quer simplificar isso para uma função que faça tudo de uma vez, podemos chamar ela de &lt;code&gt;role&lt;/code&gt;, como se fosse &amp;ldquo;role dois dados&amp;rdquo;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;role()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;role()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;role()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A função &lt;code&gt;role&lt;/code&gt; não existe no R base, mas você mesmo pode construí-la:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;role &amp;lt;- function() {
+  x &amp;lt;- sample(vetor, size = 1)
+  y &amp;lt;- sample(vetor, size = 1)
+  x + y
+}
+
+role()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pause para contemplar os diferentes elementos do construtor de funções do R:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;role&lt;/code&gt; é o nome da função, e ele deve ser atribuído &lt;code&gt;&amp;lt;-&lt;/code&gt; para que você possa chamar sua função&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;function&lt;/code&gt; é uma função que constrói funções, e os argumentos dela que vão nos parenteses são aqueles que o usuário deverá digitar. Nesse caso, nenhum argumento é necessário.&lt;/li&gt;
+&lt;li&gt;Os &lt;code&gt;{}&lt;/code&gt; indicam o início e o fim do &lt;code&gt;corpo&lt;/code&gt; da função, onde a magia acontece.&lt;/li&gt;
+&lt;li&gt;Ao rodar o construtor da função, nada acontece. A função só entra em funcionamento na hora que o usuário a utiliza posteriormente &lt;code&gt;role()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;exercício-2&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Escreva uma função que role 2 dados de 10 faces e some seus resultados.&lt;/p&gt;
+&lt;h3 id=&#34;programas-scripts&#34;&gt;Programas (scripts)&lt;/h3&gt;
+&lt;!-- 
+
+N: Eu coloquei o script direto lá em cima, pra mim não faz muito sentido passar pelo console primeiro, mas não sei, o que você acha?
+
+V: Olha, pra mim depende muito do aluno. Acho que as vezes gente que começa a estudar o R nunca para pra pensar na distinção entre as duas coisas. Pessoalmente acho útil porque eu uso o console o tempo todo para testar coisas que eu não quero que poluam o script, mas muita gente faz isso no script e depois apaga. Meu ponto aqui é outra coisa, é só introduzir pra eles o conceito de programa/script. O que é, o que tem num programa, talvez um ou outro exemplo de um programa. Tipo um programa de importação e tratamento de dados. Um programa que produz uma visualização. Um programa que gera um modelo estatístico. Um programa que faz uma tabela, etc.
+
+--&gt;
+&lt;p&gt;Na maioria das situações, esses conceitos soltos que introduzimos não são muito úteis isoladamente. Afinal de contas, objetos, funções e números individuais não servem para muita coisa. Esses conceitos ganham corpo quando os utilizamos juntos para produzir nossos programas. O que são programas? A metáfora mais comumemente utilizada é a culinária. Um programa é uma sequência de instruções, uma receita para produzir alguma coisa. A diferença é que ao invés de produtos culinários, os ingredientes são informações na memória de um computador, e ao invés de um prato, estamos tentando produzir resultados que podem ser analisados: estatísticas descritivas, representações gráficas, modelos matemáticos, tabelas, etc.&lt;/p&gt;
+&lt;p&gt;Falaremos mais sobre programas e estratégias de construção de programas (se der tempo), em outra aula. Por aqui, seria interessante que vocês levassem adiante a noção de que o programa é o conjunto da obra. É comum desenvolvermos ou encontrarmos programas para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;importar e corrigir quaisquer problemas nos meus dados&lt;/li&gt;
+&lt;li&gt;produzir estatísticas descritivas a partir de meus dados&lt;/li&gt;
+&lt;li&gt;produzir diversos gráficos que descrevem meus dados&lt;/li&gt;
+&lt;li&gt;produzir tabulações e exportá-las para outros softwares&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Como vários aspectos do R, a flexibilidade aqui é imensa, e vocês são livres para definir o &lt;strong&gt;escopo&lt;/strong&gt; dos seus programas. Você vai preferir colocar tudo num programa só, ou talvez dividí-lo em diversos programas e tarefas menores? Cada abordagem carrega consigo vantagens e desvantagens que vocês terão que decidir se valem ou não a pena.&lt;/p&gt;
+&lt;h3 id=&#34;pacotes&#34;&gt;Pacotes&lt;/h3&gt;
+&lt;p&gt;Você não é a única pessoa que escreve suas próprias funções com R. Muitos professores, programadores e estatísticos usam R para projetar ferramentas que podem ajudar as pessoas a analisar dados. Eles então tornam essas ferramentas gratuitas para qualquer pessoa usar. Para usar essas ferramentas, basta baixá-las. Eles reúnem coleções pré-montadas de funções e objetos chamados pacotes. Veremos o básico aqui.&lt;/p&gt;
+&lt;!-- Acho melhor evitar qplot. Vamos usar as funções do graphics mesmo para fazer uns gráficos simples. Pode deixar o exemplo de baixar o ggplot2, sem problema, mas é melhor a gente produzir os gráficos no base mesmo para o pessoal ter uma ideia quando eles encontrarem base graphics por aí. --&gt;
+&lt;p&gt;Vamos usar a função qplot para fazer alguns gráficos rápidos. qplot vem no pacote ggplot2, o pacote popular para fazer gráficos. Antes de usar o qplot, ou qualquer outra coisa no pacote ggplot2, você precisa fazer o download e instalá-lo.&lt;/p&gt;
+&lt;p&gt;Os pacotes do R em geral estão hospedados em &lt;a href=&#34;http://cran.r-project.org&#34;&gt;http://cran.r-project.org&lt;/a&gt;, o mesmo site de onde você baixou sua versão do R. No entanto, você não precisa visitar o site para baixar um pacote R; você pode baixar pacotes direto da linha de comando do R.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&#39;ggplot2&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;É isso. O R fará com que seu computador visite o site, baixe ggplot2 e instale o pacote em seu disco rígido exatamente onde o R deseja encontrá-lo. Agora você tem o pacote ggplot2. Se você gostaria de instalar outro pacote, substitua ggplot2 pelo nome do seu pacote no código.&lt;/p&gt;
+&lt;h3 id=&#34;ajuda&#34;&gt;Ajuda&lt;/h3&gt;
+&lt;h4 id=&#34;no-r&#34;&gt;No R&lt;/h4&gt;
+&lt;p&gt;Existem mais de 1.000 funções no núcleo do R e novas funções são criadas o tempo todo. Isso pode ser muito material para memorizar e aprender! Felizmente, cada função R vem com sua própria página de ajuda, que você pode acessar digitando o nome da função após um ponto de interrogação. Por exemplo, cada um desses comandos abrirá uma página de ajuda. Procure as páginas que aparecem na guia Ajuda do painel inferior direito do RStudio:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?sqrt
+?log10
+?sample
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As páginas de ajuda contem informações úteis sobre o que cada função faz. Essas páginas de ajuda também servem como documentação de código, portanto, pode ser algo um pouco chato. Muitas vezes parecem ter sido escritas para pessoas que já entendem a função e não precisam de ajuda. Não deixe que isso te faça desistir de entender uma função que você queira usar - você pode ganhar muito com uma página de ajuda examinando-a em busca de informações que façam sentido e ignorando o resto. Essa técnica inevitavelmente o levará à parte mais útil de cada página de ajuda: a parte inferior. Aqui, quase todas as páginas de ajuda incluem algum código de exemplo que coloca a função em ação. Executar esse código é uma ótima maneira de aprender com o exemplo dado.&lt;/p&gt;
+&lt;p&gt;Se você gostaria de consultar a página de ajuda de uma função, mas esqueceu o nome da função, você pode pesquisar por palavra-chave. Para fazer isso, digite dois pontos de interrogação seguidos por uma palavra-chave na linha de comando de R, o R exibirá uma lista de links para páginas de ajuda relacionadas à palavra-chave. Você pode pensar nisso como a página de ajuda para a página de ajuda:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;??log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Muitos pacotes também incluem &lt;strong&gt;vinhetas&lt;/strong&gt;, que são pequenas aulinhas que resumem as principais funções de um pacote através de explicações de uso detalhados. Você pode ver as vinhetas disponíveis num pacote instalado assim:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vignette(package = &amp;quot;ggplot2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E a vinheta em si é acessada assim:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vignette(&amp;quot;ggplot2-specs&amp;quot;, package = &amp;quot;ggplot2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Que deve abrir a vinheta na sua seção &amp;ldquo;Help&amp;rdquo; do RStudio. A maioria dessas vinhetas também está disponível online numa consulta rápida ao Google.&lt;/p&gt;
+&lt;h4 id=&#34;online&#34;&gt;Online&lt;/h4&gt;
+&lt;p&gt;Em geral, após uma consulta a página de ajuda, pode ser que você não esteja satisfeito. Você pode complementar sua página de ajuda com diversos recursos online. Vamos deixar alguns links abaixo que utilizamos cotidianamente.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google&lt;/a&gt;: em geral, uma pesquisa com &amp;ldquo;r &amp;lt;função&amp;gt;&amp;rdquo; ou &amp;ldquo;r &amp;lt;pacote&amp;gt;&amp;rdquo; te leva para onde você quer ir.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stack Overflow&lt;/a&gt;: similar, mas no stackoverflow se usam &lt;code&gt;[tags]&lt;/code&gt;, então seria algo como &lt;code&gt;[r][pacote] sua pergunta&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://community.rstudio.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RStudio Community&lt;/a&gt;: mais pra perguntas relacionadas ao RStudio&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://r-br.2285057.n4.nabble.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lista R-Br&lt;/a&gt;: lista ativa e em português, em geral, o pessoal é prestativo.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/rstudiotips&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RStudio Tips - Twitter&lt;/a&gt;: dicas no twitter para ir melhorando no cotidiano.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;exercício-3&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Consulte a ajuda das funções &lt;code&gt;sum&lt;/code&gt;, &lt;code&gt;mean&lt;/code&gt;, &lt;code&gt;min&lt;/code&gt;, &lt;code&gt;max&lt;/code&gt;, &lt;code&gt;range&lt;/code&gt;. Porque todas elas tem o argumento &lt;code&gt;na.rm&lt;/code&gt;? O que argumento o &lt;code&gt;trim&lt;/code&gt; em &lt;code&gt;mean&lt;/code&gt; faz? Qual a melhor maneira de rapidamente entender o que uma função faz através da página de ajuda?&lt;/p&gt;
+&lt;h2 id=&#34;objetos-em-r&#34;&gt;Objetos em R&lt;/h2&gt;
+&lt;h3 id=&#34;vetores&#34;&gt;Vetores&lt;/h3&gt;
+&lt;p&gt;Já trabalhamos com alguns vetores lá em cima, é inevitável. Pensou em salvar um objeto na memória do computador no R, pensou em vetor. Pra ser preciso, estamos usando &lt;strong&gt;vetores atômicos&lt;/strong&gt;. Os vetores atômicos são em geral o objeto mais frequentemente usado em R. Para construir um, você utiliza a função &lt;code&gt;c&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor &amp;lt;- c(1, 2, 3, 4, 5, 6)
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4 5 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E você pode verificar se ele é um vetor mesmo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;is.vector(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;is.vector&lt;/code&gt; testa se o objeto é um vetor, e retorna &lt;code&gt;TRUE&lt;/code&gt; se sim, e &lt;code&gt;FALSE&lt;/code&gt; se não.&lt;/p&gt;
+&lt;h4 id=&#34;exercício-4&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Teste se &lt;code&gt;vetor2&lt;/code&gt;, criado anteriormente é um vetor. Crie um vetor com os nomes de cinco pessoas da sala.&lt;/p&gt;
+&lt;h4 id=&#34;tamanho&#34;&gt;Tamanho&lt;/h4&gt;
+&lt;p&gt;Ao contrário de outras linguagens, o R não diferencia entre escalares e vetores. Se você salvar só 1 valor, ele salva num vetor atômico de tamanho 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- 1
+is.vector(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;length(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;length(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vetores atômicos guardam suas informações em uma única dimensão (como se fosse uma caixinha de pílulas semanal), cada compartimento guarda um valor. E todos os valores tem que ser do mesmo tipo! Números com números, caracteres com caracteres. Não pode misturar.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;inteiro &amp;lt;- 1L
+double &amp;lt;- 1
+texto &amp;lt;- &amp;quot;um&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ou com mais de um valor:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;inteiros &amp;lt;- c(1L, 2L)
+doubles &amp;lt;- c(1, 2)
+textos &amp;lt;- c(&amp;quot;um&amp;quot;, &amp;quot;dois&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Esses tipos de vetores são importantes pois eles interagem com as funções de maneira lógica:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(inteiros)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(doubles)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(textos)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Error in sum(textos): &#39;type&#39; inválido (character) do argumento
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Veja a mensagem de erro ao tentar somar os textos.&lt;/p&gt;
+&lt;h4 id=&#34;exercício-5&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Considerando os dois vetores abaixo, calcule as suas médias. Porque não é possível calcular a média do segundo vetor.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;idade1 &amp;lt;- c(20, 25, 30, 35, 40, 45, 50)
+idade2 &amp;lt;- c(&amp;quot;20&amp;quot;, &amp;quot;25&amp;quot;, &amp;quot;30&amp;quot;, &amp;quot;35&amp;quot;, &amp;quot;40&amp;quot;, &amp;quot;45&amp;quot;, &amp;quot;50&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;tipos&#34;&gt;Tipos&lt;/h4&gt;
+&lt;p&gt;Vetores atômicos podem ser de 6 tipos, dois são mais utilizados.&lt;/p&gt;
+&lt;h4 id=&#34;números-reais&#34;&gt;Números reais&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4 5 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A função &lt;code&gt;typeof&lt;/code&gt; me diz qual o tipo de um vetor atômico.&lt;/p&gt;
+&lt;h4 id=&#34;números-inteiros&#34;&gt;Números inteiros&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;inteiros
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(inteiros)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;integer&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O padrão do R é aceitar números reais, se você não especificar. Para forçar números inteiros, é precisar utilizar:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;inteiros &amp;lt;- c(1, 2)
+
+typeof(inteiros)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;inteiros &amp;lt;- c(1L, 2L)
+
+typeof(inteiros)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;integer&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Essas diferenças em geral são inconsequentes, mas existem alguns casos, como resultados de divisão e raíz quadrada, em que podemos encontrar resultados curiosos.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sqrt(2)^2 - 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 4.440892e-16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em teoria, a operação acima deveria ser 0, mas como o computador tem uma quantidade limitada de memória para armazenar as casas decimais, ele acaba gerando uma &amp;ldquo;sobrinha&amp;rdquo; infinitesimal da raíz quadrada de dois.&lt;/p&gt;
+&lt;h5 id=&#34;caracteres&#34;&gt;Caracteres&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;texto &amp;lt;- c(&amp;quot;Bem&amp;quot;, &amp;quot;Vindos&amp;quot;)
+
+texto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Bem&amp;quot;    &amp;quot;Vindos&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(texto)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h6 id=&#34;exercício-6&#34;&gt;Exercício&lt;/h6&gt;
+&lt;p&gt;Qual a diferença entre: 1, &amp;ldquo;1&amp;rdquo;, &amp;ldquo;one&amp;rdquo; no R? Quais são números e quais são caracteres?&lt;/p&gt;
+&lt;h5 id=&#34;lógicos&#34;&gt;Lógicos&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;3 &amp;lt; 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;3 &amp;gt; 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;logico &amp;lt;- c(TRUE, FALSE)
+
+logico
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(logico)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;logical&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vetores lógicos são a base de várias operações úteis no R e vamos voltar a eles em diversos momentos.&lt;/p&gt;
+&lt;p&gt;Complexos e crus:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;comp &amp;lt;- c(1 + 1i, 1 + 2i, 1 + 3i)
+comp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1+1i 1+2i 1+3i
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(comp)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;complex&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;raw(3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 00 00 00
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(raw(3))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;raw&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vetores complexos servem para armazenar número complexos, enquanto vetores crus servem para armazenar os valores em bits de uma informação. Ambos são menos utilizados na análise de dados e eu os introduzo apenas para vocês saberem que eles existem.&lt;/p&gt;
+&lt;h3 id=&#34;atributos&#34;&gt;Atributos&lt;/h3&gt;
+&lt;p&gt;Atributos são informações adicionais que podemos colocar em um objeto para cumprir uma série de tarefas auxiliares. Pense, por exemplo, em dar nomes para os meses do ano, ou classificar um objeto de acordo com seu tipo. Atributos são &lt;strong&gt;metadados&lt;/strong&gt; ou dados sobre os dados, e eles nos interessam porque o R pode aproveitar os atributos de um objeto para realizar tarefas específicas.&lt;/p&gt;
+&lt;p&gt;Você pode ver os atributos de um objeto assim:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;attributes(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O nosso vetor não tem nenhum atributo ainda, por isso &lt;code&gt;NULL&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;O atributo mais comum que os objetos podem ter em R são nomes. Podemos ver o atributo nomes assim:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Novamente, &lt;code&gt;NULL&lt;/code&gt; indica que o vetor não tem nomes.&lt;/p&gt;
+&lt;p&gt;A maioria das funções que trabalham com atributos vai ter esses &amp;ldquo;dois empregos&amp;rdquo;. De um lado, você pode utilizá-las para obter (get) os atributos, de outro, você pode utilizá-las para modificar (set) os atributos, veja:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names(vetor) &amp;lt;- c(&amp;quot;one&amp;quot;, &amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;, &amp;quot;four&amp;quot;, &amp;quot;five&amp;quot;, &amp;quot;six&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora, veja como ficaram os resultados das duas funções anteriores.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;attributes(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $names
+## [1] &amp;quot;one&amp;quot;   &amp;quot;two&amp;quot;   &amp;quot;three&amp;quot; &amp;quot;four&amp;quot;  &amp;quot;five&amp;quot;  &amp;quot;six&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;one&amp;quot;   &amp;quot;two&amp;quot;   &amp;quot;three&amp;quot; &amp;quot;four&amp;quot;  &amp;quot;five&amp;quot;  &amp;quot;six&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O R também vai mostrar o atributo nomes quando você chamar o vetor.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   one   two three  four  five   six 
+##     1     2     3     4     5     6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Da mesma forma que você modificou os atributos antes, você pode modificá-los ou removê-los:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names(vetor) &amp;lt;- c(&amp;quot;um&amp;quot;, &amp;quot;dois&amp;quot;, &amp;quot;três&amp;quot;, &amp;quot;quatro&amp;quot;, &amp;quot;cinco&amp;quot;, &amp;quot;seis&amp;quot;)
+names(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;um&amp;quot;     &amp;quot;dois&amp;quot;   &amp;quot;três&amp;quot;   &amp;quot;quatro&amp;quot; &amp;quot;cinco&amp;quot;  &amp;quot;seis&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names(vetor) &amp;lt;- NULL
+names(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O outro atributo importante para muitas tarefas são as dimensões de um objeto. Lembre que os nossos vetores atômicos são limitados pela exigência de só ter uma dimensão, mas e se quisermos organizar nossos dados em várias dimensões? Um jeito possível é alterar as dimensões:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dim(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NULL
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# 2 linhas e 3 colunas
+dim(vetor) &amp;lt;- c(2, 3)
+
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# 3 linhas e 2 colunas
+
+dim(vetor) &amp;lt;- c(3, 2)
+
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E não precisa se limitar a objetos bidimensionais. Você pode passar n dimensões para o objeto e o R distribuirá os valores do seu vetor no número de dimensões necessários. O único detalhe importante é você reparar que o R tem uma certa preferência de ir preenchendo os valores da coluna antes dos valores da linha e se você quiser fazer isso de forma diferente, é melhor utilizar as funções &lt;code&gt;matrix&lt;/code&gt; ou &lt;code&gt;array&lt;/code&gt;, que veremos adiante.&lt;/p&gt;
+&lt;h4 id=&#34;exercício-7&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Usando seus conhecimentos sobre atributos, construa uma pequena matriz com o nome de 5 pessoas da turma e seu sexo.&lt;/p&gt;
+&lt;h3 id=&#34;matrizes&#34;&gt;Matrizes&lt;/h3&gt;
+&lt;p&gt;Matrizes são muito parecidas com o que acabamos de construir: elas guardam informações em um &lt;code&gt;array&lt;/code&gt; de duas dimensões. A grande diferença é que as matrizes são programadas para executar as operações matemáticas com matrizes de acordo com os princípios e convenções da álgebra linear. Portanto, o R vem com funções para transpor, inverter, solucionar, etc. matrizes. Você pode construir matrizes no R com:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;m &amp;lt;- matrix(vetor, nrow = 2)
+m
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ou, se você quiser mudar a ordem de preenchimento:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;m2 &amp;lt;- matrix(vetor, nrow = 2, byrow = TRUE)
+m2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para mais informações, consulte &lt;code&gt;?matrix&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;exercício-8&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Reconstrua a sua matriz original usando a função &lt;code&gt;matrix&lt;/code&gt; ao invés de alterar os atributos. E os nomes das colunas?&lt;/p&gt;
+&lt;h3 id=&#34;arrays&#34;&gt;Arrays&lt;/h3&gt;
+&lt;p&gt;O array é uma extensão da ideia de matriz para quantas dimensões você quiser, ou n-dimensões. 3, 4, 5, 10 dimensões, isso é com você. Na prática os arrays não são muito frequentes na análise de dados, mas eles existem se você precisar deles um dia:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;a &amp;lt;- array(c(11:14, 21:24, 31:34), dim = c(2, 2, 3))
+a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## , , 1
+## 
+##      [,1] [,2]
+## [1,]   11   13
+## [2,]   12   14
+## 
+## , , 2
+## 
+##      [,1] [,2]
+## [1,]   21   23
+## [2,]   22   24
+## 
+## , , 3
+## 
+##      [,1] [,2]
+## [1,]   31   33
+## [2,]   32   34
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O display de um array multidimensional é meio confuso, porque o R vai te mostrar as &amp;ldquo;fatias&amp;rdquo; do array. Quanto mais dimensões, mais fatias. Boa sorte se você precisar deles um dia!&lt;/p&gt;
+&lt;h3 id=&#34;classe&#34;&gt;Classe&lt;/h3&gt;
+&lt;p&gt;A classe de um objeto é um atributo importante para seu funcionamento no R, porque diferentes classes estão associadas a diferentes métodos! Pense, por exemplo, que você deseja organizar uma sequência de valores em um vetor. Se esses valores são números, a ordem crescente ou decrescente é bastante intuitiva. Se são textos, podemos usar a ordem alfabética. Mas e se forem meses do ano? Grupos etários? Categorias educacionais?&lt;/p&gt;
+&lt;p&gt;Problemas dessa natureza são resolvidos no R através da atribuição de classes aos objetos. Transposição e solução de matrizes utilizarão o atributo classe para saber se aquele objeto é uma matriz, para citar apenas um exemplo. Podemos descobrir a classe de um objeto assim:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;class(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;matrix&amp;quot; &amp;quot;array&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mas esse é o nosso vetor modificado. Vejamos o que acontece se retiramos o atributo &lt;code&gt;dim&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dim(vetor) &amp;lt;- NULL
+class(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;numeric&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Veja que não mudamos o tipo do vetor, ele continua sendo &amp;ldquo;double&amp;rdquo;,&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(vetor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mas sua classe mudou. Podemos mudar a classe de um objeto de maneira arbitrária, mas em geral a gente evita fazer isso, porque esse atributo está muito relacionado com as propriedades desse objeto. Veja dois exemplos do que ocorre ao alterar manualmente a classe de um objeto:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;agora &amp;lt;- Sys.time()
+agora
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2021-06-14 12:51:59 -03&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(agora)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;class(agora)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;POSIXct&amp;quot; &amp;quot;POSIXt&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nesse primeiro exemplo, usando &lt;code&gt;Sys.time&lt;/code&gt; para obter o horário local. O tipo dessa informação é &amp;ldquo;double&amp;rdquo;, pois o R armazena variáveis tempo como o número de segundos passados entre uma data de início arbitrária e o momento que o seu tempo representa. Mas a classe desse objeto é POSIXct e POSIXt, que são as classes do R para lidar com objetos que registram data e tempo.&lt;/p&gt;
+&lt;p&gt;Veja o que acontece se eu temporariamente remover a classe desse objeto:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;unclass(agora)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1623685919
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;R transformou meu objeto data/tempo em um número. O que ocorre é que quando meu objeto tem as classes adequadas, isso alerta o R para que ele trate esse objeto de forma diferente. As funções do R utilizarão métodos de &lt;code&gt;print&lt;/code&gt; para facilitar a visualização de objetos data/tempo, mas, por debaixo do capô, preservarão suas características computacionais numéricas. Você pode, por exemplo, somar 24h ao seu objeto:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;agora + (24 * 60 * 60)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2021-06-15 12:51:59 -03&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você também pode, se assim desejar, transformar um valor numérico arbitrário numa data (só demonstração, não vale a pena fazer isso) atribuindo uma classe para ele:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;objeto &amp;lt;- 1000000000
+class(objeto) &amp;lt;- c(&amp;quot;POSIXct&amp;quot;, &amp;quot;POSIXt&amp;quot;)
+
+objeto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2001-09-08 22:46:40 -03&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;exercício-9&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Experimente brincar com o valor de objeto e ver&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Qual é a data de referência do R para calcular tempos?&lt;/li&gt;
+&lt;li&gt;O que acontece se o valor for negativo?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;O segundo exemplo relevante são os fatores. Fatores são a classe utilizada pelo R para trabalhar com variáveis categóricas, ou informação qualitativa. Um fator só pode ter alguns valores pré-definidos pelo usuário. Pense, por exemplo, nas categorias de sexo ou raça que o IBGE utiliza em suas pesquisas amostrais. Há um pequeno número pré-definido de categorias. Para construir um fator, você pode fazer o seguinte:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;genero &amp;lt;- factor(c(&amp;quot;homem&amp;quot;, &amp;quot;mulher&amp;quot;, &amp;quot;mulher&amp;quot;, &amp;quot;homem&amp;quot;))
+
+typeof(genero)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;integer&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;attributes(genero)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $levels
+## [1] &amp;quot;homem&amp;quot;  &amp;quot;mulher&amp;quot;
+## 
+## $class
+## [1] &amp;quot;factor&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Fatores seguem aquela linha que descrevemos para datas. R guarda os valores do seu fator utilizando números simples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;unclass(genero)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 2 1
+## attr(,&amp;quot;levels&amp;quot;)
+## [1] &amp;quot;homem&amp;quot;  &amp;quot;mulher&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mas na hora que você utiliza esse fator, o software apresenta para você os rótulos das categorias.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;genero
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] homem  mulher mulher homem 
+## Levels: homem mulher
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Através do atributo &lt;code&gt;levels&lt;/code&gt;, o R está associando cada valor numérico com um rótulo, e no momento em que você procurar construir uma tabela ou trabalhar com esses fatores de qualquer maneira, o software utilizará o atributo classe para dar-lhe o tratamento adequado. Por exemplo, se eu tentar transformar os vetores a seguir em caractere, o R saberá distinguir:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;as.character(c(1, 2, 2, 1))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;1&amp;quot; &amp;quot;2&amp;quot; &amp;quot;2&amp;quot; &amp;quot;1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;as.character(genero)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;homem&amp;quot;  &amp;quot;mulher&amp;quot; &amp;quot;mulher&amp;quot; &amp;quot;homem&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O uso da função &lt;code&gt;as.character&lt;/code&gt; é um gancho perfeito para o próximo assunto. Mas antes:&lt;/p&gt;
+&lt;h4 id=&#34;exercício-10&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Construa um fator a partir do vetor a seguir que registre os meses do ano. Dica: utilize o argumento &lt;code&gt;levels&lt;/code&gt; da função &lt;code&gt;factor&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;f &amp;lt;- c(1, 3, 9, 4, 11, 2, 6, 6, 3, 2, 9, 11, 12, 12, 1, 8)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;coerção&#34;&gt;Coerção&lt;/h3&gt;
+&lt;p&gt;Coerção é o comportamento da linguagem R ao encontrar situações em que diferentes tipos de dados estão misturados em um mesmo vetor atômico. Lembrem que cada vetor atômico só pode armazenar 1 tipo de informação, portanto, ao tentar inserir uma informação de outro tipo, R devolverá:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;um erro, indicando que a operação é impossível, OU&lt;/li&gt;
+&lt;li&gt;a operação será realizada, porém, o tipo da informação será modificado&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;No segundo caso, o R aplica uma coerção na tentativa de preservar ao máximo as informações. Veja exemplos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(1, 0, 1, TRUE, FALSE)
+v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 0 1 1 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(1, 2, 3, &amp;quot;4&amp;quot;)
+v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;1&amp;quot; &amp;quot;2&amp;quot; &amp;quot;3&amp;quot; &amp;quot;4&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(TRUE, FALSE, &amp;quot;TRUE&amp;quot;)
+v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;TRUE&amp;quot;  &amp;quot;FALSE&amp;quot; &amp;quot;TRUE&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;R vai tentar transformar o tipo de dados mais específico num tipo de dado mais geral, assim, evitando que a informação seja perdida.&lt;/p&gt;
+&lt;p&gt;Em outros casos, o processo de coerção pode ser iniciado pelo próprio usuário, porque este deseja transformar um tipo de dado em outro:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(1, 0, 1, TRUE, FALSE)
+as.logical(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE FALSE  TRUE  TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(1, 2, 3, &amp;quot;4&amp;quot;)
+as.numeric(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(TRUE, FALSE, &amp;quot;TRUE&amp;quot;)
+as.logical(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE FALSE  TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Existem funções &lt;code&gt;as.____&lt;/code&gt; para todos os tipos de dados e classes mais comuns do R, e é praxe que autores de novos pacotes que trazem classes também incluam seus próprios métodos de coerção para suas novas classes.&lt;/p&gt;
+&lt;h4 id=&#34;exercício-11&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Porque o R prefere coagir vetores lógicos mistos para números e vetores numéricos e lógicos para caractere?&lt;/p&gt;
+&lt;h3 id=&#34;listas&#34;&gt;Listas&lt;/h3&gt;
+&lt;p&gt;Até esse momento, trabalhamos com variações no vetor atômico. O vetor atômico tem uma limitação repetidamente discutida: ele só armazena um tipo de dado. Bancos de dados reais certamente armazenarão informações de vários tipos distintos, então precisamos de uma estrutura de dado que tenha a capacidade de guardar estas informações díspares. É aí que entram as listas.&lt;/p&gt;
+&lt;p&gt;Listas são como vetores atômicos, mas elas não guardam valores! Listas guardam OBJETOS R. Qualquer um. Vetores atômicos? Sim. Funções? Sim. Outras listas? Pode também. Para criar listas:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;list1 &amp;lt;- list(100:130, &amp;quot;R&amp;quot;, list(TRUE, FALSE))
+list1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+##  [1] 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118
+## [20] 119 120 121 122 123 124 125 126 127 128 129 130
+## 
+## [[2]]
+## [1] &amp;quot;R&amp;quot;
+## 
+## [[3]]
+## [[3]][[1]]
+## [1] TRUE
+## 
+## [[3]][[2]]
+## [1] FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note como cada elemento da lista é um objeto R diferente. A lista não julga, ela apenas armazena seus objetos. Um detalhe interessante e que será importante mais tarde: note como a saída do R diferencia [1] de [[1]] no índice dos elementos da lista. Isso é necessário porque a lista pode guardar muitas coisas dentro de si, e o usuário precisa ter a capacidade de recuperar essas informações que estão lá nas profundezas da lista. Falaremos um pouco mais sobre isso na aula de amanhã, quando discutirmos indexação.&lt;/p&gt;
+&lt;h4 id=&#34;exercício-12&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Crie uma lista de compras em que cada elemento da lista seja um vetor atômico de itens que você vai comprar de cada seção do supermercado. Para simplificar, utilize as seções: &amp;ldquo;limpeza&amp;rdquo;, &amp;ldquo;mercearia&amp;rdquo; e &amp;ldquo;hortifruti&amp;rdquo;.&lt;/p&gt;
+&lt;h3 id=&#34;data-frames&#34;&gt;Data Frames&lt;/h3&gt;
+&lt;p&gt;Data frames são o formato de dados mais popular em análise de dados, e por um bom motivo: eles combinam a flexibilidade necessária para armazenar diversos tipos de informações diferentes com a consistência das matrizes e dos vetores. Por trás da cortina, eles são listas com restrições: todos os elementos da lista devem ter o mesmo comprimento, isso garante a retangularidade da nossa informação.&lt;/p&gt;
+&lt;p&gt;Essa retangularidade é importante do ponto de vista analítico: o data frame deve conter uma observação para cada unidade de análise e uma coluna para cada informação ou variável que foi coletada sobre essa unidade de análise. Se, de alguma forma esta informação não está disponível, isso deverá ficar &lt;strong&gt;explícito&lt;/strong&gt; por uma célula com valor desconhecido.&lt;/p&gt;
+&lt;p&gt;No R, embora isso não seja tão comum, você pode construir data frames manualmente:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- data.frame(x = c(1, 2, 3, 4, 5),
+                 y = c(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;e&amp;quot;),
+                 z = c(TRUE, FALSE, TRUE, TRUE, FALSE))
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   x y     z
+## 1 1 a  TRUE
+## 2 2 b FALSE
+## 3 3 c  TRUE
+## 4 4 d  TRUE
+## 5 5 e FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Logo de cara, vemos que o &lt;code&gt;data.frame&lt;/code&gt; do R tem aquela cara de tabela com a qual estamos acostumados. Podemos ver como o &lt;code&gt;data.frame&lt;/code&gt; é construído observado alguns de seus atributos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;list&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;class(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;data.frame&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;attributes(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $names
+## [1] &amp;quot;x&amp;quot; &amp;quot;y&amp;quot; &amp;quot;z&amp;quot;
+## 
+## $class
+## [1] &amp;quot;data.frame&amp;quot;
+## 
+## $row.names
+## [1] 1 2 3 4 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Secretamente, o data.frame é uma lista, com nomes, um atributo menos importante, chamado &lt;code&gt;row.names&lt;/code&gt;, e algumas características como aquelas que mencionamos acima. O &lt;code&gt;data.frame&lt;/code&gt; e o &lt;code&gt;vetor&lt;/code&gt; são as principais ferramentas no cotidiano do analista e, portanto, são as que mais vamos utilizar daqui pra frente. Outra função útil é a e&lt;code&gt;str&lt;/code&gt;utura de uma lista ou data frame:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &#39;data.frame&#39;:	5 obs. of  3 variables:
+##  $ x: num  1 2 3 4 5
+##  $ y: chr  &amp;quot;a&amp;quot; &amp;quot;b&amp;quot; &amp;quot;c&amp;quot; &amp;quot;d&amp;quot; ...
+##  $ z: logi  TRUE FALSE TRUE TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ela oferece uma visão geral do data.frame, e é especialmente útil quando seu data.frame é grande e contém muitas variáveis.&lt;/p&gt;
+&lt;p&gt;Em geral, a digitação de data sets no R não é recomendada. A interface do programa não te ajuda a produzir dados no formato necessário. É provável que você cometa muitos erros no caminho e não há uma ferramenta muito completa dentro do software que facilite esse processo. Isso ocorre porque o R não é um software de produção ou tabulação de dados, como o Microsoft Excel, o OpenOffice Calc ou o IBM SPSS, mas sim um software de análise de dados. O mais comum é você importar um banco de dados pronto e previamente tabulado utilizando uma das funções do R, como no exemplo abaixo, em que importamos uma pequena amostra da PNAD Contínua do primeiro trimestre diretamente um link na internet.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;url &amp;lt;- &amp;quot;https://raw.githubusercontent.com/laddem/site/master/amostra_pnad.csv&amp;quot;
+df &amp;lt;- read.csv(url)
+head(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre               UF  V1022  V2007 V2009  V2010 VD2003
+## 1 2021         1            Ceará Urbana  Homem    80 Branca      2
+## 2 2021         1 Distrito Federal Urbana Mulher    19  Parda      4
+## 3 2021         1       Pernambuco Urbana Mulher    36  Preta      2
+## 4 2021         1   Santa Catarina Urbana  Homem    50  Parda      2
+## 5 2021         1        São Paulo Urbana Mulher    43  Parda      3
+## 6 2021         1            Goiás Urbana  Homem    35  Parda      3
+##                      VD3005 VD4016
+## 1 16 anos ou mais de estudo     NA
+## 2         11 anos de estudo     NA
+## 3         12 anos de estudo   1045
+## 4          5 anos de estudo   1500
+## 5          9 anos de estudo   1600
+## 6         14 anos de estudo   3000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Veremos mais sobre importação na aula de amanhã!&lt;/p&gt;
+&lt;h4 id=&#34;exercício-13&#34;&gt;Exercício&lt;/h4&gt;
+&lt;p&gt;Crie um data frame contendo informações de cinco colegas de turma: registre o nome, a idade presumida, o sexo, a profissão e a renda presumida. Não precisa perguntar, basta chutar um valor que você ache.&lt;/p&gt;
+&lt;h3 id=&#34;fórmulas&#34;&gt;Fórmulas&lt;/h3&gt;
+&lt;p&gt;Fórmulas são a maneira que os desenvolvedores do R encontraram para representar equações matemáticas. Porém, como tudo no software livre, elas foram apropriadas por desenvolvedores para muitas tarefas criativas e vocês irão encontrá-las por aí cumprindo diversos papéis. Vejamos alguns exemplos.&lt;/p&gt;
+&lt;p&gt;Fórmulas são usadas para especificar as equações de modelos matemáticos no R:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;modelo_linear &amp;lt;- lm(VD4016 ~ VD3005, data = df)
+summary(modelo_linear)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Call:
+## lm(formula = VD4016 ~ VD3005, data = df)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3786.1  -744.7  -345.1   382.7 15013.9 
+## 
+## Coefficients:
+##                                                Estimate Std. Error t value
+## (Intercept)                                       682.5      946.1   0.721
+## VD300510 anos de estudo                           467.5     1221.4   0.383
+## VD300511 anos de estudo                           434.8     1064.8   0.408
+## VD300512 anos de estudo                           905.3      960.2   0.943
+## VD300513 anos de estudo                          1584.8     1104.8   1.434
+## VD300514 anos de estudo                          1497.5     1119.4   1.338
+## VD300515 anos de estudo                          1525.8     1092.5   1.397
+## VD300516 anos ou mais de estudo                  3303.6      970.1   3.406
+## VD30052 anos de estudo                            217.5     1445.2   0.150
+## VD30053 anos de estudo                            261.5     1269.3   0.206
+## VD30054 anos de estudo                            727.8     1119.4   0.650
+## VD30055 anos de estudo                            649.5     1019.0   0.637
+## VD30056 anos de estudo                            610.5     1064.8   0.573
+## VD30057 anos de estudo                           -163.7     1158.7  -0.141
+## VD30058 anos de estudo                            990.8     1064.8   0.931
+## VD30059 anos de estudo                            762.6     1007.2   0.757
+## VD3005Sem instrução e menos de 1 ano de estudo    131.8     1186.0   0.111
+##                                                Pr(&amp;gt;|t|)    
+## (Intercept)                                    0.471128    
+## VD300510 anos de estudo                        0.702120    
+## VD300511 anos de estudo                        0.683236    
+## VD300512 anos de estudo                        0.346404    
+## VD300513 anos de estudo                        0.152291    
+## VD300514 anos de estudo                        0.181807    
+## VD300515 anos de estudo                        0.163341    
+## VD300516 anos ou mais de estudo                0.000733 ***
+## VD30052 anos de estudo                         0.880452    
+## VD30053 anos de estudo                         0.836892    
+## VD30054 anos de estudo                         0.515999    
+## VD30055 anos de estudo                         0.524230    
+## VD30056 anos de estudo                         0.566756    
+## VD30057 anos de estudo                         0.887695    
+## VD30058 anos de estudo                         0.352699    
+## VD30059 anos de estudo                         0.449441    
+## VD3005Sem instrução e menos de 1 ano de estudo 0.911583    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1892 on 370 degrees of freedom
+##   (613 observations deleted due to missingness)
+## Multiple R-squared:  0.2427,	Adjusted R-squared:  0.2099 
+## F-statistic: 7.409 on 16 and 370 DF,  p-value: 4.467e-15
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Também são usadas para algumas funções que produzem tabulações cruzadas:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;xtabs(~ VD3005 + V2007, data = df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                                           V2007
+## VD3005                                     Homem Mulher
+##   1 ano de estudo                             12     17
+##   10 anos de estudo                            8     16
+##   11 anos de estudo                           10     14
+##   12 anos de estudo                          105    111
+##   13 anos de estudo                           12      7
+##   14 anos de estudo                            6     13
+##   15 anos de estudo                            9      8
+##   16 anos ou mais de estudo                   51     61
+##   2 anos de estudo                            14     13
+##   3 anos de estudo                            16     15
+##   4 anos de estudo                            19     27
+##   5 anos de estudo                            44     46
+##   6 anos de estudo                            25     23
+##   7 anos de estudo                            13     20
+##   8 anos de estudo                            25     19
+##   9 anos de estudo                            44     27
+##   Sem instrução e menos de 1 ano de estudo    47     45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Algumas funções que produzem gráficos também utilizam fórmulas:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;boxplot(VD4016 ~ V2010, data = df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/rbase/dia1_files/figure-html/unnamed-chunk-70-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Falaremos mais de fórmulas no futuro, a medida que elas forem aparecendo. Nos exemplos acima, é possível ver que a fórmula não tem apenas um significado. Dependendo do contexto da função, ela pode fazer coisas muito diferentes, usando seus lados esquerdo e direito para tarefas distintas. O que é importante vocês levarem com vocês é o formato das fórmulas, e uma intuição de que quando uma fórmula aparece, algo está sendo feito com uma lógica do tipo: &amp;ldquo;Para cada x, corresponde um y&amp;rdquo;, ou algo similar.&lt;/p&gt;
+&lt;h4 id=&#34;exerício&#34;&gt;Exerício&lt;/h4&gt;
+&lt;p&gt;Consulte o &lt;code&gt;?xtabs&lt;/code&gt;, qual o significado da fórmula e para que servem os lados esquerdo e direito?&lt;/p&gt;
+&lt;h2 id=&#34;revisão&#34;&gt;Revisão&lt;/h2&gt;
+&lt;p&gt;Cobrimos bastante coisa na aula de hoje, e não é nosso interesse que vocês saiam dessa aula decorando tudo. Vamos destacar alguns pontos mais importantes, que são a chave para vocês trabalharem no R.&lt;/p&gt;
+&lt;p&gt;Objetos são formas de armazenar coisas na memória do computador, eles podem ser de uma variedade de tipos e classes, e ter vários formatos mais ou menos adequados as nossas necessidades. Os objetos mais comuns no nosso arsenal são as funções, os vetores e os data frames.&lt;/p&gt;
+&lt;p&gt;As funções são os verbos de uma linguagem de programação, elas fazem coisas aos nossos objetos. Você provavelmente vai passar a maior parte do tempo usando funções pré-programadas, mas também pode escrever suas próprias.&lt;/p&gt;
+&lt;p&gt;Os vetores são a forma mais simples de organizar dados, em geral, trabalharemos com vetores atômicos, que guardam sequências de informações do mesmo tipo e uma única dimensão. Vetores de 2 dimensões, ou matrizes, podem ser ocasionalmente importantes para vocês em algum momento.&lt;/p&gt;
+&lt;p&gt;Os data frames são o feijão com arroz da análise de dados, eles são flexíveis para acomodar tipos de dados distintos e respeitam as convenções que são importantes para nós: consistência de operações, uma observação por linha, uma variável por coluna.&lt;/p&gt;
+&lt;p&gt;Os objetos podem ter diversos atributos. Muito deles são apenas estéticos para facilitar a comunicação com o usuário, outros são mais substanciais, e alteram a forma como o R processa os dados guardados ali. Citamos exemplos de fatores e data/tempo como exemplos. Um dos atributos mais importantes de um objeto é sua classe, que discutimos um pouco.&lt;/p&gt;
+&lt;p&gt;Por fim, falamos de dois comportamentos importantes do software: coerção e reciclagem. Eles podem facilitar ou complicar a nossa vida se não tomamos cuidado com esse comportamento. A coerção transforma o tipo dos vetores para um tipo mais genérico com o intuito de preservar informações. A reciclagem aumenta o tamanho de objetos menores para bater com o tamanho de objetos maiores numa mesma operação.&lt;/p&gt;
+&lt;h3 id=&#34;exercícios&#34;&gt;Exercícios&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Como você poderia identificar o tipo de um objeto? Como você poderia identificar a classe dele? Qual a diferença entre essas duas coisas? Porque isso é relevante?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Digamos que você quer armazenar algumas informações na memória do computador. Que tipo de objeto você utilizaria para armanzenar:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Os nomes dos colegas da sua turma&lt;/li&gt;
+&lt;li&gt;Seus números de telefone&lt;/li&gt;
+&lt;li&gt;Uma variável que indica se esta pessoa nasceu antes de 1989&lt;/li&gt;
+&lt;li&gt;A idade de um grupo de pessoas&lt;/li&gt;
+&lt;li&gt;Informações de cadastro de uma pessoa: nome completo, afiliações, telefones para contato, endereços, etc.&lt;/li&gt;
+&lt;li&gt;Uma coleção de funções que você utiliza frequentemente&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Porque no resumo eu disse que as funções são verbos? Que tipo de ações as funções que vimos na aula fazem nos nossos objetos? Se as funções são verbos, que classe de palavras a gente poderia dizer que são os nossos objetos? E nós, que usamos o software, o que somos?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Digamos que eu quero armazenar as informações de cadastro dos membros da turma. Que estrutura de dados eu deveria utilizar? Como você implementaria esta estrutura no R? Desenvolva um pequeno exemplo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quais são os atributos de um data frame? Como você poderia descobrí-los e alterá-los? Em que situações isso seria proveitoso?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Suponha que você têm o vetor atômico abaixo:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(1, 1, TRUE, FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O que acontecerá com as informações desse vetor ao ser armazenado no R? Como você poderia alterar esse resultado? Porque o R se comporta dessa maneira?&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Considere a operação matemática abaixo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v1 &amp;lt;- c(1, 2, 3)
+v2 &amp;lt;- c(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+
+v1 * v2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O que você espera encontrar na saída do R ao rodar essa seção? Rode o código e responda: você se surpreendeu? O que aconteceu e porquê? Qual o significado da mensagem de aviso?&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Considere o banco de dados abaixo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sala &amp;lt;- data.frame(
+  id = c(1, 2, 3),
+  idade = c(20, 25, 30, 35, 40, 45),
+  nome = c(&amp;quot;Fulano&amp;quot;, &amp;quot;Cicrano&amp;quot;, &amp;quot;Beltrano&amp;quot;, &amp;quot;Herculano&amp;quot;, &amp;quot;Mariano&amp;quot;, &amp;quot;Carrano&amp;quot;),
+  sexo = &amp;quot;Masculino&amp;quot;,
+  origem = c(&amp;quot;Campinas&amp;quot;, &amp;quot;Barueri&amp;quot;, &amp;quot;Monte Verde&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;, &amp;quot;Natal&amp;quot;, &amp;quot;Belo Horizonte&amp;quot;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Verifique as variáveis &lt;code&gt;id&lt;/code&gt; e &lt;code&gt;sexo&lt;/code&gt;. Os valores dessas variáveis fazem sentido? Elas não impedem a construção do data frame, por quê? Que característica do R está operando nessas variáveis?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>readr, tibble e tidyr</title>
