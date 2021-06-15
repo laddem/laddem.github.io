@@ -1584,15 +1584,15 @@ is.na(vet)
 &lt;h3 id=&#34;exercícios-6&#34;&gt;Exercícios&lt;/h3&gt;
 &lt;p&gt;Para os próximos exercícios considere o data frame da pnad que estamos usando nas aulas.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Como você selecionaria o mesmo valor abaixo, mas usando inteiros negativos na seleção?&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;Como você selecionaria o mesmo valor abaixo, mas usando inteiros negativos na seleção?&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2[1,5]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Homem&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Qual a diferença em usar em selecionar determinada informação em um data frame usando colchetes duplos &lt;code&gt;[[]]&lt;/code&gt; e usando colchetes simples? Observe o exemplo abaixo para responder:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Qual a diferença em usar em selecionar determinada informação em um data frame usando colchetes duplos &lt;code&gt;[[]]&lt;/code&gt; e usando colchetes simples? Observe o exemplo abaixo para responder:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2[[&#39;Ano&#39;]]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##    [1] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
@@ -1623,9 +1623,9 @@ Saída truncada para visualização
 ....
 Saída truncada para visualização
 &lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Considere o data frame abaixo:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Considere o data frame abaixo:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sala &amp;lt;- data.frame(
   id = c(1, 2, 3, 4, 5, 6),
   idade = c(20, 25, 30, 35, 40, 45),
@@ -1635,30 +1635,34 @@ Saída truncada para visualização
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Modifique o nome de &amp;lsquo;Mariano&amp;rsquo; por &amp;lsquo;Mariana&amp;rsquo;. E altere a variável sexo para que seja um vetor que altere o valor para &amp;lsquo;Feminino&amp;rsquo; na posição em que o nome foi trocado para Mariana.&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Considere o mesmo data frame sala construído no exercício anterior. Usando testes lógicos e operadores Booleanos. Verifique:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo. 
-b. se existe algum aluno que tem idade maior ou iguam a 20 anos ou que seja de Campinas.
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Considere o mesmo data frame sala construído no exercício anterior. Usando testes lógicos e operadores Booleanos. Verifique:&lt;/p&gt;
+&lt;p&gt;a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo.&lt;br&gt;
+b. se existe algum aluno que tem idade maior ou iguam a 20 anos ou que seja de Campinas.&lt;br&gt;
 c. se existe alguém com o nome Beltrano.&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Agora considere o seguinte data frame:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Agora considere o seguinte data frame e, usando as funções apropriadas ensinadas na aula de hoje, responda:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cadastro &amp;lt;- data.frame(
   id = c(10, 105, 299, 645, 7907, 8660, 4992, 630),
   idade = c(20, 25, 30, 35, 40, 45, 60, 53),
   nome = c(&amp;quot;Thais&amp;quot;, NA, &amp;quot;Guilherme&amp;quot;, &amp;quot;Betânia&amp;quot;, &amp;quot;Ana Lucia&amp;quot;, NA, NA, &amp;quot;Pâmela&amp;quot;),
   sexo = c(&amp;quot;Feminino&amp;quot;, &amp;quot;Masculino&amp;quot;,&amp;quot;Masculino&amp;quot;, NA ,NA, &amp;quot;Feminino&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;Feminino&amp;quot;),
-  origem = c(&amp;quot;Campinas&amp;quot;, NA, &amp;quot;Monte Verde&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;, NA, &amp;quot;Belo Horizonte&amp;quot;,&amp;quot;São Paulo&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;)
+  origem = c(&amp;quot;Campinas&amp;quot;, NA, &amp;quot;Monte Verde&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;, NA, &amp;quot;Belo Horizonte&amp;quot;,&amp;quot;São Paulo&amp;quot;,
+             &amp;quot;Rio de Janeiro&amp;quot;)
 )
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Usando as funções apropriadas ensinadas na aula de hoje:&lt;/p&gt;
-&lt;p&gt;a. Quantos NAs existe na coluna nome?
-b. Quantos NAs existe na coluna sexo?
-c. Quantos NAs existe na coluna origem?
-d. Substitua os NAs na coluna sexo pelo valor &amp;lsquo;Feminino&amp;rsquo;&lt;/p&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Salve o data frame &amp;lsquo;cadastro&amp;rsquo; do exercicio anterior em um arquivo &lt;code&gt;.csv&lt;/code&gt;. Como você faria isso? Quais os argumentos que devem ser usados?&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;Quantos NAs existe na coluna nome?&lt;/li&gt;
+&lt;li&gt;Quantos NAs existe na coluna sexo?&lt;/li&gt;
+&lt;li&gt;Quantos NAs existe na coluna origem?&lt;/li&gt;
+&lt;li&gt;Substitua os NAs na coluna sexo pelo valor &amp;lsquo;Feminino&amp;rsquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Salve o data frame &amp;lsquo;cadastro&amp;rsquo; do exercicio anterior em um arquivo &lt;code&gt;.csv&lt;/code&gt;. Como você faria isso? Quais os argumentos que devem ser usados?&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>

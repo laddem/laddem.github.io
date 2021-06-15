@@ -1399,15 +1399,15 @@ is.na(vet)
 <h3 id="exercícios-6">Exercícios</h3>
 <p>Para os próximos exercícios considere o data frame da pnad que estamos usando nas aulas.</p>
 <ol>
-<li>Como você selecionaria o mesmo valor abaixo, mas usando inteiros negativos na seleção?</li>
-</ol>
+<li>
+<p>Como você selecionaria o mesmo valor abaixo, mas usando inteiros negativos na seleção?</p>
 <pre><code class="language-r">df2[1,5]
 </code></pre>
 <pre><code>## [1] &quot;Homem&quot;
 </code></pre>
-<ol start="2">
-<li>Qual a diferença em usar em selecionar determinada informação em um data frame usando colchetes duplos <code>[[]]</code> e usando colchetes simples? Observe o exemplo abaixo para responder:</li>
-</ol>
+</li>
+<li>
+<p>Qual a diferença em usar em selecionar determinada informação em um data frame usando colchetes duplos <code>[[]]</code> e usando colchetes simples? Observe o exemplo abaixo para responder:</p>
 <pre><code class="language-r">df2[['Ano']]
 </code></pre>
 <pre><code>##    [1] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
@@ -1438,9 +1438,9 @@ Saída truncada para visualização
 ....
 Saída truncada para visualização
 </code></pre>
-<ol start="3">
-<li>Considere o data frame abaixo:</li>
-</ol>
+</li>
+<li>
+<p>Considere o data frame abaixo:</p>
 <pre><code class="language-r">sala &lt;- data.frame(
   id = c(1, 2, 3, 4, 5, 6),
   idade = c(20, 25, 30, 35, 40, 45),
@@ -1450,30 +1450,34 @@ Saída truncada para visualização
 )
 </code></pre>
 <p>Modifique o nome de &lsquo;Mariano&rsquo; por &lsquo;Mariana&rsquo;. E altere a variável sexo para que seja um vetor que altere o valor para &lsquo;Feminino&rsquo; na posição em que o nome foi trocado para Mariana.</p>
-<ol start="4">
-<li>Considere o mesmo data frame sala construído no exercício anterior. Usando testes lógicos e operadores Booleanos. Verifique:</li>
-</ol>
-<p>a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo. 
-b. se existe algum aluno que tem idade maior ou iguam a 20 anos ou que seja de Campinas.
+</li>
+<li>
+<p>Considere o mesmo data frame sala construído no exercício anterior. Usando testes lógicos e operadores Booleanos. Verifique:</p>
+<p>a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo.<br>
+b. se existe algum aluno que tem idade maior ou iguam a 20 anos ou que seja de Campinas.<br>
 c. se existe alguém com o nome Beltrano.</p>
-<ol start="5">
-<li>Agora considere o seguinte data frame:</li>
-</ol>
+</li>
+<li>
+<p>Agora considere o seguinte data frame e, usando as funções apropriadas ensinadas na aula de hoje, responda:</p>
 <pre><code class="language-r">cadastro &lt;- data.frame(
   id = c(10, 105, 299, 645, 7907, 8660, 4992, 630),
   idade = c(20, 25, 30, 35, 40, 45, 60, 53),
   nome = c(&quot;Thais&quot;, NA, &quot;Guilherme&quot;, &quot;Betânia&quot;, &quot;Ana Lucia&quot;, NA, NA, &quot;Pâmela&quot;),
   sexo = c(&quot;Feminino&quot;, &quot;Masculino&quot;,&quot;Masculino&quot;, NA ,NA, &quot;Feminino&quot;, &quot;Masculino&quot;, &quot;Feminino&quot;),
-  origem = c(&quot;Campinas&quot;, NA, &quot;Monte Verde&quot;, &quot;Rio de Janeiro&quot;, NA, &quot;Belo Horizonte&quot;,&quot;São Paulo&quot;, &quot;Rio de Janeiro&quot;)
+  origem = c(&quot;Campinas&quot;, NA, &quot;Monte Verde&quot;, &quot;Rio de Janeiro&quot;, NA, &quot;Belo Horizonte&quot;,&quot;São Paulo&quot;,
+             &quot;Rio de Janeiro&quot;)
 )
 </code></pre>
-<p>Usando as funções apropriadas ensinadas na aula de hoje:</p>
-<p>a. Quantos NAs existe na coluna nome?
-b. Quantos NAs existe na coluna sexo?
-c. Quantos NAs existe na coluna origem?
-d. Substitua os NAs na coluna sexo pelo valor &lsquo;Feminino&rsquo;</p>
-<ol start="6">
-<li>Salve o data frame &lsquo;cadastro&rsquo; do exercicio anterior em um arquivo <code>.csv</code>. Como você faria isso? Quais os argumentos que devem ser usados?</li>
+<ol>
+<li>Quantos NAs existe na coluna nome?</li>
+<li>Quantos NAs existe na coluna sexo?</li>
+<li>Quantos NAs existe na coluna origem?</li>
+<li>Substitua os NAs na coluna sexo pelo valor &lsquo;Feminino&rsquo;</li>
+</ol>
+</li>
+<li>
+<p>Salve o data frame &lsquo;cadastro&rsquo; do exercicio anterior em um arquivo <code>.csv</code>. Como você faria isso? Quais os argumentos que devem ser usados?</p>
+</li>
 </ol>
 
           </div>
