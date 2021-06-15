@@ -945,5 +945,723 @@ v1 * v2
 </description>
     </item>
     
+    <item>
+      <title>Manipulação de objetos em R</title>
+      <link>https://laddem.github.io/courses/rbase/dia2/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://laddem.github.io/courses/rbase/dia2/</guid>
+      <description>&lt;h2 id=&#34;manipulação-de-objetos&#34;&gt;Manipulação de objetos&lt;/h2&gt;
+&lt;h3 id=&#34;leituraimportação&#34;&gt;Leitura/Importação&lt;/h3&gt;
+&lt;p&gt;Você pode importar um data.frame para o R de duas formas. A primeira delas, é carregando através do &lt;code&gt;Environment&lt;/code&gt; no canto direito superior do RStudio. Clique em Import Dataset e selecione &amp;lsquo;From Text File&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;O RStudio solicitará que você selecione o arquivo que deseja importar e, em seguida, abrirá um assistente para ajudá-lo a importar os dados. Use o assistente para informar ao RStudio qual nome dar ao conjunto de dados. Você também pode usar o assistente para informar ao RStudio qual caractere o conjunto de dados usa como separador, qual caractere ele usa para representar decimais (geralmente um ponto nos Estados Unidos e uma vírgula na Europa/Brasil) e se o conjunto de dados vem ou não com uma linha de nomes de coluna (conhecida como cabeçalho). Para ajudá-lo, o assistente mostra a aparência do arquivo bruto, bem como a aparência dos dados carregados com base nas configurações de entrada.&lt;/p&gt;
+&lt;p&gt;Você também pode desmarcar a caixa “Strings como fatores” no assistente. Eu recomendo fazer isso. Se você fizer isso, o R carregará todas as suas cadeias de caracteres como cadeias de caracteres. Caso contrário, R os converterá em fatores.&lt;/p&gt;
+&lt;p&gt;A outra forma de importar um arquivo no R, é usando direto no script a função &amp;lsquo;read.csv&amp;rsquo;. Vamos trabalhar com os dados da pnad, no arquivo amostra_pnad.csv. Ele é um arquivo de valores separados por vírgula ou CSV para abreviar. CSVs são arquivos de texto simples, o que significa que você pode abri-los em um editor de texto (assim como em muitos outros programas). Se você abrir amostra_pnad.csv, verá que ele contém uma tabela de dados semelhante à seguinte. Cada linha da tabela é salva em sua própria linha e uma vírgula é usada para separar as células dentro de cada linha. Cada arquivo CSV compartilha este formato básico:&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Ano&amp;rdquo;,&amp;ldquo;Trimestre&amp;rdquo;,&amp;ldquo;UF&amp;rdquo;,&amp;ldquo;V1022&amp;rdquo;,&amp;ldquo;V2007&amp;rdquo;,&amp;ldquo;V2009&amp;rdquo;,&amp;ldquo;V2010&amp;rdquo;,&amp;ldquo;VD2003&amp;rdquo;,&amp;ldquo;VD3005&amp;rdquo;,&amp;ldquo;VD4016&amp;rdquo;
+&amp;ldquo;2021&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;Ceará&amp;rdquo;,&amp;ldquo;Urbana&amp;rdquo;,&amp;ldquo;Homem&amp;rdquo;,80,&amp;ldquo;Branca&amp;rdquo;,2,&amp;ldquo;16 anos ou mais de estudo&amp;rdquo;,NA
+&amp;ldquo;2021&amp;rdquo;,&amp;ldquo;1&amp;rdquo;,&amp;ldquo;Distrito Federal&amp;rdquo;,&amp;ldquo;Urbana&amp;rdquo;,&amp;ldquo;Mulher&amp;rdquo;,19,&amp;ldquo;Parda&amp;rdquo;,4,&amp;ldquo;11 anos de estudo&amp;rdquo;,NA
+&amp;hellip;e assim por diante&lt;/p&gt;
+&lt;p&gt;Vamos carregar novamente os dados da pnad que foram mostrados na aula passada:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;url &amp;lt;- &amp;quot;https://raw.githubusercontent.com/laddem/site/master/amostra_pnad.csv&amp;quot;
+df &amp;lt;- read.csv(url)
+head(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre               UF  V1022  V2007 V2009  V2010 VD2003
+## 1 2021         1            Ceará Urbana  Homem    80 Branca      2
+## 2 2021         1 Distrito Federal Urbana Mulher    19  Parda      4
+## 3 2021         1       Pernambuco Urbana Mulher    36  Preta      2
+## 4 2021         1   Santa Catarina Urbana  Homem    50  Parda      2
+## 5 2021         1        São Paulo Urbana Mulher    43  Parda      3
+## 6 2021         1            Goiás Urbana  Homem    35  Parda      3
+##                      VD3005 VD4016
+## 1 16 anos ou mais de estudo     NA
+## 2         11 anos de estudo     NA
+## 3         12 anos de estudo   1045
+## 4          5 anos de estudo   1500
+## 5          9 anos de estudo   1600
+## 6         14 anos de estudo   3000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Se a importação ocorrer corretamente, o data.frame irá aparecer no ambiente &lt;code&gt;Environment&lt;/code&gt; mostrando o número de observações e o número de variáveis (colunas).&lt;/p&gt;
+&lt;p&gt;Quando você importa um conjunto de dados, o RStudio salva os dados em um data frame e, em seguida, exibe o data frame em uma guia Exibir. Você pode abrir qualquer data frame em uma guia Exibir a qualquer momento com a função View().&lt;/p&gt;
+&lt;h4 id=&#34;exercícios&#34;&gt;Exercícios&lt;/h4&gt;
+&lt;p&gt;Visualize os dados que você acabou de importar em formato de planilha através do Environment e usando a função View().
+É possível também visualizar as 6 primeiras linhas do data.frame ou as 6 últimas linhas. Para isso, use as funções head() e tail().&lt;/p&gt;
+&lt;p&gt;Obs: se você quiser ver mais que 6 linhas, coloque o segundo argumento na função head(df, 10). Quantas linhas vão ser mostradas neste caso?&lt;/p&gt;
+&lt;h3 id=&#34;escritasalvar&#34;&gt;Escrita/Salvar&lt;/h3&gt;
+&lt;p&gt;Você pode salvar e exportar um novo arquivo .csv para o seu computador. Assim, você pode enviá-lo por e-mail a um colega, armazená-lo em um pen drive ou abri-lo em um programa diferente. Você pode salvar quaisquer dados executados e alterados no R em um arquivo .csv com o comando write.csv.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;write.csv(df, file = &amp;quot;df_pnad.csv&amp;quot;, row.names = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;R transformará seu data frame em um arquivo de texto simples com o formato de valores separados por vírgula e salvará o arquivo em seu diretório de trabalho. Para ver onde está seu diretório de trabalho, execute &lt;code&gt;getwd()&lt;/code&gt;. Para alterar a localização do seu diretório de trabalho, visite &lt;em&gt;Sessão &amp;gt; Definir Diretório de Trabalho &amp;gt; Escolher Diretório&lt;/em&gt; na barra de menus do RStudio.&lt;/p&gt;
+&lt;p&gt;Você pode personalizar o processo de salvamento com o grande conjunto de argumentos opcionais de write.csv (consulte &lt;code&gt;?write.csv&lt;/code&gt; para obter detalhes). No entanto, existem três argumentos que você deve usar sempre que executar &lt;code&gt;write.csv&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Primeiro, você deve fornecer a função &lt;code&gt;write.csv&lt;/code&gt; o nome do data frame que deseja salvar. Em seguida, você deve fornecer um nome de arquivo para dar ao seu arquivo. R entenderá esse nome literalmente, portanto, certifique-se de fornecer uma extensão.&lt;/p&gt;
+&lt;p&gt;Finalmente, você deve adicionar o argumento &lt;code&gt;row.names = FALSE&lt;/code&gt;. Isso impedirá R de adicionar uma coluna de números no início do seu data frame. Esses números identificarão suas linhas de 1 a 1000, mas é improvável que qualquer programa em que você abrir &lt;code&gt;df_pnad.csv&lt;/code&gt; compreenderá o sistema de nomes de linhas. Muito provavelmente, o programa assumirá que os nomes das linhas são a primeira coluna de dados em seu data frame. Na verdade, isso é exatamente o que R assumirá se você reabrir &lt;code&gt;df_pnad.csv&lt;/code&gt;. Se você salvar e abrir &lt;code&gt;df_pnad.csv&lt;/code&gt; várias vezes em R, notará colunas duplicadas de números de linha se formando no início de seu data frame. Não posso explicar por que R faz isso, mas posso explicar como evitá-lo: use &lt;code&gt;row.names = FALSE&lt;/code&gt; sempre que salvar dados com &lt;code&gt;write.csv&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;notação&#34;&gt;Notação&lt;/h2&gt;
+&lt;p&gt;Para que você consiga trabalhar com valores individuais dentro do seu data frame, tarefa necessária em análise de dados, você pode selecionar valores dentro de um objeto R através do seu sistema de notação.&lt;/p&gt;
+&lt;h3 id=&#34;selecionando-valores&#34;&gt;Selecionando valores&lt;/h3&gt;
+&lt;p&gt;O R tem um sistema de notação que permite extrair valores de objetos R. Para extrair um valor ou conjunto de valores de um data frame, escreva o nome do data frame seguido por um par de colchetes:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[ , ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Ano Trimestre                  UF  V1022  V2007 V2009    V2010 VD2003
+## 1    2021         1               Ceará Urbana  Homem    80   Branca      2
+## 2    2021         1    Distrito Federal Urbana Mulher    19    Parda      4
+## 3    2021         1          Pernambuco Urbana Mulher    36    Preta      2
+## 4    2021         1      Santa Catarina Urbana  Homem    50    Parda      2
+## 5    2021         1           São Paulo Urbana Mulher    43    Parda      3
+## 6    2021         1               Goiás Urbana  Homem    35    Parda      3
+## 7    2021         1               Amapá Urbana  Homem    72    Parda      3
+## 8    2021         1           São Paulo Urbana Mulher    23  Amarela      8
+## 9    2021         1    Distrito Federal Urbana  Homem    23    Parda      5
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Entre os colchetes estarão dois índices separados por uma vírgula. Os índices dizem ao R quais valores retornar. O R usará o primeiro índice para o subconjunto das linhas do dataframe e o segundo índice para o subconjunto das colunas. Ou seja, df[linhas, colunas].&lt;/p&gt;
+&lt;p&gt;Você pode pensar em um índice como um CEP ou o endereço de um valor ou um conjunto de valores, e a indexação como o processo que você utilizaria para encontrar um desses valores numa lista telefônica, no Google ou no Maps.&lt;/p&gt;
+&lt;p&gt;Você tem uma escolha quando se trata de escrever índices. Existem seis maneiras diferentes de escrever um índice para o R e cada uma faz algo ligeiramente diferente. Eles são todos muito simples e muito úteis, então vamos dar uma olhada em cada um deles. Você pode criar índices com:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Inteiros positivos&lt;/li&gt;
+&lt;li&gt;Inteiros negativos&lt;/li&gt;
+&lt;li&gt;Zero&lt;/li&gt;
+&lt;li&gt;Espaços em branco&lt;/li&gt;
+&lt;li&gt;Valores lógicos&lt;/li&gt;
+&lt;li&gt;Nomes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;O mais simples de usar são os inteiros positivos.&lt;/p&gt;
+&lt;p&gt;Por exemplo, caso você queira extrair um valor que está na primeira linha e na quarta coluna do seu data frame, no caso, estamos usando o df, que é uma pequena amostra da pnad, lembra? Como podemos fazer isso?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[1, 4]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Urbana&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para extrair mais de um valor, use um vetor com inteiros positivos. Por exemplo, se você quer retornar a primeira linha de &lt;em&gt;df&lt;/em&gt; com df[1, c(1,2,3)] ou df[1, 1:3]&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[1,1:3]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre    UF
+## 1 2021         1 Ceará
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[1, c(1,2,3)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre    UF
+## 1 2021         1 Ceará
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Essa notação não é limitada somente a objetos do tipo data frame. Você pode usar a mesma sintaxe para selecionar valores em qualquer objeto R, desde que você forneça um índice para cada dimensão do objeto. Então, por exemplo, você pode definir um subconjunto de um vetor (que tem uma dimensão) com um único índice:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vec &amp;lt;- c(10, 15, 31, 60, 10, 2)
+vec[1:3]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 10 15 31
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bom, isso é a notação usando usando inteiros positivos. Como seria com inteiros negativos? Quais as diferenças?&lt;/p&gt;
+&lt;p&gt;Vamos lá!&lt;/p&gt;
+&lt;p&gt;Os inteiros negativos fazem exatamente o oposto dos inteiros positivos durante a indexação. O R retornará todos os elementos, exceto os elementos em um índice negativo. Por exemplo, df[-1, 1:10] retornará tudo, exceto a primeira linha do data frame. df[-(2:999), 1:10] retornará a primeira linha e a última linha (e excluirá todo o resto):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[-(2:999), 1:10]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Ano Trimestre             UF  V1022 V2007 V2009  V2010 VD2003
+## 1    2021         1          Ceará Urbana Homem    80 Branca      2
+## 1000 2021         1 Santa Catarina  Rural Homem    66 Branca      2
+##                         VD3005 VD4016
+## 1    16 anos ou mais de estudo     NA
+## 1000          5 anos de estudo   1000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[-1, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   [1] &amp;quot;11 anos de estudo&amp;quot;                       
+##   [2] &amp;quot;12 anos de estudo&amp;quot;                       
+##   [3] &amp;quot;5 anos de estudo&amp;quot;                        
+##   [4] &amp;quot;9 anos de estudo&amp;quot;                        
+##   [5] &amp;quot;14 anos de estudo&amp;quot;                       
+##   [6] &amp;quot;16 anos ou mais de estudo&amp;quot;               
+##   [7] &amp;quot;12 anos de estudo&amp;quot;                       
+##   [8] &amp;quot;14 anos de estudo&amp;quot;                       
+##   [9] &amp;quot;5 anos de estudo&amp;quot;                        
+##  [10] &amp;quot;9 anos de estudo&amp;quot;                        
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A vantagem de usar inteiros negativos ao invés de inteiros positivos na indexação, é que os inteiros negativos são uma maneira mais eficiente de criar um subconjunto do que os inteiros positivos, se você quiser incluir a maioria das linhas ou colunas de um data frame.&lt;/p&gt;
+&lt;p&gt;Na notação &lt;code&gt;df[-2,2]&lt;/code&gt; o que irá ser mostrado pelo R?&lt;/p&gt;
+&lt;p&gt;O que acontecerá se você usar o zero como um índice? Zero não é um inteiro positivo nem um inteiro negativo, mas ele ainda usará para fazer um tipo de subconjunto. O R, neste caso, não retornará nada de uma dimensão quando você usa zero como um índice:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[0, 0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## data frame with 0 columns and 0 rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pra ser sincera, indexar com 0 não ajuda em muita coisa.&lt;/p&gt;
+&lt;p&gt;Além dos inteiros positivos, inteiros negativos, e zero, você pode também usar espaços em branco na indexação. O espaço em branco no R vai extrair todos os valores em uma dimensão. Isso permite subdividir um objeto em uma dimensão, mas não nas outras, o que é útil para extrair linhas ou colunas inteiras de um data frame:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[1, ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre    UF  V1022 V2007 V2009  V2010 VD2003
+## 1 2021         1 Ceará Urbana Homem    80 Branca      2
+##                      VD3005 VD4016
+## 1 16 anos ou mais de estudo     NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[, 5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    [1] &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot;
+##    [9] &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot;
+##   [17] &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot;
+##   [25] &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot; 
+##   [33] &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot;
+##   [41] &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot; 
+##   [49] &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot;
+##   [57] &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot;
+##   [65] &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot;
+##   [73] &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot; &amp;quot;Homem&amp;quot;  &amp;quot;Homem&amp;quot;  &amp;quot;Mulher&amp;quot; &amp;quot;Mulher&amp;quot;
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Estamos quase chegando no final dos tipos de indexação que são possíveis de serem feitas no R.
+No caso de valores lógicos, se você fornecer um vetor de &lt;code&gt;TRUEs&lt;/code&gt; e &lt;code&gt;FALSEs&lt;/code&gt; como seu índice, o R combinará cada &lt;code&gt;TRUE&lt;/code&gt; e &lt;code&gt;FALSE&lt;/code&gt; com uma linha do data frame (ou uma coluna, dependendo de onde você colocar o índice). O R então retornará cada linha que corresponde a um &lt;code&gt;TRUE&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Pode ser útil imaginar R lendo o data frame e perguntando: &amp;ldquo;Devo retornar a enésima linha da estrutura de dados?&amp;rdquo; e depois consultar o enésimo valor do índice para obter sua resposta. Para que este sistema funcione, seu vetor deve ser tão longo quanto a dimensão que você está tentando subdividir:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[1, c(TRUE, TRUE, FALSE)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre  V1022 V2007  V2010 VD2003 VD4016
+## 1 2021         1 Urbana Homem Branca      2     NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;rows &amp;lt;- c(F, TRUE, TRUE, F, F, F, F, F, F, F, F, F, F, F, F, F, 
+  F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, F, 
+  F, F, F, F, F, F, F, F, F, F, F, F, F, F)
+
+df[rows, ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      Ano Trimestre                 UF  V1022  V2007 V2009   V2010 VD2003
+## 2   2021         1   Distrito Federal Urbana Mulher    19   Parda      4
+## 3   2021         1         Pernambuco Urbana Mulher    36   Preta      2
+## 54  2021         1           Rondônia Urbana  Homem    44  Branca      2
+## 55  2021         1     Espírito Santo Urbana Mulher    45  Branca      4
+## 106 2021         1       Minas Gerais  Rural  Homem    31   Parda      3
+## 107 2021         1          São Paulo Urbana  Homem    14  Branca      4
+## 158 2021         1            Alagoas Urbana  Homem    38   Parda      1
+## 159 2021         1              Amapá Urbana Mulher    20   Parda      3
+## 210 2021         1            Roraima Urbana  Homem    55   Parda      6
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Esse sistema será de grande ajuda na parte de modificação de valores que veremos daqui a pouco.&lt;/p&gt;
+&lt;p&gt;Finalmente, você pode pedir os elementos que deseja pelo nome - se o seu objeto tiver nomes (consulte Nomes). Essa é uma maneira comum de extrair as colunas de um data frame, já que as colunas quase sempre têm um nome:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;Ano&amp;quot;       &amp;quot;Trimestre&amp;quot; &amp;quot;UF&amp;quot;        &amp;quot;V1022&amp;quot;     &amp;quot;V2007&amp;quot;     &amp;quot;V2009&amp;quot;    
+##  [7] &amp;quot;V2010&amp;quot;     &amp;quot;VD2003&amp;quot;    &amp;quot;VD3005&amp;quot;    &amp;quot;VD4016&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[3, c(&amp;quot;UF&amp;quot;, &amp;quot;V2007&amp;quot;, &amp;quot;V2010&amp;quot;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##           UF  V2007 V2010
+## 3 Pernambuco Mulher Preta
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[ , &amp;quot;VD3005&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    [1] &amp;quot;16 anos ou mais de estudo&amp;quot;               
+##    [2] &amp;quot;11 anos de estudo&amp;quot;                       
+##    [3] &amp;quot;12 anos de estudo&amp;quot;                       
+##    [4] &amp;quot;5 anos de estudo&amp;quot;                        
+##    [5] &amp;quot;9 anos de estudo&amp;quot;                        
+##    [6] &amp;quot;14 anos de estudo&amp;quot;                       
+##    [7] &amp;quot;16 anos ou mais de estudo&amp;quot;               
+##    [8] &amp;quot;12 anos de estudo&amp;quot;                       
+##    [9] &amp;quot;14 anos de estudo&amp;quot;                       
+##   [10] &amp;quot;5 anos de estudo&amp;quot;                        
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;exercícios-1&#34;&gt;Exercícios&lt;/h4&gt;
+&lt;p&gt;Retorne a informação da observação 800, e as colunas Ano, VD3005, V2009, V2010 do nosso data frame da amostra da pnad. O que o R retornará? Faça a mesma indexação usando inteiros positivos ou inteiros negativos.&lt;/p&gt;
+&lt;h3 id=&#34;diferentes-seleções--e-&#34;&gt;Diferentes seleções: &lt;code&gt;[[&lt;/code&gt; e &lt;code&gt;$&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Dois tipos de objeto em R obedecem a um segundo sistema opcional de notação. Você pode extrair valores de data frames e listas com a sintaxe &lt;code&gt;$&lt;/code&gt;. Você encontrará a sintaxe $ repetidamente no R, então vamos examinar como ela funciona.&lt;/p&gt;
+&lt;p&gt;Para selecionar uma coluna de um data frame, escreva o nome do data frame, no caso df, e o nome da coluna separados por $. Observe que nenhuma aspa deve estar no nome da coluna:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df$V2009
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    [1]  80  19  36  50  43  35  72  23  23  47  71  16  48  13  25   3  27  83
+##   [19]  55  79  14  80  20  21  22  69  57  27  63  35  28  41  39  71   7  45
+##   [37]  11   9  48  14  48  47   5  36  25  55   8  64   7  58  30   1  18  44
+##   [55]  45  17   9  24  11  11  71  75  49  20  55  31  60   2   7  81  68  15
+##   [73]  31   2  44  40  49  55   9  40  55   0  35  32   7  63  62  54  48   5
+##   [91]  46  49  20  90  16   0  41  15  67  26  22  18  58  63   0  31  14  39
+##  [109]  34  44  61  48  47  29  43  65  10  36  20   7  28  18  23  75  37  49
+##  [127]  45   3  61  54  38  50  41  47  39  44  32  27  66  55  70  69  41  31
+##  [145]  38  91  62  30  21  59   4  29   5  24  83   6  15  38  20  89  85  44
+##  [163]  73   7  49  22  33   5  18   4  27  22   0  21  74  26  58  52  77  36
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O R retornará todos os valores da coluna como um vetor. Esta notação &lt;code&gt;$&lt;/code&gt; é muito útil e muito usada porque você freqüentemente armazenará as variáveis de seus conjuntos de dados como colunas em um data frame. De vez em quando, você desejará executar uma função como &lt;code&gt;mean()&lt;/code&gt; ou &lt;code&gt;median()&lt;/code&gt; nos valores de uma variável. Em R, essas funções esperam um vetor de valores como entrada, e o &lt;code&gt;df$V2009&lt;/code&gt; entrega seus dados no formato certo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(df$V2009)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 36.939
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você pode usar a mesma notação com &lt;code&gt;$&lt;/code&gt; com os elementos de uma lista, se eles tiverem nomes. Essa notação também tem uma vantagem com listas. Se você criar um subconjunto de uma lista da maneira usual, o R retornará uma nova lista que contém os elementos solicitados, mesmo se você solicitar apenas um único elemento.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lista &amp;lt;- list(numbers = c(1, 2), logical = TRUE, strings = c(&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;))
+
+lista
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $numbers
+## [1] 1 2
+## 
+## $logical
+## [1] TRUE
+## 
+## $strings
+## [1] &amp;quot;a&amp;quot; &amp;quot;b&amp;quot; &amp;quot;c&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lista[1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $numbers
+## [1] 1 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O resultado é uma lista menor com um elemento. Esse elemento é o vetor c(1, 2). Isso pode ser irritante porque muitas funções R não funcionam com listas. Por exemplo, sum(lst[1]) retornará um erro. Para você conseguir fazer uma operação com lista, você precisará usar &lt;code&gt;$&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(lista$numbers)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Se os elementos em sua lista não tiverem nomes (ou você não quiser usar os nomes), você pode usar dois colchetes &lt;code&gt;[[ ]]&lt;/code&gt;, em vez de um, para criar um subconjunto da lista. Essa notação fará a mesma coisa que a notação &lt;code&gt;$&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lista[[1]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em outras palavras, se você subdividir uma lista com a notação de colchete único, o R retornará uma lista menor. Se você subdividir uma lista com a notação de colchetes duplos, o R retornará apenas os valores que estavam dentro de um elemento da lista. Você pode combinar esse recurso com qualquer um dos métodos de indexação de R:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lista[&amp;quot;numbers&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $numbers
+## [1] 1 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lista[[&amp;quot;numbers&amp;quot;]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Essa diferença é sutil, mas importante. Na comunidade R, há uma maneira popular e útil de pensar sobre isso. Imagine que cada lista é um trem e cada elemento é um vagão. Quando você usa colchetes simples, o R seleciona vagões de trem individuais e os retorna como um novo trem. Cada vagão mantém seu conteúdo, mas esse conteúdo ainda está dentro de um vagão de trem (ou seja, uma lista). Quando você usa colchetes duplos, o R realmente descarrega o carro e lhe devolve o conteúdo. Resumindo:&lt;/p&gt;
+&lt;p&gt;Use colchetes simples para selecionar vagões de trem e colchetes duplos para selecionar o conteúdo dentro de um vagão.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://laddem.github.io/courses/rbase/dia2_files/hopr_train.png&#34; alt=&#34;A metáfora do trem&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;exercícios-2&#34;&gt;Exercícios&lt;/h4&gt;
+&lt;p&gt;Assim como na lista, é possível usar os colchetes &lt;code&gt;[[ ]]&lt;/code&gt; em data frame. Tente usá-los no data frame da pnad. Quais são as diferenças encontradas?&lt;/p&gt;
+&lt;h2 id=&#34;modificando-valores&#34;&gt;Modificando valores&lt;/h2&gt;
+&lt;p&gt;Para manipular os valores dentro do seu data frame, faça primeiro uma cópia que você pode manipular. Isso garantirá que você sempre tenha uma cópia original do data frame para usar (caso as coisas dêem errado):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2 &amp;lt;- df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;modificando-os-valores-diretamente&#34;&gt;Modificando os valores diretamente&lt;/h3&gt;
+&lt;p&gt;Você pode usar o sistema de notação de R para modificar valores dentro de um objeto. Primeiro, descreva o valor (ou valores) que você deseja modificar. Em seguida, use o operador de atribuição &lt;code&gt;&amp;lt;-&lt;/code&gt; para sobrescrever esses valores. O R irá atualizar os valores selecionados no objeto original. Em um exemplo real:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor &amp;lt;- c(0, 0, 0, 0, 0, 0)
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0 0 0 0 0 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você pode selecionar um valor dentro desse vetor· Neste caso selecionamos o primeiro:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor[1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E aqui, podemos modificar o valor:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor[1] &amp;lt;- 35
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 35  0  0  0  0  0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você pode substituir vários valores de uma vez, desde que o número de novos valores seja igual ao número de valores selecionados:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor[c(3, 4, 5)] &amp;lt;- c(1, 1, 1)
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 35  0  1  1  1  0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor[4:6] &amp;lt;- vetor[4:6] + 1
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 35  0  1  2  2  1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você também pode criar valores que ainda não existem em seu objeto. O R irá expandir o objeto para acomodar os novos valores:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor[7] &amp;lt;- 20
+vetor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 35  0  1  2  2  1 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Isto é uma ótima maneira de adicionar novas variáveis ao data frame:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2$nova_coluna &amp;lt;- 1:1000
+
+head(df2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre               UF  V1022  V2007 V2009  V2010 VD2003
+## 1 2021         1            Ceará Urbana  Homem    80 Branca      2
+## 2 2021         1 Distrito Federal Urbana Mulher    19  Parda      4
+## 3 2021         1       Pernambuco Urbana Mulher    36  Preta      2
+## 4 2021         1   Santa Catarina Urbana  Homem    50  Parda      2
+## 5 2021         1        São Paulo Urbana Mulher    43  Parda      3
+## 6 2021         1            Goiás Urbana  Homem    35  Parda      3
+##                      VD3005 VD4016 nova_coluna
+## 1 16 anos ou mais de estudo     NA           1
+## 2         11 anos de estudo     NA           2
+## 3         12 anos de estudo   1045           3
+## 4          5 anos de estudo   1500           4
+## 5          9 anos de estudo   1600           5
+## 6         14 anos de estudo   3000           6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Da mesma forma que você criou uma nova coluna, é possível removê-la atribuindo o valor &lt;code&gt;NULL&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2$nova_coluna &amp;lt;- NULL
+
+head(df2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Ano Trimestre               UF  V1022  V2007 V2009  V2010 VD2003
+## 1 2021         1            Ceará Urbana  Homem    80 Branca      2
+## 2 2021         1 Distrito Federal Urbana Mulher    19  Parda      4
+## 3 2021         1       Pernambuco Urbana Mulher    36  Preta      2
+## 4 2021         1   Santa Catarina Urbana  Homem    50  Parda      2
+## 5 2021         1        São Paulo Urbana Mulher    43  Parda      3
+## 6 2021         1            Goiás Urbana  Homem    35  Parda      3
+##                      VD3005 VD4016
+## 1 16 anos ou mais de estudo     NA
+## 2         11 anos de estudo     NA
+## 3         12 anos de estudo   1045
+## 4          5 anos de estudo   1500
+## 5          9 anos de estudo   1600
+## 6         14 anos de estudo   3000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você pode selecionar um conjunto de linhas dentro de um data frame usando uma combinação dos sistemas de notação do R. Você pode destacar apenas os valores que você quer, definindo a dimensão das colunas do df2 com &lt;code&gt;[&lt;/code&gt;. Ou, você pode definir um subconjunto da coluna &lt;code&gt;df2$UF&lt;/code&gt;, misturando o &lt;code&gt;$&lt;/code&gt; com o &lt;code&gt;[&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2[c(5, 8, 39,44), ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     Ano Trimestre        UF  V1022  V2007 V2009   V2010 VD2003
+## 5  2021         1 São Paulo Urbana Mulher    43   Parda      3
+## 8  2021         1 São Paulo Urbana Mulher    23 Amarela      8
+## 39 2021         1 São Paulo Urbana Mulher    48  Branca      3
+## 44 2021         1 São Paulo Urbana  Homem    36  Branca      2
+##                       VD3005 VD4016
+## 5           9 anos de estudo   1600
+## 8          12 anos de estudo   1200
+## 39         12 anos de estudo   1200
+## 44 16 anos ou mais de estudo     NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## selecionando linhas especificas e a coluna V2010
+df2[c(5, 8, 39,44), 6]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 43 23 48 36
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## podemos fazer o mesmo dessa forma
+df2$V2009[c(5, 8, 39,44)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 43 23 48 36
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Suponha que você sabe que os valores dessas linhas na coluna V2009 estão errados e você precisa arrumá-los atribuindo novos valores. O conjunto de novos valores terá que ser do mesmo tamanho que o conjunto de valores que você está substituindo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2$V2009[c(5, 8, 39,44)] &amp;lt;- c(23, 23, 23, 23)
+
+# ou
+
+df2$V2009[c(5, 8, 39,44)]&amp;lt;- 23
+
+head(df2, 44)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     Ano Trimestre                UF  V1022  V2007 V2009   V2010 VD2003
+## 1  2021         1             Ceará Urbana  Homem    80  Branca      2
+## 2  2021         1  Distrito Federal Urbana Mulher    19   Parda      4
+## 3  2021         1        Pernambuco Urbana Mulher    36   Preta      2
+## 4  2021         1    Santa Catarina Urbana  Homem    50   Parda      2
+## 5  2021         1         São Paulo Urbana Mulher    23   Parda      3
+## 6  2021         1             Goiás Urbana  Homem    35   Parda      3
+## 7  2021         1             Amapá Urbana  Homem    72   Parda      3
+## 8  2021         1         São Paulo Urbana Mulher    23 Amarela      8
+## 9  2021         1  Distrito Federal Urbana  Homem    23   Parda      5
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Observe que você está mudando os valores dos objetos salvos em df2, nos livros em inglês, isso é chamado de &lt;em&gt;modify in place&lt;/em&gt;. Você não acaba com uma cópia modificada do df2; os novos valores aparecerão dentro do df2. É preciso fazer isso de forma consciente e segura, para não sobrescrever informações, por isso, recomendamos trabalhar com cópias do objeto original (df2 ao invés de df).&lt;/p&gt;
+&lt;p&gt;A mesma técnica funcionará se você armazenar seus dados em um vetor, matriz, array, lista ou data frame. Basta descrever os valores que você deseja alterar com o sistema de notação de R e, em seguida, atribuir esses valores com o operador de atribuição de R &lt;code&gt;&amp;lt;-&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;exercícios-3&#34;&gt;Exercícios&lt;/h4&gt;
+&lt;p&gt;Considere o vetor abaixo. Atribua um novo valor na posição 3 deste vetor. É possível atribuir uma string no lugar de um número?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor_x&amp;lt;- c(10,30,50,10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;modificando-com-testes-lógicos&#34;&gt;Modificando com testes lógicos&lt;/h3&gt;
+&lt;p&gt;E se você precisa saber um valor específico e precise que o R te retorne a linha em que este valor está? Por que no caso anterior você sabia as linhas que você queria mudar, mas e quando o seu objeto é grande e você não sabe exatamente onde a informação se encontra? Como fazer?&lt;/p&gt;
+&lt;p&gt;Lembra do sistema de notação do R que permitia valores lógicos? Você pode deixar um teste lógico criar um vetor de TRUEs e FALSEs para você.&lt;/p&gt;
+&lt;p&gt;Um teste lógico é uma comparação como “um é menor que dois?”, &lt;code&gt;1 &amp;lt; 2&lt;/code&gt; ou “três é maior que quatro?”, &lt;code&gt;3 &amp;gt; 4&lt;/code&gt;. O R fornece sete operadores lógicos que você pode usar para fazer comparações, e eles podem ser vistos na tabela abaixo.&lt;/p&gt;
+&lt;p&gt;Cada operador retorna TRUE ou FALSE. Se você usar um operador para comparar vetores, o R fará comparações entre elementos - assim como faz com os operadores aritméticos:&lt;/p&gt;
+&lt;p&gt;Table: Table 1: Operadores lógicos&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Operador&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Sintaxe&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Teste&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a &amp;gt; b&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a é maior que b?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;gt;=&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a &amp;gt;= b&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a é maior ou igual a b?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;lt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a &amp;lt; b&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a é menor que b?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;lt;=&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a &amp;lt;= b&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a é menor ou igual a b?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;==&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a == b&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a é igual a b?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;!=&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a != b&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a é diferente de b?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;%in%&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a %in% c(a, b, c)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;a está contido em algum dos elementos de b?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;1 &amp;gt; 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;1 &amp;gt; c(0, 1, 2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE FALSE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c(1, 2, 3) == c(3, 2, 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE  TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O operado &lt;code&gt;%in%&lt;/code&gt; é o único operador que não executa a execução normal do elemento inteiro. &lt;code&gt;%in%&lt;/code&gt; testa se os valores do lado esquerdo estão no vetor do lado direito. Se você fornecer um vetor no lado esquerdo, este operador não irá emparelhar os valores à esquerda com os valores à direita e, em seguida, fará testes de elementos. Em vez disso, ele testará independentemente se cada valor à esquerda está em algum lugar do vetor à direita:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;1 %in% c(3, 4, 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c(1, 2) %in% c(3, 4, 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c(1, 2, 3) %in% c(3, 4, 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE FALSE  TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c(1, 2, 3, 4) %in% c(3, 4, 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE FALSE  TRUE  TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Observe que você testa a igualdade com um sinal de igual duplo, &lt;code&gt;==&lt;/code&gt;, e não um único sinal de igual, &lt;code&gt;=&lt;/code&gt;, que é outra maneira de escrever &lt;code&gt;&amp;lt;-&lt;/code&gt;. É fácil esquecer e usar &lt;code&gt;a = b&lt;/code&gt; para testar se a é igual a b. Infelizmente, você terá uma surpresa desagradável. O R não retornará &lt;code&gt;TRUE&lt;/code&gt; ou &lt;code&gt;FALSE&lt;/code&gt;, porque não terá que: a será igual a b, porque você acabou de executar o equivalente a &lt;code&gt;a &amp;lt;- b&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Você pode comparar quaisquer dois objetos no R com um operador lógico; no entanto, os operadores lógicos fazem mais sentido se você comparar dois objetos do mesmo tipo de dados. Se você comparar objetos de diferentes tipos de dados, o R usará suas regras de coerção para forçar os objetos ao mesmo tipo antes de fazer a comparação.&lt;/p&gt;
+&lt;h4 id=&#34;exercícios-4&#34;&gt;Exercícios&lt;/h4&gt;
+&lt;p&gt;Extraia a coluna &lt;code&gt;V2010&lt;/code&gt; do &lt;code&gt;df2&lt;/code&gt; e teste os valores igual a &amp;lsquo;Branca&amp;rsquo;. Além disso conte quantas linhas são iguais a &amp;lsquo;Branca&amp;rsquo;. Dica: use a função sum() para fazer a contagem.&lt;/p&gt;
+&lt;p&gt;Para resumir, você pode usar um teste lógico para selecionar valores dentro de um objeto.&lt;/p&gt;
+&lt;p&gt;O subconjunto lógico é uma técnica poderosa porque permite identificar, extrair e modificar rapidamente valores individuais em seu conjunto de dados. Ao trabalhar com subconjuntos lógicos, você não precisa saber onde existe um valor em seu conjunto de dados. Você só precisa saber como descrever o valor com um teste lógico.&lt;/p&gt;
+&lt;p&gt;Além dos operadores lógicos, também temos os operadores booleanos, os operadores booleanos são como &lt;code&gt;&amp;amp;&lt;/code&gt; ou &lt;code&gt;|&lt;/code&gt;. Eles reduzem os resultados de vários testes lógicos em um único &lt;code&gt;TRUE&lt;/code&gt; ou &lt;code&gt;FALSE&lt;/code&gt;. Os operadores e seus testes podem ser vistos na tabela abaixo.&lt;/p&gt;
+&lt;p&gt;Table: Table 2: Operadores booleanos&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Operador&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Sintaxe&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Teste&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;amp;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cond1 &amp;amp; cond2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cond1 e cond2 são simultâneamente verdadeiros?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;|&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cond1 | cond2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cond1 ou cond2 é verdadeiro?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;xor&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;xor(cond1, cond2)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Apenas cond1 ou apenas cond2 é verdadeiro?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;!&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;!cond1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Inverta o resultado de cond1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;any&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;any(cond1, cond2, cond3, &amp;hellip;)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Algum resultado em c(cond1, cond2, cond3, &amp;hellip;) é verdadeiro?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;all&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;all(cond1, cond2, cond3, &amp;hellip;)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Todos os resultados em c(cond1, cond2, cond3, &amp;hellip;) são verdadeiros?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Para usar um operador booleano, coloque-o entre dois testes lógicos completos. O R irá executar cada teste lógico e, em seguida, usar o operador booleano para combinar os resultados em um único &lt;code&gt;TRUE&lt;/code&gt; ou &lt;code&gt;FALSE&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Quando usados com vetores, os operadores booleanos seguirão a mesma execução elementar que os operadores aritméticos e lógicos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;a &amp;lt;- c(1, 2, 3)
+b &amp;lt;- c(1, 2, 3)
+c &amp;lt;- c(1, 2, 4)
+
+a == b
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE TRUE TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;b == c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE  TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;a == b &amp;amp; b == c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE  TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você pode usar um operador booleano para localizar as pessoas de 23 anos e de escolaridade 9 anos de estudo no df2.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2$V2009 == 40 &amp;amp; df2$VD3005 == &amp;quot;8 anos de estudo&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##   [97] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;valores-desconhecidos&#34;&gt;Valores desconhecidos&lt;/h3&gt;
+&lt;p&gt;Problemas com informações desconhecidas acontecem com frequência na análise de dados. Normalmente, eles são mais simples: você não sabe um valor porque a medição foi perdida, corrompida ou nunca feita para começar. O R tem uma maneira de ajudá-lo a gerenciar esses valores ausentes.&lt;/p&gt;
+&lt;p&gt;O caractere &lt;code&gt;NA&lt;/code&gt; é um símbolo especial em R. Ele significa “não disponível” e pode ser usado como um espaço reservado para informações ausentes. O R tratará &lt;code&gt;NA&lt;/code&gt; exatamente como você deseja que as informações ausentes sejam tratadas. Por exemplo, qual resultado você esperaria se adicionar 1 a uma informação ausente?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;1 + NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O R retornará uma segunda informação faltante. Não seria correto dizer que 1 + NA = 1 porque há uma boa chance de que o valor ausente não seja zero. Você não tem informações suficientes para determinar o resultado.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;NA == 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Valores ausentes podem ajudá-lo a contornar lacunas em seus conjuntos de dados, mas também podem criar alguns problemas frustrantes. Suponha, por exemplo, que você coletou 1.000 observações e deseja tirar sua média com a função mean(). Se um dos valores for NA, seu resultado será NA:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c(NA, 1:50)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] NA  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+## [26] 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+## [51] 50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(c(NA, 1:50))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A maioria das funções R vem com o argumento opcional, &lt;code&gt;na.rm&lt;/code&gt;, que significa &lt;code&gt;NA remove&lt;/code&gt;. o R irá ignorar NAs quando avaliar uma função se você adicionar o argumento &lt;code&gt;na.rm = TRUE&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(c(NA, 1:50), na.rm = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 25.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ocasionalmente, você pode querer identificar os NAs em seu conjunto de dados com um teste lógico, mas isso também cria um problema. Como você faria isso? Se algo for um valor ausente, qualquer teste lógico que o use retornará um valor ausente, até mesmo este teste:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;NA == NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O que significa que testes como este não ajudarão você a encontrar valores ausentes:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c(1, 2, 3, NA) == NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA NA NA NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O R fornece uma função especial que pode testar se um valor é um NA. A função é &lt;code&gt;is.na&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;is.na(NA)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vet &amp;lt;- c(1, 2, 3, NA)
+
+is.na(vet)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE FALSE FALSE  TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;exercícios-5&#34;&gt;Exercícios&lt;/h4&gt;
+&lt;p&gt;Conte o número de NAs na coluna &lt;code&gt;VD4016&lt;/code&gt; do data frame &lt;code&gt;df2&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;revisão&#34;&gt;Revisão&lt;/h2&gt;
+&lt;p&gt;Na aula de hoje falamos sobre como importar dados, exportar dados, manipulação e diferentes notações para identificação de informações e modificação.&lt;/p&gt;
+&lt;p&gt;Para selecionar os valores em um data frame, ou em outro objeto R, aprendemos a usar a notação &lt;code&gt;data.frame[ , ]&lt;/code&gt; e a partir dessa notação, selecionar diferentes linhas e colunas, usando números inteiros, números negativos, espaços em branco, valores lógicos e nomes.&lt;/p&gt;
+&lt;p&gt;Aprendemos com listas e dataframes a seleção pela notação de colchetes duplos &lt;code&gt;[[&lt;/code&gt; e &lt;code&gt;$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Em relação a modificação de valores, aprendemos a modificar os valores no local dentro de um objeto R ao combinar a sintaxe da notação de R com o operador de atribuição, &lt;code&gt;&amp;lt;-&lt;/code&gt;. Isso permite que você atualize seus dados e limpe seus conjuntos de dados.&lt;/p&gt;
+&lt;p&gt;Aprendemos diferentes operadores lógicos: &lt;code&gt;&amp;gt;&lt;/code&gt;; &lt;code&gt;&amp;gt;=&lt;/code&gt;; &lt;code&gt;&amp;lt;&lt;/code&gt;; &lt;code&gt;&amp;lt;=&lt;/code&gt;; &lt;code&gt;==&lt;/code&gt;; &lt;code&gt;!=&lt;/code&gt;; &lt;code&gt;%in%&lt;/code&gt; e operadores booleanos: &lt;code&gt;&amp;amp;&lt;/code&gt;; &lt;code&gt;|&lt;/code&gt;; &lt;code&gt;xor&lt;/code&gt;; &lt;code&gt;!&lt;/code&gt;; &lt;code&gt;any&lt;/code&gt;; &lt;code&gt;all&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Quando você trabalha com grandes conjuntos de dados, modificar e recuperar valores cria um problema logístico próprio. Como você pode pesquisar os dados para encontrar os valores que deseja modificar ou recuperar? Como um usuário R, você pode fazer isso com subconjuntos lógicos. Crie um teste lógico com operadores lógicos e booleanos e, em seguida, use o teste como um índice na notação de colchetes de R. O R retornará os valores que você está procurando, mesmo se você não souber onde eles estão.&lt;/p&gt;
+&lt;h3 id=&#34;exercícios-6&#34;&gt;Exercícios&lt;/h3&gt;
+&lt;p&gt;Para os próximos exercícios considere o data frame da pnad que estamos usando nas aulas.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Como você selecionaria o mesmo valor abaixo, mas usando inteiros negativos na seleção?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2[1,5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Homem&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Qual a diferença em usar em selecionar determinada informação em um data frame usando colchetes duplos &lt;code&gt;[[]]&lt;/code&gt; e usando colchetes simples? Observe o exemplo abaixo para responder:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2[[&#39;Ano&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    [1] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [15] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [29] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [43] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [57] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [71] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [85] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [99] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [113] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [127] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[&#39;Ano&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Ano
+## 1    2021
+## 2    2021
+## 3    2021
+## 4    2021
+## 5    2021
+## 6    2021
+## 7    2021
+## 8    2021
+## 9    2021
+....
+Saída truncada para visualização
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Considere o data frame abaixo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sala &amp;lt;- data.frame(
+  id = c(1, 2, 3, 4, 5, 6),
+  idade = c(20, 25, 30, 35, 40, 45),
+  nome = c(&amp;quot;Fulano&amp;quot;, &amp;quot;Cicrano&amp;quot;, &amp;quot;Beltrano&amp;quot;, &amp;quot;Herculano&amp;quot;, &amp;quot;Mariano&amp;quot;, &amp;quot;Carrano&amp;quot;),
+  sexo = &amp;quot;Masculino&amp;quot;,
+  origem = c(&amp;quot;Campinas&amp;quot;, &amp;quot;Barueri&amp;quot;, &amp;quot;Monte Verde&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;, &amp;quot;Natal&amp;quot;, &amp;quot;Belo Horizonte&amp;quot;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Modifique o nome de &amp;lsquo;Mariano&amp;rsquo; por &amp;lsquo;Mariana&amp;rsquo;. E altere a variável sexo para que seja um vetor que altere o valor para &amp;lsquo;Feminino&amp;rsquo; na posição em que o nome foi trocado para Mariana.&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Considere o mesmo data frame sala construído no exercício anterior. Usando testes lógicos e operadores Booleanos. Verifique:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo. 
+b. se existe algum aluno que tem idade maior ou iguam a 20 anos ou que seja de Campinas.
+c. se existe alguém com o nome Beltrano.&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Agora considere o seguinte data frame:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cadastro &amp;lt;- data.frame(
+  id = c(10, 105, 299, 645, 7907, 8660, 4992, 630),
+  idade = c(20, 25, 30, 35, 40, 45, 60, 53),
+  nome = c(&amp;quot;Thais&amp;quot;, NA, &amp;quot;Guilherme&amp;quot;, &amp;quot;Betânia&amp;quot;, &amp;quot;Ana Lucia&amp;quot;, NA, NA, &amp;quot;Pâmela&amp;quot;),
+  sexo = c(&amp;quot;Feminino&amp;quot;, &amp;quot;Masculino&amp;quot;,&amp;quot;Masculino&amp;quot;, NA ,NA, &amp;quot;Feminino&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;Feminino&amp;quot;),
+  origem = c(&amp;quot;Campinas&amp;quot;, NA, &amp;quot;Monte Verde&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;, NA, &amp;quot;Belo Horizonte&amp;quot;,&amp;quot;São Paulo&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Usando as funções apropriadas ensinadas na aula de hoje:&lt;/p&gt;
+&lt;p&gt;a. Quantos NAs existe na coluna nome?
+b. Quantos NAs existe na coluna sexo?
+c. Quantos NAs existe na coluna origem?
+d. Substitua os NAs na coluna sexo pelo valor &amp;lsquo;Feminino&amp;rsquo;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Salve o data frame &amp;lsquo;cadastro&amp;rsquo; do exercicio anterior em um arquivo &lt;code&gt;.csv&lt;/code&gt;. Como você faria isso? Quais os argumentos que devem ser usados?&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
