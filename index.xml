@@ -5,7 +5,7 @@
     <link>https://laddem.github.io/</link>
       <atom:link href="https://laddem.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>LADDEM</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 LADDEM</copyright><lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 LADDEM</copyright><lastBuildDate>Tue, 15 Jun 2021 20:04:57 -0300</lastBuildDate>
     <image>
       <url>https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png</url>
       <title>LADDEM</title>
@@ -1507,7 +1507,7 @@ a == b
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1]  TRUE  TRUE FALSE
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Você pode usar um operador booleano para localizar as pessoas de 23 anos e de escolaridade 9 anos de estudo no df2.&lt;/p&gt;
+&lt;p&gt;Você pode usar um operador booleano para localizar as pessoas de 40 anos e de escolaridade 9 anos de estudo no df2.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df2$V2009 == 40 &amp;amp; df2$VD3005 == &amp;quot;8 anos de estudo&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##    [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
@@ -1639,7 +1639,7 @@ Saída truncada para visualização
 &lt;li&gt;
 &lt;p&gt;Considere o mesmo data frame sala construído no exercício anterior. Usando testes lógicos e operadores Booleanos. Verifique:&lt;/p&gt;
 &lt;p&gt;a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo.&lt;br&gt;
-b. se existe algum aluno que tem idade maior ou iguam a 20 anos ou que seja de Campinas.&lt;br&gt;
+b. se existe algum aluno que tem idade maior ou igual a 20 anos ou que seja de Campinas.&lt;br&gt;
 c. se existe alguém com o nome Beltrano.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1664,6 +1664,7 @@ c. se existe alguém com o nome Beltrano.&lt;/p&gt;
 &lt;p&gt;Salve o data frame &amp;lsquo;cadastro&amp;rsquo; do exercicio anterior em um arquivo &lt;code&gt;.csv&lt;/code&gt;. Como você faria isso? Quais os argumentos que devem ser usados?&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
 </description>
     </item>
     
@@ -7063,6 +7064,448 @@ glimpse(l)
              &amp;quot;mpg ~ wt + cyl + drat&amp;quot;,
              &amp;quot;mpg ~ wt + cyl + drat + am&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Soluções</title>
+      <link>https://laddem.github.io/courses/rbase/solucoes/</link>
+      <pubDate>Tue, 15 Jun 2021 20:04:57 -0300</pubDate>
+      <guid>https://laddem.github.io/courses/rbase/solucoes/</guid>
+      <description>&lt;p&gt;Soluções para os exercícios feitos em sala e os exercícios de revisão do final das aulas.&lt;/p&gt;
+&lt;h2 id=&#34;aula-1-básico&#34;&gt;Aula 1: Básico&lt;/h2&gt;
+&lt;h3 id=&#34;fundamentos&#34;&gt;Fundamentos&lt;/h3&gt;
+&lt;h4 id=&#34;funções&#34;&gt;Funções&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;round(3.1415)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;factorial(3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Só de olhar para as funções e seus resultados, você conseguíria dizer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;O que cada função faz?&lt;/li&gt;
+&lt;li&gt;Quais entradas (inputs) ela pede?&lt;/li&gt;
+&lt;li&gt;Qual saída ela produz (output)?&lt;/li&gt;
+&lt;li&gt;Que opções alternativas (argumentos) elas poderiam conter?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A função &lt;code&gt;round()&lt;/code&gt; arredonda valores decimais, enquanto &lt;code&gt;factorial()&lt;/code&gt; calcula o fatorial de um número. Ambas recebem inputs numéricos, e emitem outputs numéricos também. &lt;code&gt;round()&lt;/code&gt; tem um argumento extra &lt;code&gt;digits&lt;/code&gt;, que permite determina para quantas casas decimais o número deverá ser arredondado.&lt;/p&gt;
+&lt;h4 id=&#34;argumentos&#34;&gt;Argumentos&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dado &amp;lt;- 1:6
+
+# dado limpo
+sample(dado, size = 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# dado viciado
+sample(dado, size = 1, prob = c(1/8, 1/8, 1/8, 1/8, 1/8, 3/8))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Repita a operação de sample acima com o dado “viciado” e com o dado “limpo” e verifique se você consegue perceber empiricamente que meu dado está “viciado”.&lt;/p&gt;
+&lt;p&gt;Esse exercício era para repetir o código várias vezes e verificar se o resultado 6 aparecia mais no dado viciado que no limpo.&lt;/p&gt;
+&lt;p&gt;Que outros argumentos existem na função sample? Qual o papel do argumento replace?&lt;/p&gt;
+&lt;p&gt;Sample tem os argumento opcionais &lt;code&gt;size&lt;/code&gt;, &lt;code&gt;replace&lt;/code&gt; e &lt;code&gt;prob&lt;/code&gt;. O primeiro define quantas amostram devem ser retiradas, o segundo define se a amostra tem reposição, ou seja, se um valor sorteado é retirado da amostra ou não e o terceiro define com que probabilidades devem ser feitos os sorteios, o padrão é com probabilidades iguais para todos os valores do vetor &lt;code&gt;x&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;sua-primeira-função&#34;&gt;Sua primeira função&lt;/h4&gt;
+&lt;p&gt;Escreva uma função que role 2 dados de 10 faces e some seus resultados.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;role10 &amp;lt;- function() {
+  x &amp;lt;- sample(x = 1:10, size = 1)
+  y &amp;lt;- sample(x = 1:10, size = 1)
+  x + y
+}
+
+role10()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 19
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;ajuda&#34;&gt;Ajuda&lt;/h4&gt;
+&lt;p&gt;Consulte a ajuda das funções sum, mean, min, max, range. Porque todas elas tem o argumento na.rm? O que argumento o trim em mean faz? Qual a melhor maneira de rapidamente entender o que uma função faz através da página de ajuda?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?sum
+?mean
+?min
+?max
+?range
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O argumento na.rm permite que os cálculos das medidas sejam feitos mesmo na presença de valores nulos/desconhecidos, registrados no R como &lt;code&gt;NA&lt;/code&gt;. Você pode ler o argumento &lt;code&gt;na.rm&lt;/code&gt; como &amp;ldquo;Remova os &lt;code&gt;NA&lt;/code&gt;s&amp;rdquo;. A melhor maneira de entender o funcionamento de uma função rapidamente é ler as seções &amp;ldquo;Description&amp;rdquo; e &amp;ldquo;Examples&amp;rdquo;, que você pode utilizar para rapidamente entender como a função funciona na prática.&lt;/p&gt;
+&lt;h3 id=&#34;objetos-em-r&#34;&gt;Objetos em R&lt;/h3&gt;
+&lt;h4 id=&#34;vetores&#34;&gt;Vetores&lt;/h4&gt;
+&lt;p&gt;Teste se vetor2, criado anteriormente é um vetor. Crie um vetor com os nomes de cinco pessoas da sala.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;vetor2 &amp;lt;- c(1, 2, 3, 4, 5)
+is.vector(vetor2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;nomes &amp;lt;- c(&amp;quot;Pessoa 1&amp;quot;, &amp;quot;Pessoa 2&amp;quot;, &amp;quot;Pessoa 3&amp;quot;, &amp;quot;Pessoa 4&amp;quot;, &amp;quot;Pessoa 5&amp;quot;)
+nomes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Pessoa 1&amp;quot; &amp;quot;Pessoa 2&amp;quot; &amp;quot;Pessoa 3&amp;quot; &amp;quot;Pessoa 4&amp;quot; &amp;quot;Pessoa 5&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A função &lt;code&gt;is.vector&lt;/code&gt; testa se um objeto é do tipo vetor. Existem outras funções da família &lt;code&gt;is.____&lt;/code&gt; para todos os objetos R. Você pode criar um vetor de nomes usando aspas ao redor dos valores das informações em cada posição do vetor e atribuir isso &lt;code&gt;&amp;lt;-&lt;/code&gt; para um objeto com um nome da sua preferência.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Considerando os dois vetores abaixo, calcule as suas médias. Porque não é possível calcular a média do segundo vetor.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;idade1 &amp;lt;- c(20, 25, 30, 35, 40, 45, 50)
+idade2 &amp;lt;- c(&amp;quot;20&amp;quot;, &amp;quot;25&amp;quot;, &amp;quot;30&amp;quot;, &amp;quot;35&amp;quot;, &amp;quot;40&amp;quot;, &amp;quot;45&amp;quot;, &amp;quot;50&amp;quot;)
+
+mean(idade1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(idade2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in mean.default(idade2): argumento não é numérico nem lógico: retornando
+## NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O primeiro vetor retorna normalmente porque &lt;code&gt;idade1&lt;/code&gt; é um vetor de números. Apesar da sua aparência, &lt;code&gt;idade2&lt;/code&gt; é um vetor de texto. Podemos verificar o tipo do vetor da seguinte forma:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(idade1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(idade2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;Qual a diferença entre: 1, “1”, “one” no R? Quais são números e quais são caracteres?&lt;/p&gt;
+&lt;p&gt;Ao invés de responder essa pergunta, podemos usar o R para satisfazer nossa curiosidade:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(&amp;quot;1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(&amp;quot;one&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O primeiro é um número, os outros são caracteres de texto.&lt;/p&gt;
+&lt;h4 id=&#34;atributos&#34;&gt;Atributos&lt;/h4&gt;
+&lt;p&gt;Usando seus conhecimentos sobre atributos, construa uma pequena matriz com o nome de 5 pessoas da turma e seu sexo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;info &amp;lt;- c(&amp;quot;Pessoa 1&amp;quot;, &amp;quot;Pessoa 2&amp;quot;, &amp;quot;Pessoa 3&amp;quot;, &amp;quot;Pessoa 4&amp;quot;, &amp;quot;Pessoa 5&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;Feminino&amp;quot;, &amp;quot;Feminino&amp;quot;)
+
+dim(info) &amp;lt;- c(5, 2)
+
+info
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##      [,1]       [,2]       
+## [1,] &amp;quot;Pessoa 1&amp;quot; &amp;quot;Masculino&amp;quot;
+## [2,] &amp;quot;Pessoa 2&amp;quot; &amp;quot;Masculino&amp;quot;
+## [3,] &amp;quot;Pessoa 3&amp;quot; &amp;quot;Masculino&amp;quot;
+## [4,] &amp;quot;Pessoa 4&amp;quot; &amp;quot;Feminino&amp;quot; 
+## [5,] &amp;quot;Pessoa 5&amp;quot; &amp;quot;Feminino&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;matrizes&#34;&gt;Matrizes&lt;/h4&gt;
+&lt;p&gt;Reconstrua a sua matriz original usando a função matrix ao invés de alterar os atributos. E os nomes das colunas?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;info_matrix &amp;lt;- matrix(info, nrow = 5, dimnames = list(1:5, c(&amp;quot;Nome&amp;quot;, &amp;quot;Sexo&amp;quot;)))
+info_matrix
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Nome       Sexo       
+## 1 &amp;quot;Pessoa 1&amp;quot; &amp;quot;Masculino&amp;quot;
+## 2 &amp;quot;Pessoa 2&amp;quot; &amp;quot;Masculino&amp;quot;
+## 3 &amp;quot;Pessoa 3&amp;quot; &amp;quot;Masculino&amp;quot;
+## 4 &amp;quot;Pessoa 4&amp;quot; &amp;quot;Feminino&amp;quot; 
+## 5 &amp;quot;Pessoa 5&amp;quot; &amp;quot;Feminino&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;classe&#34;&gt;Classe&lt;/h4&gt;
+&lt;p&gt;Experimente brincar com o valor de objeto e ver&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Qual é a data de referência do R para calcular tempos?&lt;/li&gt;
+&lt;li&gt;O que acontece se o valor for negativo?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;objeto &amp;lt;- 0
+class(objeto) &amp;lt;- c(&amp;quot;POSIXct&amp;quot;, &amp;quot;POSIXt&amp;quot;)
+
+objeto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;1969-12-31 21:00:00 -03&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;objeto &amp;lt;- -100000000
+class(objeto) &amp;lt;- c(&amp;quot;POSIXct&amp;quot;, &amp;quot;POSIXt&amp;quot;)
+
+objeto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;1966-10-31 11:13:20 -03&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Este exercício parte do princípio de que vocês compreenderam como o R entende tempos: eles são armazenadas como o número de segundos entre a data de referência do sistema e o tempo que ele pretendem medir. Assim, para descobrir a data de referência basta criar um objeto com o tempo 0 e passar a classe adequada para seus atributos e ver o resultado na tela. Da mesma forma, os números negativos representam tempos ocorridos antes dessa data de referência.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Construa um fator a partir do vetor a seguir que registre os meses do ano. Dica: utilize o argumento levels da função factor.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;f &amp;lt;- c(1, 3, 9, 4, 11, 2, 6, 6, 3, 2, 9, 11, 12, 12, 1, 8)
+
+factor(f, levels = 1:12, 
+       labels = c(&amp;quot;Jan&amp;quot;, &amp;quot;Fev&amp;quot;, &amp;quot;Mar&amp;quot;, &amp;quot;Abr&amp;quot;, &amp;quot;Mai&amp;quot;, &amp;quot;Jun&amp;quot;,
+                  &amp;quot;Jul&amp;quot;, &amp;quot;Ago&amp;quot;, &amp;quot;Set&amp;quot;, &amp;quot;Out&amp;quot;, &amp;quot;Nov&amp;quot;, &amp;quot;Dez&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] Jan Mar Set Abr Nov Fev Jun Jun Mar Fev Set Nov Dez Dez Jan Ago
+## Levels: Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;coerção&#34;&gt;Coerção&lt;/h4&gt;
+&lt;p&gt;Porque o R prefere coagir vetores lógicos mistos para números e vetores numéricos e lógicos para caractere?&lt;/p&gt;
+&lt;p&gt;A resposta é mais conceitual que prática, mas o objetivo é usar o tipo de dado mais genérico possível de tal forma que a gente não perca as informações. Veja alguns exemplos abaixo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Números misturados com valores lógicos
+v &amp;lt;- c(32, 64, 128, 256, TRUE, FALSE)
+v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  32  64 128 256   1   0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Posso &amp;quot;recuperar&amp;quot; meus valores lógicos depois
+as.logical(v[5:6])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Texto misturado com números
+v &amp;lt;- c(15, 21, 19, 80, &amp;quot;Abóbora&amp;quot;, &amp;quot;Caqui&amp;quot;)
+v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;15&amp;quot;      &amp;quot;21&amp;quot;      &amp;quot;19&amp;quot;      &amp;quot;80&amp;quot;      &amp;quot;Abóbora&amp;quot; &amp;quot;Caqui&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Posso &amp;quot;recuperar&amp;quot; meus números depois
+as.numeric(v[1:4])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15 21 19 80
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;listas&#34;&gt;Listas&lt;/h4&gt;
+&lt;p&gt;Crie uma lista de compras em que cada elemento da lista seja um vetor atômico de itens que você vai comprar de cada seção do supermercado. Para simplificar, utilize as seções: “limpeza”, “mercearia” e “hortifruti”.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lista_de_compras &amp;lt;- list(
+  limpeza = c(&amp;quot;Creme dental&amp;quot;, &amp;quot;Sabonete&amp;quot;, &amp;quot;Xampú&amp;quot;, &amp;quot;Condicionador&amp;quot;, &amp;quot;Tira-limo&amp;quot;),
+  mercearia = c(&amp;quot;Pão&amp;quot;, &amp;quot;Leite&amp;quot;, &amp;quot;Ovos&amp;quot;, &amp;quot;Queijo&amp;quot;, &amp;quot;Presunto&amp;quot;, &amp;quot;Manteiga&amp;quot;, &amp;quot;Biscoito&amp;quot;),
+  hortifruti = c(&amp;quot;Cebola&amp;quot;, &amp;quot;Tomate&amp;quot;, &amp;quot;Alho&amp;quot;, &amp;quot;Banana&amp;quot;, &amp;quot;Mamão&amp;quot;, &amp;quot;Abacate&amp;quot;, &amp;quot;Batata&amp;quot;, &amp;quot;Pimenta dedo-de-moça&amp;quot;)
+)
+
+lista_de_compras
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $limpeza
+## [1] &amp;quot;Creme dental&amp;quot;  &amp;quot;Sabonete&amp;quot;      &amp;quot;Xampú&amp;quot;         &amp;quot;Condicionador&amp;quot;
+## [5] &amp;quot;Tira-limo&amp;quot;    
+## 
+## $mercearia
+## [1] &amp;quot;Pão&amp;quot;      &amp;quot;Leite&amp;quot;    &amp;quot;Ovos&amp;quot;     &amp;quot;Queijo&amp;quot;   &amp;quot;Presunto&amp;quot; &amp;quot;Manteiga&amp;quot; &amp;quot;Biscoito&amp;quot;
+## 
+## $hortifruti
+## [1] &amp;quot;Cebola&amp;quot;               &amp;quot;Tomate&amp;quot;               &amp;quot;Alho&amp;quot;                
+## [4] &amp;quot;Banana&amp;quot;               &amp;quot;Mamão&amp;quot;                &amp;quot;Abacate&amp;quot;             
+## [7] &amp;quot;Batata&amp;quot;               &amp;quot;Pimenta dedo-de-moça&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A principal característica da lista que eu queria ressaltar aqui é que podemos armazenar várias informações de tipos e tamanhos diferentes numa lista. É a estrutura de dados mais flexível no R.&lt;/p&gt;
+&lt;h4 id=&#34;data-frames&#34;&gt;Data Frames&lt;/h4&gt;
+&lt;p&gt;Crie um data frame contendo informações de cinco colegas de turma: registre o nome, a idade presumida, o sexo, a profissão e a renda presumida. Não precisa perguntar, basta chutar um valor que você ache.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- data.frame(nome = c(&amp;quot;Colega 1&amp;quot;, &amp;quot;Colega 2&amp;quot;, &amp;quot;Colega 3&amp;quot;, &amp;quot;Colega 4&amp;quot;, &amp;quot;Colega 5&amp;quot;),
+                 idade = c(20, 30, 40, 25, 35),
+                 sexo = c(&amp;quot;M&amp;quot;, &amp;quot;F&amp;quot;, &amp;quot;F&amp;quot;, &amp;quot;F&amp;quot;, &amp;quot;M&amp;quot;), 
+                 profissao = c(&amp;quot;Professor&amp;quot;, &amp;quot;Pesquisador&amp;quot;, &amp;quot;Programador&amp;quot;, &amp;quot;Jornalista&amp;quot;, &amp;quot;Analista de dados&amp;quot;),
+                 renda = c(2000, 3000, 1500, 2000, 4000))
+
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       nome idade sexo         profissao renda
+## 1 Colega 1    20    M         Professor  2000
+## 2 Colega 2    30    F       Pesquisador  3000
+## 3 Colega 3    40    F       Programador  1500
+## 4 Colega 4    25    F        Jornalista  2000
+## 5 Colega 5    35    M Analista de dados  4000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;revisão&#34;&gt;Revisão&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Como você poderia identificar o tipo de um objeto? Como você poderia identificar a classe dele? Qual a diferença entre essas duas coisas? Porque isso é relevante?&lt;/p&gt;
+&lt;p&gt;Supondo que você tenha um objeto desconhecido, você pode usar as funções descritas na aula para identificar seu tipo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(1, 2, 3, 4, NA)
+
+typeof(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;class(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;numeric&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;is.vector(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;is.list(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O tipo de um objeto define quais informações estão guardadas nele:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;double guardam números reais, que contém casas decimais&lt;/li&gt;
+&lt;li&gt;integer guardam números inteiros&lt;/li&gt;
+&lt;li&gt;character guardam strings de caracteres em formato texto&lt;/li&gt;
+&lt;li&gt;listas guardam objetos R, como vetores, funções, outras listas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A classe de um objeto define como o R vai tratá-lo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fatores serão armazenados como números inteiros, mas serão representados por rótulos de texto sempre que o usuário desejar ver seu conteúdo.&lt;/li&gt;
+&lt;li&gt;datas serão armazenadas como números de segundos, mas serão representadas em formato de data/hora legível por pessoas.&lt;/li&gt;
+&lt;li&gt;matrizes codificam operações como transposição e multiplicação de matrizes que não funcionam em outros tipos de dado&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Esses são apenas alguns exemplos de classe, mas acho que deu pra pegar a ideia.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Digamos que você quer armazenar algumas informações na memória do computador. Que tipo de objeto você utilizaria para armanzenar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Os nomes dos colegas da sua turma&lt;/li&gt;
+&lt;li&gt;Seus números de telefone&lt;/li&gt;
+&lt;li&gt;Uma variável que indica se esta pessoa nasceu antes de 1989&lt;/li&gt;
+&lt;li&gt;A idade de um grupo de pessoas&lt;/li&gt;
+&lt;li&gt;Informações de cadastro de uma pessoa: nome completo, afiliações, telefones para contato, endereços, etc.&lt;/li&gt;
+&lt;li&gt;Uma coleção de funções que você utiliza frequentemente&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Você pode armazenar valores em vetores atômicos, então nomes de colegas poderiam ficar num vetor de caracteres, números de telefone num vetor de números inteiros, uma variável que indica se alguém nasceu antes de 1989 ou depois é perfeita para um vetor lógico.&lt;/p&gt;
+&lt;p&gt;A idade de um grupo de pessoas já parece conter mais de uma informação por observação, então ela pode ser armazenada em um data.frame, contendo a identificação da pessoa e a sua idade.&lt;/p&gt;
+&lt;p&gt;Um caso parecido, mas levemente diferente são as informações de cadastro de uma pessoa, que deveriam ser armazenadas numa lista, pois o cadastro pode conter informações de diferentes formatos e tamanhos e não necessariamente teria o formato retangular do data.frame.&lt;/p&gt;
+&lt;p&gt;Uma coleção de funções deve ser armazenadas numa lista, pois este é objeto R adequado para armazenar tudo que não for uma coleção de informações como num vetor atômico.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Porque no resumo eu disse que as funções são verbos? Que tipo de ações as funções que vimos na aula fazem nos nossos objetos? Se as funções são verbos, que classe de palavras a gente poderia dizer que são os nossos objetos? E nós, que usamos o software, o que somos?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Se você parar para pensar, programação de computadores é uma forma de comunicação envolvendo pelo menos 3 interlocutores: você, a máquina e outros programadores. Na sintaxe do português, as frases são divididas em sujeito e predicado, sendo que o predicado geralmente tem um verbo e alguns complementos opcionais. O sujeito de uma frase na programação geralmente está oculto, pois ele é implicitamente você, que pede que a máquina execute tarefas. O verbo são as funções, que indicam à máquina que ações deverão ser executadas, e os complementos são os argumentos da função, em geral, objetos contendo informações, bem como opções (adjetivos, advérbios) que descrevem não apenas EM QUEM as tarefas serão executadas, mas também COMO.&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Digamos que eu quero armazenar as informações de cadastro dos membros da turma. Que estrutura de dados eu deveria utilizar? Como você implementaria esta estrutura no R? Desenvolva um pequeno exemplo.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Você deveria utilizar um data frame para guardar as várias informações de cadastro da turma. Note que é um pouco diferente do exemplo acima, em que eu tenho o cadastro de uma pessoa. Em geral, parte do processo de tabulação de um banco de dados é coletar informações que estão em formatos díspares e transformá-las em algo que pode ser analisado com facilidade, ou seja, um data frame.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- data.frame(nome = c(&amp;quot;Fulano&amp;quot;, &amp;quot;Beltrano&amp;quot;),
+                 telefone = c(123456, 456321),
+                 endereco = c(&amp;quot;Onde Judas perdeu as botas&amp;quot;, &amp;quot;Duas ruas pra baixo&amp;quot;),
+                 sexo = c(&amp;quot;M&amp;quot;, &amp;quot;F&amp;quot;),
+                 email = c(&amp;quot;fulano@email.com&amp;quot;, &amp;quot;beltrano@nomail.com&amp;quot;), 
+                 uf = c(&amp;quot;SP&amp;quot;, &amp;quot;RN&amp;quot;), 
+                 cidade = c(&amp;quot;Borá&amp;quot;, &amp;quot;São Miguel do Gostoso&amp;quot;))
+
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       nome telefone                   endereco sexo               email uf
+## 1   Fulano   123456 Onde Judas perdeu as botas    M    fulano@email.com SP
+## 2 Beltrano   456321        Duas ruas pra baixo    F beltrano@nomail.com RN
+##                  cidade
+## 1                  Borá
+## 2 São Miguel do Gostoso
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em geral, não é comum construir bancos de dados no R, existem softwares com facilidades melhores para a digitação de informações. O exemplo acima apenas demonstra minimamente o resultado do que, provavelmente, seria uma importação de um cadastro já salvo.&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Quais são os atributos de um data frame? Como você poderia descobrí-los e alterá-los? Em que situações isso seria proveitoso?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Usando o data frame construído no exercício anterior, podemos verificar seus atributos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;attributes(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $names
+## [1] &amp;quot;nome&amp;quot;     &amp;quot;telefone&amp;quot; &amp;quot;endereco&amp;quot; &amp;quot;sexo&amp;quot;     &amp;quot;email&amp;quot;    &amp;quot;uf&amp;quot;       &amp;quot;cidade&amp;quot;  
+## 
+## $class
+## [1] &amp;quot;data.frame&amp;quot;
+## 
+## $row.names
+## [1] 1 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Podemos alterar esses atributos usando a forma &lt;code&gt;&amp;lt;-&lt;/code&gt; da mesma função:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;attributes(df) &amp;lt;- list(row.names = c(&amp;quot;Oi&amp;quot;, &amp;quot;Td bem?&amp;quot;),
+                       names = c(&amp;quot;Nome&amp;quot;, &amp;quot;Telefone&amp;quot;, &amp;quot;Endereço&amp;quot;, &amp;quot;Sexo&amp;quot;, &amp;quot;Email&amp;quot;, &amp;quot;Uf&amp;quot;, &amp;quot;Cidade&amp;quot;),
+                       class = &amp;quot;data.frame&amp;quot;)
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##             Nome Telefone                   Endereço Sexo               Email
+## Oi        Fulano   123456 Onde Judas perdeu as botas    M    fulano@email.com
+## Td bem? Beltrano   456321        Duas ruas pra baixo    F beltrano@nomail.com
+##         Uf                Cidade
+## Oi      SP                  Borá
+## Td bem? RN São Miguel do Gostoso
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em geral, no entanto, evitamos usar essa última forma e usamos as funções acessórias para modificar os atributos sem bagunçar nosso objeto! Se você não especificar TODOS os atributos na lista, ele vai desmanchar sua festa&amp;hellip; Por isso, preferimos alterar cada um individualmente:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;row.names(df) &amp;lt;- c(1, 2)
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Nome Telefone                   Endereço Sexo               Email Uf
+## 1   Fulano   123456 Onde Judas perdeu as botas    M    fulano@email.com SP
+## 2 Beltrano   456321        Duas ruas pra baixo    F beltrano@nomail.com RN
+##                  Cidade
+## 1                  Borá
+## 2 São Miguel do Gostoso
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em geral, é proveitoso alterar atributos de um objeto como seus nomes para facilitar a legibilidade do código e a digitação. Outros atributos mais consequentes como a classe, em geral, não é proveitoso alterar diretamente. As funções que criam e manipulam objetos costumam modificar a classe de um objeto automaticamente e da forma correta, e não precisamos nos preocupar com isso. No entanto, é útil saber a classe de um objeto pois isto pode nos ajudar a identificar a origem de um erro. Há um exemplo na aula 2 em que tentamos tirar a média de um valor que está salvo num data frame incorretamente.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- data.frame(idade = c(20, 30, 40, 50))
+
+mean(df[&amp;quot;idade&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in mean.default(df[&amp;quot;idade&amp;quot;]): argumento não é numérico nem lógico:
+## retornando NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O código não funciona, pois estamos tentando tirar a média de uma lista:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(df[&amp;quot;idade&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;list&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para tirar uma média, precisamos acessar os valores que estão no vetor atômico guardado dentro da lista:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df[[&amp;quot;idade&amp;quot;]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 20 30 40 50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(df[[&amp;quot;idade&amp;quot;]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# ou
+
+df$idade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 20 30 40 50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;typeof(df$idade)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;double&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora sim:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(df$idade)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mean(df[[&amp;quot;idade&amp;quot;]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Suponha que você têm o vetor atômico abaixo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v &amp;lt;- c(1, 1, TRUE, FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O que acontecerá com as informações desse vetor ao ser armazenado no R? Como você poderia alterar esse resultado? Porque o R se comporta dessa maneira?&lt;/p&gt;
+&lt;p&gt;Como já discutido anteriormente, os valores &lt;code&gt;TRUE/FALSE&lt;/code&gt; serão coagidos a &lt;code&gt;1/0&lt;/code&gt;, e você pode usar as funções &lt;code&gt;as._____&lt;/code&gt; para converter para o formato desejado.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;as.logical(v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  TRUE  TRUE  TRUE FALSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O R se comporta dessa maneira pois ele visa preservar as informações no formato mais genérico possível.&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Considere a operação matemática abaixo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;v1 &amp;lt;- c(1, 2, 3)
+v2 &amp;lt;- c(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+
+v1 * v2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O que você espera encontrar na saída do R ao rodar essa seção? Rode o código e responda: você se surpreendeu? O que aconteceu e porquê? Qual o significado da mensagem de aviso?&lt;/p&gt;
+&lt;p&gt;Antes de rodar, você já deve ter notado que estamos fazendo uma multiplicação de cada elemento do vetor 1 por cada elemento do vetor 2, porém, eles tem tamanhos distintos. Não nos deve surpreender então que o R recicle os argumentos do vetor menor até dar o tamanho do vetor maior. Como o comprimento do v2 não é múltiplo de v1, recebemos um aviso, mas mesmo que não recebamos esse aviso, precisamos estar atentos a reciclagens que não fizemos intencionalmente!&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Considere o banco de dados abaixo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sala &amp;lt;- data.frame(
+  id = c(1, 2, 3),
+  idade = c(20, 25, 30, 35, 40, 45),
+  nome = c(&amp;quot;Fulano&amp;quot;, &amp;quot;Cicrano&amp;quot;, &amp;quot;Beltrano&amp;quot;, &amp;quot;Herculano&amp;quot;, &amp;quot;Mariano&amp;quot;, &amp;quot;Carrano&amp;quot;),
+  sexo = &amp;quot;Masculino&amp;quot;,
+  origem = c(&amp;quot;Campinas&amp;quot;, &amp;quot;Barueri&amp;quot;, &amp;quot;Monte Verde&amp;quot;, &amp;quot;Rio de Janeiro&amp;quot;, &amp;quot;Natal&amp;quot;, &amp;quot;Belo Horizonte&amp;quot;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Verifique as variáveis &lt;code&gt;id&lt;/code&gt; e &lt;code&gt;sexo&lt;/code&gt;. Os valores dessas variáveis fazem sentido? Elas não impedem a construção do data frame, por quê? Que característica do R está operando nessas variáveis?&lt;/p&gt;
+&lt;p&gt;O valor da variável id está incorreto, pois temos ids repetidas para pessoas diferentes. O valor da variável sexo está correto, aparentemente, de acordo com a variável nome. Em ambos os casos, R está reciclando os vetores mais curtos para preencher os espaços vazios e criar um data frame completo. A variável id precisa ser corrigida, pois a reciclagem aqui está prejudicando a consistência da informação, mas no caso de sexo, é um uso válido da regra da reciclagem para evitar repetição.&lt;/p&gt;
 </description>
     </item>
     
