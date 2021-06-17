@@ -1,0 +1,1826 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="LADDEM" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Boas práticas e ferramentas úteis em R" />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://laddem.github.io/courses/rbase/dia4/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="rgb(251, 191, 183)" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/purebasic.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/purebasic.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.46f8102c91669d08bf92f59f6531234a.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://laddem.github.io/courses/rbase/dia4/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="LADDEM" />
+  <meta property="og:url" content="https://laddem.github.io/courses/rbase/dia4/" />
+  <meta property="og:title" content="Programando: scripts, controle de fluxo e iteração | LADDEM" />
+  <meta property="og:description" content="Boas práticas e ferramentas úteis em R" /><meta property="og:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" />
+    <meta property="twitter:image" content="https://laddem.github.io/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_300x300_fit_lanczos_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-06-17T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-06-17T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Programando: scripts, controle de fluxo e iteração | LADDEM</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="f2fcd69131d33fe0d43f4eec75b6ee00" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.f16be01fc8fb2b5885dd67ce942d1185.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/"><img src="/media/logo_hu21999b1509efcb95cf9a1f4a62aafaa3_109704_0x70_resize_lanczos_2.png" alt="LADDEM"></a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          R-base
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Cursos</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/courses/rbase/">R-base</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/courses/rbase/dia1/">Básico</a></li>
+
+
+
+  <li class=""><a href="/courses/rbase/dia2/">Manipulando dados</a></li>
+
+
+
+  <li class=""><a href="/courses/rbase/dia3/">Estatística e Visualização</a></li>
+
+
+
+  <li class="active"><a href="/courses/rbase/dia4/">Programação</a></li>
+
+
+
+  <li class=""><a href="/courses/rbase/solucoes/">Soluções</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#programas">Programas</a>
+      <ul>
+        <li><a href="#estrutura-de-um-programa">Estrutura de um programa</a></li>
+        <li><a href="#tarefas-em-série">Tarefas em série</a></li>
+        <li><a href="#tarefas-em-paralelo">Tarefas em paralelo</a></li>
+        <li><a href="#estratégia-de-programação">Estratégia de programação</a></li>
+      </ul>
+    </li>
+    <li><a href="#criando-programas-no-r">Criando programas no R</a>
+      <ul>
+        <li><a href="#exercício">Exercício</a></li>
+        <li><a href="#if">if</a></li>
+        <li><a href="#else">else</a></li>
+        <li><a href="#lookup-tables">Lookup tables</a></li>
+        <li><a href="#comentários">Comentários</a></li>
+        <li><a href="#loops">Loops</a></li>
+        <li><a href="#vetorização">Vetorização</a></li>
+      </ul>
+    </li>
+    <li><a href="#revisão">Revisão</a>
+      <ul>
+        <li><a href="#exercícios">Exercícios</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+            
+  <nav class="d-none d-md-flex" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      
+  
+  
+  
+
+  <li class="breadcrumb-item">
+    <a href="/">
+      
+        Home
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/">
+      
+        Cursos
+      
+    </a>
+  </li>
+
+
+  <li class="breadcrumb-item">
+    <a href="/courses/rbase/">
+      
+        R-base
+      
+    </a>
+  </li>
+
+
+      <li class="breadcrumb-item active" aria-current="page">
+        Programação
+      </li>
+    </ol>
+  </nav>
+
+
+          
+
+          <h1>Programando: scripts, controle de fluxo e iteração</h1>
+
+          <div class="article-style">
+            <h2 id="programas">Programas</h2>
+<p>Até esse momento, olhamos para as diferentes possibilidades de uso do R para analisar informações de maneira relativamente desestruturada. Vimos na primeira aula a forma como o R armazena informações em objetos e trabalha com eles através de funções. Na segunda aula, aprendemos a recuperar essas informações e fazer alterações nesses objetos através da indexação dos objetos, seja diretamente, indicando o índice onde a informação se encontra, seja indiretamente, através de testes lógicos.</p>
+<p>Na terceira aula, vimos muitas funções pré-programadas que nos ajudam a descrever os dados através de conceitos de estatística, como medidas de tendência central e dispersão, bem como uma forma de visualizar essas medidas através de gráficos simples.</p>
+<p>Hoje, gostaria de levar a atenção de vocês de volta a um ponto curto da aula 1: a estruturação de todas essas operações para produzir alguma coisa concreta. Seus programas provavelmente não serão pedaços soltos de importação de dados, ou uma coleção de objetos e funções, em geral, eles tem um objetivo claro e seguem uma sequência lógica, como produzir um grupo de tabelas sobre variáveis de interesse, ou vários gráficos que você pode utilizar em publicações ou em relatórios. E é disso que se trata construir um programa.</p>
+<h3 id="estrutura-de-um-programa">Estrutura de um programa</h3>
+<p>Em primeiro lugar, é útil estabelecer uma distinção: uma coisa é o programa e outra é a sua implementação em uma linguagem de programação. O programa não está limitado às tarefas que conhecemos ou que o software é capaz de realizar, ele descreve o que desejamos fazer e os passos necessários para atingir esse objetivo. Pode ser necessário realizar passos do programa fora do R, isso não importa. O mais importante é que o seu programa seja possível e que seus passos sigam uma sequência lógica bem fundamentada.</p>
+<p>Um bom exemplo dessa distinção é que muitas vezes o nosso primeiro passo, obter dados, é executado usando nosso navegador ou nossos pés para ir até fontes de dados e trazê-las para o nosso computador.</p>
+<p>Em muitos casos, por conveniência, podemos fazer alterações nessas fontes de dados através de um outro software, com o qual estamos familiarizados, antes de trazer para o R. Da mesma forma, no final de um processo de análise no R, podemos levar os resultados para outros programas onde vamos produzir os produtos finais, como textos, relatórios, postagens, publicaçóes, ou mesmo outras linguagens de programação como o Python. Assim, o nosso programa não se confunde com aquilo que de fato implementaremos no R.</p>
+<h3 id="tarefas-em-série">Tarefas em série</h3>
+<p>Em geral, programas são compostos de uma série de tarefas que são executadas em ordem. Por exemplo:</p>
+<ul>
+<li>Vou até o site do <em>open.datasus</em> e baixo os dados sobre a vacinação em São Paulo</li>
+<li>Importo os dados no R</li>
+<li>Faço o tratamento da qualidade das informações, dos valores nulos, etc</li>
+<li>Construo tabelas de frequências de vacinação por grupo etário</li>
+<li>Transformo as tabelas de frequências em proporções do total</li>
+<li>Produzo um gráfico de barras estilo &ldquo;pirâmide etária&rdquo;</li>
+<li>Exporto as tabelas e gráficos para um editor de texto no qual produzo um relatório</li>
+</ul>
+<p>A implementação dessas tarefas em série no R é muito simples: o R lê suas rotinas de cima para baixo, assim, basta que o encadeamento das operações respeite essa ordem para que seu programa funcione.</p>
+<h3 id="tarefas-em-paralelo">Tarefas em paralelo</h3>
+<p>Apesar da aparente simplicidade, muitas tarefas envolvem esquemas mais complexos:</p>
+<ul>
+<li>Algumas operações devem ser executadas apenas em alguns casos</li>
+<li>Algumas operações devem ser repetidas muitas vezes</li>
+</ul>
+<p>Por exemplo, no meu programa de análise da vacinação, eu preciso transformar minhas tabelas de frequência em proporções do total. Mas total de que? Total da população em geral? Total da população por sexo? Total por grupo etário? Eu posso imaginar uma situação em que, para os municípios com menos de 50.000 habitantes, calcule o total por sexo, e para os municípios com mais de 50.000 habitantes, calcule o total geral.</p>
+<p>Independente de se o exemplo faz sentido, o que é importante vocês levarem é que é necessário criar uma bifurcação no meu programa:</p>
+<ul>
+<li>Se a população &gt; 50.000, uma operação deve ser realizada</li>
+<li>Se a população &lt; 50.000, outra operação deve ser realizada</li>
+</ul>
+<p>Em todas as linguagens de programação, essas operações são implementadas através de estruturas lógicas de <strong>se -&gt; então; senão -&gt; então</strong>, ou, <strong>if -&gt; then; else -&gt; then</strong>.</p>
+<p>O outro problema que precisamos resolver frequentemente, é a repetição de uma operação. Por exemplo:</p>
+<ul>
+<li>Preciso contar o número de vacinados para cada grupo etário</li>
+<li>Preciso calcular as proporções para cada grupo etário</li>
+</ul>
+<p>Mesmo que implicitamente, estamos tratando da repetição de uma operação muitas e muitas vezes. Em programação, isso é chamado de &ldquo;loop&rdquo;, ou laço.</p>
+<p>Exemplo de um programa:</p>
+<p><img src="/courses/rbase/dia4_files/hopr_program.png" alt="Exemplo de um programa em forma de fluxograma"></p>
+<h3 id="estratégia-de-programação">Estratégia de programação</h3>
+<p>Ok, mas você tem autonomia para construir seus programas da forma como você preferir, com um pouco de esforço e bateção de cabeça, dá pra fazer qualquer programa funcionar. Porque falar de estratégias então? Bom, se você aderir a algumas convenções você pode facilitar muito a sua vida, e evitar problemas comuns que ocorrem na hora que sentamos diante do computador para implementar nossos programas. Então, seguem algumas dicas:</p>
+<h4 id="comece-no-papel">Comece no papel</h4>
+<p>Antes de sentar no computador, descreva as atividades a serem realizadas em um papel. Eu costumo manter um bloco de notas do lado do computador para isso. Pode ser um bloco eletrônico, no próprio computador. O importante é que você tenha acesso a um documento que delineia o que você quer obter e o passo a passo para chegar lá que não depende do código que de fato será rodado pelo computador. Isso é extremamente útil porque programar é um trabalho cansativo e as vezes difícil, o que faz com a gente se perca e tenha aquele sentimento de &ldquo;putz, o que eu estava fazendo mesmo?&rdquo;.</p>
+<p>Além disso, atualize seu programa a medida que você o implementa. Muitas vezes, nós estimamos mal a dificuldade de realizar uma tarefa. Em outros casos, várias tarefas podem ser feitas de uma só vez com facilidade. Procure atualizar seu programa original para refletir essas mudanças no nível de complexidade e no número de tarefas.</p>
+<h4 id="divida-o-trabalho-em-tarefas-menores">Divida o trabalho em tarefas menores</h4>
+<p>Ao desenhar um programa na nossa imaginação, não temos muita clareza da real dificuldade de realização de determinadas tarefas até que de fato nos sentamos para realizá-las. Quando isso ocorrer, não tente pular etapas: quebre suas tarefas em subtarefas menores até que elas possam ser realizadas com mais facilidade. Lembre-se que, ao contrário de um ser humano, o computador nunca se cansa de repetir pequenas tarefas milhões de vezes, então se utilize disso para simplificar ao máximo os passos sequenciais e paralelos necessários para realizar uma tarefa.</p>
+<h4 id="crie-exemplos-mínimos-para-testar-seu-código">Crie exemplos mínimos para testar seu código</h4>
+<p>Se você está inseguro sobre a saída de uma função ou o resultado de um cálculo, crie um pequeno exemplo para testá-lo. Assim, você adquire controle e segurança sobre o input e o output (ou a entrada e a saída), bem como evita cometer erros de programação que são difíceis de identificar depois. Utilize seus conhecimentos de vetores e data frames para criar pequenos experimentos e verifique se o programa está executando-os corretamente. Lembre-se que uma das grandes vantagens de um computador é que se um código funciona para 10 casos, ele funciona para 10.000.000 de casos.</p>
+<h2 id="criando-programas-no-r">Criando programas no R</h2>
+<p>Tudo bem, estamos com nosso programa na mão e sentamos diante do computador. E agora?</p>
+<p>Comece a implementar os passos em série no R, verificando que cada passo foi bem sucedido antes de ir para o próximo, evite pular etapas a menos que você já seja um programador experiente. É melhor ir dando cada passo e se certificando de que tudo está correndo bem. Vamos ver um exemplo de implementação de programa agora. Vou começar importando nossa mini-amostra da PNAD 2021, 1o trimestre.</p>
+<pre><code class="language-r">url &lt;- &quot;https://raw.githubusercontent.com/laddem/site/master/amostra_pnad.csv&quot;
+df &lt;- read.csv(url)
+head(df)
+</code></pre>
+<pre><code>##    Ano Trimestre               UF  V1022  V2007 V2009  V2010 VD2003
+## 1 2021         1            Ceará Urbana  Homem    80 Branca      2
+## 2 2021         1 Distrito Federal Urbana Mulher    19  Parda      4
+## 3 2021         1       Pernambuco Urbana Mulher    36  Preta      2
+## 4 2021         1   Santa Catarina Urbana  Homem    50  Parda      2
+## 5 2021         1        São Paulo Urbana Mulher    43  Parda      3
+## 6 2021         1            Goiás Urbana  Homem    35  Parda      3
+##                      VD3005 VD4016
+## 1 16 anos ou mais de estudo     NA
+## 2         11 anos de estudo     NA
+## 3         12 anos de estudo   1045
+## 4          5 anos de estudo   1500
+## 5          9 anos de estudo   1600
+## 6         14 anos de estudo   3000
+</code></pre>
+<p>Um primeiro problema que me interessa resolver, é que os nomes de todas as variáveis da PNADC são códigos. Alguns pesquisadores experientes já decoraram esses códigos e conseguem trabalhar com elas. Mas como não sou um deles, prefiro mudar os nomes. Minimizo o R e vou consultar o dicionário da PNADC:</p>
+<ul>
+<li>V1022  = Situação do Domicílio</li>
+<li>V2007  = Sexo</li>
+<li>V2009  = Idade do morador</li>
+<li>V2010  = Raça/Cor</li>
+<li>VD2003 = Número de pessoas no domicílio</li>
+<li>VD3005 = Número de anos de estudo da pessoa</li>
+<li>VD4016 = Rendimento Mensal Habitual do Trabalho Principal</li>
+</ul>
+<p>Então, decido que meu primeiro passo é alterar os nomes das variáveis no banco:</p>
+<pre><code class="language-r">names(df) &lt;- c(&quot;ano&quot;, &quot;trimestre&quot;, &quot;uf&quot;, &quot;sit_dom&quot;, &quot;sexo&quot;, &quot;idade&quot;, &quot;cor_pele&quot;, &quot;n_moradores&quot;, &quot;anos_estudo&quot;, &quot;rend_mes_trab_princ&quot;)
+
+head(df)
+</code></pre>
+<pre><code>##    ano trimestre               uf sit_dom   sexo idade cor_pele n_moradores
+## 1 2021         1            Ceará  Urbana  Homem    80   Branca           2
+## 2 2021         1 Distrito Federal  Urbana Mulher    19    Parda           4
+## 3 2021         1       Pernambuco  Urbana Mulher    36    Preta           2
+## 4 2021         1   Santa Catarina  Urbana  Homem    50    Parda           2
+## 5 2021         1        São Paulo  Urbana Mulher    43    Parda           3
+## 6 2021         1            Goiás  Urbana  Homem    35    Parda           3
+##                 anos_estudo rend_mes_trab_princ
+## 1 16 anos ou mais de estudo                  NA
+## 2         11 anos de estudo                  NA
+## 3         12 anos de estudo                1045
+## 4          5 anos de estudo                1500
+## 5          9 anos de estudo                1600
+## 6         14 anos de estudo                3000
+</code></pre>
+<p>Outra questão importante é se os tipos das variáveis estão corretos. Em geral, quero que meus números estejam registrados como numéricos, minhas categorias como fatores, etc.</p>
+<pre><code class="language-r">str(df)
+</code></pre>
+<pre><code>## 'data.frame':	1000 obs. of  10 variables:
+##  $ ano                : int  2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 ...
+##  $ trimestre          : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ uf                 : chr  &quot;Ceará&quot; &quot;Distrito Federal&quot; &quot;Pernambuco&quot; &quot;Santa Catarina&quot; ...
+##  $ sit_dom            : chr  &quot;Urbana&quot; &quot;Urbana&quot; &quot;Urbana&quot; &quot;Urbana&quot; ...
+##  $ sexo               : chr  &quot;Homem&quot; &quot;Mulher&quot; &quot;Mulher&quot; &quot;Homem&quot; ...
+##  $ idade              : int  80 19 36 50 43 35 72 23 23 47 ...
+##  $ cor_pele           : chr  &quot;Branca&quot; &quot;Parda&quot; &quot;Preta&quot; &quot;Parda&quot; ...
+##  $ n_moradores        : int  2 4 2 2 3 3 3 8 5 9 ...
+##  $ anos_estudo        : chr  &quot;16 anos ou mais de estudo&quot; &quot;11 anos de estudo&quot; &quot;12 anos de estudo&quot; &quot;5 anos de estudo&quot; ...
+##  $ rend_mes_trab_princ: int  NA NA 1045 1500 1600 3000 NA 1200 1200 2000 ...
+</code></pre>
+<p>Noto que minhas variáveis numéricas estão ok, mas minhas variáveis categóricas não. Elas estão registradas como &ldquo;caractere&rdquo;. Por isso, vou utilizar a coerção para transformá-las em fatores.</p>
+<pre><code class="language-r">df$uf &lt;- as.factor(df$uf)
+df$sit_dom &lt;- as.factor(df$sit_dom)
+df$sexo &lt;- as.factor(df$sexo)
+df$cor_pele &lt;- as.factor(df$cor_pele)
+df$anos_estudo &lt;- as.factor(df$anos_estudo)
+</code></pre>
+<h3 id="exercício">Exercício</h3>
+<p>Uma outra opção é alterar um argumento durante a importação do meu banco, em <code>read.csv</code>. Que argumento é esse e como ele funcionaria aqui?</p>
+<p>Voltando à aula, agora nosso banco tem a seguinte estrutura:</p>
+<pre><code class="language-r">str(df)
+</code></pre>
+<pre><code>## 'data.frame':	1000 obs. of  10 variables:
+##  $ ano                : int  2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 ...
+##  $ trimestre          : int  1 1 1 1 1 1 1 1 1 1 ...
+##  $ uf                 : Factor w/ 27 levels &quot;Acre&quot;,&quot;Alagoas&quot;,..: 6 7 17 24 25 9 3 25 7 10 ...
+##  $ sit_dom            : Factor w/ 2 levels &quot;Rural&quot;,&quot;Urbana&quot;: 2 2 2 2 2 2 2 2 2 1 ...
+##  $ sexo               : Factor w/ 2 levels &quot;Homem&quot;,&quot;Mulher&quot;: 1 2 2 1 2 1 1 2 1 1 ...
+##  $ idade              : int  80 19 36 50 43 35 72 23 23 47 ...
+##  $ cor_pele           : Factor w/ 5 levels &quot;Amarela&quot;,&quot;Branca&quot;,..: 2 4 5 4 4 4 4 1 4 4 ...
+##  $ n_moradores        : int  2 4 2 2 3 3 3 8 5 9 ...
+##  $ anos_estudo        : Factor w/ 17 levels &quot;1 ano de estudo&quot;,..: 8 3 4 12 16 6 8 4 6 12 ...
+##  $ rend_mes_trab_princ: int  NA NA 1045 1500 1600 3000 NA 1200 1200 2000 ...
+</code></pre>
+<p>Uma primeira questão que me interessou explorar foram as estatísticas descritivas dos rendimentos do trabalho.</p>
+<pre><code class="language-r">mean(df$rend_mes_trab_princ)
+</code></pre>
+<pre><code>## [1] NA
+</code></pre>
+<p>Logo de cara, precisamos nos lembrar que a variável em questão tem valores nulos, então, é necessário utilizar argumentos nas funções de estatística.</p>
+<pre><code class="language-r">mean(df$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 2000.636
+</code></pre>
+<pre><code class="language-r">median(df$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1262
+</code></pre>
+<pre><code class="language-r">range(df$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1]    50 19000
+</code></pre>
+<pre><code class="language-r">quantile(df$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>##    0%   25%   50%   75%  100% 
+##    50  1000  1262  2300 19000
+</code></pre>
+<pre><code class="language-r">sd(df$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 2128.755
+</code></pre>
+<p>Porém, uma questão me ocorreu: o rendimento mensal do trabalho é uma medida da capacidade das pessoas de atender suas necessidades, e os preços variam muito de cidade para cidade, de estado para estado, de região para região. Uma primeira providência que podemos tomar, é verificar as diferença entre a renda das populações urbana e rural.</p>
+<pre><code class="language-r">df_urbana &lt;- df[df$sit_dom == &quot;Urbana&quot;, ]
+df_rural &lt;- df[df$sit_dom == &quot;Rural&quot;, ]
+
+mean(df_urbana$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 2236.528
+</code></pre>
+<pre><code class="language-r">median(df_urbana$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1500
+</code></pre>
+<pre><code class="language-r">range(df_urbana$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1]    50 19000
+</code></pre>
+<pre><code class="language-r">quantile(df_urbana$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>##    0%   25%   50%   75%  100% 
+##    50  1100  1500  2700 19000
+</code></pre>
+<pre><code class="language-r">sd(df_urbana$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 2313.148
+</code></pre>
+<pre><code class="language-r">mean(df_rural$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1199.136
+</code></pre>
+<pre><code class="language-r">median(df_rural$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1022.5
+</code></pre>
+<pre><code class="language-r">range(df_rural$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1]   50 5800
+</code></pre>
+<pre><code class="language-r">quantile(df_rural$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>##     0%    25%    50%    75%   100% 
+##   50.0  500.0 1022.5 1500.0 5800.0
+</code></pre>
+<pre><code class="language-r">sd(df_rural$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 968.0749
+</code></pre>
+<p>Podemos ver que os rendimentos da população urbana e rural são muito diferentes. A média e a mediana da renda urbana são de 1,5 a 2 vezes maior que a rural. Porém, eu posso conjecturar que a população rural teria um poder de compra maior, porque os preços dos produtos nas cidades são mais altos, e querer aplicar uma correção arbitrária de, digamos, 20%. Há diversas maneiras de levar isso a cabo, mas aqui, vou aproveitar para introduzir vocês a estrutura <code>if else</code>.</p>
+<p>Vocês devem ter notado que eu usei 15 linhas de códigos para calcular as medidas de estatística descritiva, sendo que a maior parte dessas operações foi repetida três vezes com variação mínima linha por linha. A saída do R também não é muito útil, porque é difícil visualmente comparar grupos diferentes. Esse tipo de situação é perfeita para uma função.</p>
+<pre><code class="language-r">descreva &lt;- function(x) {
+  mean(x, na.rm = TRUE)
+  median(x, na.rm = TRUE)
+  range(x, na.rm = TRUE)
+  quantile(x, na.rm = TRUE)
+  sd(x, na.rm = TRUE)
+}
+
+descreva(df$rend_mes_trab_princ)
+</code></pre>
+<pre><code>## [1] 2128.755
+</code></pre>
+<p>Minha primeira tentativa de construir a função não deu muito certo. A função simplesmente retorna o primeiro valor. Isso faz parte do comportamento das funções em R, elas retornam apenas uma coisa. Mas eu tenho a solução: posso guardar todos os cálculos numa lista e a função a retornará.</p>
+<pre><code class="language-r">descreva &lt;- function(x) {
+  
+  list(
+    Média         = mean(x, na.rm = TRUE),
+    Mediana       = median(x, na.rm = TRUE),
+    Amplitude     = range(x, na.rm = TRUE),
+    Quartis       = quantile(x, na.rm = TRUE),
+    Desvio_Padrão = sd(x, na.rm = TRUE)
+  )
+  
+}
+
+descreva(df$rend_mes_trab_princ)
+</code></pre>
+<pre><code>## $Média
+## [1] 2000.636
+## 
+## $Mediana
+## [1] 1262
+## 
+## $Amplitude
+## [1]    50 19000
+## 
+## $Quartis
+##    0%   25%   50%   75%  100% 
+##    50  1000  1262  2300 19000 
+## 
+## $Desvio_Padrão
+## [1] 2128.755
+</code></pre>
+<p>Aproveitei também para melhorar minha função, nesse caso, optei simplesmente por colocar nomes nos elementos da lista. Agora posso facilmente descrever os meus três grupos:</p>
+<pre><code class="language-r"># Renda total
+descreva(df$rend_mes_trab_princ)
+</code></pre>
+<pre><code>## $Média
+## [1] 2000.636
+## 
+## $Mediana
+## [1] 1262
+## 
+## $Amplitude
+## [1]    50 19000
+## 
+## $Quartis
+##    0%   25%   50%   75%  100% 
+##    50  1000  1262  2300 19000 
+## 
+## $Desvio_Padrão
+## [1] 2128.755
+</code></pre>
+<pre><code class="language-r"># Renda urbana
+descreva(df_urbana$rend_mes_trab_princ)
+</code></pre>
+<pre><code>## $Média
+## [1] 2236.528
+## 
+## $Mediana
+## [1] 1500
+## 
+## $Amplitude
+## [1]    50 19000
+## 
+## $Quartis
+##    0%   25%   50%   75%  100% 
+##    50  1100  1500  2700 19000 
+## 
+## $Desvio_Padrão
+## [1] 2313.148
+</code></pre>
+<pre><code class="language-r"># Renda rural
+descreva(df_rural$rend_mes_trab_princ)
+</code></pre>
+<pre><code>## $Média
+## [1] 1199.136
+## 
+## $Mediana
+## [1] 1022.5
+## 
+## $Amplitude
+## [1]   50 5800
+## 
+## $Quartis
+##     0%    25%    50%    75%   100% 
+##   50.0  500.0 1022.5 1500.0 5800.0 
+## 
+## $Desvio_Padrão
+## [1] 968.0749
+</code></pre>
+<p>Até aqui, tudo bem, mas e a minha correção?</p>
+<h3 id="if">if</h3>
+<p>Para aplicar essa correção, decidi inflar a renda rural em 20% e diminuir a renda urbana em 10%. Não sei se esses valores fazem sentido, mas vamos partir do pressuposto que sim. Como eu poderia colocar isso dentro da minha função <code>descreva</code> de tal forma que o resultado reflita a minha correção? Preciso de uma estrutura que execute uma operação para rendas urbanas e outra para rendas rurais. Algo assim:</p>
+<pre><code class="language-r">teste1 &lt;- data.frame(renda = 2000,
+                    sit_dom = &quot;rural&quot;)
+teste1
+</code></pre>
+<pre><code>##   renda sit_dom
+## 1  2000   rural
+</code></pre>
+<pre><code class="language-r">teste2 &lt;- data.frame(renda = 2000,
+                    sit_dom = &quot;urbana&quot;)
+teste2
+</code></pre>
+<pre><code>##   renda sit_dom
+## 1  2000  urbana
+</code></pre>
+<pre><code class="language-r">if (teste1$sit_dom[1] == &quot;urbana&quot;) {
+  mean(teste1$renda[1] * 0.9)
+}
+
+if (teste1$sit_dom[1] == &quot;rural&quot;) {
+  mean(teste1$renda[1] * 1.2)
+}
+</code></pre>
+<pre><code>## [1] 2400
+</code></pre>
+<pre><code class="language-r">if (teste2$sit_dom[1] == &quot;urbana&quot;) {
+  mean(teste2$renda[1] * 0.9)
+}
+</code></pre>
+<pre><code>## [1] 1800
+</code></pre>
+<pre><code class="language-r">if (teste2$sit_dom[1] == &quot;rural&quot;) {
+  mean(teste2$renda[1] * 1.2)
+}
+</code></pre>
+<p>Ok, isso resolve meu problema de uma forma muito simples:</p>
+<ul>
+<li>A estrutura if realiza um teste lógico dentro dos parênteses que deve retornar um valor único</li>
+<li>Se este valor for <code>TRUE</code>, a operação dentro dos <code>{}</code> será realizada.</li>
+</ul>
+<p>Vocês podem testar alterar os valores de &ldquo;teste&rdquo; e verificar se o resultado muda.</p>
+<p>Porém, esse tipo de estrutura tem duas limitações importantes:</p>
+<ul>
+<li>Só funciona para testes lógicos que retornam um único valor TRUE/FALSE</li>
+<li>Exige que o computador execute um teste lógico para cada operação, mesmo que ele já tenha encontrado o caso verdadeiro</li>
+</ul>
+<p>A solução para o primeiro problema a gente vê mais tarde, mas a solução para o segundo é você criar uma árvore de decisão para seu problema, indicando o que fazer em cada caso.</p>
+<h3 id="else">else</h3>
+<p>No caso mais simples, só temos duas alternativas, então se/senão.</p>
+<pre><code class="language-r">teste &lt;- data.frame(renda = 2000,
+                    sit_dom = &quot;rural&quot;)
+teste
+</code></pre>
+<pre><code>##   renda sit_dom
+## 1  2000   rural
+</code></pre>
+<pre><code class="language-r">if (teste$sit_dom[1] == &quot;urbana&quot;) {
+  mean(teste$renda[1] * 0.9)
+} else {
+  mean(teste$renda[1] * 1.2)
+}
+</code></pre>
+<pre><code>## [1] 2400
+</code></pre>
+<p>Experimentem alterar os valores de <code>teste</code> para ver o resultado.</p>
+<p>Tudo bem, mas como eu posso utilizar isso na prática? Eu preciso calcular as minhas estatísticas descritivas, e esse caso é muito simples. Podemos levá-lo para dentro da nossa função <code>descreva</code>. Vamos criar uma outra função parecida:</p>
+<pre><code class="language-r">descreva2 &lt;- function(x, y) {
+  # Se todos os valores de y forem urbana
+  if (all(y == &quot;Urbana&quot;)) {
+    # altere os valores de x
+    x &lt;- x * 0.9
+    # e calcule as estatísticas descritivas
+    list(
+      Média         = mean(x, na.rm = TRUE),
+      Mediana       = median(x, na.rm = TRUE),
+      Amplitude     = range(x, na.rm = TRUE),
+      Quartis       = quantile(x, na.rm = TRUE),
+      Desvio_Padrão = sd(x, na.rm = TRUE)
+    )
+  # senão, a população é rural
+  } else {
+    # altere os valores de x
+    x &lt;- x * 1.2
+    # e calcule as estatísticas descritivas
+    list(
+      Média         = mean(x, na.rm = TRUE),
+      Mediana       = median(x, na.rm = TRUE),
+      Amplitude     = range(x, na.rm = TRUE),
+      Quartis       = quantile(x, na.rm = TRUE),
+      Desvio_Padrão = sd(x, na.rm = TRUE)
+    )
+  }
+  
+}
+
+descreva2(df_urbana$rend_mes_trab_princ, df_urbana$sit_dom)
+</code></pre>
+<pre><code>## $Média
+## [1] 2012.876
+## 
+## $Mediana
+## [1] 1350
+## 
+## $Amplitude
+## [1]    45 17100
+## 
+## $Quartis
+##    0%   25%   50%   75%  100% 
+##    45   990  1350  2430 17100 
+## 
+## $Desvio_Padrão
+## [1] 2081.833
+</code></pre>
+<pre><code class="language-r">descreva2(df_rural$rend_mes_trab_princ, df_rural$sit_dom)
+</code></pre>
+<pre><code>## $Média
+## [1] 1438.964
+## 
+## $Mediana
+## [1] 1227
+## 
+## $Amplitude
+## [1]   60 6960
+## 
+## $Quartis
+##   0%  25%  50%  75% 100% 
+##   60  600 1227 1800 6960 
+## 
+## $Desvio_Padrão
+## [1] 1161.69
+</code></pre>
+<p><code>descreva2</code> agora aplica a minha correção, mas ela ainda tem diversos problemas. Ela não sabe como lidar com meu banco de dados completo, que contém tanto casos urbanos, como rurais. Mas para nossos propósitos, ela serve. Isso nos traz para uma lição muito importante: todo código é uma obra incompleta, ele pode ser melhorado e tornado mais genérico e poderoso, mas será que vale a pena?</p>
+<p>Como analistas, precisamos valorizar o nosso tempo: cada dia que passamos programando e refinando nossos códigos, é um dia que poderia ser gasto com leituras, comunicação, escrita, etc. Em geral, minha regra de ouro é o <em>good enough</em>. Se o seu código realiza corretamente as operações que são do seu interesse naquele momento no tempo, ele é bom. Você deve melhorá-lo apenas se surgir um novo caso em que ele não corresponde mais às suas necessidades.</p>
+<h3 id="lookup-tables">Lookup tables</h3>
+<p>Continuamos nossa análise e me ocorreu outra questão, as diferenças nos rendimentos de pessoas de acordo com a sua cor da pele. Eu poderia começar calculando as medidas de tendência central para cada grupo:</p>
+<pre><code class="language-r">branca &lt;- df[df$cor_pele == &quot;Branca&quot;, ]
+preta &lt;- df[df$cor_pele == &quot;Preta&quot;, ]
+parda &lt;- df[df$cor_pele == &quot;Parda&quot;, ]
+amarela &lt;- df[df$cor_pele == &quot;Amarela&quot;, ]
+indigena &lt;- df[df$cor_pele == &quot;Indígena&quot;, ]
+
+mean(branca$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 2391.827
+</code></pre>
+<pre><code class="language-r">mean(preta$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1722.571
+</code></pre>
+<pre><code class="language-r">mean(parda$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1679.492
+</code></pre>
+<pre><code class="language-r">mean(amarela$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 2300
+</code></pre>
+<pre><code class="language-r">mean(indigena$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] NaN
+</code></pre>
+<pre><code class="language-r">median(branca$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1500
+</code></pre>
+<pre><code class="language-r">median(preta$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1100
+</code></pre>
+<pre><code class="language-r">median(parda$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1100
+</code></pre>
+<pre><code class="language-r">median(amarela$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] 1700
+</code></pre>
+<pre><code class="language-r">median(indigena$rend_mes_trab_princ, na.rm = TRUE)
+</code></pre>
+<pre><code>## [1] NA
+</code></pre>
+<p>Bastante coisa pra digitar né? Mais tarde vamos ver uma solução para este problema. Mas no momento, estou interessado em uma questão mais específica: por causa do pequeno número de observações, e também por causa de considerações metodológicas, eu quero reduzir o número de categorias de cor da pele para três: Branca, Negra e Outra. Eu poderia utilizar estruturas de if/else, mas a implementação seria um pouco longa:</p>
+<pre><code class="language-r">cor1 &lt;- &quot;Branca&quot;
+
+cor2 &lt;- &quot;Parda&quot;
+
+cor3 &lt;- &quot;Indígena&quot;
+
+mude_corpele &lt;- function(x) {
+  if (x == &quot;Branca&quot;) {
+    x
+  } else if (x == &quot;Preta&quot;) {
+    &quot;Negra&quot;
+  } else if (x == &quot;Parda&quot;) {
+    &quot;Negra&quot;
+  } else {
+    &quot;Outra&quot;
+  }
+}
+
+mude_corpele(cor1)
+</code></pre>
+<pre><code>## [1] &quot;Branca&quot;
+</code></pre>
+<pre><code class="language-r">mude_corpele(cor2)
+</code></pre>
+<pre><code>## [1] &quot;Negra&quot;
+</code></pre>
+<pre><code class="language-r">mude_corpele(cor3)
+</code></pre>
+<pre><code>## [1] &quot;Outra&quot;
+</code></pre>
+<p>Eu também precisaria de um jeito de repetir essa operação muitas vezes, talvez com um laço, que veremos adiante. Mas nesse tipo de caso específico, há uma saída muito mais elegante, rápida e fácil: <strong>lookup tables</strong>. Conceitualmente, lookup tables são como uma tabelinha no qual você diz ao computador para procurar um resultado que corresponde a uma chave. Por exemplo:</p>
+<ul>
+<li>Branca -&gt; Branca</li>
+<li>Preta -&gt; Negra</li>
+<li>Parda -&gt; Negra</li>
+<li>Amarela -&gt; Outra</li>
+<li>Indígena -&gt; Outra</li>
+</ul>
+<p>E aí, o computador vai repetir a operação de &ldquo;olhar&rdquo; a tabela para ver a qual valor corresponde qual chave a quantidade de vezes que for necessário. Veja como a implementação fica simples:</p>
+<pre><code class="language-r">mudecor &lt;-c(Branca   = &quot;Branca&quot;,
+            Preta    = &quot;Negra&quot;,
+            Parda    = &quot;Negra&quot;,
+            Amarela  = &quot;Outra&quot;,
+            Indígena = &quot;Outra&quot;)
+</code></pre>
+<p>Agora, eu posso obter o valor correspondente fazer usando indexação:</p>
+<pre><code class="language-r">mudecor[&quot;Branca&quot;]
+</code></pre>
+<pre><code>##   Branca 
+## &quot;Branca&quot;
+</code></pre>
+<pre><code class="language-r">mudecor[&quot;Preta&quot;]
+</code></pre>
+<pre><code>##   Preta 
+## &quot;Negra&quot;
+</code></pre>
+<pre><code class="language-r">mudecor[&quot;Parda&quot;]
+</code></pre>
+<pre><code>##   Parda 
+## &quot;Negra&quot;
+</code></pre>
+<pre><code class="language-r">mudecor[&quot;Amarela&quot;]
+</code></pre>
+<pre><code>## Amarela 
+## &quot;Outra&quot;
+</code></pre>
+<pre><code class="language-r">mudecor[&quot;Indígena&quot;]
+</code></pre>
+<pre><code>## Indígena 
+##  &quot;Outra&quot;
+</code></pre>
+<p>E é fácil fazer o mesmo para todas as observações salvas no vetor <code>df$cor_pele</code>, desde que façamos um passo intermediário de coerção para &ldquo;caractere&rdquo;.</p>
+<pre><code class="language-r">mudecor[as.character(df$cor_pele)]
+</code></pre>
+<pre><code>##   Branca    Parda    Preta    Parda    Parda    Parda    Parda  Amarela 
+## &quot;Branca&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Outra&quot; 
+##    Parda    Parda   Branca    Parda    Parda    Parda    Parda    Parda 
+##  &quot;Negra&quot;  &quot;Negra&quot; &quot;Branca&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot; 
+##    Parda    Preta    Preta    Parda    Parda   Branca   Branca    Parda 
+##  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot; &quot;Branca&quot; &quot;Branca&quot;  &quot;Negra&quot; 
+##    Parda    Parda    Preta   Branca    Parda   Branca    Parda   Branca 
+##  &quot;Negra&quot;  &quot;Negra&quot;  &quot;Negra&quot; &quot;Branca&quot;  &quot;Negra&quot; &quot;Branca&quot;  &quot;Negra&quot; &quot;Branca&quot; 
+##    Parda    Parda   Branca   Branca   Branca   Branca   Branca   Branca 
+##  &quot;Negra&quot;  &quot;Negra&quot; &quot;Branca&quot; &quot;Branca&quot; &quot;Branca&quot; &quot;Branca&quot; &quot;Branca&quot; &quot;Branca&quot; 
+....
+Saída truncada para visualização
+</code></pre>
+<p>Para salvar esse resultado no data frame, ficaríamos com:</p>
+<pre><code class="language-r">df$cor_pele2 &lt;- mudecor[as.character(df$cor_pele)]
+
+head(df [ sample(1:nrow(df), 5), c(&quot;cor_pele&quot;, &quot;cor_pele2&quot;) ] )
+</code></pre>
+<pre><code>##     cor_pele cor_pele2
+## 490    Parda     Negra
+## 841    Parda     Negra
+## 136    Parda     Negra
+## 553   Branca    Branca
+## 326    Parda     Negra
+</code></pre>
+<p>Note que eu optei por salvar o resultado numa nova variável, chamada <code>cor_pele2</code>. Em geral, essa é a abordagem correta, você preserva a sua variável original e cria uma variável derivada dela, mas existem situações em que pode ser mais adequado alterar a variável original. Cabe a vocês refletir sobre o &ldquo;preço&rdquo; que se paga por esta opção no caso concreto de vocês.</p>
+<p>Utilizando uma lookup table, pulamos o problema de ter que repetir a operação uma vez para cada observação, nos aproveitando do comportamento do R quando utilizamos a indexação de data frames com <code>[]</code>.</p>
+<h3 id="comentários">Comentários</h3>
+<p>Aproveito que mudamos a função descreva para falar sobre o uso de comentários <code>#</code> no código. São informações que o computador ignora ao rodar o programa, mas cuja presença ajuda o leitor a rapidamente compreender o que um determinado código faz sem precisar mergulhar nos detalhes. Comentários são cruciais para que o programa seja legível para outras pessoas, como seus colaboradores e para seu &ldquo;eu futuro&rdquo;, que pode voltar àquele programa original muito tempo depois e ter dificuldade de compreender o que ele está fazendo. Volte para a função <code>descreva</code> e a função <code>descreva2</code> e veja a diferença entre as duas.</p>
+<p>Comentários fazem parte da documentação de códigos, e um bom uso deles ajuda você a aprender programação, manter códigos, colaborar com outras pessoas e identificar problemas rapidamente. Criem o hábito de escreverem comentários nos seus programas.</p>
+<p>No começo, é comum a gente escrever muitos comentários, detalhando todas as tarefas. Com o tempo, os nossos códigos vão ficando mais enxutos, e deixamos a própria linguagem fazer a maior parte da comunicação, com alguns comentários aqui e ali apenas para situar o leitor.</p>
+<p>Isso é relevante porque nossos códigos são documentos textuais, como mensagens, memorandos e relatórios. Eles se assemelham muito a uma seção &ldquo;Métodos&rdquo; de um artigo científico, porque descrevem as tarefas realizadas para chegar a um resultado. Portanto, boas práticas de produção de textos como pontuação, estilo, conectores, coesão e coerência são importantes aqui também. Esse é um assunto discutido na &ldquo;<a href="https://pt.wikipedia.org/wiki/Programa%c3%a7%c3%a3o_liter%c3%a1ria" target="_blank" rel="noopener">Programação Literária</a>&rdquo; e foge um pouco do tema desse curso.</p>
+<h3 id="loops">Loops</h3>
+<p>Voltando para o nosso banco de dados, agora que recategorizamos a variável renda, temos que resolver um segundo problema: preciso calcular a média e a mediana da renda para cada grupo da variável <code>cor_pele2</code>. Já vimos que podemos fazer isso com muita digitação lá em cima, mas não é difícil imaginar situações em que o número de grupos é muito grande e isso não seja recomendado. Além disso, códigos que exigem muita digitação são cansativos e nos levam a cometer muitos erros.</p>
+<p>Por essas razões, a solução mais adequada é utilizar laços:</p>
+<pre><code class="language-r"># Primeiro, separamos os grupos
+grupos &lt;- unique(df$cor_pele2)
+grupos
+</code></pre>
+<pre><code>## [1] &quot;Branca&quot; &quot;Negra&quot;  &quot;Outra&quot;
+</code></pre>
+<pre><code class="language-r"># Iniciamos um vetor que armazenará nossos resultados
+renda_corpele2 &lt;- vector(length = 3L)
+
+# Aqui começa o laço
+for (i in 1:3) {
+  renda_corpele2[i] &lt;- mean(df$rend_mes_trab_princ[df$cor_pele2 == grupos[i]], na.rm = TRUE)
+}
+
+# E aqui está o resultado
+renda_corpele2
+</code></pre>
+<pre><code>## [1] 2391.827 1686.537 2300.000
+</code></pre>
+<h4 id="for">for</h4>
+<p>O laço acima tem diversos passos, e é muito instrutivo se a gente olhar para cada um deles com cuidado.</p>
+<ul>
+<li>A primeira parte, no qual separamos os grupos, não uma parte do laço em si, mas ela é necessária nesse contexto em que vamos fazer operações por grupo.</li>
+<li>A segunda parte é a <strong>inicialização</strong> de um espaço vazio para conter nossos resultados. Ao contrário da maioria das funções que vimos até o momento, <code>for loops</code> não retornam nada. Experimente rodar um <code>for loop</code> em que você não atribui <code>&lt;-</code> os resultados a nenhum objeto. Nesse caso, queremos um espaço para cada grupo, então um vetor vazio de tamanho 3.</li>
+<li>A terceira parte é a <strong>sequência</strong>, que vai nos parênteses e indica <strong>qual o nome do operador sequencial</strong>, no caso, eu o chamei de i, e os <strong>valores que i vai tomar em cada repetição</strong>, no caso, 1, 2 e 3.</li>
+<li>A quarta parte, é o <strong>corpo</strong>, onde as operações são de fato executadas. Em geral, o corpo de um loop só contém uma operação mesmo, mas isso não é obrigatório! Um <code>for loop</code> pode conter diversas operações dentro de seu corpo. O único cuidado é que todo resultado deve ser atribuído <code>&lt;-</code> a algum objeto, ou ele será perdido.</li>
+<li>Por fim, é praxe imprimir o <strong>resultado</strong> após a execução para verificação.</li>
+</ul>
+<p>Veja também este segundo loop:</p>
+<pre><code class="language-r">sexos &lt;- unique(df$sexo)
+
+rend_medio_sexo &lt;- vector(length = 2L)
+rend_mediano_sexo &lt;- vector(length = 2L)
+
+for (i in 1:2) {
+  rend_medio_sexo[i] &lt;- mean(df$rend_mes_trab_princ[df$sexo == sexos[i]], na.rm = TRUE)
+  rend_mediano_sexo[i] &lt;- median(df$rend_mes_trab_princ[df$sexo == sexos[i]], na.rm = TRUE)
+}
+
+rend_medio_sexo
+</code></pre>
+<pre><code>## [1] 2121.893 1817.175
+</code></pre>
+<pre><code class="language-r">rend_mediano_sexo
+</code></pre>
+<pre><code>## [1] 1308 1200
+</code></pre>
+<p>Espero que tenha ficado claro pra vocês que com um pouco mais de trabalho vocês conseguem rapidamente calcular todas as medidas de estatística descritiva por grupos incrementando esse tipo de estrutura de laço com mais vetores e mais operações.</p>
+<h4 id="outros-loops">Outros loops</h4>
+<p>Existem também outras estruturas de loops em R, como o <code>while</code> e o <code>repeat</code>. Optamos por não incluir elas no curso porque elas acabam não sendo muito relevantes para a análise de dados em R. Os alunos interessados em aprender mais sobre elas podem consultar os manuais de referência do curso, os livros <em>Hands-on Programming with R</em> e <em>Ciência de dados em R</em> descrevem brevemente como essas estruturas funcionam.</p>
+<p>O resumão é que o loop <code>while</code> funciona através de um teste lógico: o laço é repetido enquanto o teste lógico retornar verdadeiro e você é responsável por programar dentro do corpo as mudanças entre uma repetição e outra que eventualmente levarão o teste a falhar. O <code>repeat</code> loop é parecido, mas a diferença é que ele será repetido indefinidamente e você é responsável por introduzir a condição que o fará parar com <code>break</code>.</p>
+<h3 id="vetorização">Vetorização</h3>
+<p>Esse assunto é opcional, talvez não interesse tanta gente. Voltemos para a situação em que queremos transformar a variável <code>cor_pele</code>. Ao invés da solução que encontramos utilizando lookup tables, poderíamos muito bem criar uma árvore de decisão <code>if/else</code> dentro de um <code>for loop</code>.</p>
+<pre><code class="language-r"># Inicialização
+df$cor_pele3 &lt;- NA
+
+# Sequência e corpo
+for (i in 1:nrow(df)) {
+  if (df$cor_pele[i] == &quot;Branca&quot;) {
+    df$cor_pele3[i] &lt;- &quot;Branca&quot;
+  } else if (df$cor_pele[i] == &quot;Preta&quot;) {
+    df$cor_pele3[i] &lt;- &quot;Negra&quot;
+  } else if (df$cor_pele[i] == &quot;Parda&quot;) {
+    df$cor_pele3[i] &lt;- &quot;Negra&quot;
+  } else {
+    df$cor_pele3[i] &lt;- &quot;Outra&quot;
+  }
+}
+
+# Resultado
+df[1:10, c(&quot;cor_pele&quot;, &quot;cor_pele2&quot;, &quot;cor_pele3&quot;)]
+</code></pre>
+<pre><code>##    cor_pele cor_pele2 cor_pele3
+## 1    Branca    Branca    Branca
+## 2     Parda     Negra     Negra
+## 3     Preta     Negra     Negra
+## 4     Parda     Negra     Negra
+## 5     Parda     Negra     Negra
+## 6     Parda     Negra     Negra
+## 7     Parda     Negra     Negra
+## 8   Amarela     Outra     Outra
+## 9     Parda     Negra     Negra
+## 10    Parda     Negra     Negra
+</code></pre>
+<p>O resultado é o mesmo. Porém, algumas perguntas pra vocês:</p>
+<ul>
+<li>Qual das duas soluções envolve mais digitação (e chance de cometer erros)?</li>
+<li>Qual das duas soluções roda mais rápido em um banco de dados grande?</li>
+<li>Qual das duas soluções é mais legível para uma pessoa olhando de fora?</li>
+</ul>
+<p>Algumas dessas perguntas tem respostas subjetivas, mas uma delas, a performance, tem uma resposta objetiva:</p>
+<pre><code class="language-r">system.time({
+  df$cor_pele2 &lt;- mudecor[as.character(df$cor_pele)]
+})
+</code></pre>
+<pre><code>##   usuário   sistema decorrido 
+##         0         0         0
+</code></pre>
+<pre><code class="language-r">system.time({
+  df$cor_pele3 &lt;- NA
+  for (i in 1:nrow(df)) {
+    if (df$cor_pele[i] == &quot;Branca&quot;) {
+      df$cor_pele3[i] &lt;- &quot;Branca&quot;
+    } else if (df$cor_pele[i] == &quot;Preta&quot;) {
+      df$cor_pele3[i] &lt;- &quot;Negra&quot;
+    } else if (df$cor_pele[i] == &quot;Parda&quot;) {
+      df$cor_pele3[i] &lt;- &quot;Negra&quot;
+    } else {
+      df$cor_pele3[i] &lt;- &quot;Outra&quot;
+    }
+  }
+})
+</code></pre>
+<pre><code>##   usuário   sistema decorrido 
+##      0.05      0.00      0.05
+</code></pre>
+<p>Vejam que mesmo em um banco de dados pequeno, com apenas mil observações, a operação vetorizada foi quase instantânea, enquanto o for loop demorou alguns milisegundos. Na hora que passamos para operações com milhares ou milhões de observações, essa diferença se traduz em tempo perdido e vale a pena considerar procurar uma solução vetorizada para o nosso problema.</p>
+<p>O outro ponto que acho importante levantar é que existe uma correspondência entre esses dois tipos de estrutura: sempre que você vir um código que faz uma árvore de decisão dentro de um <code>for</code> loop, provavelmente é um problema que pode ser facilmente resolvido com uma lookup table. De quebra, você ainda tem um código muito mais rápido.</p>
+<p>Infelizmente, por uma questão de tempo e foco, vamos deixar de fora a ideia de programação funcional, no qual a gente transforma nossos laços em funções e utiliza a família de funções <code>apply</code> do R para repetir a aplicação de funções para a maioria dos casos em que utilizaríamos <code>for</code> loops. Mas fica como uma sugestão de estudo pros alunos que se pegarem usando muitos <code>for</code> loops. Também não falamos de ambientes, funções genéricas e métodos no sistema S3, que ficam como leituras recomendadas nos livros de referência.</p>
+<p>Em termos de conteúdo, o curso se encerra por aqui, ficamos agora com a revisão e os exercícios.</p>
+<!-- Ficaram de fora: Environments, S3 Generics and Methods, Programação funcional -->
+<h2 id="revisão">Revisão</h2>
+<p>Programas são uma sequência lógica de operações em série e em paralelo que nos levam de uma coleção de entradas (em geral, bancos de dados) para as nossas saídas desejadas (em geral, estatísticas e gráficos, outros bancos de dados transformados, etc.).</p>
+<p>É uma boa ideia separar o seu programa da sua implementação e sempre ter à mão o seu programa a medida que você trabalha para colocá-lo em prática na sua linguagem de programação favorita (que é, obviamente, o R). Você pode executar partes do seu programa dentro e fora do R, dependendo das suas necessidades.</p>
+<p>Seus passos em série são implementados apenas ordenando suas operações de cima para baixo, enquanto seus passos em paralelo dependem do uso de estruturas lógicas se-então-senão e de laços.</p>
+<p>Uma solução para alguns tipos de operação é o uso de lookup tables, elas tem a vantagem de serem simples em sua estrutura e rodarem muito rapidamente.</p>
+<p>O laço mais comum no cinto de utilidades do analista é o <code>for</code>, ele é composto de uma inicialização, uma sequência e um corpo. Sua principal qualidade é a flexibilidade, já que ele pode ser utilizado para repetir qualquer tipo de operação um determinado número de vezes. Existem outros tipos de laço, mas eles não são tão importantes para nós.</p>
+<p>A vetorização de operações é uma forma de ganhar velocidade nos códigos. O uso de lookup tables é um exemplo de vetorização de árvores if-else e <code>for</code> loops, mas vale considerar que soluções vetorizadas podem ser mais trabalhosas de desenvolver do que laços. Então sempre tenha em mente que seu tempo é precioso e um código <em>good enough</em> te permite usá-lo para outras tarefas mais relevantes.</p>
+<h3 id="exercícios">Exercícios</h3>
+<ol>
+<li>
+<p>Amanhã teremos nossa oficina livre, em que vocês devem desenvolver seu primeiro programa de forma autônoma, embora com a nossa presença e apoio. Comece desenvolvendo um bloco de notas (físico ou virtual) o passo a passo das operações que você deveria realizar. Uma boa maneira de representar códigos é utilizar fluxogramas, que representar esquematicamente a estrutura das operações, a presença de atividades em série, em paralelo e laços.</p>
+</li>
+<li>
+<p>Qual o valor de x no código abaixo:</p>
+</li>
+</ol>
+<pre><code class="language-r">x &lt;- 1
+if (x == 1) {
+  x &lt;- x + 1
+  if (x == 1) {
+    x &lt;- x + 1
+  }
+}
+x
+</code></pre>
+<ol start="3">
+<li>E no código abaixo?</li>
+</ol>
+<pre><code class="language-r">x &lt;- 1
+if (x == 1) {
+  x &lt;- x + 1
+  if (x == 2) {
+    x &lt;- x + 1
+  }
+}
+x
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<ol start="4">
+<li>O que o código abaixo está fazendo? Como você utilizaria esse código? Você consegue pensar em outra solução para o mesmo problema?</li>
+</ol>
+<pre><code class="language-r">x &lt;- c(1, 2, 3)
+
+if (x == 1) {
+  &quot;empregado&quot;
+} else if (x == 2) {
+  &quot;desempregado&quot;
+} else {
+  &quot;desalentado&quot;
+}
+</code></pre>
+<pre><code>## Warning in if (x == 1) {: a condição tem comprimento &gt; 1 e somente o primeiro
+## elemento será usado
+</code></pre>
+<pre><code>## [1] &quot;empregado&quot;
+</code></pre>
+<ol start="5">
+<li>
+<p>Construa um loop que calcule a idade média de cada uf.</p>
+</li>
+<li>
+<p>Construa um código que calcule a média do número de moradores do domicílio, segundo situação urbana ou rural. O que os resultados te dizem?</p>
+</li>
+<li>
+<p>Construa duas maneiras de calcular o rendimento anual do trabalho principal,</p>
+</li>
+</ol>
+<ul>
+<li>uma operação simples com vetores</li>
+<li>utilizando um for loop</li>
+</ul>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/rbase/dia3/" rel="next">Estatística e visualização: analisando seus dados e obtendo resultados</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/rbase/solucoes/" rel="prev">Soluções</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on 17 Jun 2021</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+  
+  
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    © 2021 LADDEM
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.8b7df62fd2da18ce73e29c13cc0a6198.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.71e713848164e269bc250f377042949d.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
