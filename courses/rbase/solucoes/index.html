@@ -574,81 +574,197 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-<div class="article-container pt-3">
-  <h1>Soluções</h1>
-
-  
-
-  
     
 
 
-<div class="article-metadata">
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          R-base
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
 
   
   
+    
+
+    
+      
+
+      <ul class="nav docs-sidenav">
+        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Cursos</a></li>
+      </ul>
+
+      
+      
+        
+          
+        
+      
+
 
   
-  <span class="article-date">
+    
+    
     
     
       
     
-    15 Jun 2021
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
     
 
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/courses/rbase/">R-base</a>
+    
+      
+        <ul class="nav docs-sidenav">
+      
+
+
+  <li class=""><a href="/courses/rbase/dia1/">Básico</a></li>
 
 
 
+  <li class=""><a href="/courses/rbase/dia2/">Manipulando dados</a></li>
 
+
+
+  <li class=""><a href="/courses/rbase/dia3/">Estatística e Visualização</a></li>
+
+
+
+  <li class="active"><a href="/courses/rbase/solucoes/">Soluções</a></li>
+
+      
+        </ul>
+      
+    
+
+    
+      </div>
+    
+
+    
   
-</div>
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#aula-1-básico">Aula 1: Básico</a>
+      <ul>
+        <li><a href="#fundamentos">Fundamentos</a></li>
+        <li><a href="#objetos-em-r">Objetos em R</a></li>
+        <li><a href="#revisão">Revisão</a></li>
+      </ul>
+    </li>
+    <li><a href="#aula-2-manipulação-de-dados">Aula 2: Manipulação de dados</a>
+      <ul>
+        <li><a href="#leituraimportação">Leitura/Importação</a></li>
+        <li><a href="#selecionando-valores">Selecionando valores</a></li>
+        <li><a href="#modificando-valores">Modificando valores</a></li>
+        <li><a href="#revisão-1">Revisão</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+            
+  <nav class="d-none d-md-flex" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      
+  
+  
+  
+
+  <li class="breadcrumb-item">
+    <a href="/">
+      
+        Home
+      
+    </a>
+  </li>
 
 
+  <li class="breadcrumb-item">
+    <a href="/courses/">
+      
+        Cursos
+      
+    </a>
+  </li>
 
-  <div class="article-container">
 
-    <div class="article-style">
-      <p>Soluções para os exercícios feitos em sala e os exercícios de revisão do final das aulas.</p>
+  <li class="breadcrumb-item">
+    <a href="/courses/rbase/">
+      
+        R-base
+      
+    </a>
+  </li>
+
+
+      <li class="breadcrumb-item active" aria-current="page">
+        Soluções
+      </li>
+    </ol>
+  </nav>
+
+
+          
+
+          <h1>Soluções</h1>
+
+          <div class="article-style">
+            <p>Soluções para os exercícios feitos em sala e os exercícios de revisão do final das aulas.</p>
 <h2 id="aula-1-básico">Aula 1: Básico</h2>
 <h3 id="fundamentos">Fundamentos</h3>
 <h4 id="funções">Funções</h4>
@@ -674,12 +790,12 @@
 # dado limpo
 sample(dado, size = 1)
 </code></pre>
-<pre><code>## [1] 6
+<pre><code>## [1] 5
 </code></pre>
 <pre><code class="language-r"># dado viciado
 sample(dado, size = 1, prob = c(1/8, 1/8, 1/8, 1/8, 1/8, 3/8))
 </code></pre>
-<pre><code>## [1] 6
+<pre><code>## [1] 2
 </code></pre>
 <p>Repita a operação de sample acima com o dado “viciado” e com o dado “limpo” e verifique se você consegue perceber empiricamente que meu dado está “viciado”.</p>
 <p>Esse exercício era para repetir o código várias vezes e verificar se o resultado 6 aparecia mais no dado viciado que no limpo.</p>
@@ -695,7 +811,7 @@ sample(dado, size = 1, prob = c(1/8, 1/8, 1/8, 1/8, 1/8, 3/8))
 
 role10()
 </code></pre>
-<pre><code>## [1] 19
+<pre><code>## [1] 10
 </code></pre>
 <h4 id="ajuda">Ajuda</h4>
 <p>Consulte a ajuda das funções sum, mean, min, max, range. Porque todas elas tem o argumento na.rm? O que argumento o trim em mean faz? Qual a melhor maneira de rapidamente entender o que uma função faz através da página de ajuda?</p>
@@ -1082,110 +1198,422 @@ v1 * v2
 </code></pre>
 <p>Verifique as variáveis <code>id</code> e <code>sexo</code>. Os valores dessas variáveis fazem sentido? Elas não impedem a construção do data frame, por quê? Que característica do R está operando nessas variáveis?</p>
 <p>O valor da variável id está incorreto, pois temos ids repetidas para pessoas diferentes. O valor da variável sexo está correto, aparentemente, de acordo com a variável nome. Em ambos os casos, R está reciclando os vetores mais curtos para preencher os espaços vazios e criar um data frame completo. A variável id precisa ser corrigida, pois a reciclagem aqui está prejudicando a consistência da informação, mas no caso de sexo, é um uso válido da regra da reciclagem para evitar repetição.</p>
+<h2 id="aula-2-manipulação-de-dados">Aula 2: Manipulação de dados</h2>
+<h3 id="leituraimportação">Leitura/Importação</h3>
+<p>Visualize os dados que você acabou de importar em formato de planilha através do Environment e usando a função View().
+É possível também visualizar as 6 primeiras linhas do data.frame ou as 6 últimas linhas. Para isso, use as funções head() e tail().</p>
+<p>Obs: se você quiser ver mais que 6 linhas, coloque o segundo argumento na função head(df, 10). Quantas linhas vão ser mostradas neste caso?</p>
+<pre><code class="language-r">url &lt;- &quot;https://raw.githubusercontent.com/laddem/site/master/amostra_pnad.csv&quot;
+df &lt;- read.csv(url)
+</code></pre>
+<pre><code class="language-r">View(df)
+</code></pre>
+<pre><code class="language-r">head(df, 10)
+</code></pre>
+<pre><code>##     Ano Trimestre               UF  V1022  V2007 V2009   V2010 VD2003
+## 1  2021         1            Ceará Urbana  Homem    80  Branca      2
+## 2  2021         1 Distrito Federal Urbana Mulher    19   Parda      4
+## 3  2021         1       Pernambuco Urbana Mulher    36   Preta      2
+## 4  2021         1   Santa Catarina Urbana  Homem    50   Parda      2
+## 5  2021         1        São Paulo Urbana Mulher    43   Parda      3
+## 6  2021         1            Goiás Urbana  Homem    35   Parda      3
+## 7  2021         1            Amapá Urbana  Homem    72   Parda      3
+## 8  2021         1        São Paulo Urbana Mulher    23 Amarela      8
+## 9  2021         1 Distrito Federal Urbana  Homem    23   Parda      5
+## 10 2021         1         Maranhão  Rural  Homem    47   Parda      9
+##                       VD3005 VD4016
+## 1  16 anos ou mais de estudo     NA
+## 2          11 anos de estudo     NA
+## 3          12 anos de estudo   1045
+## 4           5 anos de estudo   1500
+## 5           9 anos de estudo   1600
+## 6          14 anos de estudo   3000
+## 7  16 anos ou mais de estudo     NA
+## 8          12 anos de estudo   1200
+## 9          14 anos de estudo   1200
+## 10          5 anos de estudo   2000
+</code></pre>
+<pre><code class="language-r">tail(df)
+</code></pre>
+<pre><code>##       Ano Trimestre             UF  V1022  V2007 V2009  V2010 VD2003
+## 995  2021         1          Bahia  Rural Mulher    15  Preta      3
+## 996  2021         1       Amazonas  Rural Mulher    32  Parda      3
+## 997  2021         1       Maranhão Urbana  Homem    69  Parda      3
+## 998  2021         1          Ceará Urbana  Homem    33 Branca      6
+## 999  2021         1          Goiás Urbana  Homem    58  Parda      3
+## 1000 2021         1 Santa Catarina  Rural  Homem    66 Branca      2
+##                         VD3005 VD4016
+## 995           8 anos de estudo     NA
+## 996          12 anos de estudo     NA
+## 997           3 anos de estudo     NA
+## 998          12 anos de estudo   1000
+## 999  16 anos ou mais de estudo   7000
+## 1000          5 anos de estudo   1000
+</code></pre>
+<p>Exercício apenas para vocês se familiarizem com as formas de ver o conteúdo de bancos de dados em R. A função View() é útil para bancos pequenos, mas tem performance ruim para bancos com muitas informações. head() e tail() são ótimas formas de verificar a forma geral do banco de dados sem precisar sobrecarregar seu computador.</p>
+<h3 id="selecionando-valores">Selecionando valores</h3>
+<p>Retorne a informação da observação 800, e as colunas Ano, VD3005, V2009, V2010 do nosso data frame da amostra da pnad. O que o R retornará? Faça a mesma indexação usando inteiros positivos ou inteiros negativos.</p>
+<pre><code class="language-r">df[800, c(1, 8, 6, 7)]
+</code></pre>
+<pre><code>##      Ano VD2003 V2009  V2010
+## 800 2021      3    45 Branca
+</code></pre>
+<pre><code class="language-r">df[-c(1:799, 801:1000), -c(2:5, 9, 10)]
+</code></pre>
+<pre><code>##      Ano V2009  V2010 VD2003
+## 800 2021    45 Branca      3
+</code></pre>
+<p>Aqui, o objetivo era praticar a seleção de linhas e colunas usando inteiros positivos e negativos. É meio trabalhoso e nem sempre é a forma mais eficiente, mas é ocasionalmente útil. Note o uso de vetores tanto no caso de seleções positivas quanto de negativas e de sequências com <code>:</code> para facilitar a digitação.</p>
+<h4 id="diferentes-seleções--e-">Diferentes seleções: <code>[[</code> e <code>$</code></h4>
+<p>Assim como na lista, é possível usar os colchetes <code>[[ ]]</code> em data frame. Tente usá-los no data frame da pnad. Quais são as diferenças encontradas?</p>
+<pre><code class="language-r">df[[1]]
+</code></pre>
+<pre><code>##    [1] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [15] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [29] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [43] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [57] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [71] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [85] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [99] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [113] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [127] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+....
+Saída truncada para visualização
+</code></pre>
+<pre><code class="language-r">df[[6]]
+</code></pre>
+<pre><code>##    [1]  80  19  36  50  43  35  72  23  23  47  71  16  48  13  25   3  27  83
+##   [19]  55  79  14  80  20  21  22  69  57  27  63  35  28  41  39  71   7  45
+##   [37]  11   9  48  14  48  47   5  36  25  55   8  64   7  58  30   1  18  44
+##   [55]  45  17   9  24  11  11  71  75  49  20  55  31  60   2   7  81  68  15
+##   [73]  31   2  44  40  49  55   9  40  55   0  35  32   7  63  62  54  48   5
+##   [91]  46  49  20  90  16   0  41  15  67  26  22  18  58  63   0  31  14  39
+##  [109]  34  44  61  48  47  29  43  65  10  36  20   7  28  18  23  75  37  49
+##  [127]  45   3  61  54  38  50  41  47  39  44  32  27  66  55  70  69  41  31
+##  [145]  38  91  62  30  21  59   4  29   5  24  83   6  15  38  20  89  85  44
+##  [163]  73   7  49  22  33   5  18   4  27  22   0  21  74  26  58  52  77  36
+....
+Saída truncada para visualização
+</code></pre>
+<pre><code class="language-r">df[[&quot;Ano&quot;]]
+</code></pre>
+<pre><code>##    [1] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [15] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [29] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [43] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [57] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [71] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [85] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [99] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [113] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [127] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+....
+Saída truncada para visualização
+</code></pre>
+<pre><code class="language-r">df[[&quot;V2009&quot;]]
+</code></pre>
+<pre><code>##    [1]  80  19  36  50  43  35  72  23  23  47  71  16  48  13  25   3  27  83
+##   [19]  55  79  14  80  20  21  22  69  57  27  63  35  28  41  39  71   7  45
+##   [37]  11   9  48  14  48  47   5  36  25  55   8  64   7  58  30   1  18  44
+##   [55]  45  17   9  24  11  11  71  75  49  20  55  31  60   2   7  81  68  15
+##   [73]  31   2  44  40  49  55   9  40  55   0  35  32   7  63  62  54  48   5
+##   [91]  46  49  20  90  16   0  41  15  67  26  22  18  58  63   0  31  14  39
+##  [109]  34  44  61  48  47  29  43  65  10  36  20   7  28  18  23  75  37  49
+##  [127]  45   3  61  54  38  50  41  47  39  44  32  27  66  55  70  69  41  31
+##  [145]  38  91  62  30  21  59   4  29   5  24  83   6  15  38  20  89  85  44
+##  [163]  73   7  49  22  33   5  18   4  27  22   0  21  74  26  58  52  77  36
+....
+Saída truncada para visualização
+</code></pre>
+<p>Os colchetes duplos <code>[[</code> funcionam no data frame porque ele é, por debaixo do capô, uma lista. Eles retornam os vetores que compõem o nosso data frame e permitem a realização de operações com vetores. São diferentes dos colchetes simples <code>[</code>, que retornarão listas/data frames menores, contendo apenas as partes que você selecionar. Lembrem-se da metáfora do trem!</p>
+<h3 id="modificando-valores">Modificando valores</h3>
+<h4 id="modificando-os-valores-diretamente">Modificando os valores diretamente</h4>
+<p>Considere o vetor abaixo. Atribua um novo valor na posição 3 deste vetor. É possível atribuir uma string no lugar de um número?</p>
+<pre><code class="language-r">vetor_x&lt;- c(10,30,50,10)
 
-    </div>
+vetor_x[3] &lt;- 70
 
-    
+vetor_x
+</code></pre>
+<pre><code>## [1] 10 30 70 10
+</code></pre>
+<p>A atribuição em si é um processo relativamente simples. Vamos ver o que acontece se atribuímos um texto.</p>
+<pre><code class="language-r">vetor_x[3] &lt;- &quot;Texto&quot;
+
+vetor_x
+</code></pre>
+<pre><code>## [1] &quot;10&quot;    &quot;30&quot;    &quot;Texto&quot; &quot;10&quot;
+</code></pre>
+<p>R usa suas regras de coerção para preservar as informações e transforma os valores numéricos em texto.</p>
+<h4 id="modificando-com-testes-lógicos">Modificando com testes lógicos</h4>
+<p>Extraia a coluna <code>V2010</code> do <code>df2</code> e teste os valores igual a &lsquo;Branca&rsquo;. Além disso conte quantas linhas são iguais a &lsquo;Branca&rsquo;. Dica: use a função sum() para fazer a contagem.</p>
+<pre><code class="language-r"># Cópia de df
+df2 &lt;- df
+
+sum(df2$V2010 == &quot;Branca&quot;)
+</code></pre>
+<pre><code>## [1] 407
+</code></pre>
+<p>Usamos um teste lógico no vetor <code>df2$V2010</code> para criar um vetor de valores lógicos <code>TRUE/FALSE</code> e as regras de coerção do R para fazer a soma dos valores verdadeiros <code>1</code> e descobrimos que 407 pessoas da amostra são brancas.</p>
+<h4 id="valores-desconhecidos">Valores desconhecidos</h4>
+<p>Conte o número de NAs na coluna <code>VD4016</code> do data frame <code>df2</code>.</p>
+<pre><code class="language-r">sum(is.na(df2$VD4016))
+</code></pre>
+<pre><code>## [1] 613
+</code></pre>
+<p>Usando a mesma lógica do exercício anterior, porém, usando a função <code>is.na()</code> no lugar de <code>==</code> por causa do comportamento especial de valores <code>NA</code> em R.</p>
+<h3 id="revisão-1">Revisão</h3>
+<p>Para os próximos exercícios considere o data frame da pnad que estamos usando nas aulas.</p>
+<ol>
+<li>Como você selecionaria o mesmo valor abaixo, mas usando inteiros negativos na seleção?</li>
+</ol>
+<pre><code class="language-r">df2[1,5]
+</code></pre>
+<pre><code>## [1] &quot;Homem&quot;
+</code></pre>
+<pre><code class="language-r">df2[-(2:1000), -c(1:4, 6:20)]
+</code></pre>
+<pre><code>## [1] &quot;Homem&quot;
+</code></pre>
+<p>Exercício maroto, apenas para vocês botarem a cabeça para trabalhar e lembrarem de usar <code>:</code> ao invés de digitar milhares de números.</p>
+<ol start="2">
+<li>Qual a diferença em usar em selecionar determinada informação em um data frame usando colchetes duplos <code>[[]]</code> e usando colchetes simples? Observe o exemplo abaixo para responder:</li>
+</ol>
+<pre><code class="language-r">df2[['Ano']]
+</code></pre>
+<pre><code>##    [1] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [15] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [29] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [43] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [57] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [71] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [85] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##   [99] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [113] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+##  [127] 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021 2021
+....
+Saída truncada para visualização
+</code></pre>
+<pre><code class="language-r">df['Ano']
+</code></pre>
+<pre><code>##       Ano
+## 1    2021
+## 2    2021
+## 3    2021
+## 4    2021
+## 5    2021
+## 6    2021
+## 7    2021
+## 8    2021
+## 9    2021
+....
+Saída truncada para visualização
+</code></pre>
+<p>A diferença é o tipo da saída do R e o que você pode fazer com ela:</p>
+<pre><code class="language-r"># Vetor!
+typeof(df2[['Ano']])
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<pre><code class="language-r">class(df2[['Ano']])
+</code></pre>
+<pre><code>## [1] &quot;integer&quot;
+</code></pre>
+<pre><code class="language-r"># Lista/data.frame!
+typeof(df2['Ano'])
+</code></pre>
+<pre><code>## [1] &quot;list&quot;
+</code></pre>
+<pre><code class="language-r">class(df2['Ano'])
+</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+<pre><code class="language-r"># Funciona!
+mean(df2[['Ano']])
+</code></pre>
+<pre><code>## [1] 2021
+</code></pre>
+<pre><code class="language-r"># Erro!
+mean(df2['Ano'])
+</code></pre>
+<pre><code>## Warning in mean.default(df2[&quot;Ano&quot;]): argumento não é numérico nem lógico:
+## retornando NA
+</code></pre>
+<pre><code>## [1] NA
+</code></pre>
+<ol start="3">
+<li>Considere o data frame abaixo:</li>
+</ol>
+<pre><code class="language-r">sala &lt;- data.frame(
+   id = c(1, 2, 3, 4, 5, 6),
+   idade = c(20, 25, 30, 35, 40, 45),
+   nome = c(&quot;Fulano&quot;, &quot;Cicrano&quot;, &quot;Beltrano&quot;, &quot;Herculano&quot;, &quot;Mariano&quot;, &quot;Carrano&quot;),
+   sexo = &quot;Masculino&quot;,
+   origem = c(&quot;Campinas&quot;, &quot;Barueri&quot;, &quot;Monte Verde&quot;, &quot;Rio de Janeiro&quot;, &quot;Natal&quot;, &quot;Belo Horizonte&quot;)
+)
+</code></pre>
+<p>Modifique o nome de &lsquo;Mariano&rsquo; por &lsquo;Mariana&rsquo;. E altere a variável sexo para que seja um vetor que altere o valor para &lsquo;Feminino&rsquo; na posição em que o nome foi trocado para Mariana.</p>
+<pre><code class="language-r"># Ver a informação
+sala[sala$nome == &quot;Mariano&quot;, &quot;nome&quot;]
+</code></pre>
+<pre><code>## [1] &quot;Mariano&quot;
+</code></pre>
+<pre><code class="language-r">sala[sala$nome == &quot;Mariana&quot;, &quot;sexo&quot;]
+</code></pre>
+<pre><code>## character(0)
+</code></pre>
+<pre><code class="language-r"># Modificar a informação
+sala[sala$nome == &quot;Mariano&quot;, &quot;nome&quot;] &lt;- &quot;Mariana&quot;
+sala[sala$nome == &quot;Mariana&quot;, &quot;sexo&quot;] &lt;- &quot;Feminino&quot;
+
+# Checar o resultado
+sala
+</code></pre>
+<pre><code>##   id idade      nome      sexo         origem
+## 1  1    20    Fulano Masculino       Campinas
+## 2  2    25   Cicrano Masculino        Barueri
+## 3  3    30  Beltrano Masculino    Monte Verde
+## 4  4    35 Herculano Masculino Rio de Janeiro
+## 5  5    40   Mariana  Feminino          Natal
+## 6  6    45   Carrano Masculino Belo Horizonte
+</code></pre>
+<p>Vocês podiam utilizar uma seleção por números inteiros, porque o banco é pequeno, mas optei por fazer o exercício usando testes lógicos, porque é um caso mais geral e serve para mais de uma posição.</p>
+<ol start="4">
+<li>
+<p>Considere o mesmo data frame sala construído no exercício anterior. Usando testes lógicos e operadores Booleanos. Verifique:</p>
+<p>a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo.<br>
+b. se existe algum aluno que tem idade maior ou igual a 20 anos ou que seja de Campinas. 
+c. se existe alguém com o nome Beltrano.</p>
+</li>
+</ol>
+<pre><code class="language-r"># a. se existe algum aluno que seja do sexo Masculino e seja de São Paulo.
+sala[sala$origem == &quot;São Paulo&quot;, ]
+</code></pre>
+<pre><code>## [1] id     idade  nome   sexo   origem
+## &lt;0 linhas&gt; (ou row.names de comprimento 0)
+</code></pre>
+<pre><code class="language-r"># b. se existe algum aluno que tem idade maior ou igual a 20 anos ou que seja de Campinas. 
+sala[sala$idade &gt;= 20 &amp; sala$origem == &quot;Campinas&quot;, ]
+</code></pre>
+<pre><code>##   id idade   nome      sexo   origem
+## 1  1    20 Fulano Masculino Campinas
+</code></pre>
+<pre><code class="language-r"># c. se existe alguém com o nome Beltrano.
+sala[sala$nome == &quot;Beltrano&quot;, ]
+</code></pre>
+<pre><code>##   id idade     nome      sexo      origem
+## 3  3    30 Beltrano Masculino Monte Verde
+</code></pre>
+<p>Exercício para exercitar os músculos de testes lógicos dentro de bancos de dados!</p>
+<ol start="5">
+<li>Agora considere o seguinte data frame e, usando as funções apropriadas ensinadas na aula de hoje, responda:</li>
+</ol>
+<pre><code class="language-r">cadastro &lt;- data.frame(
+   id     = c(10, 105, 299, 645, 7907, 8660, 4992, 630),
+   idade  = c(20, 25, 30, 35, 40, 45, 60, 53),
+   nome   = c(&quot;Thais&quot;, NA, &quot;Guilherme&quot;, &quot;Betânia&quot;, &quot;Ana Lucia&quot;, NA, NA, &quot;Pâmela&quot;),
+   sexo   = c(&quot;Feminino&quot;, &quot;Masculino&quot;,&quot;Masculino&quot;, 
+              NA ,NA, &quot;Feminino&quot;, &quot;Masculino&quot;, &quot;Feminino&quot;),
+   origem = c(&quot;Campinas&quot;, NA, &quot;Monte Verde&quot;, &quot;Rio de Janeiro&quot;,
+              NA, &quot;Belo Horizonte&quot;,&quot;São Paulo&quot;, &quot;Rio de Janeiro&quot;)
+)
+</code></pre>
+<ol>
+<li>Quantos NAs existe na coluna nome?</li>
+<li>Quantos NAs existe na coluna sexo?</li>
+<li>Quantos NAs existe na coluna origem?</li>
+<li>Substitua os NAs na coluna sexo pelo valor &lsquo;Feminino&rsquo;</li>
+</ol>
+<pre><code class="language-r"># 1. Quantos NAs existem na coluna nome?
+sum(is.na(cadastro$nome))
+</code></pre>
+<pre><code>## [1] 3
+</code></pre>
+<pre><code class="language-r"># 2. Quantos NAs existem na coluna sexo?
+sum(is.na(cadastro$sexo))
+</code></pre>
+<pre><code>## [1] 2
+</code></pre>
+<pre><code class="language-r"># 3. Quantos NAs existem na coluna origem?
+sum(is.na(cadastro$origem))
+</code></pre>
+<pre><code>## [1] 2
+</code></pre>
+<pre><code class="language-r"># 4. Substitua os NAs na coluna sexo pelo valor 'Feminino'
+
+     # Ver os dados
+     cadastro[is.na(cadastro$sexo), ]
+</code></pre>
+<pre><code>##     id idade      nome sexo         origem
+## 4  645    35   Betânia &lt;NA&gt; Rio de Janeiro
+## 5 7907    40 Ana Lucia &lt;NA&gt;           &lt;NA&gt;
+</code></pre>
+<pre><code class="language-r">     # Modificar
+     cadastro[is.na(cadastro$origem), &quot;sexo&quot;] &lt;- &quot;Feminino&quot;
+
+     # Ver o resultado
+     cadastro
+</code></pre>
+<pre><code>##     id idade      nome      sexo         origem
+## 1   10    20     Thais  Feminino       Campinas
+## 2  105    25      &lt;NA&gt;  Feminino           &lt;NA&gt;
+## 3  299    30 Guilherme Masculino    Monte Verde
+## 4  645    35   Betânia      &lt;NA&gt; Rio de Janeiro
+## 5 7907    40 Ana Lucia  Feminino           &lt;NA&gt;
+## 6 8660    45      &lt;NA&gt;  Feminino Belo Horizonte
+## 7 4992    60      &lt;NA&gt; Masculino      São Paulo
+## 8  630    53    Pâmela  Feminino Rio de Janeiro
+</code></pre>
+<ol start="6">
+<li>Salve o data frame &lsquo;cadastro&rsquo; do exercicio anterior em um arquivo <code>.csv</code>. Como você faria isso? Quais os argumentos que devem ser usados?</li>
+</ol>
+<pre><code class="language-r">write.csv(cadastro, &quot;cadastro.csv&quot;, row.names = FALSE)
+</code></pre>
+<p>Só para relembrar o uso da função <code>write.csv</code>. Não deixem de consultar também as funções <code>?read.table</code>, <code>?write.table</code>, <code>?read.csv2</code>, <code>?write.csv2</code>, <code>?read.fwf</code> e <code>?write.fwf</code>. Essas funções permitem ler a maior parte dos dados em formato texto que vocês encontrarão nas suas vidas como analistas ou pesquisadores, que utilizam convenções como separadores de colunas (<code>;</code>, <code>,</code>, <code>\t</code>, <code>&quot; &quot;</code>), separadores de casas decimais (<code>,</code>, <code>.</code>), caracteres de escape (<code>\</code>, <code>&quot;</code>), codificação de caracteres acentuados (&ldquo;UTF-8&rdquo;, &ldquo;Windows-1252&rdquo;, etc.) e outras questões similares.</p>
+<hr>
+
+          </div>
+
+          
 
 
 
-
-
-
-
-
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=https://laddem.github.io/courses/rbase/solucoes/&amp;text=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://laddem.github.io/courses/rbase/solucoes/&amp;t=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="mailto:?subject=Solu%c3%a7%c3%b5es&amp;body=https://laddem.github.io/courses/rbase/solucoes/" target="_blank" rel="noopener" class="share-btn-email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://laddem.github.io/courses/rbase/solucoes/&amp;title=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="whatsapp://send?text=Solu%c3%a7%c3%b5es%20https://laddem.github.io/courses/rbase/solucoes/" target="_blank" rel="noopener" class="share-btn-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://laddem.github.io/courses/rbase/solucoes/&amp;title=Solu%c3%a7%c3%b5es" target="_blank" rel="noopener" class="share-btn-weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/rbase/dia3/" rel="next">Estatística e visualização: analisando seus dados e obtendo resultados</a>
+  </div>
+  
+  
 </div>
 
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on 15 Jun 2021</p>
+
+          
 
 
 
 
 
+          
 
 
 
+
+          
 
 
   
@@ -1193,55 +1621,10 @@ v1 * v2
 
 
 
-  
-  
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <a href="/author/laddem/"><img class="avatar mr-3 avatar-circle" src="/author/laddem/avatar_hu9f1bf5134929e5e12370052690438b0e_18476_270x270_fill_lanczos_center_2.png" alt="LADDEM"></a>
-    
+        </div>
 
-    <div class="media-body">
-      <h5 class="card-title"><a href="/author/laddem/">LADDEM</a></h5>
-      
-      
-      <ul class="network-icon" aria-hidden="true">
-  
-</ul>
+      </article>
 
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-</article>
-  </div>
-
-  <div class="page-footer">
-    
-    
-    <div class="container">
       <footer class="site-footer">
 
   
@@ -1277,7 +1660,15 @@ v1 * v2
   </p>
 </footer>
 
-    </div>
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
     
   </div>
 
@@ -1347,6 +1738,11 @@ v1 * v2
     
 
     
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
     
 
     
